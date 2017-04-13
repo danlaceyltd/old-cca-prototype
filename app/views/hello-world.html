@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_alpha.html" %}
+    
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        {{ message }}
+      </h1>
+
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
