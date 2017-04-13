@@ -8,4 +8,8 @@ router.get('/', function (req, res) {
 
 // add your routes here
 
+router.get('/hello-world', function (req, res) {
+  res.render('hello-world', {'message' : 'Hello world'});
+});
+
 module.exports = router
