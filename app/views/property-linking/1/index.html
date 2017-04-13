@@ -1,8 +1,16 @@
 {% extends "layout.html" %}
 
+{% set title = "Dashboard home" %}
+{% set version = "1" %}
+
 {% block page_title %}
-  Dashboard home
+  {{title}}
 {% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
 
 {% block content %}
 
@@ -10,19 +18,63 @@
 
     {% include "includes/phase_banner_prototype.html" %}
 
-
-
         <h1 class="heading-xlarge" style="margin-bottom:4px">
             <span class="heading-secondary">AGENT NAME</span>
             <span class="agent-code pull-right">Agent Code: 1712092466</span>
-            Dashboard home
+            {{title}}
         </h1>
 
         <hr style="height: 5px; background-color: #005ea5;border:0;margin-top:0px" />
 
+        <div class="grid-row">
+        <div class="column-two-thirds">
+            <h3 class="heading-large" style="border-bottom: solid 2px #b5babe;padding-bottom: 10px;">Properties</h3>
+
+            <h4 class="heading-medium"><a href="/property-linking/{{version}}/manage-properties">Manage properties</a></h4>
+            <p>View and update your detailed property information.</p>
+
+            <h4 class="heading-medium"><a href="#">Claim properties</a></h4>
+            <p>Find and add properties to your account.</p>
 
 
-    
+            <h4 class="heading-medium">Coming soon</a></h4>
+            <ul class="list list-bullet">
+            <li>View draft forms</li>
+            <li>Manage clients (agents only)</li>
+            <li>Claim properties</li>
+            <li>View messages</li>
+            <li>Manage cases</li>
+            <li>Manage agents</li>
+            <li>Manage personal details</li>
+            <li>Manage notifications</li>
+        </ul>
+
+
+        <h4 class="heading-medium">Useful information</a></h4>
+        <p><a href="https://www.gov.uk/guidance/how-non-domestic-property-including-plant-and-machinery-is-valued">How non-domestic property (including plant and machinery) is valued</a></p>
+
+
+        </div>
+        <div class="column-third">
+
+            <h3 class="heading-large" style="border-bottom: solid 2px #b5babe;padding-bottom: 10px;">Management</h3>
+
+            <h4 class="heading-medium"><a href="#">Manage agents</a></h4>
+            <p>Give/remove permission for agents to complete check and challenge forms for you.</p>
+
+            <h4 class="heading-medium"><a href="#">Manage clients</a></h4>
+            <p>View property representation requests.</p>
+
+
+        </div>
+     </div>
+
+
+
+    {% include "includes/get_help.html" %}
+
 </main>
+
+
 
 {% endblock %}
