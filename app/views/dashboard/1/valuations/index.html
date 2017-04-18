@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% set title = "Valuations" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    {% include "includes/nav.html" %}
+
+
+            <h1 class="heading-xlarge margin-bottom-0 clear-right">
+                {{title}}
+            </h1>
+
+            <h2 class="heading-secondary">Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria,  LA12 9RB</h2>
+
+
+
+            <div class="table-wrapper">
+                <table class="table-font-xsmall margin-bottom-20 margin-top-30">
+                    <caption class="visuallyhidden">Valuations</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="col">Effective date</th>
+                            <th scope="col">Rateable value</th>
+                            <th scope="col">Capacity</th>
+                            <th scope="col">From</th>
+                            <th scope="col">To</th>
+                            <th scope="col" class="last">Actions</th>
+                        </tr>
+
+                            <tr>
+                                <td>
+                                    1 Apr 2010
+                                </td>
+                                <td>
+                                    £28500
+                                </td>
+                                <td>
+                                Owner
+                                </td>
+                                <td>
+                                1 Apr 2017
+                                </td>
+                                <td>
+                                Present
+                                </td>
+                                <td class="last">
+                                    <ul>
+
+                                        <a href="#">
+                                            View valuation
+                                            <span class="visuallyhidden">for 1 Apr 2017 to Present</span>
+                                        </a>
+
+                                    </ul>
+                                </td>
+                            </tr>
+
+                        
+                    </tbody>
+                </table>
+            </div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}

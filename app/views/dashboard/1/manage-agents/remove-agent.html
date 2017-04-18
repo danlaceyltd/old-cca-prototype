@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% set title = "Remove agent" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+            <h1 class="heading-xlarge">{{title}}</h1>
+
+            <p>Are you sure you no longer want Automated Stub Agent 1 to act on behalf of this property?</p>
+
+            <a href="/dashboard/{{version}}/manage-agents/agent-removed" class="button">Remove agent</a>
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}

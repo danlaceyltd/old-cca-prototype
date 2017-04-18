@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% set title = "Appoint an agent" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+            <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">
+                {{title}}
+            </h1>
+
+
+            <p>You’ll need to enter the code of the agent you want to appoint and tell us what they can do on behalf of your business.</p>
+
+
+                <details>
+                                <summary role="button"><span class="summary">My agent hasn’t given me a code</span></summary>
+                                <div class="panel-indent" id="details-content-1">
+                                  You’ll need to ask your agent for the code they were assigned when they registered for this service.
+                                </div>
+                            </details>
+
+                            <p>Please be aware that you'll be responsible for any information your agent submits to us about your property. You'll be liable for any penalty or the backdating of revised valuations if your agent submits false information.</p>
+
+                            <form>
+
+                                <div class=" form-group">
+                                       <label class="heading-medium" for="agentCode">Agent code</label>
+                                       <input type="text" id="agentCode" value="" name="agentCode" class="form-control">
+                                </div>
+
+
+                        		<fieldset id="canCheckGroup" class="form-group inline">
+                      				<legend class="heading-medium">
+                                       Do you want this agent to submit checks?
+                                   </legend>
+
+                                       <details>
+                                           <summary role="button" ><span class="summary">What is a check?</span></summary>
+                                           <div class="panel-indent" id="details-content-2" style="margin-bottom:0">
+                                              If any of the factual details about your property or land are incorrect, you need to let us know. Confirming or alerting us to any changes through this service is known as a check.
+                                           </div>
+                                       </details>
+
+                                     <div class="multiple-choice">
+                                       <input id="canCheck_START_AND_CONTINUE" type="radio" name="canCheck" value="START_AND_CONTINUE">
+                                       <label class="block-label selection-button-radio" for="canCheck_START_AND_CONTINUE">Yes</label>
+                                   </div>
+
+                                   <div class="multiple-choice">
+                                    <input id="canCheck_NOT_PERMITTED" type="radio" name="canCheck" value="NOT_PERMITTED">
+                                    <label class="block-label selection-button-radio" for="canCheck_NOT_PERMITTED">No</label>
+                                   </div>
+
+                           	 </fieldset>
+
+
+
+
+                		<fieldset id="canChallengeGroup" class="form-group inline">
+              				<legend class="heading-medium">
+                               Do you want this agent to submit challenges?
+                           </legend>
+
+                       <details>
+                           <summary role="button"><span class="summary">What is a challenge?</span></summary>
+                           <div class="panel-indent" id="details-content-3" style="margin-bottom:0">
+                              If you want to request a change to your valuation, you’ll need to submit a challenge. Unlike a check, which is to confirm and propose changes to current property information, a challenge allows you to suggest changes to the valuation.
+                           </div>
+                       </details>
+
+
+                        <div class="multiple-choice">
+                           <input id="canChallenge_START_AND_CONTINUE" type="radio" name="canChallenge" value="START_AND_CONTINUE">
+                           <label class="block-label selection-button-radio" for="canChallenge_START_AND_CONTINUE">Yes</label>
+                       </div>
+
+                       <div class="multiple-choice">
+                            <input id="canChallenge_NOT_PERMITTED" type="radio" name="canChallenge" value="NOT_PERMITTED">
+                            <label class="block-label selection-button-radio" for="canChallenge_NOT_PERMITTED">No</label>
+                        </div>
+
+           	            </fieldset>
+
+                           <p>
+                               <a href="/dashboard/{{version}}/appoint-agent/success" class="button margin-right-20">Continue</a>
+                               <a href="javascript: history.go(-1)" class="button-secondary">Cancel</a>
+
+                           </p>
+
+                            </form>
+    </div>
+</div>
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}

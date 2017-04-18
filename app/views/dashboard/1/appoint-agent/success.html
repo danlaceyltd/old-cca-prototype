@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% set title = "We have received your request for this agent to act on behalf of your business" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+            <div class="column-two-thirds">
+                <div class="govuk-box-highlight">
+                        <h1 class="bold-large">{{title}}</h1>
+                </div>
+                      <h2 class="heading-medium">What happens next</h2>
+        <p>The agent has been sent your request to act on behalf of Shop One, 1 Shop Street, Someton, Townchester, Anyshire,  TC1 1AA.</p>
+
+        <p>
+            <a href="/dashboard/{{version}}" class="button">
+                Go to your dashboard
+            </a>
+        </p>
+
+    </div>
+</div>
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}

@@ -18,12 +18,9 @@
 
     {% include "includes/phase_banner_prototype.html" %}
 
-    <a class="link-back" href="/property-linking/{{version}}">Back</a>
+    <a class="link-back" href="/dashboard/{{version}}">Back</a>
 
-    <ul class="navigation-links pull-right">
-        <li><a href="/property-linking/{{version}}">Dashboard</a></li>
-        <li><a href="#">Sign out</a></li>
-    </ul>
+    {% include "includes/nav.html" %}
 
     <h1 class="heading-xlarge">
         Manage properties
@@ -74,10 +71,10 @@
                          <td class="last">
                              <ul>
                                  <li>
-                                     <a href="/property-linking/{{version}}/agent/appoint-agent">Appoint agent</a>
+                                     <a href="/dashboard/{{version}}/appoint-agent">Appoint agent</a>
                                  </li>
                                  <li>
-                                     <a href="/property-linking/{{version}}/agent/valuations">View valuations</a>
+                                     <a href="/dashboard/{{version}}/valuations">View valuations</a>
                                  </li>
 
                              </ul>
@@ -90,10 +87,10 @@
 
 
          <br />
-         <p><a href="/property-linking/{{version}}/find-property" id="addAnotherProperty">Add property</a></p>
+         <p><a href="/dashboard/{{version}}/find-property" id="addAnotherProperty">Add property</a></p>
 
          <br />
-         <p><a class="link-back" href="/property-linking/{{version}}/">Back</a></p>
+         <p><a class="link-back" href="/dashboard/{{version}}/">Back</a></p>
 
 
 

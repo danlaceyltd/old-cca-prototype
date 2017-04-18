@@ -14,17 +14,18 @@ router.get('/hello-world', function (req, res) {
 
 
 
-//Upload rates branch
-router.get('/property-linking/1/find-property/upload-rates-bill', function (req, res) {
+//Upload rates branching
+router.get('/dashboard/1/find-property/upload-rates-bill', function (req, res) {
 
   var haveRatesBill = req.query.hasRatesBill
 
   if (haveRatesBill === 'false') {
-    res.redirect('/property-linking/1/find-property/upload-evidence')
+    res.redirect('/dashboard/1/find-property/upload-evidence');
   } else {
-    res.render('property-linking/1/find-property/upload-rates-bill')
+    res.render('dashboard/1/find-property/upload-rates-bill');
   }
-})
+
+});
 
 
 module.exports = router

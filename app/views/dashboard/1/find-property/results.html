@@ -24,7 +24,7 @@
                 {{title}}
             </h1>
 
-            <form id="search-form" action="/property-linking/{{version}}/find-property/results" method="get" role="search" class="search-header">
+            <form id="search-form" action="/dashboard/{{version}}/find-property/results" method="get" role="search" class="search-header">
 
                 <div class="form-group inline">
                       <fieldset>
@@ -1798,30 +1798,131 @@
                             </form>
 
 
-                            <div class="grid-row">
-                                        <div class="column-two-thirds">
+                            <section id="search-results">
+                                <table id="search-results-table" class="table-font-xsmall">
+                                <caption style="text-align: left">
+                                    <span class="result-count">
+                                        <span id="result-count" style="display: inline-block; margin: 14px 0"> Showing
 
-                                            <h3 class="heading-medium">
-                                                Other useful information
-                                            </h3>
 
-                                            <ul class="list-bullet">
-                                                <li>
-                                                    <a href="https://www.gov.uk/government/collections/the-central-rating-list">Central rating lists</a>
-                                                </li>
-                                                <li>
-                                                    <a href="https://www.gov.uk/government/collections/valuation-scales">
-                                                        Valuation scales
-                                                    </a>
-                                                </li>
-                                            </ul>
 
-                                            <div class="alert--info margin-top-20">
-                                                <a href="https://voaratinglists.blob.core.windows.net/html/rlidata.htm">Download full property dataset</a>
-                                            </div>
+                                                    results 1 to 25 of 1,647
 
+
+
+                                        </span>
+                                    </span>
+                                    <details role="group">
+                                        <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Can’t find your property?</span></summary>
+                                        <div class="panel panel-border-wide" id="details-content-0" aria-hidden="true">
+                                            <p>If you can’t find your property in the list of search results, youll need to contact us.</p>
+                                            <p>Email<br>ccaservice@voa.gsi.gov.uk</p>
+                                            <p>Telephone (England)<br>03000 501 501</p>
+                                            <p>Telephone (Wales)<br>03000 505 505</p>
                                         </div>
-                                    </div>
+                                    </details>
+                                </caption>
+
+
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            Address
+                                        </th>
+                                        <th scope="col">
+                                            Description
+                                        </th>
+                                        <th scope="col">
+                                            Total area (m²/unit)
+                                        </th>
+                                        <th scope="col">
+                                            Price per m²/unit
+                                        </th>
+                                        <th scope="col">
+                                            Current rateable value
+                                        </th>
+
+                                            <th scope="col" class="last">
+                                                Action
+                                            </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td>
+                                            <span><a href="#">33, Alverstone Road, Worthing, West Sussex, BN11 2JR</a></span>
+
+                                        </td>
+                                        <td>
+                                            <span>Vehicle repair workshop and premises</span>
+                                        </td>
+                                        <td>
+                                            <span>28.3</span>
+                                        </td>
+                                        <td>
+                                            <span>£60</span>
+                                        </td>
+                                        <td>
+                                            <span>£1,550</span>
+                                        </td>
+
+                                            <td class="last">
+                                                <span>
+                                                    <a href="/dashboard/{{version}}/find-property/add-property">
+                                                        Claim this property
+                                                        <span class="visuallyhidden">33, Alverstone Road, Worthing, West Sussex, BN11 2JR</span>
+                                                    </a>
+                                                </span>
+                                            </td>
+
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+
+                <footer>
+
+
+        <ul class="pager" id="pager">
+
+
+
+
+
+
+                    <li class="active"><span class="current">1</span></li>
+
+
+
+                    <li>
+                        <a href="#">
+                            2
+                        </a>
+                    </li>
+
+
+
+                    <li>
+                        <a href="#">
+                            3
+                        </a>
+                    </li>
+
+
+
+
+
+
+                <li><a href="#">Next</a></li>
+
+
+        </ul>
+
+                </footer>
+            </section>
 
 
     {% include "includes/get_help.html" %}
