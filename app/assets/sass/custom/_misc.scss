@@ -64,3 +64,89 @@
     line-height: 1.11111;
     font-weight: 400;
 }
+
+.banner-temporary-message-without-action {
+  border: none;
+  margin-bottom: 30px;
+  background: #005ea5;
+  color: #fff;
+  padding: 15px 15px 18px 15px;
+}
+.banner-temporary-message-without-action {
+    padding: 20px 15px 20px 15px;
+}
+
+.rateable-value-top-banner {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.tabular-data__entry {
+    display: table;
+    width: 100%;
+    position: relative;
+    padding: .78947em 0;
+}
+.assessment-col-2x li {
+    width: calc(50% - 20px);
+    float: left;
+    border-bottom: solid 1px #bfc1c3;
+    margin: 0.2em 0;
+    margin-right: 20px;
+    line-height: 2em;
+}
+@media (min-width: 641px){
+    #assessment-details .tabular-data__data-1 {
+        width: 40%;
+        white-space: pre-wrap;
+    }
+}
+.assessment-col-2x .tabular-data__data-1 {
+    display: inline-block;
+}
+.tabular-data__entry * {
+    font-family: "nta",Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: none;
+}
+.assessment-col-2x .tabular-data__heading--label {
+    width: 49%;
+    display: inline-block;
+}
+
+.tabular-data__heading--label {
+    font-family: "nta",Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 300;
+    text-transform: none;
+    font-weight: 700;
+}
+caption {
+    text-align: left;
+    font-weight: 800;
+}
+
+tfoot .total td, tfoot .subtotal td {
+    border-top: solid 2px #0b0c0c;
+}
+tfoot .total td {
+    border-bottom: 0;
+}
+sup {
+    font-size: .7em;
+    font-weight: 800;
+}
+
+table .last, .table .last {
+    padding-right: 0;
+    text-align: right;
+}
+
+.print-link {
+    display: inline-block;
+    background: transparent no-repeat 0 50%;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASAgMAAAAvVbb5AAAACVBMVEX///////8KDAwmYEUdAAAAAXRSTlMAQObYZgAAADBJREFUCFtjYOBa1cDAoBkKJFYCCSYwEYpCrAICZCI0FEhkrURmQRRnrYRpW7WqAQAlGR86Ip1rwwAAAABJRU5ErkJggg==");
+    padding: 0.5em 0 0.5em 28px;
+    zoom: 1;
+}

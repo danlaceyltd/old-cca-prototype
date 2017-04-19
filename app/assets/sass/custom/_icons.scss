@@ -1,0 +1,75 @@
+.icon {
+  //background-size: 100%;
+  background-repeat: no-repeat;
+  cursor: default;
+  display: block;
+  height: 22px;
+  text-align: center;
+  vertical-align: middle;
+  width: 22px;
+
+
+  // Variations
+
+  &-close {
+    background-image: url('../images/icons/icon-close.png');
+    display: block;
+
+  	@include device-pixel-ratio() {
+  		background-image: url('../images/icons/icon-close-2x.png');
+      background-size: 100%;
+  	}
+  }
+
+  &-upload {
+    background-image: url("../images/icons/icon-file-upload.png");
+    @include device-pixel-ratio() {
+      background-image: url("../images/icons/icon-file-upload-2x.png");
+      background-size: 100%;
+    }
+    width: 30px;
+    height: 39px;
+  }
+
+  &-sort{
+      background-image: url('../images/icons/udarrow.png');
+          display: inline-block;
+        width: 9px;
+        height: 12px;
+        margin-left: 4px;
+  }
+
+}
+
+
+
+//details - help
+
+.help{
+  text-decoration: none;
+  color: $black;
+  display: inline-block;
+  summary{
+    width: auto;
+    color: $black;
+    position: inherit;
+    .arrow{
+      display: none;
+    }
+    &::-webkit-details-marker {
+      display: none
+    }
+  }
+  .panel-indent{
+      margin-bottom: 0;
+    }
+
+}
+
+.badge{
+    background-color: $green;
+    padding: 4px;
+    color: white;
+    font-size: 16px;
+    margin-left:10px;
+}
