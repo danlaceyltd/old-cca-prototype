@@ -12,7 +12,7 @@
 
 
         $('#dataTable').DataTable({
-            'ajax': 'https://api.myjson.com/bins/1eoa93',//'https://api.myjson.com/bins/31ixi',
+            'ajax': 'https://api.myjson.com/bins/10qyev',
                "info": true,
                "paging": true,
                "lengthChange": true,
