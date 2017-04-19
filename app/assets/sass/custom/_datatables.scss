@@ -172,6 +172,13 @@ table.dataTable.no-footer {
 table.dataTable tbody th, table.dataTable tbody td {
     padding: 8px 20px 8px 0;
 }
+table.dataTable tbody td.last {
+    padding: 8px 0px 8px 0;
+}
+table.dataTable thead th.last {
+    padding-right: 0;
+}
+
 
 table.dataTable thead th, #content table.dataTable thead td {
     padding: 10px 20px 8px 0;
