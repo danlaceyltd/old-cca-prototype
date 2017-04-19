@@ -5,6 +5,7 @@
         new VOA.RadioToggleFields();
         new VOA.RadioToggleAdvanced();
         new VOA.JqueryFiler();
+        new VOA.Pagination();
     });
 
 }(window.VOA = window.VOA || {}, jQuery));
