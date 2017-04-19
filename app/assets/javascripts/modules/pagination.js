@@ -32,7 +32,8 @@
                 ],
                 "columnDefs": [
                     { targets: 'no-sort', orderable: false }
-                ]
+                ],
+                "lengthMenu": [[15, 25, 50, 10], [15, 25, 50, 100]]
         });
 
 

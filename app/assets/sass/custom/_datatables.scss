@@ -177,6 +177,34 @@ table.dataTable thead th, #content table.dataTable thead td {
     padding: 10px 20px 8px 0;
 }
 
+
+.dataTables_length [name="dataTable_length"]{
+	    width: auto;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		font-family: "nta", Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 16px;
+		line-height: 1.25;
+		padding: 5px 4px 4px;
+		border: 2px solid #0b0c0c;
+}
+.dataTables_filter [type="search"]{
+		width: auto;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		font-family: "nta", Arial, sans-serif;
+		font-weight: 400;
+		text-transform: none;
+		font-size: 16px;
+		line-height: 1.25;
+		padding: 5px 4px 4px;
+		border: 2px solid #0b0c0c;
+}
+
 	//$link-colour: $govuk-blue;
 	//$link-active-colour: $light-blue;
 	//$link-hover-colour: $light-blue;
