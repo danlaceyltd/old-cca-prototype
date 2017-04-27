@@ -21,7 +21,7 @@
                 "language": {
                     "info": "Showing page _PAGE_ of _PAGES_",
                     "lengthMenu": "Show _MENU_ rows",
-                     "sSearch": "Filter"
+                     "sSearch": "Filter results"
                 },
                 "aoColumns": [
                     {"width": "auto"},
@@ -34,6 +34,17 @@
                     { targets: 'no-sort', orderable: false }
                 ],
                 "lengthMenu": [[15, 25, 50, 10], [15, 25, 50, 100]]
+        });
+
+        $('#dataTableClients').DataTable({
+            "info": true,
+            "paging": true,
+            "lengthChange": false,
+             "searching": false,
+             "ordering": false,
+             "language": {
+                 "info": "Showing _START_ to _END_ of _TOTAL_"
+             },
         });
 
 

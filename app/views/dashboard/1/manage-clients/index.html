@@ -11,6 +11,12 @@
     Check and challenge your business rates valuation
 {% endblock %}
 
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+
+
 
 {% block content %}
 
@@ -24,18 +30,491 @@
                 {{title}}
             </h1>
 
+            <a href="/dashboard/{{version}}/manage-clients/pending-requests">
+               You have 2 pending requests
+            </a>
 
-            <h2 class="heading-secondary">
+            <div class="table-wrapper">
 
-                       <a href="/dashboard/{{version}}/manage-clients/pending-requests">
-                           You have 2 pending requests
-                       </a>
+            <table id="dataTableClients" class="table-font-xsmall margin-bottom-20 margin-top-30">
 
-                </h2>
+                <thead>
+                    <tr>
+                        <th scope="col">Organisation name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Local authority reference</th>
+                        <th scope="col">Permissions</th>
+                        <th scope="col" class="last">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Org ABC</td>
+                        <td>41 -43, Pinn Hill, Exeter, EX1 3TH</td>
+                        <td>2209804101</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: No</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org DEF</td>
+                        <td>1, The High St, Exeter, EX2 4TH</td>
+                        <td>2209804102</td>
+                        <td>
+                            <ul>
+                                <li>Check: No</li>
+                                <li>Challenge: No</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org GHI</td>
+                        <td>3, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804102</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org JKL</td>
+                        <td>5, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804108</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org MNO</td>
+                        <td>6, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804109</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org PQR</td>
+                        <td>9, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804168</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org STU</td>
+                        <td>7, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209802108</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org VWX</td>
+                        <td>12, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209604108</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org WYZ</td>
+                        <td>50, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804118</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org ABC</td>
+                        <td>41 -43, Pinn Hill, Exeter, EX1 3TH</td>
+                        <td>2209804101</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: No</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org DEF</td>
+                        <td>1, The High St, Exeter, EX2 4TH</td>
+                        <td>2209804102</td>
+                        <td>
+                            <ul>
+                                <li>Check: No</li>
+                                <li>Challenge: No</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org GHI</td>
+                        <td>3, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804102</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org JKL</td>
+                        <td>5, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804108</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org MNO</td>
+                        <td>6, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804109</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org PQR</td>
+                        <td>9, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804168</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org STU</td>
+                        <td>7, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209802108</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org VWX</td>
+                        <td>12, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209604108</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org WYZ</td>
+                        <td>50, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804118</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org ABC</td>
+                        <td>41 -43, Pinn Hill, Exeter, EX1 3TH</td>
+                        <td>2209804101</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: No</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org DEF</td>
+                        <td>1, The High St, Exeter, EX2 4TH</td>
+                        <td>2209804102</td>
+                        <td>
+                            <ul>
+                                <li>Check: No</li>
+                                <li>Challenge: No</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org GHI</td>
+                        <td>3, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804102</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org JKL</td>
+                        <td>5, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804108</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org MNO</td>
+                        <td>6, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804109</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org PQR</td>
+                        <td>9, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804168</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org STU</td>
+                        <td>7, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209802108</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org VWX</td>
+                        <td>12, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209604108</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Org WYZ</td>
+                        <td>50, The Low St, Exeter, EX2 5TH</td>
+                        <td>2209804118</td>
+                        <td>
+                            <ul>
+                                <li>Check: Yes</li>
+                                <li>Challenge: yes</li>
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li><a href="#">Revoke client</a></li>
+                                <li><a href="#">View valuations</a></li>
+                            </ul>
+                        </td>
+                    </tr>
 
 
-                <p>There are no existing clients</p>
 
+
+                <tbody>
+
+            </table>
+</div>
 
 
 
