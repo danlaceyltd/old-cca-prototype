@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set title = "Pagination with single search box" %}
+{% set title = "Sorting and filtering columns" %}
 {% set version = "1" %}
 
 {% block page_title %}
@@ -31,7 +31,7 @@
 
 
             <div class="table-wrapper">
-                 <table id="dataTable" class="table-font-xsmall margin-bottom-20 margin-top-30">
+                 <table id="dataTableFilter" class="table-font-xsmall margin-bottom-20 margin-top-30">
                      <caption class="visuallyhidden">Your properties</caption>
                          <thead>
                              <tr>
@@ -41,24 +41,18 @@
                                  <th>Appointed Agents</th>
                                  <th>Actions</th>
                              </tr>
+                             <tr id="filterrow">
+                                 <th></th>
+                                 <th></th>
+                                 <th></th>
+                                 <th></th>
+                                 <th></th>
+                            </tr>
                          </thead>
                      </table>
                  </div>
 
 
-<!--
-         <ul role="navigation" aria-label="Pagination" class="pagination">
-            <li class="disabled previous">Previous <span class="visuallyhidden">page</span></li>
-            <li><a href="#"><span class="visuallyhidden">page </span>1</a></li>
-            <li><span class="ellipsis">…</span></li>
-            <li><a href="#"><span class="visuallyhidden">page </span>4</a></li>
-            <li class="active"><span class="visuallyhidden">You're currently on page </span>5</li>
-            <li><a href="#"><span class="visuallyhidden">page </span>6</a></li>
-            <li><span class="ellipsis">…</span></li>
-            <li><a href="#"><span class="visuallyhidden">page </span>40</a></li>
-            <li class="next"><a href="#">Next <span class="visuallyhidden">page</span></a></li>
-         </ul>
--->
 
     {% include "includes/get_help.html" %}
 

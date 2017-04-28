@@ -33,7 +33,7 @@
                 "columnDefs": [
                     { targets: 'no-sort', orderable: false }
                 ],
-                "lengthMenu": [[15, 25, 50, 10], [15, 25, 50, 100]]
+                "lengthMenu": [[15, 25, 50, 100], [15, 25, 50, 100]]
         });
 
         $('#dataTableClients').DataTable({
@@ -46,6 +46,45 @@
                  "info": "Showing _START_ to _END_ of _TOTAL_"
              },
         });
+
+
+        //filtering
+
+        $(document).on('click', '#dataTableFilter thead tr#filterrow th input', function(e) {
+           if (e.stopPropagation !== undefined) {
+               e.stopPropagation();
+           } else {
+               e.cancelBubble = true;
+           }
+         });
+
+
+
+        $('#dataTableFilter thead tr#filterrow th').not('#dataTableFilter thead tr#filterrow th:last').each( function () {
+               var title = $('#dataTableClients thead th').eq( $(this).index() ).text();
+               $(this).html( '<input type="text" />' );
+           } );
+
+           var table = $('#dataTableFilter').DataTable( {
+               ajax: 'https://api.myjson.com/bins/1e1cmv',
+               orderCellsTop: true,
+                "aoColumns": [
+                    {"width": "auto"},
+                    {"width": "208px"},
+                    {"width": "auto"},
+                    {"width": "auto"},
+                    { "width": "120px", "sClass": "last", 'bSortable': false}
+                ],
+           } );
+
+           $("#dataTableFilter thead input").on( 'keyup change', function () {
+               table.column( $(this).parent().index()+':visible' ).search( this.value ).draw();
+           } );
+
+           $('#dataTableFilter').closest('.table-wrapper').find('.dataTables_filter').remove();
+
+
+
 
 
     };

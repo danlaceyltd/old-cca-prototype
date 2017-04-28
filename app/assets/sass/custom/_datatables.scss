@@ -185,7 +185,7 @@ table.dataTable thead th, #content table.dataTable thead td {
 }
 
 
-.dataTables_length [name="dataTable_length"]{
+.dataTables_length select{
 	    width: auto;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
@@ -210,6 +210,19 @@ table.dataTable thead th, #content table.dataTable thead td {
 		line-height: 1.25;
 		padding: 5px 4px 4px;
 		border: 2px solid #0b0c0c;
+}
+#filterrow input{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.25;
+    padding: 5px 4px 4px;
+    border: 2px solid #0b0c0c;
 }
 
 	//$link-colour: $govuk-blue;
