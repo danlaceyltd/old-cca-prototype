@@ -41,17 +41,23 @@
                         <th scope="col">Effective date</th>
                         <th scope="col">Case type</th>
                         <th scope="col">Draft expiry date</th>
-                        <th class="last" scope="col">Actions</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
 
                     <tr>
-                        <td><a href="/dashboard/{{version}}/valuations">Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria, LA12 9RB</a></td>
-                        <td><a href="/dashboard/{{version}}/valuations/detailed">1 Apr 2017</a></td>
+                        <td>Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria, LA12 9RB</td>
+                        <td>1 Apr 2017</td>
                         <td>Check</td>
                         <td>1 Sept 2017</td>
-                        <td  class="last"><a href="#">Continue drafting this case</a></td>
+                        <td>
+                            <ul class="list list-action">
+                                <li><a href="#">Continue drafting</a></li>
+                                <li><a href="/dashboard/{{version}}/valuations/detailed">View valuation</a></li>
+                                <li><a href="#">Delete draft</a></li>
+                            </ul>
+                        </td>
                     </tr>
 
 
