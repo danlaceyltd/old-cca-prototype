@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% set title = "Draft cases" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <a class="link-back" href="/dashboard/{{version}}">Back</a>
+
+    {% include "includes/nav.html" %}
+
+    <h1 class="heading-xlarge">
+        {{title}}
+    </h1>
+
+            <div class="table-wrapper">
+            <table id="draftCasesTable" class="table-font-xsmall margin-top-30 margin-bottom-20">
+                <caption class="visuallyhidden">Manage agents</caption>
+                <colgroup>
+                    <col style="width: 300px">
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">Address</th>
+                        <th scope="col">Effective date</th>
+                        <th scope="col">Case type</th>
+                        <th scope="col">Draft expiry date</th>
+                        <th class="last" scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><a href="/dashboard/{{version}}/valuations">Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria, LA12 9RB</a></td>
+                        <td><a href="/dashboard/{{version}}/valuations/detailed">1 Apr 2017</a></td>
+                        <td>Check</td>
+                        <td>1 Sept 2017</td>
+                        <td  class="last"><a href="#">Continue drafting this case</a></td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
