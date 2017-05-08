@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% set title = "Dashboard home" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="overlay"></div>
+    {% include "includes/phase_banner_prototype.html" %}
+
+        <h1 class="heading-xlarge" style="margin-bottom:4px">
+            <span class="heading-secondary">AGENT ABC</span>
+            <span class="agent-code pull-right">Agent Code: 1712092466</span>
+            {{title}}
+        </h1>
+
+        <hr style="height: 5px; background-color: #005ea5;border:0;margin-top:0px" />
+
+        <div class="grid-row">
+        <div class="column-two-thirds">
+            <h3 class="heading-large" style="border-bottom: solid 2px #b5babe;padding-bottom: 10px;">Properties</h3>
+
+            <h4 class="heading-medium"><a href="/dashboard/{{version}}/manage-properties/">Manage properties</a></h4>
+            <p>View and update your detailed property information.</p>
+
+            <h4 class="heading-medium"><a href="/dashboard/{{version}}/find-property">Claim properties</a></h4>
+            <p>Find and add properties to your account.</p>
+
+
+            <h3 class="heading-large" style="border-bottom: solid 2px #b5babe;padding-bottom: 10px;">Cases</h3>
+            <div class="pop">
+                <h3 class="heading-medium">Draft cases (1)</h3>
+                <p><a href="/dashboard/{{version}}/draft-cases">Continue editing checks that have not yet been submitted.</a></p>
+            </div>
+
+
+            {% include "includes/coming_soon.html" %}
+
+
+        <h4 class="heading-medium">Useful information</a></h4>
+        <p><a href="https://www.gov.uk/guidance/how-non-domestic-property-including-plant-and-machinery-is-valued">How non-domestic property (including plant and machinery) is valued</a></p>
+        <p><a href="https://www.gov.uk/guidance/how-to-check-your-rateable-value-is-correct">How to check and challenge your rateable value</a></p>
+
+        </div>
+        <div class="column-third">
+
+            <h3 class="heading-large" style="border-bottom: solid 2px #b5babe;padding-bottom: 10px;">Management</h3>
+
+            <h4 class="heading-medium"><a href="/dashboard/{{version}}/manage-agents">Manage agents</a></h4>
+            <p>Give/remove permission for agents to complete check and challenge forms for you.</p>
+
+            <h4 class="heading-medium"><a href="/dashboard/{{version}}/manage-clients">Manage clients</a></h4>
+            <p>View property representation requests.</p>
+
+            <h4 class="heading-medium"><a href="/dashboard/{{version}}/add-user-to-gg">Add another user from my business</a></h4>
+            <p>To add another user, you’ll firstly need to add them to your Government Gateway account.</p>
+
+            <h4 class="heading-medium"><a href="/dashboard/{{version}}/change-details">Update my business details</a></h4>
+            <p>Keep your own business details up to date.</p>
+
+        </div>
+     </div>
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
