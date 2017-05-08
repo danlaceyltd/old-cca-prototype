@@ -55,7 +55,7 @@
                             <ul class="list list-action">
                                 <li><a href="#">Continue drafting</a></li>
                                 <li><a href="/dashboard/{{version}}/valuations/detailed">View valuation</a></li>
-                                <li><a href="#">Delete draft</a></li>
+                                <li><a href="#" data-toggle="dialog" data-target="dialog-delete">Delete draft</a></li>
                             </ul>
                         </td>
                     </tr>
@@ -69,6 +69,22 @@
     {% include "includes/get_help.html" %}
 
 </main>
+
+
+<div class="dialog" id="dialog-delete" aria-hidden="true" data-modal="true">
+    <div class="dialog-holder" aria-labelledby="dialog-delete" aria-describedby="dialog-content-delete" role="alertdialog">
+        <div class="dialog-content" id="dialog-content-delete" role="document" tabindex="0">
+            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+            <div class="modal-content-div"><h3 class="heading-small">Delete draft case</h3>
+                <p>Are you sure you want to delete the draft case for the property?<br />
+                Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria, LA12 9RB</p>
+            </div>
+            <a href="/dashboard/{{version}}/draft-cases/no-cases" class="button"  role="button">Yes, I want to delete this draft case</a>
+            <a href="#" class="dialog-cancel button-secondary margin-left-10" aria-label="close" role="button">Cancel</a>
+        </div>
+    </div>
+</div>
+
 
 
 

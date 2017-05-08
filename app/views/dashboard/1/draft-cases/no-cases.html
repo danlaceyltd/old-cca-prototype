@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% set title = "Draft cases" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <a class="link-back" href="/dashboard/{{version}}">Back</a>
+
+    {% include "includes/nav.html" %}
+
+    <h1 class="heading-xlarge">
+        {{title}}
+    </h1>
+
+    <div class="alert--success margin-top-20">
+        Case has been deleted, you have no draft cases.
+    </div>
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+<div class="dialog" id="dialog-delete" aria-hidden="true" data-modal="true">
+    <div class="dialog-holder" aria-labelledby="dialog-delete" aria-describedby="dialog-content-delete" role="alertdialog">
+        <div class="dialog-content" id="dialog-content-delete" role="document" tabindex="0">
+            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+            <div class="modal-content-div"><h3 class="heading-small">Delete draft case</h3>
+                <p>Are you sure you want to delete the draft case for the property?<br />
+                Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria, LA12 9RB</p>
+            </div>
+            <a href="#" class="button"  role="button">Yes, I want to delete this draft case</a>
+            <a href="#" class="dialog-cancel button-secondary margin-left-10" aria-label="close" role="button">Cancel</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
