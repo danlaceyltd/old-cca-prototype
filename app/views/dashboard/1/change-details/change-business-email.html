@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% set title = "Change business email" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <ul class="navigation-links pull-right">
+        <li><a href="/dashboard/{{version}}/change-business-details-2">Dashboard</a></li>
+        <li><a href="#">Sign out</a></li>
+    </ul>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+                <h1 class="heading-xlarge">
+                    {{title}}
+                </h1>
+
+                <form action="/dashboard/{{version}}/change-details/summary" method="post" class="form">
+
+                    {% include "dashboard/" + version + "/change-details/fields/business_email.html" %}
+
+
+                    <div class="form-group margin-top-30">
+                      <input type="submit" class="button" value="Update">
+                      <a href="/dashboard/{{version}}/change-details/summary" class="button-secondary margin-left-10">Cancel</a>
+                    </div>
+
+                </form>
+
+
+        </div>
+    </div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}

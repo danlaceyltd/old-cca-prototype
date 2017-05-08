@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% set title = "Your business details have been updated" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <ul class="navigation-links pull-right">
+        <li><a href="/dashboard/{{version}}/change-business-details-1">Dashboard</a></li>
+        <li><a href="#">Sign out</a></li>
+    </ul>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+                <div class="govuk-box-highlight">
+                    <h1 class="bold-large">{{title}}</h1>
+                </div>
+
+                <p>Copy tbc ..</p>
+
+                <p><a href="/dashboard/{{version}}/change-business-details-1" class="button">Go to your dashboard</a></p>
+
+        </div>
+    </div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}

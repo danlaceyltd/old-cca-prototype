@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% set title = "Business details" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <ul class="navigation-links pull-right">
+        <li><a href="/dashboard/{{version}}/change-business-details-2">Dashboard</a></li>
+        <li><a href="#">Sign out</a></li>
+    </ul>
+
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+                <h1 class="heading-xlarge">
+                    {{title}}
+                </h1>
+
+                <table class="check-your-answers">
+
+                  <tbody>
+                    <tr>
+                      <td>Business name</td>
+                      <td>{% if data['bussinessName'] %}{{data['bussinessName']}}{% else %}Agent ABC{% endif %}</td>
+                      <td class="change-answer"><a href="/dashboard/{{version}}/change-details/change-business-name">Change</a></td>
+                    </tr>
+                    <tr>
+                      <td>Address</td>
+                      <td>
+                          {% if data['bussinessAddress1'] %}{{data['bussinessAddress1']}}<br />{% else %}10 The High St<br />{% endif %}
+                          {% if data['bussinessAddress2'] %}{{data['bussinessAddress2']}}<br />{% else %}Brighton<br />{% endif %}
+                          {% if data['bussinessAddress3'] %}{{data['bussinessAddress3']}}<br />{% else %}{% endif %}
+                          {% if data['bussinessAddress4'] %}{{data['bussinessAddress4']}}<br />{% else %}{% endif %}
+                          {% if data['bussinessAddressPostcode'] %}{{data['bussinessAddressPostcode']}}{% else %}BN13 1AA{% endif %}
+                      </td>
+                      <td class="change-answer"><a href="/dashboard/{{version}}/change-details/change-business-address">Change</a></td>
+                    </tr>
+                    <tr>
+                      <td>Phone</td>
+                      <td>{% if data['phone'] %}{{data['phone']}}{% else %}12345678910{% endif %}</td>
+                      <td class="change-answer"><a href="/dashboard/{{version}}/change-details/change-business-phone">Change</a></td>
+                    </tr>
+                    <tr>
+                      <td>Email</td>
+                      <td>{% if data['email'] %}{{data['email']}}{% else %}admin@abc.com{% endif %}</td>
+                      <td class="change-answer"><a href="/dashboard/{{version}}/change-details/change-business-email">Change</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+
+
+        </div>
+    </div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
