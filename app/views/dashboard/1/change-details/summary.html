@@ -35,12 +35,12 @@
 
                   <tbody>
                     <tr>
-                      <td>Business name</td>
+                      <td><strong>Business name</strong></td>
                       <td>{% if data['bussinessName'] %}{{data['bussinessName']}}{% else %}Agent ABC{% endif %}</td>
-                      <td class="change-answer"><a href="/dashboard/{{version}}/change-details/change-business-name">Change</a></td>
+                      <td class="change-answer"><a href="/dashboard/{{version}}/change-details/change-business-name">Update</a></td>
                     </tr>
                     <tr>
-                      <td>Address</td>
+                      <td><strong>Business address</strong></td>
                       <td>
                           {% if data['bussinessAddress1'] %}{{data['bussinessAddress1']}}<br />{% else %}10 The High St<br />{% endif %}
                           {% if data['bussinessAddress2'] %}{{data['bussinessAddress2']}}<br />{% else %}Brighton<br />{% endif %}
@@ -48,17 +48,17 @@
                           {% if data['bussinessAddress4'] %}{{data['bussinessAddress4']}}<br />{% else %}{% endif %}
                           {% if data['bussinessAddressPostcode'] %}{{data['bussinessAddressPostcode']}}{% else %}BN13 1AA{% endif %}
                       </td>
-                      <td class="change-answer"><a href="/dashboard/{{version}}/change-details/change-business-address">Change</a></td>
+                      <td class="change-answer"><a href="/dashboard/{{version}}/change-details/change-business-address">Update</a></td>
                     </tr>
                     <tr>
-                      <td>Phone</td>
+                      <td><strong>Telephone</strong></td>
                       <td>{% if data['phone'] %}{{data['phone']}}{% else %}12345678910{% endif %}</td>
-                      <td class="change-answer"><a href="/dashboard/{{version}}/change-details/change-business-phone">Change</a></td>
+                      <td class="change-answer"><a href="/dashboard/{{version}}/change-details/change-business-phone">Update</a></td>
                     </tr>
                     <tr>
-                      <td>Email</td>
+                      <td><strong>Email</strong></td>
                       <td>{% if data['email'] %}{{data['email']}}{% else %}admin@abc.com{% endif %}</td>
-                      <td class="change-answer"><a href="/dashboard/{{version}}/change-details/change-business-email">Change</a></td>
+                      <td class="change-answer"><a href="/dashboard/{{version}}/change-details/change-business-email">Update</a></td>
                     </tr>
                   </tbody>
                 </table>
