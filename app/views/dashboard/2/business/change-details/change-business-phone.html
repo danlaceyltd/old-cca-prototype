@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% set title = "Update business telephone" %}
+{% set version = "2" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+                <h1 class="heading-xlarge">
+                    {{title}}
+                </h1>
+
+                <form action="/dashboard/{{version}}/business/change-details/summary" method="post" class="form">
+
+                    {% include "dashboard/" + version + "/business/change-details/fields/business_phone.html" %}
+
+
+                    <div class="form-group margin-top-30">
+                      <input type="submit" class="button" value="Update">
+                      <a href="/dashboard/{{version}}/business/change-details/summary" class="button-secondary margin-left-10">Cancel</a>
+                    </div>
+
+                </form>
+
+
+        </div>
+    </div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}

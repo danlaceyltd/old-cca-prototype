@@ -11,6 +11,7 @@
     var Pagination = function (){
 
 
+
         $('#dataTable').DataTable({
             'ajax': 'https://api.myjson.com/bins/1e1cmv',
                "info": true,
@@ -60,7 +61,7 @@
         $('#dataTableFilter thead tr#filterrow th').
             not('#dataTableFilter thead tr#filterrow th:eq(2), #dataTableFilter thead tr#filterrow th:eq(4)')
                 .each( function () {
-                    var title = $('#dataTableClients thead th').eq( $(this).index() ).text();
+                    //var title = $('#dataTableFilter thead th').eq( $(this).index() ).text();
                     $(this).html( '<input type="text" />' );
             });
 
@@ -102,13 +103,13 @@
 
             $('#dataTableFilter').closest('.table-wrapper').find('.dataTables_filter').empty().append('<a href="#">Show filters</a>');
 
-            $(document).on('click', '.dataTables_filter a', function(e) {
+            $(document).on('click', '#dataTableFilter_filter a', function(e) {
                 e.preventDefault();
                 $('#dataTableFilter thead tr#filterrow').toggle();
                 $(this).text(function(i, text){
-                return text === 'Show filters' ? 'Hide filters' : 'Show filters';
+                    return text === 'Show filters' ? 'Hide filters' : 'Show filters';
+                });
             });
-        });
 
     };
 

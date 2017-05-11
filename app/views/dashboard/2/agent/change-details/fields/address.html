@@ -1,0 +1,20 @@
+<div class="form-group margin-bottom-10">
+    <label class="heading-medium" for="address1">Address</label>
+    <input type="text" id="address1" value="{% if data['address1'] %}{{data['address1']}}{% else %}10 Lorem St{% endif %}" name="address1" class="form-control" >
+</div>
+<div class=" form-group margin-bottom-10">
+    <label class="visuallyhidden" for="address2">Address line 2</label>
+    <input type="text" id="address2" value="{% if data['address2'] %}{{data['address2']}}{% else %}Ipsum{% endif %}" name="address2" class="form-control" >
+</div>
+<div class=" form-group margin-bottom-10">
+    <label class="visuallyhidden" for="address3">Address line 3</label>
+    <input type="text" id="address3" value="{{data['address3']}}" name="address3" class="form-control" >
+</div>
+<div class=" form-group margin-bottom-0">
+    <label class="visuallyhidden" for="address4">Address line 4</label>
+    <input type="text" id="address4" value="{{data['address4']}}" name="address4" class="form-control" >
+</div>
+<div class="form-group margin-bottom-0">
+    <label class="heading-medium" for="addressPostcode">Postcode</label>
+    <input type="text" id="addressPostcode" value="{% if data['addressPostcode'] %}{{data['addressPostcode']}}{% else %}ABC 123{% endif %}" name="addressPostcode" class="form-control form-control-1-4">
+</div>

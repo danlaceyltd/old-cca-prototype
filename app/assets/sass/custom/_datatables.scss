@@ -223,12 +223,63 @@ table.dataTable thead th, #content table.dataTable thead td {
     font-size: 16px;
     line-height: 1.25;
     padding: 2px 4px;
-    border: 2px solid #0b0c0c;
+    border: 2px solid #111;
 }
 
 	//$link-colour: $govuk-blue;
 	//$link-active-colour: $light-blue;
 	//$link-hover-colour: $light-blue;
 	//$link-visited-colour: #4c2c92;
+    #propertiesTableBusiness_wrapper,
+    #propertiesTable_wrapper,
+    #clientsTable_wrapper,
+    #draftsTable_wrapper{
+        .dataTables_length{
+            float: right;
+        }
+        .dataTables_filter{
+        //    float: left;
+        margin-right: 30px;
+        }
+    }
+
+    .data-filter{
+        li{
+            display:inline-block;
+            //border-right: solid 1px $grey-2;
+            padding: 0 10px;
+            a.current{
+                text-decoration: none;
+                color: $black;
+            }
+            &:first-child{
+                padding-left: 0 !important;
+            }
+        }
+
+        .data-declined{
+            //border-right: none;
+        }
+    }
+
+    .data-all.reset{
+        a.current{
+            display: none !important;
+        }
+    }
+    #propertiesTableBusiness_filter,
+    #propertiesTable_filter,
+    #clientsTable_filter,
+    #draftsTable_filter{
+        display: none;
+    }
+    .list{
+        &.list-actions{
+            margin-bottom: 0;
+        }
+    }
+    .pendingvoa{
+        color: $grey-1;
+    }
 
 }

@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% set title = "Properties" %}
+{% set version = "2" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+        <div class="section-tabs">
+            <ul role="tablist">
+              <li class="active"><a href="/dashboard/{{version}}/agent">Properties</a></li>
+              <li><a href="/dashboard/{{version}}/agent/drafts">Drafts</a></li>
+              <li><a href="/dashboard/{{version}}/agent/change-details/summary">My details</a></li>
+              <li><a href="/dashboard/{{version}}/agent/find-property">+ Add property</a></li>
+              <li class="tab-right"><span>Welcome, MNO Client</span><a href="#">Sign out</a></li>
+            </ul>
+        </div>
+
+        <h1 class="visuallyhidden">
+            {{title}}
+        </h1>
+
+
+
+
+
+    <ul class="data-filter">
+        <li class="data-all"><a href="#" class="current" data-filter="all">All (100)</a></li>
+        <li class="data-approved"><a href="#" data-filter="approved">Approved (88)</a></li>
+        <li class="data-pending"><a href="#" data-filter="pending">Pending (7)</a></li>
+        <li class="data-declined"><a href="#" data-filter="declined">Declined (5)</a></li>
+        <li class="data-mine"><a href="#" data-filter="MNO Client">My property (10)</a></li>
+    </ul>
+
+<div class="table-wrapper">
+    <table id="propertiesTable" class="table-font-xsmall">
+        <colgroup>
+            <col >
+            <col >
+            <col >
+            <col style="width:180px">
+            <col >
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Address</th>
+                <th>Local authority reference</th>
+                <th>Client</th>
+                <th>Actions</th>
+                <th>Status</th>
+            </tr>
+            <tr id="filterrow">
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+           </tr>
+        </thead>
+
+    </table>
+</div>
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}

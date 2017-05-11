@@ -4,6 +4,7 @@
   border-bottom: 1px solid #bfc1c3;
   margin: 1.5em 0;
   display: flex;
+
 }
 @media (max-width: 640px) {
 
@@ -19,6 +20,7 @@
   top: 1px;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .section-tabs ul li {
@@ -38,7 +40,7 @@
 
 .section-tabs ul a {
   font-family: "proxima_nova", Arial, sans-serif;
-  font-size: 19px;
+  font-size: 16px;
   line-height: 1.31579;
   font-weight: 400;
   text-transform: none;
@@ -105,6 +107,7 @@
   padding: 10px 9px 10px;
   margin: 0 5px 0 0;
   border-color: #bfc1c3;
+  color: $black;
 }
 @media (max-width: 640px) {
 
@@ -181,4 +184,19 @@ strong, b {
     display: inline-block;
     width: 100%;
   }
+}
+.section-tabs .tab-right{
+    float: right;
+    margin-top: 20px;
+    a{
+        display: inline;
+        background: none;
+        border: none;
+        margin-right: 0;
+        padding-right: 0;
+        text-decoration: underline;
+    }
+    span{
+        font-size: 16px;
+    }
 }

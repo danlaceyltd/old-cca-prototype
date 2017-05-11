@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% set title = "We’ve received your request to add 33, ALVERSTONE ROAD, WORTHING, WEST SUSSEX, BN11 2JR to your business’s customer record" %}
+{% set version = "2" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+            <div class="column-two-thirds">
+
+
+
+            <div class="govuk-box-highlight">
+                    <h1 class="bold-large">{{title}}</h1>
+                    <p>
+                      Your submission ID is <br>
+                      <strong class="heading-medium">HDJ2123F</strong>
+                    </p>
+                  </div>
+
+                  <h2 class="heading-medium">What happens next</h2>
+                  <p>If the property request is approved you’ll be able to view the detailed valuation. This may take some time depending on the nature of your application.</p>
+                  <p><a href="/dashboard/{{version}}/business/find-property" class="link">Add another property</a></p>
+
+
+
+
+
+
+                <p>
+                    <a href="/dashboard/{{version}}/business/"  class="button">Continue</a>
+                </p>
+
+
+            </div>
+</div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
