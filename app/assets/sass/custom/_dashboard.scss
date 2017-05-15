@@ -8,3 +8,16 @@
     padding: 0;
     margin: 0;
 }
+
+table th.proposed, table td.proposed {
+   background-color: #f0f8ff;
+   padding-left: 10px;
+}
+
+.border-right {
+  border-right: solid 1px #bfc1c3;
+}
+
+.border-left {
+  border-left: solid 1px #bfc1c3;
+}

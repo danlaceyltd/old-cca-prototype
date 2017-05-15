@@ -5,12 +5,9 @@
         new VOA.RadioToggleFields();
         new VOA.RadioToggleAdvanced();
         new VOA.JqueryFiler();
-        new VOA.Pagination();
         new VOA.ShowDialog();
-        new VOA.PropertiesTable();
-        new VOA.PropertiesTableBusiness();
-        new VOA.ClientsTable();
-        new VOA.DraftsTable();
+        new VOA.Pagination();
+        new VOA.CheckWizard();
     });
 
 }(window.VOA = window.VOA || {}, jQuery));

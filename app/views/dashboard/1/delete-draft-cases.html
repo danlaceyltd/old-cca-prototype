@@ -77,6 +77,11 @@
 
 </main>
 
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
+
 
 
 {% endblock %}

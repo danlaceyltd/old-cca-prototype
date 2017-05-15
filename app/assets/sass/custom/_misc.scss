@@ -162,3 +162,80 @@ table .last, .table .last {
     padding: 0.5em 0 0.5em 28px;
     zoom: 1;
 }
+.property-details-top{
+    margin-top: 20px;
+    span{
+        font-size: 16px;
+    }
+}
+
+
+.summary li {
+  margin: 0;
+  padding: 0;
+  border-bottom: solid 1px #bfc1c3; }
+
+  .summary li ol li {
+    border-bottom: none;
+    padding: 0;
+    margin: 0; }
+
+
+.summary .question {
+  width: 42%;
+  display: inline-block;
+  vertical-align: top; }
+
+
+.summary .answer {
+  width: 40%;
+  display: inline-block;
+  margin-left: 20px;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  margin-top: 10px; }
+
+
+.summary .edit {
+  display: inline-block;
+  float: right;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 16px; }
+
+
+.summary h3 {
+  margin-top: 40px;
+  margin-bottom: 0; }
+
+
+  .transaction-banner--complete {
+      background-color: #28a197;
+      color: #fff;
+      padding: 30px;
+      margin-bottom: 30px;
+      text-align: center;
+  }
+
+  .transaction-banner__heading {
+    font-family: "nta",Arial,sans-serif;
+    font-size: 36px;
+    line-height: 1.11111;
+    font-weight: 400;
+    text-transform: none;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.submission-number {
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 18px;
+    line-height: 1.2;
+    display: block;
+}

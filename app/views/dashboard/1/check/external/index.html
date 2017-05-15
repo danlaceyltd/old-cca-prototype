@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% set title = "Tell us about external factors affecting the property" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span>
+                </li>
+            </ul>
+
+
+            <a href="/dashboard/{{version}}/check" class="link-back">Back</a>
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+
+
+            <p>You should use this option to tell us about any changes in the local area that affect your property. You can tell us about more than one factor, with the same or different start dates. They must all be happening at the time of submitting this check</p>
+            <p>You’ll also need to review the details we hold for your property and tell us about anything that’s missing or inaccurate.</p>
+
+            <h2 class="heading-medium margin-top-30">Before you start</h2>
+
+            <p>You’ll need to provide in your supporting documents:</p>
+
+            <ul class="list list-bullet">
+                <li>details about the external factor(s) and how they affect your property</li>
+                <li>the start and estimated end date of the changes</li>
+                <li>evidence of the external factor(s) such as photographs, planning information and work schedules</li>
+                <li>evidence to support any other proposed changes, and the date they happened, such as plans and photographs</li>
+            </ul>
+
+            <p>You may also need to provide rent details of the property, including the annual rent and the date that rent started. This should be included in your supporting documents.</p>
+
+            <p>It’s important to provide as much evidence as you can of any changes as it will help us to make an accurate valuation. It will also support you if you want to challenge the rateable value.</p>
+
+            <p>All fields are mandatory unless otherwise stated.</p>
+
+            <p class="panel panel-border-wide">Suggesting changes can cause the rateable value to go up as well as down. This is because we may review the rateable value based on the information you provide.</p>
+
+
+
+                <a href="" class="button">Continue</a>
+
+
+
+                <h3 class="heading-medium">After you submit the form</h3>
+                <p>We’ll contact you to tell you our decision about any proposed changes.</p>
+
+
+
+
+            <a href="/dashboard/{{version}}/check" class="link-back">Back</a>
+
+        </div>
+    </div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

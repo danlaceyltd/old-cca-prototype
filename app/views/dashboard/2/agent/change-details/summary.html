@@ -69,6 +69,7 @@
                         <td>{% if data['personalemail'] %}{{data['personalemail']}}{% else %}lorem@ipsum.com{% endif %}</td>
                         <td class="last"><a href="/dashboard/{{version}}/agent/change-details/change-email">Update</a></td>
                       </tr>
+
                     </tbody>
                 </table>
 
@@ -83,6 +84,11 @@
                         <col>
                     </colgroup>
                   <tbody>
+                      <tr>
+                        <td><strong>Agent code</strong></td>
+                        <td>1234567</td>
+                        <td></td>
+                      </tr>
                     <tr>
                       <td><strong>Business name</strong></td>
                       <td>{% if data['bussinessName'] %}{{data['bussinessName']}}{% else %}Agent ABC{% endif %}</td>
@@ -122,4 +128,9 @@
 
 
 
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
 {% endblock %}
