@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% set title = "Properties" %}
+{% set version = "2" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+        <div class="section-tabs">
+            <ul role="tablist">
+              <li class="active"><a href="/dashboard/{{version}}/business">Properties</a></li>
+              <li><a href="/dashboard/{{version}}/business/drafts">Drafts</a></li>
+              <li><a href="/dashboard/{{version}}/business/change-details/summary">My details</a></li>
+              <li><a href="/dashboard/{{version}}/business/find-property">+ Claim property</a></li>
+              <li class="tab-right"><span>Welcome, ABC Business</span><a href="#">Sign out</a></li>
+            </ul>
+        </div>
+
+        <h1 class="visuallyhidden">
+            {{title}}
+        </h1>
+
+        <h2 class="heading-large">You've claimed a property</h2>
+        <p>It may take some time for your property to display here once you've clamed it.</p>
+        <p>Once you've successfully claimed your property you'll be able to suggest changes.</p>
+        <p>In the meantime you can <a href="/dashboard/{{version}}/business/find-property">claim another property</a>.
+
+
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
