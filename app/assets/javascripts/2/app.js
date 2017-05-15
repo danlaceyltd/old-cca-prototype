@@ -7,7 +7,9 @@
         new VOA.JqueryFiler();
         new VOA.ShowDialog();
         new VOA.PropertiesTable();
+        new VOA.PropertiesTableSmall();
         new VOA.PropertiesTableBusiness();
+        new VOA.PropertiesTableBusinessSmall();
         new VOA.ClientsTable();
         new VOA.DraftsTable();
     });

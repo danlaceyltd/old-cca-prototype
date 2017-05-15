@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% set title = "Drafts" %}
+{% set version = "2" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="section-tabs">
+        <ul role="tablist">
+          <li ><a href="/dashboard/{{version}}/agent-small">Properties</a></li>
+          <li class="active"><a href="/dashboard/{{version}}/agent-small/drafts">Drafts</a></li>
+          <li><a href="/dashboard/{{version}}/agent-small/change-details/summary">My details</a></li>
+          <li class="tab-right"><span>Welcome, Jo bloggs of MNO Client</span><a href="#" class="not-you">(Not you?)</a> <a href="#">Sign out</a></li>
+        </ul>
+    </div>
+
+
+    <h1 class="visuallyhidden">
+        {{title}}
+    </h1>
+
+    <ul class="data-filter">
+        <li class="data-all"><a href="#" class="current" data-filter="all">All (2)</a></li>
+        <li class="data-check"><a href="#" data-filter="Check">Checks (1)</a></li>
+        <li class="data-challenge"><a href="#" data-filter="Challenge">Challenges (1)</a></li>
+    </ul>
+
+    <p>Drafts will only remain for 30 days.</p>
+
+            <div class="table-wrapper">
+            <table id="draftsTable" class="table-font-xsmall margin-top-30 margin-bottom-20">
+                <caption class="visuallyhidden">Manage agents</caption>
+                <colgroup>
+                    <col style="width:400px">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">Address</th>
+                        <th scope="col">Client</th>
+                        <th scope="col">Effective date</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Expiry date</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    <tr id="filterrow" style="display:none">
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                   </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria, LA12 9RB</td>
+                        <td>ABC Client</td>
+                        <td>1 Apr 2017</td>
+                        <td>Check</td>
+                        <td>1 Sept 2017</td>
+                        <td>
+                            <ul class="list list-action">
+                                <li><a href="#">Continue drafting</a></li>
+                                <li><a href="/dashboard/{{version}}/agent-small/valuations/detailed">View valuation</a></li>
+                                <li><a href="#" data-toggle="dialog" data-target="dialog-delete">Delete draft</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2 Lorem St, Ipsum ABC 123</td>
+                        <td>DEF Client</td>
+                        <td>2 Apr 2017</td>
+                        <td>Challenge</td>
+                        <td>12 Sept 2017</td>
+                        <td>
+                            <ul class="list list-action">
+                                <li><a href="#">Continue drafting</a></li>
+                                <li><a href="/dashboard/{{version}}/agent-small/valuations/detailed">View valuation</a></li>
+                                <li><a href="#" data-toggle="dialog" data-target="dialog-delete">Delete draft</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+<div class="dialog" id="dialog-delete" aria-hidden="true" data-modal="true">
+    <div class="dialog-holder" aria-labelledby="dialog-delete" aria-describedby="dialog-content-delete" role="alertdialog">
+        <div class="dialog-content" id="dialog-content-delete" role="document" tabindex="0">
+            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+            <div class="modal-content-div"><h3 class="heading-small">Delete draft case</h3>
+                <p>Are you sure you want to delete the draft case for the property?<br />
+                Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria, LA12 9RB</p>
+            </div>
+            <a href="/dashboard/{{version}}/agent-small/draft-cases/no-cases" class="button"  role="button">Yes, I want to delete this draft case</a>
+            <a href="#" class="dialog-cancel button-secondary margin-left-10" aria-label="close" role="button">Cancel</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

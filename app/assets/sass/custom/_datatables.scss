@@ -270,7 +270,17 @@ table.dataTable thead th, #content table.dataTable thead td {
     #propertiesTableBusiness_filter,
     #propertiesTable_filter,
     #clientsTable_filter,
-    #draftsTable_filter{
+    #draftsTable_filter,
+    #draftsTable_info,
+    #draftsTable_paginate,
+    #draftsTable_length,
+    #propertiesTableBusinessSmall_info,
+    #propertiesTableBusinessSmall_length,
+    #propertiesTableBusinessSmall_paginate,
+    #propertiesTableSmall_info,
+    #propertiesTableSmall_length,
+    #propertiesTableSmall_paginate,
+    #propertiesTableSmall_filter{
         display: none;
     }
     .list{

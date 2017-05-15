@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set title = "Awaiting VOA approval" %}
+{% set title = "Pending VOA approval" %}
 {% set version = "2" %}
 
 {% block page_title %}
@@ -34,7 +34,7 @@
 
         <p>You can <a href="/dashboard/{{version}}/business/appoint-agent">appoint an agent</a> for this property</p>
 
-        <a href="/dashboard/{{version}}/business/" class="link-back">Back</a>
+        <a href="javascript: history.go(-1)" class="link-back">Back</a>
 
 </div></div>
     {% include "includes/get_help.html" %}
