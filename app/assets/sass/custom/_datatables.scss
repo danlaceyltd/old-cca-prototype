@@ -277,10 +277,12 @@ table.dataTable thead th, #content table.dataTable thead td {
     #propertiesTableBusinessSmall_info,
     #propertiesTableBusinessSmall_length,
     #propertiesTableBusinessSmall_paginate,
+    #propertiesTableBusinessSmall_filter,
     #propertiesTableSmall_info,
     #propertiesTableSmall_length,
     #propertiesTableSmall_paginate,
     #propertiesTableSmall_filter{
+
         display: none;
     }
     .list{
