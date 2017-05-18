@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set title = "Draft cases" %}
+{% set title = "Drafts" %}
 {% set version = "3" %}
 
 {% block page_title %}
@@ -10,45 +10,43 @@
 {% block service_name %}
     Check and challenge your business rates valuation
 {% endblock %}
-
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
 
 {% block content %}
 
 <main id="content" role="main">
 
-    {% include "includes/phase_banner_prototype.html" %}
+    {% include "includes/phase_banner_prototype_signout.html" %}
 
-    <a class="link-back" href="/dashboard/{{version}}/agent">Back</a>
 
-    {% include "includes/nav.html" %}
 
-    <h1 class="heading-xlarge">
+        <div class="section-tabs">
+            <ul role="tablist">
+              <li ><a href="/dashboard/{{version}}/agent">Properties</a></li>
+              <li class="active"><a href="/dashboard/{{version}}/agent/drafts">Drafts</a></li>
+              <li ><a href="/dashboard/{{version}}/agent/change-details/summary">My details</a></li>
+              <li class="tab-right"><span>Welcome, <a href="/dashboard/{{version}}/agent/change-details/summary">Jo Bloggs - ABC Agent</a>.<a href="#" class="margin-left-10">Not you?</a></span></li>
+            </ul>
+        </div>
+
+    <h1 class="visuallyhidden">
         {{title}}
     </h1>
 
-    <div class="alert--success margin-top-20">
-        Case has been deleted, you have no draft cases.
-    </div>
+
+
+        <div class="alert--success margin-top-20">
+            Case has been deleted, you have no draft cases.
+        </div>
+
 
 
     {% include "includes/get_help.html" %}
 
 </main>
-
-
-<div class="dialog" id="dialog-delete" aria-hidden="true" data-modal="true">
-    <div class="dialog-holder" aria-labelledby="dialog-delete" aria-describedby="dialog-content-delete" role="alertdialog">
-        <div class="dialog-content" id="dialog-content-delete" role="document" tabindex="0">
-            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
-            <div class="modal-content-div"><h3 class="heading-small">Delete draft case</h3>
-                <p>Are you sure you want to delete the draft case for the property?<br />
-                Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria, LA12 9RB</p>
-            </div>
-            <a href="#" class="button"  role="button">Yes, I want to delete this draft case</a>
-            <a href="#" class="dialog-cancel button-secondary margin-left-10" aria-label="close" role="button">Cancel</a>
-        </div>
-    </div>
-</div>
 
 
 
