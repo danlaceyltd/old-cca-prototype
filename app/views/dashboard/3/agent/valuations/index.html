@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% set title = "Property details" %}
-{% set version = "2" %}
+{% set version = "3" %}
 
 {% block page_title %}
   {{title}}
@@ -26,39 +26,49 @@
         <span class="property-address"></span>
     </h2>
 
-    <a href="/dashboard/{{version}}/business-small/appoint-agent" >Appoint another agent for this property</a>
+    <table class="check-your-answers">
 
-    <div class="tabular-data__entry assessment-col-2x" id="assessment-details">
-        <ul>
-            <li>
-                <span class="tabular-data__heading--label">Agent</span>
-                <span class="tabular-data__data-1" style="width:50%"><span class="property-client-name"></span><div class="pull-right"><a href="#">Revoke agent</a></div></span>
-            </li>
-            <li>
-                <span class="tabular-data__heading--label">Status</span>
-                <span class="tabular-data__data-1" style="width:50%">Property link declined by VOA</span>
-            </li>
+        <colgroup>
+            <col style="width: 40%">
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+          <tr>
+            <td><strong>Status</strong></td>
+            <td><span class="property-status"></span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Approved period</strong></td>
+            <td>XX/XX/XX - XX/XX/XX</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Client</strong></td>
+            <td><span class="property-client-name"></span></td>
+            <td class="last"><a href="#">Revoke client</a></td>
+          </tr>
+          <tr>
+            <td><strong>Local authority	reference</strong></td>
+            <td><span class="property-ba-ref"></span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Check permission</strong></td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Challenge permission</strong></td>
+            <td>No</td>
+            <td></td>
+          </tr>
+        </tbody>
+    </table>
 
-            <li>
-                <span class="tabular-data__heading--label">Local authority	reference</span>
-                <span class="tabular-data__data-1"><span class="property-ba-ref"></span></span>
-            </li>
-            <li>
-                <span class="tabular-data__heading--label">Approved period</span>
-                <span class="tabular-data__data-1">XX/XX/XX - XX/XX/XX</span>
-            </li>
-            <li>
-                <span class="tabular-data__heading--label">Check permission</span>
-                <span class="tabular-data__data-1">Yes</span>
-            </li>
-            <li>
-                <span class="tabular-data__heading--label">Challenge permission</span>
-                <span class="tabular-data__data-1">No</span>
-            </li>
 
-
-        </ul>
-    </div>
+            
 
             <div class="table-wrapper">
                 <table class="table-font-xsmall margin-bottom-20">
@@ -81,7 +91,7 @@
                                 <td>Present</td>
                                 <td>
                                     <ul class="list list-actions">
-                                        <li><a href="/dashboard/{{version}}/business-small/valuations/detailed">View valuation</a></li>
+                                        <li><a href="/dashboard/{{version}}/agent/valuations/detailed">View valuation</a></li>
                                         <li><a href="#">Suggest changes
                                         </a></li>
                                         <li><a href="#">Challenge this valuation</a></li>
@@ -94,7 +104,7 @@
                 </table>
             </div>
 
-            <a class="link-back" href="javascript: history.go(-1)">Back</a>
+            <a class="link-back" href="/dashboard/{{version}}/agent">Back</a>
 
     {% include "includes/get_help.html" %}
 

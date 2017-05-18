@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% set title = "Manage agents" %}
+{% set version = "3" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+                <ul class="navigation-links">
+                    <li><a href="/dashboard/{{version}}/business-small/">Manage properties</a></li>
+                    <li><a href="#">Sign out</a></li>
+                </ul>
+
+
+
+            <h1 class="heading-xlarge">
+                {{title}}
+            </h1>
+
+            <div class="table-wrapper">
+            <table id="agentsTable" class="table-font-xsmall margin-top-30 margin-bottom-20">
+                <caption class="visuallyhidden">Manage agents</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Agent name</th>
+                        <th scope="col">Agent code</th>
+                        <th class="last" scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td scope="row">Automated Stub Agent 1</td>
+                        <td>2000000001</td>
+                        <td class="last">
+                            <a id="viewManagedProperties" href="/dashboard/{{version}}/business-small/manage-agents/agent-properties">
+                                View managed properties
+                                <span class="visually hidden"> for Automated Stub Agent 1</span>
+                            </a>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

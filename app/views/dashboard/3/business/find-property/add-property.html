@@ -1,0 +1,444 @@
+{% extends "layout.html" %}
+
+{% set title = "Add this property to your business’s customer record" %}
+{% set version = "3" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+            <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">
+                {{title}}
+            </h1>
+
+
+
+                                    <p class="heading-medium">You are adding this property to your business’s customer record:</p>
+
+
+                                    <header class="hero">
+                                        <section class="hero__content">
+                                            <span class="hero__heading-medium">33, ALVERSTONE ROAD, WORTHING, WEST SUSSEX, BN11 2JR</span>
+                                        </section>
+                                    </header>
+
+
+                                    <p class="panel panel-border-wide">
+                                        If this isn’t the right property you can
+                                        <a href="/dashboard/{{version}}/business/find-property">search for a different property</a>
+                                    </p>
+
+
+
+
+                        <form action="/business-rates-property-linking/link-to-property/2820044000?address=33%2C+ALVERSTONE+ROAD%2C+WORTHING%2C+WEST+SUSSEX%2C+BN11+2JR" method="POST">
+                            <input type="hidden" name="csrfToken" value="7232c8b05501f0e2b5bf2f9380d6ec783be2c53f-1491906638557-9b84303e5d108eb8ce6a698f">
+
+
+                            <details>
+                                <summary role="button" aria-expanded="false"><span class="summary">I’m the owner or occupier for only part of this property</span></summary>
+                                <div class="panel panel-border-narrow" id="details-content-1">
+                                    If you’re the owner or occupier for only part of the property, you shouldn’t add this property to your customer record. Instead, you should <a href="/business-rates-property-linking/contact-us">contact us</a> to request a split for the property.
+                                </div>
+                            </details>
+
+                            <details>
+                                <summary role="button" aria-expanded="false"><span class="summary">I’m not the owner but I let the property to someone else, as a sublet</span></summary>
+                                <div class="panel panel-border-narrow"  id="details-content-2">
+                                    <p>If you’re not the owner of the property but you let all or part of the property to another person or business as a sublet, you should select ‘owner’ and enter the dates of the sublet period.</p><p>If you let only a part of the property to another person or business, you shouldn’t add this property to your customer record. Instead, you should <a href="/business-rates-property-linking/contact-us">contact us</a> to request a split to the property.</p>
+                                </div>
+                            </details>
+
+                            <details>
+                                <summary role="button" aria-expanded="false"><span class="summary">I’m an agent acting on behalf of the owner or occupier for this property</span></summary>
+                                <div class="panel panel-border-narrow" id="details-content-3">
+                                    Only an owner or occupier can add a property. You can’t add a property on behalf of your client.
+                                </div>
+                            </details>
+
+                            <br>
+
+
+                        <div class=" form-group">
+                     		<fieldset id="capacityGroup" class="">
+                   				<legend class="heading-medium">What is your relationship to the property?</legend>
+                                    <div class="multiple-choice">
+                                        <input id="capacity_OWNER" type="radio" name="capacity" value="OWNER">
+                                        <label class="block-label selection-button-radio" for="capacity_OWNER">Owner</label>
+                                    </div>
+                                    <div class="multiple-choice">
+                                        <input id="capacity_OCCUPIER" type="radio" name="capacity" value="OCCUPIER">
+                                        <label class="block-label selection-button-radio" for="capacity_OCCUPIER">Occupier</label>
+                                    </div>
+                                    <div class="multiple-choice">
+                                        <input id="capacity_OWNER_OCCUPIER" type="radio" name="capacity" value="OWNER_OCCUPIER">
+                                        <label class="block-label selection-button-radio" for="capacity_OWNER_OCCUPIER">Owner and occupier</label>
+                                    </div>
+
+                	        </fieldset>
+                        </div>
+
+                        <div class=" form-group">
+                     		<fieldset id="interestedBefore2017Group" class="">
+                   				<legend class="heading-medium">When did you become the owner or occupier of the property?</legend>
+
+                                <div class="multiple-choice">
+                                    <input id="interestedBefore2017_true" type="radio" name="interestedBefore2017" value="true">
+                                    <label class="block-label selection-button-radio" for="interestedBefore2017_true">On or before 1 April 2017</label>
+                                </div>
+                                <div class="multiple-choice">
+                                    <input id="interestedBefore2017_false" type="radio" name="interestedBefore2017" value="false" data-toggle-id="interestedAfter2017">
+                                    <label class="block-label selection-button-radio" for="interestedBefore2017_false">After 1 April 2017</label>
+                                </div>
+                	        </fieldset>
+                        </div>
+
+                        <div id="interestedAfter2017" data-toggle-hidden="" aria-hidden="true" style="display: none;">
+                        	<fieldset class="form-group form-date">
+                            	<legend class="heading-medium">
+                                    On what date did you become the owner or occupier?
+                                </legend>
+
+                        	  <div id="fromDateGroup" class="form-date-dayMonth ">
+                                  <div class=" form-group">
+
+                        			<div id="fromDatedayGroup" class="form-group-day">
+
+                                                <label class="form-label" for="fromDateday">
+                                                    <span class=" label-span">Day</span>
+                                                </label>
+
+                                                <input type="text" id="fromDateday" value="" name="fromDate.day" class="form-control" maxlength="2">
+
+                        	                   </div>
+
+                        </div>
+
+                        <div class=" form-group">
+
+
+                        			<div id="fromDatemonthGroup" class="form-group-month">
+
+                                                <label class="form-label" for="fromDatemonth">
+                                                    <span class=" label-span">Month</span>
+
+
+                                                </label>
+
+
+                            <input type="text" id="fromDatemonth" value="" name="fromDate.month" class="form-control" maxlength="2">
+
+                        	 </div>
+
+                        </div>
+
+                        <div class=" form-group">
+
+
+                        			<div id="fromDateyearGroup" class="form-group-year">
+
+                                                <label class="form-label" for="fromDateyear">
+                                                    <span class=" label-span">Year</span>
+
+
+                                                </label>
+
+                            <input type="text" id="fromDateyear" value="" name="fromDate.year" class="form-control" maxlength="4">
+
+
+                        	 </div>
+
+                        </div>
+
+
+
+                        		</div>
+
+
+                        	</fieldset>
+
+
+                                            <details>
+                                                <summary role="button" aria-expanded="false"><span class="summary">I have owned or occupied the property on more than one occasion</span></summary>
+                                                <div class="panel-indent" id="details-content-4">
+                                                    If you have owned or occupied the property on more than one occasion, you should enter the date that you moved in (and if relevant the date that you moved out) for the period of time that you want to check or challenge the rateable value.
+                                                </div>
+                                            </details>
+                                            <br>
+                                        </div>
+
+
+                        <div class=" form-group">
+
+
+                             		<fieldset id="stillInterestedGroup" class="inline">
+                           				<legend class="heading-medium">
+                                            Do you still own or occupy the property?
+                                        </legend>
+
+
+                                        <div class="multiple-choice">
+                                            <input id="stillInterested_true" type="radio" name="stillInterested" value="true">
+                                            <label class="block-label selection-button-radio" for="stillInterested_true">Yes</label>
+                                        </div>
+
+                                        <div class="multiple-choice">
+                                            <input id="stillInterested_false" type="radio" name="stillInterested" value="false" data-toggle-id="endDate">
+                                            <label class="block-label selection-button-radio" for="stillInterested_false">No</label>
+                                        </div>
+
+                        	 </fieldset>
+
+                        </div>
+
+
+
+
+                                        <div id="endDate" data-toggle-hidden="" aria-hidden="true" style="display: none;">
+
+
+
+
+
+
+
+                        	<fieldset class="form-group form-date">
+                        	<legend class="heading-medium">
+                                When was your last day as the owner or occupier of the property?
+                            </legend>
+
+
+
+
+                        	  <div id="toDateGroup" class="form-date-dayMonth ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class=" form-group">
+
+
+                        			<div id="toDatedayGroup" class="form-group-day">
+
+                                                <label class="form-label" for="toDateday">
+                                                    <span class=" label-span">Day</span>
+
+
+
+
+                                                </label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <input type="text" id="toDateday" value="" name="toDate.day" class="form-control" maxlength="2">
+
+
+
+
+
+
+
+
+
+
+                        	 </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class=" form-group">
+
+
+                        			<div id="toDatemonthGroup" class="form-group-month">
+
+                                                <label class="form-label" for="toDatemonth">
+                                                    <span class=" label-span">Month</span>
+
+
+
+
+                                                </label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <input type="text" id="toDatemonth" value="" name="toDate.month" class="form-control" maxlength="2">
+
+
+
+
+
+
+
+
+
+
+                        	 </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class=" form-group">
+
+
+                        			<div id="toDateyearGroup" class="form-group-year">
+
+                                                <label class="form-label" for="toDateyear">
+                                                    <span class=" label-span">Year</span>
+
+
+
+
+                                                </label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <input type="text" id="toDateyear" value="" name="toDate.year" class="form-control" maxlength="4">
+
+
+
+
+
+
+
+
+
+
+                        	 </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                        		</div>
+
+
+                        	</fieldset>
+
+                                        </div>
+
+                                        <p>
+                                            <a href="/dashboard/{{version}}/business/find-property/choose-evidence" class="button margin-right-20">Add property</a>
+                                            <a href="javascript: history.go(-1)" class="button-secondary">Cancel</a>
+                                        </p>
+
+                                    </form></div>
+                            </div>
+</div></div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

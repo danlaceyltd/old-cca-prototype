@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% set title = "Pending VOA approval" %}
+{% set version = "3" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge">
+            {{title}}
+        </h1>
+
+        <p>Your client (<span class="property-client-name"></span>) has given you the following permission to act on their behalf.</P>
+
+            <table class="check-your-answers">
+
+                <colgroup>
+                    <col style="width: 40%">
+                    <col>
+                    <col>
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td><strong>Check permission</strong></td>
+                    <td>Yes</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Challenge permission</strong></td>
+                    <td>No</td>
+                  </tr>
+
+                </tbody>
+            </table>
+
+        <br />
+    <p>You will be able to accept the client request and view the detailed valuation once VOA has accepted the client's property claim.</P>
+
+        <a href="/dashboard/{{version}}/agent/" class="link-back">Back</a>
+
+</div></div>
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

@@ -39,8 +39,8 @@
 }
 
 .section-tabs ul a {
-  font-family: "proxima_nova", Arial, sans-serif;
-  font-size: 16px;
+  //font-family: "proxima_nova", Arial, sans-serif;
+  //font-size: 16px;
   line-height: 1.31579;
   font-weight: 400;
   text-transform: none;
@@ -198,6 +198,10 @@ strong, b {
     }
     span{
         font-size: 16px;
+        a{
+            padding: 0;
+            font-weight: normal;
+        }
     }
 
     a.not-you{

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% set title = "Pending agent requests" %}
+{% set version = "3" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <ul class="navigation-links">
+        <li><a href="/dashboard/{{version}}/business-small/">Manage properties</a></li>
+        <li><a href="#">Sign out</a></li>
+    </ul>
+
+            <h1 class="heading-xlarge">
+                {{title}}
+            </h1>
+
+
+                <p>To do...</p>
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% set title = "Property details" %}
-{% set version = "2" %}
+{% set version = "3" %}
 
 {% block page_title %}
   {{title}}
@@ -28,37 +28,47 @@
 
     <a href="/dashboard/{{version}}/business-small/appoint-agent" >Appoint another agent for this property</a>
 
-    <div class="tabular-data__entry assessment-col-2x" id="assessment-details">
-        <ul>
-            <li>
-                <span class="tabular-data__heading--label">Agent</span>
-                <span class="tabular-data__data-1" style="width:50%"><span class="property-client-name"></span><div class="pull-right"><a href="#">Revoke agent</a></div></span>
-            </li>
-            <li>
-                <span class="tabular-data__heading--label">Status</span>
-                <span class="tabular-data__data-1" style="width:50%">Property link declined by VOA</span>
-            </li>
+    <table class="check-your-answers">
 
-            <li>
-                <span class="tabular-data__heading--label">Local authority	reference</span>
-                <span class="tabular-data__data-1"><span class="property-ba-ref"></span></span>
-            </li>
-            <li>
-                <span class="tabular-data__heading--label">Approved period</span>
-                <span class="tabular-data__data-1">XX/XX/XX - XX/XX/XX</span>
-            </li>
-            <li>
-                <span class="tabular-data__heading--label">Check permission</span>
-                <span class="tabular-data__data-1">Yes</span>
-            </li>
-            <li>
-                <span class="tabular-data__heading--label">Challenge permission</span>
-                <span class="tabular-data__data-1">No</span>
-            </li>
+        <colgroup>
+            <col style="width: 40%">
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+          <tr>
+            <td><strong>Status</strong></td>
+            <td><span class="property-status"></span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Approved period</strong></td>
+            <td>XX/XX/XX - XX/XX/XX</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Agent</strong></td>
+            <td><span class="property-client-name"></span></td>
+            <td class="last"><a href="#">Revoke agent</a></td>
+          </tr>
+          <tr>
+            <td><strong>Local authority	reference</strong></td>
+            <td><span class="property-ba-ref"></span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Check permission</strong></td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Challenge permission</strong></td>
+            <td>No</td>
+            <td></td>
+          </tr>
+        </tbody>
+    </table>
 
-
-        </ul>
-    </div>
 
             <div class="table-wrapper">
                 <table class="table-font-xsmall margin-bottom-20">

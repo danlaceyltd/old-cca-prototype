@@ -1,0 +1,20 @@
+<div class="form-group margin-bottom-10">
+    <label class="heading-medium" for="bussinessAddress1">Business address</label>
+    <input type="text" id="bussinessAddress1" value="{% if data['bussinessAddress1'] %}{{data['bussinessAddress1']}}{% else %}10 The High St{% endif %}" name="bussinessAddress1" class="form-control" >
+</div>
+<div class=" form-group margin-bottom-10">
+    <label class="visuallyhidden" for="bussinessAddress2">Business address line 2</label>
+    <input type="text" id="bussinessAddress2" value="{% if data['bussinessAddress2'] %}{{data['bussinessAddress2']}}{% else %}Brighton{% endif %}" name="bussinessAddress2" class="form-control" >
+</div>
+<div class=" form-group margin-bottom-10">
+    <label class="visuallyhidden" for="bussinessAddress3">Business address line 3</label>
+    <input type="text" id="bussinessAddress3" value="{{data['bussinessAddress3']}}" name="bussinessAddress3" class="form-control" >
+</div>
+<div class=" form-group margin-bottom-0">
+    <label class="visuallyhidden" for="bussinessAddress4">Business address line 4</label>
+    <input type="text" id="bussinessAddress4" value="{{data['bussinessAddress4']}}" name="bussinessAddress4" class="form-control" >
+</div>
+<div class="form-group margin-bottom-0">
+    <label class="heading-medium" for="bussinessAddressPostcode">Postcode</label>
+    <input type="text" id="bussinessAddressPostcode" value="{% if data['bussinessAddressPostcode'] %}{{data['bussinessAddressPostcode']}}{% else %}BN13 1AA{% endif %}" name="bussinessAddressPostcode" class="form-control form-control-1-4">
+</div>

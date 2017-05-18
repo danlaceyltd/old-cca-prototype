@@ -231,6 +231,7 @@ table.dataTable thead th, #content table.dataTable thead td {
 	//$link-hover-colour: $light-blue;
 	//$link-visited-colour: #4c2c92;
     #propertiesTableBusiness_wrapper,
+    #propertiesTableBusinessSmall_wrapper,
     #propertiesTable_wrapper,
     #clientsTable_wrapper,
     #draftsTable_wrapper{
@@ -260,6 +261,11 @@ table.dataTable thead th, #content table.dataTable thead td {
         .data-declined{
             //border-right: none;
         }
+        .claim-property{
+            float: right;
+            margin-right: -10px;
+            font-weight: bold;
+        }
     }
 
     .data-all.reset{
@@ -271,12 +277,6 @@ table.dataTable thead th, #content table.dataTable thead td {
     #propertiesTable_filter,
     #clientsTable_filter,
     #draftsTable_filter,
-    #draftsTable_info,
-    #draftsTable_paginate,
-    #draftsTable_length,
-    #propertiesTableBusinessSmall_info,
-    #propertiesTableBusinessSmall_length,
-    #propertiesTableBusinessSmall_paginate,
     #propertiesTableBusinessSmall_filter,
     #propertiesTableSmall_info,
     #propertiesTableSmall_length,

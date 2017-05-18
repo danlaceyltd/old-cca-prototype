@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% set title = "Property details" %}
+{% set version = "3" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+        <h1 class="heading-xlarge">
+            {{title}}
+        </h1>
+
+<table class="check-your-answers margin-bottom-30">
+
+    <colgroup>
+        <col style="width: 40%">
+        <col>
+        <col>
+    </colgroup>
+    <tbody>
+        <tr>
+          <td><strong>Address</strong></td>
+          <td><span class="property-address"></span></td>
+          <td class="last"><a href="/dashboard/2/agentvaluations">View valuations</a></td>
+        </tr>
+      <tr>
+        <td><strong>Client name</strong></td>
+        <td><span class="property-client-name"></span></td>
+        <td  class="last"><a href="#">Revoke client</a></td>
+      </tr>
+      <tr>
+        <td><strong>Local authority	reference</strong></td>
+        <td><span class="property-ba-ref"></span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><strong>Check permission</strong></td>
+        <td>Yes</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><strong>Challenge permission</strong></td>
+        <td>Yes</td>
+        <td></td>
+      </tr>
+    </tbody>
+</table>
+
+
+
+        <a href="/dashboard/{{version}}/agent/" class="link-back">Back</a>
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
