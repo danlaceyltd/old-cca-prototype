@@ -28,7 +28,7 @@
 
 
         var table = $('#propertiesTable').DataTable({
-            ajax: 'https://api.myjson.com/bins/z93x1',
+            ajax: 'https://api.myjson.com/bins/nn5md',
             orderCellsTop: true,
             stateSave: true,
             "language": {
@@ -46,8 +46,8 @@
 
 
 
-                if(aData[4] === 'Approved'){
-                    $('td:eq(3)', nRow).html('<a href="/dashboard/3/agent/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Property details</a>');
+                if(aData[3] === 'y'){
+                        $('td:eq(3)', nRow).html('<ul class="list list-actions"><li><a href="#">Accept client request</a></li><li><a href="#">Reject client request</a></li></ul>');
                 }else if(aData[4] === "Pending"){
                         $('td:eq(3)', nRow).html('<a href="/dashboard/3/agent/pending?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Pending VOA approval</a>');
                 }else{
@@ -59,9 +59,7 @@
 
                 }
 
-                if(aData[2] === "client"){
-                    $('td:eq(2)', nRow).html('<a href="/dashboard/3/agent/pending-agent">Pending agent approval</a>');
-                }
+
 
 
             }
