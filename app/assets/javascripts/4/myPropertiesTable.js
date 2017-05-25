@@ -21,7 +21,7 @@
 
 
         $('#myPropertiesTable thead tr#filterrow th')
-            .not('#myPropertiesTable thead tr#filterrow th:eq(3)')
+            .not('#myPropertiesTable thead tr#filterrow th:eq(2), #myPropertiesTable thead tr#filterrow th:eq(3)')
                 .each( function () {
                     $(this).html( '<input type="search" />' );
             });
@@ -38,7 +38,7 @@
             "aoColumns": [
              null,
              null,
-              null,
+              { "bSortable": false},
                { "bSortable": false },
                { "bSortable": false, "visible": false   }
             ],
