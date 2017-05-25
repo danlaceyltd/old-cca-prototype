@@ -25,7 +25,7 @@
         $('#draftsTable thead tr#filterrow th')
             .not('#draftsTable thead tr#filterrow th:eq(2), #draftsTable thead tr#filterrow th:eq(3), #draftsTable thead tr#filterrow th:eq(4), #draftsTable thead tr#filterrow th:eq(5)' )
                 .each( function () {
-                    $(this).html( '<input type="search" />' );
+                    $(this).html( '<input type="search"  placeholder="Type and press enter" />' );
             });
 
 

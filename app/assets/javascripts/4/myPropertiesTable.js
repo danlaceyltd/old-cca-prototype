@@ -23,7 +23,7 @@
         $('#myPropertiesTable thead tr#filterrow th')
             .not('#myPropertiesTable thead tr#filterrow th:eq(2), #myPropertiesTable thead tr#filterrow th:eq(3)')
                 .each( function () {
-                    $(this).html( '<input type="search" />' );
+                    $(this).html( '<input type="search"  placeholder="Type and press enter" />' );
             });
 
 
