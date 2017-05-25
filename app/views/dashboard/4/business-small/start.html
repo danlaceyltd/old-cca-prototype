@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% set title = "Properties" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+        <div class="section-tabs">
+            <ul role="tablist">
+              <li class="active"><a href="/dashboard/{{version}}/business-small">Properties</a></li>
+              <li><a href="/dashboard/{{version}}/business-small/drafts">Drafts</a></li>
+              <li><a href="/dashboard/{{version}}/business-small/change-details/summary">My details</a></li>
+              <li><a href="/dashboard/{{version}}/business-small/find-property">+ Claim property</a></li>
+              <li class="tab-right"><span>Welcome, Jo Bloggs of ABC Business<a href="#" class="not-you">(Not you?)</a></span><a href="#">Sign out</a></li>
+            </ul>
+        </div>
+
+        <h1 class="visuallyhidden">
+            {{title}}
+        </h1>
+
+        <h2 class="heading-large">
+            You currently have no properties
+        </h2>
+
+        <p>In order to view your detailed property information you'll need to <a href="/dashboard/{{version}}/business-small/find-property">claim your property</a>.</p>
+        <p>It may take some time for your property to display here once you've clamed it.</p>
+        <p>Once you've successfully claimed your property you'll be able to suggest changes.</p>
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

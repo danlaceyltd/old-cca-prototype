@@ -1,0 +1,1939 @@
+{% extends "layout.html" %}
+
+{% set title = "Find a property" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+            <h1 class="heading-xlarge">
+                {{title}}
+            </h1>
+
+            <form id="search-form" action="/dashboard/{{version}}/business-small/find-property/results" method="get" role="search" class="search-header">
+
+                <div class="form-group inline">
+                      <fieldset>
+
+                        <legend class="heading-medium">Select an option to search for a property to add to your account:</legend>
+
+                        <div class="multiple-choice">
+                          <input id="search_radio_postcode" name="searchBy" value="Postcode" data-toggle-id="searchfieldpostcode" checked="checked" type="radio">
+                          <label for="search_radio_postcode">Postcode</label>
+                        </div>
+                        <div class="multiple-choice">
+                          <input id="search_radio_name_and_town" name="searchBy" value="Street name and town" data-toggle-id="searchfieldtownstreet" type="radio">
+                          <label for="search_radio_name_and_town">Street name and town </label>
+                        </div>
+                        <div class="multiple-choice">
+                          <input id="search_advanced" name="searchBy" value="Advanced" data-toggle-id="searchfieldadvanced" type="radio">
+                          <label for="search_advanced">Advanced</label>
+                        </div>
+
+                      </fieldset>
+                </div>
+
+
+
+                                <div class="grid-row">
+                                    <div class="column-two-thirds">
+                                        <div class="searchfield">
+                                            <div id="searchfieldpostcode" data-toggle-hidden="" aria-hidden="false" style="display: block;">
+                                                <label class="visuallyhidden" for="search-query1">Postcode</label>
+
+                                                <input id="search-query1" name="postCodeQuery" value="" type="search" autocomplete="off" autofocus="autofocus">
+                                                <button type="submit" id="submitsearch1" class="search-submit">Search</button>
+                                            </div>
+                                            <div id="searchfieldtownstreet" data-toggle-hidden="" class="field" aria-hidden="true" style="display: none;">
+
+
+                                                <label class="visuallyhidden" for="search-query2">Street name</label>
+                                                <input id="search-query2" name="streetQuery" value="" type="search" placeholder="Street name" autocomplete="off">
+                                                <label class="visuallyhidden" for="search-query3">Town</label>
+
+                                                <input id="search-query3" name="townQuery" value="" type="search" placeholder="Town" autocomplete="off">
+                                                <button type="submit" id="submitsearch2" class="search-submit">Search</button>
+                                            </div>
+
+
+                                            <div id="searchfieldadvanced" data-toggle-hidden="" style="display: none;" aria-hidden="true">
+
+                                                <fieldset class="form-group " id="primaryCriteria">
+                                                    <legend class="heading-medium">
+                                                        Choose a search method
+                                                    </legend>
+
+                                                    <p class="form-hint">You can search using this method only or use the additional filters if provided.</p>
+
+                                                    <div class="multiple-choice">
+                                                        <input id="primaryCriteria_ADDRESS" name="primaryCriteria" value="ADDRESS" type="radio" data-toggle-id="secondaryParams,advancedAddress,fieldScat,searchFilters" checked="">
+                                                        <label class="block-label selection-button-radio selected" for="primaryCriteria_ADDRESS">Address</label>
+                                                    </div>
+                                                    <div class="multiple-choice">
+                                                        <input id="primaryCriteria_BAREF" name="primaryCriteria" value="BAREF" type="radio" data-toggle-id="advancedBaRef">
+                                                        <label class="block-label selection-button-radio" for="primaryCriteria_BAREF">Local authority reference</label>
+                                                    </div>
+                                                    <div class="multiple-choice">
+                                                        <input id="primaryCriteria_BA" name="primaryCriteria" value="BA" type="radio" data-toggle-id="secondaryParams,fieldScat,fieldBa,searchFilters">
+                                                        <label class="block-label selection-button-radio" for="primaryCriteria_BA">Local authority</label>
+                                                    </div>
+                                                    <div class="multiple-choice">
+                                                        <input id="primaryCriteria_SCAT" name="primaryCriteria" value="SCAT" type="radio" data-toggle-id="secondaryParams,fieldScat,fieldBa,searchFilters">
+                                                        <label class="block-label selection-button-radio" for="primaryCriteria_SCAT">Special category code</label>
+                                                    </div>
+                                                </fieldset>
+
+
+                                                <div id="advancedBaRef" data-toggle-hidden="" style="display:none" aria-hidden="true">
+
+                                                    <input class="search-advanced-border-right" id="search-advanced-baref" name="baRef" value="" type="search" placeholder="Local authority reference" autocomplete="off">
+                                                    <br>
+                                                </div>
+
+                                                <div id="advancedAddress" data-toggle-hidden="" style="display: block;" aria-hidden="false">
+                                                    <input class="search-advanced-border-right" id="search-advanced-number" name="number" value="" type="search" placeholder="Property name or number (optional)" autocomplete="off">
+                                                    <br>
+                                                    <input class="search-advanced-border-right" id="search-advanced-street" name="street" value="" type="search" placeholder="Street (optional)" autocomplete="off">
+                                                    <br>
+
+
+
+
+                                                        <span class="form-hint">Please enter a town and/or a postcode</span>
+
+
+                                                    <input id="search-advanced-town" name="town" value="" type="search" placeholder="Town" autocomplete="off">
+                                                    <input class="search-advanced-postcode" id="search-advanced-postcode" name="postCode" value="" type="search" placeholder="Postcode" autocomplete="off">
+                                                    <br>
+                                                </div>
+
+
+
+
+
+
+
+
+                                                <div id="searchFilters" data-toggle-hidden="" style="display: block;" class="margin-bottom-20" aria-hidden="false"><a href="#" data-state="closed">Show additional search filters</a></div><div class="form-group" id="fieldBa" data-toggle-hidden="" style="display:none" aria-hidden="true">
+                                                    <label for="billingAuthorities" class="form-label-bold">Local authority</label>
+
+                                                    <select id="billingAuthorities" name="billingAuthority" class="form-control">
+                                                        <option value="">Select a local authority</option>
+
+                                                            <option value="3805">Adur</option>
+
+                                                            <option value="0905">Allerdale</option>
+
+                                                            <option value="1005">Amber Valley</option>
+
+                                                            <option value="3810">Arun</option>
+
+                                                            <option value="3005">Ashfield</option>
+
+                                                            <option value="2205">Ashford</option>
+
+                                                            <option value="0405">Aylesbury Vale</option>
+
+                                                            <option value="3505">Babergh</option>
+
+                                                            <option value="5060">Barking &amp; Dagenham</option>
+
+                                                            <option value="5090">Barnet</option>
+
+                                                            <option value="4405">Barnsley</option>
+
+                                                            <option value="0910">Barrow-in-Furness</option>
+
+                                                            <option value="1505">Basildon</option>
+
+                                                            <option value="1705">Basingstoke and Deane</option>
+
+                                                            <option value="3010">Bassetlaw</option>
+
+                                                            <option value="0114">Bath and North East Somerset</option>
+
+                                                            <option value="0235">Bedford</option>
+
+                                                            <option value="5120">Bexley</option>
+
+                                                            <option value="4605">Birmingham</option>
+
+                                                            <option value="2405">Blaby</option>
+
+                                                            <option value="2372">Blackburn With Darwen</option>
+
+                                                            <option value="2373">Blackpool</option>
+
+                                                            <option value="6910">Blaenau Gwent</option>
+
+                                                            <option value="1010">Bolsover</option>
+
+                                                            <option value="4205">Bolton</option>
+
+                                                            <option value="1255">Borough Of Poole</option>
+
+                                                            <option value="2505">Boston</option>
+
+                                                            <option value="1250">Bournemouth</option>
+
+                                                            <option value="0335">Bracknell Forest</option>
+
+                                                            <option value="4705">Bradford</option>
+
+                                                            <option value="1510">Braintree</option>
+
+                                                            <option value="2605">Breckland</option>
+
+                                                            <option value="5150">Brent</option>
+
+                                                            <option value="1515">Brentwood</option>
+
+                                                            <option value="6915">Bridgend</option>
+
+                                                            <option value="1445">Brighton &amp; Hove</option>
+
+                                                            <option value="0116">Bristol City</option>
+
+                                                            <option value="2610">Broadland</option>
+
+                                                            <option value="5180">Bromley</option>
+
+                                                            <option value="1805">Bromsgrove</option>
+
+                                                            <option value="1905">Broxbourne</option>
+
+                                                            <option value="3015">Broxtowe</option>
+
+                                                            <option value="2315">Burnley</option>
+
+                                                            <option value="4210">Bury</option>
+
+                                                            <option value="6920">Caerphilly</option>
+
+                                                            <option value="4710">Calderdale</option>
+
+                                                            <option value="0505">Cambridge</option>
+
+                                                            <option value="5210">Camden</option>
+
+                                                            <option value="3405">Cannock Chase</option>
+
+                                                            <option value="2210">Canterbury</option>
+
+                                                            <option value="6815">Cardiff</option>
+
+                                                            <option value="0915">Carlisle</option>
+
+                                                            <option value="6825">Carmarthenshire (1)</option>
+
+                                                            <option value="6828">Carmarthenshire (2)</option>
+
+                                                            <option value="6829">Carmarthenshire (3)</option>
+
+                                                            <option value="1520">Castle Point</option>
+
+                                                            <option value="0240">Central Bedfordshire Council</option>
+
+                                                            <option value="6820">Ceredigion</option>
+
+                                                            <option value="2410">Charnwood</option>
+
+                                                            <option value="1525">Chelmsford</option>
+
+                                                            <option value="1605">Cheltenham</option>
+
+                                                            <option value="3105">Cherwell</option>
+
+                                                            <option value="0660">Cheshire East</option>
+
+                                                            <option value="0665">Cheshire West and Chester</option>
+
+                                                            <option value="1015">Chesterfield</option>
+
+                                                            <option value="3815">Chichester</option>
+
+                                                            <option value="0415">Chiltern</option>
+
+                                                            <option value="2320">Chorley</option>
+
+                                                            <option value="1210">Christchurch</option>
+
+                                                            <option value="2004">City and County of Kingston-Upon-Hull</option>
+
+                                                            <option value="2465">City of Leicester</option>
+
+                                                            <option value="5030">City of London</option>
+
+                                                            <option value="2741">City of York</option>
+
+                                                            <option value="1530">Colchester</option>
+
+                                                            <option value="6905">Conwy</option>
+
+                                                            <option value="0920">Copeland</option>
+
+                                                            <option value="2805">Corby</option>
+
+                                                            <option value="0840">Cornwall</option>
+
+                                                            <option value="1610">Cotswold</option>
+
+                                                            <option value="4610">Coventry</option>
+
+                                                            <option value="2705">Craven</option>
+
+                                                            <option value="3820">Crawley</option>
+
+                                                            <option value="5240">Croydon</option>
+
+                                                            <option value="1910">Dacorum</option>
+
+                                                            <option value="1350">Darlington</option>
+
+                                                            <option value="2215">Dartford</option>
+
+                                                            <option value="2810">Daventry</option>
+
+                                                            <option value="6830">Denbighshire</option>
+
+                                                            <option value="1055">Derby</option>
+
+                                                            <option value="1045">Derbyshire Dales</option>
+
+                                                            <option value="4410">Doncaster</option>
+
+                                                            <option value="2220">Dover</option>
+
+                                                            <option value="4615">Dudley</option>
+
+                                                            <option value="1355">Durham County</option>
+
+                                                            <option value="5270">Ealing</option>
+
+                                                            <option value="0510">East Cambridgeshire</option>
+
+                                                            <option value="1105">East Devon</option>
+
+                                                            <option value="1240">East Dorset</option>
+
+                                                            <option value="1710">East Hampshire</option>
+
+                                                            <option value="1915">East Hertfordshire</option>
+
+                                                            <option value="2510">East Lindsey</option>
+
+                                                            <option value="2815">East Northamptonshire</option>
+
+                                                            <option value="2001">East Riding of Yorkshire</option>
+
+                                                            <option value="3410">East Staffordshire</option>
+
+                                                            <option value="1410">Eastbourne</option>
+
+                                                            <option value="1715">Eastleigh</option>
+
+                                                            <option value="0925">Eden</option>
+
+                                                            <option value="3605">Elmbridge</option>
+
+                                                            <option value="5300">Enfield</option>
+
+                                                            <option value="1535">Epping Forest</option>
+
+                                                            <option value="3610">Epsom &amp; Ewell</option>
+
+                                                            <option value="1025">Erewash</option>
+
+                                                            <option value="1110">Exeter</option>
+
+                                                            <option value="1720">Fareham</option>
+
+                                                            <option value="0515">Fenland</option>
+
+                                                            <option value="6835">Flintshire</option>
+
+                                                            <option value="3510">Forest Heath</option>
+
+                                                            <option value="1615">Forest of Dean</option>
+
+                                                            <option value="2325">Fylde</option>
+
+                                                            <option value="4505">Gateshead</option>
+
+                                                            <option value="3020">Gedling</option>
+
+                                                            <option value="1620">Gloucester</option>
+
+                                                            <option value="1725">Gosport</option>
+
+                                                            <option value="2230">Gravesham</option>
+
+                                                            <option value="2615">Great Yarmouth</option>
+
+                                                            <option value="5330">Greenwich</option>
+
+                                                            <option value="3615">Guildford</option>
+
+                                                            <option value="6810">Gwynedd</option>
+
+                                                            <option value="5360">Hackney</option>
+
+                                                            <option value="0650">Halton</option>
+
+                                                            <option value="2710">Hambleton</option>
+
+                                                            <option value="5390">Hammersmith &amp; Fulham</option>
+
+                                                            <option value="2415">Harborough</option>
+
+                                                            <option value="5420">Haringey</option>
+
+                                                            <option value="1540">Harlow</option>
+
+                                                            <option value="2715">Harrogate</option>
+
+                                                            <option value="5450">Harrow</option>
+
+                                                            <option value="1730">Hart</option>
+
+                                                            <option value="0724">Hartlepool</option>
+
+                                                            <option value="1415">Hastings</option>
+
+                                                            <option value="1735">Havant</option>
+
+                                                            <option value="5480">Havering</option>
+
+                                                            <option value="1850">Herefordshire</option>
+
+                                                            <option value="1920">Hertsmere</option>
+
+                                                            <option value="1030">High Peak</option>
+
+                                                            <option value="5510">Hillingdon</option>
+
+                                                            <option value="2420">Hinckley &amp; Bosworth</option>
+
+                                                            <option value="3825">Horsham</option>
+
+                                                            <option value="5540">Hounslow</option>
+
+                                                            <option value="0520">Huntingdon</option>
+
+                                                            <option value="2330">Hyndburn</option>
+
+                                                            <option value="3515">Ipswich</option>
+
+                                                            <option value="6805">Isle of Anglesey</option>
+
+                                                            <option value="2100">Isle of Wight</option>
+
+                                                            <option value="0835">Isles of Scilly</option>
+
+                                                            <option value="5570">Islington</option>
+
+                                                            <option value="5600">Kensington &amp; Chelsea</option>
+
+                                                            <option value="2820">Kettering</option>
+
+                                                            <option value="2635">Kings Lynn &amp; West Norfolk</option>
+
+                                                            <option value="5630">Kingston Upon Thames</option>
+
+                                                            <option value="4715">Kirklees</option>
+
+                                                            <option value="4305">Knowsley</option>
+
+                                                            <option value="5660">Lambeth</option>
+
+                                                            <option value="2335">Lancaster</option>
+
+                                                            <option value="4720">Leeds</option>
+
+                                                            <option value="1425">Lewes</option>
+
+                                                            <option value="5690">Lewisham</option>
+
+                                                            <option value="3415">Lichfield</option>
+
+                                                            <option value="2515">Lincoln</option>
+
+                                                            <option value="4310">Liverpool</option>
+
+                                                            <option value="0230">Luton</option>
+
+                                                            <option value="2235">Maidstone</option>
+
+                                                            <option value="1545">Maldon</option>
+
+                                                            <option value="1860">Malvern Hills</option>
+
+                                                            <option value="4215">Manchester</option>
+
+                                                            <option value="3025">Mansfield</option>
+
+                                                            <option value="2280">Medway</option>
+
+                                                            <option value="2430">Melton</option>
+
+                                                            <option value="3305">Mendip</option>
+
+                                                            <option value="6925">Merthyr Tydfil</option>
+
+                                                            <option value="5720">Merton</option>
+
+                                                            <option value="1135">Mid Devon</option>
+
+                                                            <option value="3520">Mid Suffolk</option>
+
+                                                            <option value="3830">Mid Sussex</option>
+
+                                                            <option value="0734">Middlesbrough</option>
+
+                                                            <option value="0435">Milton Keynes</option>
+
+                                                            <option value="3620">Mole Valley</option>
+
+                                                            <option value="6840">Monmouthshire</option>
+
+                                                            <option value="6930">Neath and Port Talbot</option>
+
+                                                            <option value="1740">New Forest</option>
+
+                                                            <option value="3030">Newark &amp; Sherwood</option>
+
+                                                            <option value="3420">Newcastle Under Lyme</option>
+
+                                                            <option value="4510">Newcastle Upon Tyne</option>
+
+                                                            <option value="5750">Newham</option>
+
+                                                            <option value="6935">Newport</option>
+
+                                                            <option value="1115">North Devon</option>
+
+                                                            <option value="1215">North Dorset</option>
+
+                                                            <option value="1035">North East Derbyshire</option>
+
+                                                            <option value="2002">North East Lincolnshire</option>
+
+                                                            <option value="1925">North Hertfordshire</option>
+
+                                                            <option value="2520">North Kesteven</option>
+
+                                                            <option value="2003">North Lincolnshire</option>
+
+                                                            <option value="2620">North Norfolk</option>
+
+                                                            <option value="0121">North Somerset</option>
+
+                                                            <option value="4515">North Tyneside</option>
+
+                                                            <option value="3705">North Warwickshire</option>
+
+                                                            <option value="2435">North West Leicestershire</option>
+
+                                                            <option value="2825">Northampton</option>
+
+                                                            <option value="2935">Northumberland</option>
+
+                                                            <option value="2625">Norwich</option>
+
+                                                            <option value="3060">Nottingham</option>
+
+                                                            <option value="3710">Nuneaton &amp; Bedworth</option>
+
+                                                            <option value="2440">Oadby &amp; Wigston</option>
+
+                                                            <option value="4220">Oldham</option>
+
+                                                            <option value="3110">Oxford</option>
+
+                                                            <option value="6845">Pembrokeshire</option>
+
+                                                            <option value="2340">Pendle</option>
+
+                                                            <option value="0540">Peterborough</option>
+
+                                                            <option value="1160">Plymouth</option>
+
+                                                            <option value="1775">Portsmouth City</option>
+
+                                                            <option value="6850">Powys 1 (Montgomeryshire)</option>
+
+                                                            <option value="6853">Powys 2 (Radnorshire)</option>
+
+                                                            <option value="6854">Powys 3 (Breconshire)</option>
+
+                                                            <option value="2345">Preston</option>
+
+                                                            <option value="1225">Purbeck</option>
+
+                                                            <option value="0345">Reading</option>
+
+                                                            <option value="5780">Redbridge</option>
+
+                                                            <option value="0728">Redcar and Cleveland</option>
+
+                                                            <option value="1825">Redditch</option>
+
+                                                            <option value="3625">Reigate &amp; Banstead</option>
+
+                                                            <option value="6940">Rhondda Cynon Taff</option>
+
+                                                            <option value="2350">Ribble Valley</option>
+
+                                                            <option value="5810">Richmond Upon Thames</option>
+
+                                                            <option value="2720">Richmondshire</option>
+
+                                                            <option value="4225">Rochdale</option>
+
+                                                            <option value="1550">Rochford</option>
+
+                                                            <option value="2355">Rossendale</option>
+
+                                                            <option value="1430">Rother</option>
+
+                                                            <option value="4415">Rotherham</option>
+
+                                                            <option value="3715">Rugby</option>
+
+                                                            <option value="3630">Runnymede</option>
+
+                                                            <option value="3040">Rushcliffe</option>
+
+                                                            <option value="1750">Rushmoor</option>
+
+                                                            <option value="2470">Rutland</option>
+
+                                                            <option value="2725">Ryedale</option>
+
+                                                            <option value="4230">Salford</option>
+
+                                                            <option value="4620">Sandwell</option>
+
+                                                            <option value="2730">Scarborough</option>
+
+                                                            <option value="3310">Sedgemoor</option>
+
+                                                            <option value="4320">Sefton</option>
+
+                                                            <option value="2735">Selby</option>
+
+                                                            <option value="2245">Sevenoaks</option>
+
+                                                            <option value="4420">Sheffield</option>
+
+                                                            <option value="2250">Shepway</option>
+
+                                                            <option value="3245">Shropshire</option>
+
+                                                            <option value="0350">Slough</option>
+
+                                                            <option value="4625">Solihull</option>
+
+                                                            <option value="0410">South Buckinghamshire</option>
+
+                                                            <option value="0530">South Cambridgeshire</option>
+
+                                                            <option value="1040">South Derbyshire</option>
+
+                                                            <option value="0119">South Gloucestershire</option>
+
+                                                            <option value="1125">South Hams</option>
+
+                                                            <option value="2525">South Holland</option>
+
+                                                            <option value="2530">South Kesteven</option>
+
+                                                            <option value="0930">South Lakeland</option>
+
+                                                            <option value="2630">South Norfolk</option>
+
+                                                            <option value="2830">South Northamptonshire</option>
+
+                                                            <option value="3115">South Oxfordshire</option>
+
+                                                            <option value="2360">South Ribble</option>
+
+                                                            <option value="3325">South Somerset</option>
+
+                                                            <option value="3430">South Staffordshire</option>
+
+                                                            <option value="4520">South Tyneside</option>
+
+                                                            <option value="1780">Southampton City</option>
+
+                                                            <option value="1590">Southend-on-Sea</option>
+
+                                                            <option value="5840">Southwark</option>
+
+                                                            <option value="3635">Spelthorne</option>
+
+                                                            <option value="1930">St Albans</option>
+
+                                                            <option value="3525">St Edmundsbury</option>
+
+                                                            <option value="4315">St Helens</option>
+
+                                                            <option value="3425">Stafford</option>
+
+                                                            <option value="3435">Staffordshire Moorlands</option>
+
+                                                            <option value="1935">Stevenage</option>
+
+                                                            <option value="4235">Stockport</option>
+
+                                                            <option value="0738">Stockton-On-Tees</option>
+
+                                                            <option value="3455">Stoke on Trent</option>
+
+                                                            <option value="3720">Stratford on Avon</option>
+
+                                                            <option value="1625">Stroud</option>
+
+                                                            <option value="3530">Suffolk Coastal</option>
+
+                                                            <option value="4525">Sunderland</option>
+
+                                                            <option value="3640">Surrey Heath</option>
+
+                                                            <option value="5870">Sutton</option>
+
+                                                            <option value="2255">Swale</option>
+
+                                                            <option value="6855">Swansea</option>
+
+                                                            <option value="3935">Swindon</option>
+
+                                                            <option value="4240">Tameside</option>
+
+                                                            <option value="3445">Tamworth</option>
+
+                                                            <option value="3645">Tandridge</option>
+
+                                                            <option value="3315">Taunton Deane</option>
+
+                                                            <option value="1130">Teignbridge</option>
+
+                                                            <option value="3240">Telford and Wrekin</option>
+
+                                                            <option value="1560">Tendring</option>
+
+                                                            <option value="1760">Test valley</option>
+
+                                                            <option value="1630">Tewkesbury</option>
+
+                                                            <option value="2260">Thanet</option>
+
+                                                            <option value="1940">Three Rivers</option>
+
+                                                            <option value="1595">Thurrock</option>
+
+                                                            <option value="2265">Tonbridge &amp; Malling</option>
+
+                                                            <option value="1165">Torbay</option>
+
+                                                            <option value="6945">Torfaen</option>
+
+                                                            <option value="1145">Torridge</option>
+
+                                                            <option value="5900">Tower Hamlets</option>
+
+                                                            <option value="4245">Trafford</option>
+
+                                                            <option value="2270">Tunbridge Wells</option>
+
+                                                            <option value="1570">Uttlesford</option>
+
+                                                            <option value="6950">Vale of Glamorgan</option>
+
+                                                            <option value="3120">Vale of White Horse</option>
+
+                                                            <option value="4725">Wakefield</option>
+
+                                                            <option value="4630">Walsall</option>
+
+                                                            <option value="5930">Waltham Forest</option>
+
+                                                            <option value="5960">Wandsworth</option>
+
+                                                            <option value="0655">Warrington</option>
+
+                                                            <option value="3725">Warwick</option>
+
+                                                            <option value="1945">Watford</option>
+
+                                                            <option value="3535">Waveney</option>
+
+                                                            <option value="3650">Waverley</option>
+
+                                                            <option value="1435">Wealden</option>
+
+                                                            <option value="2835">Wellingborough</option>
+
+                                                            <option value="1950">Welwyn Hatfield</option>
+
+                                                            <option value="0340">West Berkshire</option>
+
+                                                            <option value="1150">West Devon</option>
+
+                                                            <option value="1230">West Dorset</option>
+
+                                                            <option value="2365">West Lancashire</option>
+
+                                                            <option value="2535">West Lindsey</option>
+
+                                                            <option value="3125">West Oxfordshire</option>
+
+                                                            <option value="3320">West Somerset</option>
+
+                                                            <option value="5990">Westminster City</option>
+
+                                                            <option value="1235">Weymouth &amp; Portland</option>
+
+                                                            <option value="4250">Wigan</option>
+
+                                                            <option value="3940">Wiltshire</option>
+
+                                                            <option value="1765">Winchester</option>
+
+                                                            <option value="0355">Windsor and Maidenhead</option>
+
+                                                            <option value="4325">Wirral</option>
+
+                                                            <option value="3655">Woking</option>
+
+                                                            <option value="0360">Wokingham</option>
+
+                                                            <option value="4635">Wolverhampton</option>
+
+                                                            <option value="1835">Worcester</option>
+
+                                                            <option value="3835">Worthing</option>
+
+                                                            <option value="6955">Wrexham</option>
+
+                                                            <option value="1840">Wychavon</option>
+
+                                                            <option value="0425">Wycombe</option>
+
+                                                            <option value="2370">Wyre</option>
+
+                                                            <option value="1845">Wyre Forest</option>
+
+                                                    </select>
+                                                </div><div class="form-group" id="fieldScat" data-toggle-hidden="" style="display: none;" aria-hidden="false">
+                                                    <label for="specialCategoryCodes" class="form-label-bold">Special category code</label>
+
+                                                    <select id="specialCategoryCodes" name="specialCategoryCode" class="form-control">
+                                                        <option value="">Select a special category code</option>
+
+                                                            <option value="001">001 - AA/RAC Service Centres and Boxes</option>
+
+                                                            <option value="003">003 - Advertising Right</option>
+
+                                                            <option value="004">004 - Agricultural Showgrounds (National Scheme)</option>
+
+                                                            <option value="005">005 - Air Ports (Minor) (National Scheme)</option>
+
+                                                            <option value="006">006 - Air Strips (National Scheme)</option>
+
+                                                            <option value="007">007 - Aircraft Works With Airfields</option>
+
+                                                            <option value="008">008 - Airport Let Outs</option>
+
+                                                            <option value="009">009 - Aluminium Smelting Works</option>
+
+                                                            <option value="010">010 - Ambulance Stations</option>
+
+                                                            <option value="011">011 - Amusement Arcades</option>
+
+                                                            <option value="012">012 - Amusement Parks</option>
+
+                                                            <option value="013">013 - Animal Boarding</option>
+
+                                                            <option value="014">014 - Arenas</option>
+
+                                                            <option value="016">016 - Artificial Fibre Works</option>
+
+                                                            <option value="017">017 - Asphalt Plants</option>
+
+                                                            <option value="019">019 - Auction Rooms</option>
+
+                                                            <option value="020">020 - Baling Plants</option>
+
+                                                            <option value="021">021 - Banks/Insurance/Building Society Offices &amp; Other A2 Uses</option>
+
+                                                            <option value="022">022 - Beach Huts</option>
+
+                                                            <option value="023">023 - Beet Sugar Factories</option>
+
+                                                            <option value="024">024 - Betting Offices</option>
+
+                                                            <option value="025">025 - Bingo Halls (National Scheme)</option>
+
+                                                            <option value="026">026 - Bird Sanctuaries</option>
+
+                                                            <option value="027">027 - Boat Yards</option>
+
+                                                            <option value="028">028 - Bowling Alleys</option>
+
+                                                            <option value="029">029 - Bowling Centres (Indoor)</option>
+
+                                                            <option value="030">030 - Bowling Greens (Outdoor)</option>
+
+                                                            <option value="031">031 - Breweries (National Scheme)</option>
+
+                                                            <option value="032">032 - Brickworks (Traditional), Clay Tile/Pipe Works</option>
+
+                                                            <option value="033">033 - Bulk Cement Storage Depots</option>
+
+                                                            <option value="036">036 - Bus Stations</option>
+
+                                                            <option value="037">037 - Cable Head End Buildings</option>
+
+                                                            <option value="038">038 - Car Auction Buildings/Sites</option>
+
+                                                            <option value="039">039 - Car Parks (Multi-Storey)</option>
+
+                                                            <option value="040">040 - Car Parks (Surfaced Open)</option>
+
+                                                            <option value="041">041 - Car Parks (Unsurfaced Open)</option>
+
+                                                            <option value="042">042 - Car Showrooms</option>
+
+                                                            <option value="043">043 - Car Spaces</option>
+
+                                                            <option value="044">044 - Car Supermarkets</option>
+
+                                                            <option value="045">045 - Car Washes (Stand Alone)</option>
+
+                                                            <option value="046">046 - Car/Caravan Sales/Display/Hiring Sites</option>
+
+                                                            <option value="047">047 - Caravan Parks (Leisure) (National Scheme)</option>
+
+                                                            <option value="048">048 - Caravan Sites and Pitches (National Scheme)</option>
+
+                                                            <option value="049">049 - Casinos and Gambling Clubs</option>
+
+                                                            <option value="050">050 - Cattle Breeding Centres</option>
+
+                                                            <option value="051">051 - Cement Tile Works</option>
+
+                                                            <option value="052">052 - Cement Works</option>
+
+                                                            <option value="053">053 - Cemeteries (National Scheme)</option>
+
+                                                            <option value="054">054 - Chalet Parks (National Scheme)</option>
+
+                                                            <option value="055">055 - Chemical Works</option>
+
+                                                            <option value="056">056 - Cinemas (National Scheme)</option>
+
+                                                            <option value="057">057 - Civic and Public Buildings (Local Authority Occupations)</option>
+
+                                                            <option value="058">058 - Civic Amenity Sites</option>
+
+                                                            <option value="059">059 - Civil Airports</option>
+
+                                                            <option value="060">060 - Clubhouses</option>
+
+                                                            <option value="061">061 - Clubs &amp; Institutions</option>
+
+                                                            <option value="062">062 - Coaching Inns</option>
+
+                                                            <option value="063">063 - Coking and Carbonising Plants</option>
+
+                                                            <option value="065">065 - Colleges of Further Education (National Scheme)</option>
+
+                                                            <option value="066">066 - Communication Stations (National Scheme)</option>
+
+                                                            <option value="067">067 - Community Day Centres</option>
+
+                                                            <option value="068">068 - Computer Centres (Non-Purpose Built)</option>
+
+                                                            <option value="069">069 - Computer Centres (Purpose Built)</option>
+
+                                                            <option value="070">070 - Concert Halls (National Scheme)</option>
+
+                                                            <option value="071">071 - Concrete Batching Plants</option>
+
+                                                            <option value="072">072 - Concrete Block Works</option>
+
+                                                            <option value="073">073 - Concrete Product Works</option>
+
+                                                            <option value="074">074 - Conference &amp; Exhibition Centres</option>
+
+                                                            <option value="075">075 - Conference Centres in Country Houses</option>
+
+                                                            <option value="076">076 - Contractors Huts &amp; Compounds</option>
+
+                                                            <option value="077">077 - Country House Hotels</option>
+
+                                                            <option value="079">079 - Creameries</option>
+
+                                                            <option value="080">080 - Crematoria (With &amp; Without Cemeteries) (National Scheme)</option>
+
+                                                            <option value="081">081 - Cricket Centres</option>
+
+                                                            <option value="082">082 - Cricket Grounds (County)</option>
+
+                                                            <option value="083">083 - Cricket Grounds/Pitches (Non-County)</option>
+
+                                                            <option value="084">084 - Dance Schools &amp; Centres</option>
+
+                                                            <option value="085">085 - Day Nurseries/Play Schools</option>
+
+                                                            <option value="086">086 - Departmental and Walk Round Stores (Large)</option>
+
+                                                            <option value="087">087 - Distilleries</option>
+
+                                                            <option value="088">088 - District Heating Undertakings &amp; Networks</option>
+
+                                                            <option value="089">089 - Docks and Harbours (Non-Statutory)</option>
+
+                                                            <option value="090">090 - Domestic Fuel Installations</option>
+
+                                                            <option value="091">091 - Drive-In Restaurants</option>
+
+                                                            <option value="092">092 - Drive-Thru Restaurants</option>
+
+                                                            <option value="093">093 - Effluent Minewater Treatment Plant and Premises</option>
+
+                                                            <option value="094">094 - Electricity Undertakings (Non-Statutory)</option>
+
+                                                            <option value="095">095 - Exhaust and Tyre Centres</option>
+
+                                                            <option value="097">097 - Factory Shops</option>
+
+                                                            <option value="098">098 - Farm Shops</option>
+
+                                                            <option value="099">099 - Field Study, Activity and Adventure Centres</option>
+
+                                                            <option value="100">100 - Film and TV Studios</option>
+
+                                                            <option value="101">101 - Fire Stations</option>
+
+                                                            <option value="102">102 - Fish Farms</option>
+
+                                                            <option value="103">103 - Flour Mills (National Scheme)</option>
+
+                                                            <option value="104">104 - Food Courts</option>
+
+                                                            <option value="105">105 - Food Processing Centres</option>
+
+                                                            <option value="106">106 - Food Stores</option>
+
+                                                            <option value="107">107 - Football Grounds</option>
+
+                                                            <option value="108">108 - Football Pitches</option>
+
+                                                            <option value="109">109 - Football Stadia</option>
+
+                                                            <option value="110">110 - Foundries</option>
+
+                                                            <option value="111">111 - Funeral Parlours/Chapels Of Rest</option>
+
+                                                            <option value="112">112 - Game Farms</option>
+
+                                                            <option value="113">113 - Garages (Transport and Commercial)</option>
+
+                                                            <option value="114">114 - Garden Centres</option>
+
+                                                            <option value="116">116 - Go Kart Rinks</option>
+
+                                                            <option value="117">117 - Golf Courses</option>
+
+                                                            <option value="118">118 - Golf Driving Ranges</option>
+
+                                                            <option value="119">119 - Grain Silos</option>
+
+                                                            <option value="120">120 - Granaries and Intervention Stores</option>
+
+                                                            <option value="121">121 - Greyhound Racetracks</option>
+
+                                                            <option value="122">122 - Guest &amp; Boarding Houses</option>
+
+                                                            <option value="123">123 - Gypsy Camp Sites (Short Stay)</option>
+
+                                                            <option value="124">124 - Hatcheries/Poultry Farms</option>
+
+                                                            <option value="125">125 - Health Farms</option>
+
+                                                            <option value="126">126 - Heliports</option>
+
+                                                            <option value="127">127 - Heredits Used For Primary Treatment/Processing Of Minerals</option>
+
+                                                            <option value="128">128 - Heritage Railways</option>
+
+                                                            <option value="129">129 - High Tech Warehouses</option>
+
+                                                            <option value="130">130 - Holiday Centres</option>
+
+                                                            <option value="131">131 - Holiday Homes (Self Catering)</option>
+
+                                                            <option value="132">132 - Horse Racecourses</option>
+
+                                                            <option value="133">133 - Hospital Let Outs</option>
+
+                                                            <option value="134">134 - Hospitals &amp; Clinics NHS (National Scheme)</option>
+
+                                                            <option value="135">135 - Hospitals &amp; Clinics (Private) (National Scheme)</option>
+
+                                                            <option value="137">137 - Hotels (3 Star and Under)</option>
+
+                                                            <option value="138">138 - Hotels (4 Star &amp; Above) &amp; Major Chain Operated ( includes 3* &amp; above consortium hotels)</option>
+
+                                                            <option value="139">139 - Hypermarkets/Superstores (over 2500m2)</option>
+
+                                                            <option value="140">140 - Ice Rinks</option>
+
+                                                            <option value="141">141 - Interactive Telephone Kiosks</option>
+
+                                                            <option value="142">142 - Iron and/or Steel Works</option>
+
+                                                            <option value="143">143 - Kennels and Catteries</option>
+
+                                                            <option value="145">145 - Lakes With Water Sport Facilities</option>
+
+                                                            <option value="146">146 - Land Used For Advertising</option>
+
+                                                            <option value="147">147 - Land Used For Car Boot Sales</option>
+
+                                                            <option value="148">148 - Land Used For Storage</option>
+
+                                                            <option value="149">149 - Landfill Gas Generator Sites</option>
+
+                                                            <option value="150">150 - Land used for Waste Composting</option>
+
+                                                            <option value="151">151 - Large Distribution Warehouses</option>
+
+                                                            <option value="152">152 - Large Food Stores (750 - 2500m2)</option>
+
+                                                            <option value="153">153 - Large Industrials (Over 20,000m2)</option>
+
+                                                            <option value="154">154 - Large Shops (750 - 1850m2)</option>
+
+                                                            <option value="155">155 - Large Shops (Over 1850m2)</option>
+
+                                                            <option value="156">156 - Libraries</option>
+
+                                                            <option value="158">158 - Livestock Markets (National Scheme)</option>
+
+                                                            <option value="159">159 - Local Authority Schools (National Scheme)</option>
+
+                                                            <option value="160">160 - Lodges (National Scheme)</option>
+
+                                                            <option value="161">161 - Lorry Parks</option>
+
+                                                            <option value="162">162 - Maltings - Non Trad</option>
+
+                                                            <option value="163">163 - Maltings - Trad</option>
+
+                                                            <option value="164">164 - Marinas (National Scheme)</option>
+
+                                                            <option value="165">165 - Markets (Other Than Livestock)</option>
+
+                                                            <option value="166">166 - Mineral Depot and Premises</option>
+
+                                                            <option value="167">167 - Mineral Producing Hereditament - Blockstone</option>
+
+                                                            <option value="168">168 - Mineral Producing Hereditament - Brine</option>
+
+                                                            <option value="169">169 - Mineral Producing Hereditament - Chalk</option>
+
+                                                            <option value="170">170 - Mineral Producing Hereditament - China Clay</option>
+
+                                                            <option value="171">171 - Mineral Producing Hereditament - Clay</option>
+
+                                                            <option value="172">172 - Mineral Producing Hereditament - Coal</option>
+
+                                                            <option value="173">173 - Mineral Producing Hereditament - Fluorspar</option>
+
+                                                            <option value="174">174 - Mineral Producing Hereditament - Gas</option>
+
+                                                            <option value="175">175 - Mineral Producing Hereditament - Hardrock</option>
+
+                                                            <option value="176">176 - Mineral Producing Hereditament - Inert</option>
+
+                                                            <option value="177">177 - Mineral Producing Hereditament - Oil</option>
+
+                                                            <option value="178">178 - Mineral Producing Hereditament - Other Mineral Category</option>
+
+                                                            <option value="179">179 - Mineral Producing Hereditament - Putrescible</option>
+
+                                                            <option value="180">180 - Mineral Producing Hereditament - Sand and Gravel</option>
+
+                                                            <option value="181">181 - Mineral Producing Hereditament - Sand</option>
+
+                                                            <option value="182">182 - Mineral Producing Hereditament - Shale Unburnt</option>
+
+                                                            <option value="183">183 - Mineral Producing Hereditament - Slate</option>
+
+                                                            <option value="184">184 - Mineral Producing Hereditament With Batching Plant</option>
+
+                                                            <option value="185">185 - Mineral Producing Hereditament With Coating Plant</option>
+
+                                                            <option value="186">186 - Mineral Producing Heredtament With Tunnel Kiln</option>
+
+                                                            <option value="188">188 - Model Villages</option>
+
+                                                            <option value="189">189 - Moorings (Floating Hereditaments)</option>
+
+                                                            <option value="190">190 - Mortuaries</option>
+
+                                                            <option value="191">191 - Motor Racetracks</option>
+
+                                                            <option value="192">192 - Motor Vehicle Works</option>
+
+                                                            <option value="193">193 - Motorway Service Area Let Outs</option>
+
+                                                            <option value="194">194 - Motorway and Major Road Service Areas</option>
+
+                                                            <option value="195">195 - Museums and Art Galleries (Contractors)</option>
+
+                                                            <option value="196">196 - Museums and Art Galleries (Non-Contractors)</option>
+
+                                                            <option value="198">198 - Newspaper Printing Works (National Scheme)</option>
+
+                                                            <option value="199">199 - Night Clubs &amp; Discotheques</option>
+
+                                                            <option value="201">201 - Nursing Homes (Inc. Old Peoples Homes)</option>
+
+                                                            <option value="202">202 - Observatories</option>
+
+                                                            <option value="203">203 - Offices (Inc. Computer Centres)</option>
+
+                                                            <option value="204">204 - Offices (Headquarters/Institutional)</option>
+
+                                                            <option value="206">206 - Oxbridge Colleges</option>
+
+                                                            <option value="207">207 - Paper Mills</option>
+
+                                                            <option value="208">208 - Pavilions</option>
+
+                                                            <option value="209">209 - Petrol Filling Stations (National Scheme)</option>
+
+                                                            <option value="210">210 - Pharmacies</option>
+
+                                                            <option value="211">211 - Photographic Booths</option>
+
+                                                            <option value="213">213 - Pleasure Piers</option>
+
+                                                            <option value="214">214 - Point to Point and Eventing Courses</option>
+
+                                                            <option value="215">215 - Police Stations</option>
+
+                                                            <option value="216">216 - Polo Grounds</option>
+
+                                                            <option value="217">217 - Post Office Sorting Centres</option>
+
+                                                            <option value="218">218 - Potteries</option>
+
+                                                            <option value="219">219 - Power Generators</option>
+
+                                                            <option value="221">221 - Property used for Secondary Aggregate Processing</option>
+
+                                                            <option value="222">222 - Provender Mills (National Scheme)</option>
+
+                                                            <option value="223">223 - Public and Independent Schools (National Scheme)</option>
+
+                                                            <option value="224">224 - Public Conveniences (National Scheme)</option>
+
+                                                            <option value="225">225 - Public Halls</option>
+
+                                                            <option value="226">226 - Public Houses/Pub Restaurants (National Scheme)</option>
+
+                                                            <option value="227">227 - Public Houses/Pub Restaurants (Inc. Lodge) (National Scheme)</option>
+
+                                                            <option value="228">228 - Public Telephone Kiosks (National Scheme)</option>
+
+                                                            <option value="229">229 - Racing Stables (National Scheme)</option>
+
+                                                            <option value="231">231 - Railways &amp; Tramways (Non Leisure)</option>
+
+                                                            <option value="232">232 - Recording Studios</option>
+
+                                                            <option value="233">233 - Refuse Destructor Plants/Disposal Sites</option>
+
+                                                            <option value="234">234 - Restaurants</option>
+
+                                                            <option value="235">235 - Retail Warehouses and Foodstores</option>
+
+                                                            <option value="236">236 - Riding Schools &amp; Livery Stables (National Scheme)</option>
+
+                                                            <option value="238">238 - Roadside Restaurants (National Scheme)</option>
+
+                                                            <option value="239">239 - Roller Skating Rinks</option>
+
+                                                            <option value="241">241 - Rugby League Grounds</option>
+
+                                                            <option value="242">242 - Rugby Union Grounds</option>
+
+                                                            <option value="243">243 - Sales Kiosks</option>
+
+                                                            <option value="244">244 - Scrap Metal/Breakers Yard</option>
+
+                                                            <option value="245">245 - Sea Dredged Aggregate Processing Plants &amp; Depots</option>
+
+                                                            <option value="246">246 - Sewage Works (National Scheme)</option>
+
+                                                            <option value="247">247 - Ship Building Yards</option>
+
+                                                            <option value="248">248 - Ship Repair Yards</option>
+
+                                                            <option value="250">250 - Showhouses (National Scheme)</option>
+
+                                                            <option value="251">251 - Showrooms</option>
+
+                                                            <option value="252">252 - Ski Centres</option>
+
+                                                            <option value="253">253 - Snooker Halls/Clubs</option>
+
+                                                            <option value="254">254 - Speedway Racetracks</option>
+
+                                                            <option value="255">255 - Spoil Heap Workings</option>
+
+                                                            <option value="257">257 - Sports &amp; Leisure Centres (LA) (Dry Only) (National Scheme)</option>
+
+                                                            <option value="258">258 - Sports &amp; Leisure Centres (LA) (Wet &amp; Dry) (National Scheme)</option>
+
+                                                            <option value="259">259 - Sports &amp; Leisure Centres (Private)(Dry Only)</option>
+
+                                                            <option value="260">260 - Sports &amp; Leisure Centres (Private)(Wet &amp; Dry)</option>
+
+                                                            <option value="261">261 - Sports Grounds</option>
+
+                                                            <option value="262">262 - Sports Stadia</option>
+
+                                                            <option value="263">263 - Squash Courts</option>
+
+                                                            <option value="264">264 - Stables and Loose Boxes</option>
+
+                                                            <option value="265">265 - Stately Homes &amp; Historic Houses (National Scheme)</option>
+
+                                                            <option value="266">266 - Station Let Outs</option>
+
+                                                            <option value="267">267 - Storage Depots</option>
+
+                                                            <option value="268">268 - Stores</option>
+
+                                                            <option value="269">269 - Stud Farms</option>
+
+                                                            <option value="270">270 - Studios</option>
+
+                                                            <option value="272">272 - Swimming Pools (Local Authority)</option>
+
+                                                            <option value="273">273 - Swimming Pools (Private)</option>
+
+                                                            <option value="274">274 - Tanneries</option>
+
+                                                            <option value="275">275 - Telecommunications Cable Networks (National Scheme)</option>
+
+                                                            <option value="276">276 - Telecommunications Switching Centres</option>
+
+                                                            <option value="277">277 - Tennis Centres</option>
+
+                                                            <option value="278">278 - Tennis Courts/Clubs</option>
+
+                                                            <option value="279">279 - Theatres (National Scheme)</option>
+
+                                                            <option value="280">280 - Theme Parks</option>
+
+                                                            <option value="281">281 - Timeshare Complexes (National Scheme)</option>
+
+                                                            <option value="282">282 - Tolls (Ferries, Roads and Bridges)</option>
+
+                                                            <option value="283">283 - Totalisators On Horse Racecourses</option>
+
+                                                            <option value="284">284 - Tourist Attractions/Dark Rides</option>
+
+                                                            <option value="285">285 - Training Centre (Non Residential)</option>
+
+                                                            <option value="286">286 - Training Centre (Residential)</option>
+
+                                                            <option value="287">287 - Truck Stops</option>
+
+                                                            <option value="288">288 - Universities (Excluding Oxbridge) (National Scheme)</option>
+
+                                                            <option value="289">289 - Vehicle Repair Workshops &amp; Garages</option>
+
+                                                            <option value="290">290 - Vehicle Testing Centres (With Test Tracks)</option>
+
+                                                            <option value="291">291 - Vehicle Testing Centres (Without Test Tracks)</option>
+
+                                                            <option value="292">292 - Veterinary Clinics / Animal Clinics</option>
+
+                                                            <option value="293">293 - Village Halls, Scout Huts, Cadet Huts Etc</option>
+
+                                                            <option value="294">294 - Vineyards/Wineries</option>
+
+                                                            <option value="295">295 - Wafer Fabrications (National Scheme)</option>
+
+                                                            <option value="296">296 - War Games Courses/Misc Ag. Use</option>
+
+                                                            <option value="297">297 - Waste Incinerator Plants</option>
+
+                                                            <option value="298">298 - Waste Recycling Plants</option>
+
+                                                            <option value="299">299 - Waste Transfer Stations</option>
+
+                                                            <option value="300">300 - Water Undertakings (Non-Statutory)</option>
+
+                                                            <option value="301">301 - Wholesale Warehouses</option>
+
+                                                            <option value="302">302 - Windmills</option>
+
+                                                            <option value="303">303 - Wine Bars</option>
+
+                                                            <option value="304">304 - Zoos &amp; Safari Parks</option>
+
+                                                            <option value="400">400 - Abattoirs &amp; Slaughter Houses (Contractors Valuation)</option>
+
+                                                            <option value="401">401 - Abattoirs &amp; Slaughter Houses (Rental Valuation)</option>
+
+                                                            <option value="402">402 - Agricultural Research Centres</option>
+
+                                                            <option value="403">403 - Aquaria</option>
+
+                                                            <option value="404">404 - Archives</option>
+
+                                                            <option value="405">405 - Boathouses</option>
+
+                                                            <option value="406">406 - Bus Garages (Contractors Valuation)</option>
+
+                                                            <option value="407">407 - Bus Garages (Rental Valuation)</option>
+
+                                                            <option value="408">408 - Business Units</option>
+
+                                                            <option value="409">409 - Cafes</option>
+
+                                                            <option value="410">410 - Changing Rooms</option>
+
+                                                            <option value="411">411 - Coastguard Stations</option>
+
+                                                            <option value="412">412 - Cold Stores (Contractors Valuation)</option>
+
+                                                            <option value="413">413 - Cold Stores (Rental Valuation)</option>
+
+                                                            <option value="414">414 - Courts (Contractors Valuation)</option>
+
+                                                            <option value="415">415 - Courts (Rental Valuation)</option>
+
+                                                            <option value="416">416 - Gymnasia/Fitness Suites</option>
+
+                                                            <option value="417">417 - Hairdressing/Beauty Salons</option>
+
+                                                            <option value="418">418 - Information/Visitor Centres</option>
+
+                                                            <option value="419">419 - Land Used for Display</option>
+
+                                                            <option value="420">420 - Lifeboat Stations</option>
+
+                                                            <option value="421">421 - Miniature Railways</option>
+
+                                                            <option value="422">422 - Pack Houses</option>
+
+                                                            <option value="423">423 - Peat Fields</option>
+
+                                                            <option value="424">424 - Pet Grooming Parlours</option>
+
+                                                            <option value="425">425 - Pharmacies Within/Adjacent to Surgery/Health Centre</option>
+
+                                                            <option value="426">426 - Pitch and Putt/Putting Greens</option>
+
+                                                            <option value="427">427 - Pitches for Stalls, Sales or Promotions</option>
+
+                                                            <option value="428">428 - Police Training Colleges</option>
+
+                                                            <option value="429">429 - Post Offices</option>
+
+                                                            <option value="430">430 - Pumping Mines</option>
+
+                                                            <option value="431">431 - Religious Retreats/Study Centres (Residential)</option>
+
+                                                            <option value="432">432 - Sales Offices</option>
+
+                                                            <option value="433">433 - Statutory Docks and Harbours (Formula)</option>
+
+                                                            <option value="434">434 - Statutory Docks and Harbours (Non-Formula, Prescribed)</option>
+
+                                                            <option value="435">435 - Statutory Docks and Harbours (Other)</option>
+
+                                                            <option value="436">436 - Surgeries, Clinics, Health Centres (Contractors Valuation)</option>
+
+                                                            <option value="437">437 - Surgeries, Clinics, Health Centres (Rental Valuation)</option>
+
+                                                            <option value="438">438 - Telescope Sites</option>
+
+                                                            <option value="439">439 - University - Ancillary Land or Buildings</option>
+
+                                                            <option value="440">440 - University Occupation Within Hospitals</option>
+
+                                                            <option value="441">441 - Weighbridges</option>
+
+                                                            <option value="442">442 - Takeaway Food Outlet (Predominantly Off Premises)</option>
+
+                                                            <option value="500">500 - Cafes/Restaurants Within/Part of Specialist Property</option>
+
+                                                            <option value="501">501 - Car Parking Within/Part of Specialist Property</option>
+
+                                                            <option value="502">502 - Garages Within/Part of Specialist Property</option>
+
+                                                            <option value="503">503 - Gymnasia/Fitness Suites Within/Part of Specialist Property</option>
+
+                                                            <option value="504">504 - Kiosks Within/Part of Specialist Property</option>
+
+                                                            <option value="505">505 - Nurseries/Creches Within/Part of Specialist Property</option>
+
+                                                            <option value="506">506 - Offices Within/Part of Specialist Property</option>
+
+                                                            <option value="507">507 - Salons/Clinics Within/Part of Specialist Property</option>
+
+                                                            <option value="508">508 - Shops Within/Part of Specialist Property</option>
+
+                                                            <option value="509">509 - Sports &amp; Leisure Centres Within/Part of Specialist Property</option>
+
+                                                            <option value="510">510 - Stores Within/Part of Specialist Property</option>
+
+                                                            <option value="511">511 - Warehouses Within/Part of Specialist Property</option>
+
+                                                            <option value="512">512 - Workshops Within/Part of Specialist Property</option>
+
+                                                            <option value="513">513 - Miscellaneous Within/Part of Specialist Property</option>
+
+                                                            <option value="992">992 - Commercial Miscellaneous</option>
+
+                                                            <option value="993">993 - Leisure Miscellaneous</option>
+
+                                                            <option value="994">994 - Industrial Miscellaneous</option>
+
+                                                            <option value="995">995 - Educational Miscellaneous</option>
+
+                                                            <option value="996">996 - Formula Assessed Miscellaneous</option>
+
+                                                            <option value="997">997 - Minerals Miscellaneous</option>
+
+                                                            <option value="999">999 - Miscellaneous</option>
+
+                                                    </select>
+                                                </div>
+
+
+                                                <div id="secondaryParams" data-toggle-hidden="" style="display: none;" aria-hidden="false">
+
+                                                    <div class="form-group">
+                                                        <label for="descriptionCode" class="form-label-bold">Description code</label>
+                                                        <select id="descriptionCode" name="descriptionCode" class="form-control">
+                                                            <option value="">Any</option>
+
+                                                                <option value="CA">CA - Advertising Right and Premises</option>
+
+                                                                <option value="CA1">CA1 - Advertising Station and Premises</option>
+
+                                                                <option value="MS2">MS2 - Ambulance Station and Premises</option>
+
+                                                                <option value="LT1">LT1 - Amusement Arcade and Premises</option>
+
+                                                                <option value="LT4">LT4 - Amusement Park and Premises</option>
+
+                                                                <option value="TD2">TD2 - Auxiliary Defence Establishment and Premises</option>
+
+                                                                <option value="CS1">CS1 - Bank and Premises</option>
+
+                                                                <option value="LH1">LH1 - Beach Hut and Premises</option>
+
+                                                                <option value="CS2">CS2 - Betting Shop and Premises</option>
+
+                                                                <option value="LT2">LT2 - Bingo Hall and Premises</option>
+
+                                                                <option value="IM2">IM2 - Brickworks and Premises</option>
+
+                                                                <option value="NT">NT - Bus Station and Premises</option>
+
+                                                                <option value="IF4">IF4 - Business Unit and Premises</option>
+
+                                                                <option value="CR1">CR1 - Cafe and Premises</option>
+
+                                                                <option value="CC">CC - Camping Site and Premises</option>
+
+                                                                <option value="CP">CP - Car Park and Premises</option>
+
+                                                                <option value="CP1">CP1 - Car Parking Space and Premises</option>
+
+                                                                <option value="CG3">CG3 - Car Showroom and Premises</option>
+
+                                                                <option value="CC3">CC3 - Caravan &amp; Pitch and Premises</option>
+
+                                                                <option value="CC6">CC6 - Caravan and Chalet Park and Premises</option>
+
+                                                                <option value="CC1">CC1 - Caravan Park and Premises</option>
+
+                                                                <option value="CC4">CC4 - Caravan Pitch and Premises</option>
+
+                                                                <option value="MC">MC - Cemetery and Premises</option>
+
+                                                                <option value="CC5">CC5 - Chalet Park and Premises</option>
+
+                                                                <option value="LT">LT - Cinema and Premises</option>
+
+                                                                <option value="CL2">CL2 - Club and Premises</option>
+
+                                                                <option value="LC1">LC1 - Club House and Premises</option>
+
+                                                                <option value="EL1">EL1 - College and Premises</option>
+
+                                                                <option value="EP1">EP1 - College and Premises</option>
+
+                                                                <option value="MT1">MT1 - Communication Station and Premises</option>
+
+                                                                <option value="LC">LC - Community Centre and Premises</option>
+
+                                                                <option value="CO1">CO1 - Computer Centre and Premises</option>
+
+                                                                <option value="IM3">IM3 - Concrete Batching Plant and Premises</option>
+
+                                                                <option value="MC1">MC1 - Crematorium and Premises</option>
+
+                                                                <option value="EN1">EN1 - Day Nursery and Premises</option>
+
+                                                                <option value="FD">FD - Dock Hereditament and Premises</option>
+
+                                                                <option value="FE">FE - Electricity Hereditament and Premises</option>
+
+                                                                <option value="IF">IF - Factory and Premises</option>
+
+                                                                <option value="MS1">MS1 - Fire Station and Premises</option>
+
+                                                                <option value="CR2">CR2 - Food Court and Premises</option>
+
+                                                                <option value="LS5">LS5 - Football Ground and Premises</option>
+
+                                                                <option value="TD1">TD1 - Forces Careers Office and Premises</option>
+
+                                                                <option value="CG2">CG2 - Garage and Premises</option>
+
+                                                                <option value="LS2">LS2 - Golf Course and Premises</option>
+
+                                                                <option value="CH2">CH2 - Guest House and Premises</option>
+
+                                                                <option value="CS3">CS3 - Hairdressing Salon and Premises</option>
+
+                                                                <option value="LC3">LC3 - Hall and Premises</option>
+
+                                                                <option value="MH1">MH1 - Health Centre and Premises</option>
+
+                                                                <option value="CC2">CC2 - Holiday Centre and Premises</option>
+
+                                                                <option value="MR1">MR1 - Home and Premises</option>
+
+                                                                <option value="MH2">MH2 - Hospital and Premises</option>
+
+                                                                <option value="MH3">MH3 - Hospital and Premises</option>
+
+                                                                <option value="CH">CH - Hotel and Premises</option>
+
+                                                                <option value="CS8">CS8 - Hypermarket and Premises</option>
+
+                                                                <option value="CS4">CS4 - Kiosk and Premises</option>
+
+                                                                <option value="CW1">CW1 - Land Used For Storage and Premises</option>
+
+                                                                <option value="CS5">CS5 - Launderette and Premises</option>
+
+                                                                <option value="MP1">MP1 - Law Court and Premises</option>
+
+                                                                <option value="LC2">LC2 - Leisure Centre and Premises</option>
+
+                                                                <option value="EM">EM - Library and Premises</option>
+
+                                                                <option value="LS3">LS3 - Marina and Premises</option>
+
+                                                                <option value="CM1">CM1 - Market and Premises</option>
+
+                                                                <option value="CM">CM - Market and Premises</option>
+
+                                                                <option value="IF1">IF1 - Mill and Premises</option>
+
+                                                                <option value="IM1">IM1 - Mine and Premises</option>
+
+                                                                <option value="NT1">NT1 - Mooring and Premises</option>
+
+                                                                <option value="CH3">CH3 - Motel and Premises</option>
+
+                                                                <option value="EM1">EM1 - Museum and Premises</option>
+
+                                                                <option value="CO">CO - Offices and Premises</option>
+
+                                                                <option value="ML">ML - Offices and Premises</option>
+
+                                                                <option value="CX">CX - Other Commercial</option>
+
+                                                                <option value="EX">EX - Other Educational, Training and Cult.</option>
+
+                                                                <option value="IX">IX - Other Industrial</option>
+
+                                                                <option value="IMX">IMX - Other Industrial Mineral</option>
+
+                                                                <option value="LX">LX - Other Leisure</option>
+
+                                                                <option value="MX">MX - Other Miscellaneous</option>
+
+                                                                <option value="NX">NX - Other Non Formula</option>
+
+                                                                <option value="MTX">MTX - Other Telecommunications</option>
+
+                                                                <option value="IM6">IM6 - Peat Fields and Premises</option>
+
+                                                                <option value="CG">CG - Petrol Filling Station and Premises</option>
+
+                                                                <option value="LS4">LS4 - Playing Field and Premises</option>
+
+                                                                <option value="MP">MP - Police Station and Premises</option>
+
+                                                                <option value="CS6">CS6 - Post Office and Premises</option>
+
+                                                                <option value="MP2">MP2 - Prison and Premises</option>
+
+                                                                <option value="CL">CL - Public House and Premises</option>
+
+                                                                <option value="MT2">MT2 - Public Telephone Kiosk and Premises</option>
+
+                                                                <option value="IM">IM - Quarry and Premises</option>
+
+                                                                <option value="CR">CR - Restaurant and Premises</option>
+
+                                                                <option value="CS10">CS10 - Retail Warehouse and Premises</option>
+
+                                                                <option value="CG4">CG4 - Road Haulage Depot and Premises</option>
+
+                                                                <option value="EP">EP - School and Premises</option>
+
+                                                                <option value="EL">EL - School and Premises</option>
+
+                                                                <option value="CH1">CH1 - Self Catering Holiday Unit and Premises</option>
+
+                                                                <option value="NW">NW - Sewage Treatment Works and Premises</option>
+
+                                                                <option value="CS">CS - Shop and Premises</option>
+
+                                                                <option value="CS7">CS7 - Showroom and Premises</option>
+
+                                                                <option value="IM5">IM5 - Spoil Heap Workings and Premises</option>
+
+                                                                <option value="LS1">LS1 - Sporting Right and Premises</option>
+
+                                                                <option value="LI">LI - Sports Centre and Premises</option>
+
+                                                                <option value="LS">LS - Sports Ground and Premises</option>
+
+                                                                <option value="LI1">LI1 - Stadium and Premises</option>
+
+                                                                <option value="CW2">CW2 - Storage Depot and Premises</option>
+
+                                                                <option value="CW3">CW3 - Store and Premises</option>
+
+                                                                <option value="CS9">CS9 - Superstore and Premises</option>
+
+                                                                <option value="MH">MH - Surgery and Premises</option>
+
+                                                                <option value="LS6">LS6 - Swimming Pool and Premises</option>
+
+                                                                <option value="LS7">LS7 - Tennis Centre and Premises</option>
+
+                                                                <option value="LT3">LT3 - Theatre and Premises</option>
+
+                                                                <option value="CC7">CC7 - Time Share Complex and Premises</option>
+
+                                                                <option value="IM4">IM4 - Tipping Site and Premises</option>
+
+                                                                <option value="EU">EU - University and Premises</option>
+
+                                                                <option value="CG1">CG1 - Vehicle Repair Workshop and Premises</option>
+
+                                                                <option value="CW">CW - Warehouse and Premises</option>
+
+                                                                <option value="NT3">NT3 - Wharf and Premises</option>
+
+                                                                <option value="CL1">CL1 - Wine Bar and Premises</option>
+
+                                                                <option value="IF2">IF2 - Works and Premises</option>
+
+                                                                <option value="IF3">IF3 - Workshop and Premises</option>
+
+                                                        </select>
+                                                    </div>
+
+                                                    <label for="search-advanced-from" class="form-label-bold">Rateable value</label>
+
+
+
+                                                    <input id="search-advanced-from" name="from" value="" type="search" placeholder="from (£)" autocomplete="off">
+                                                    <label class="visuallyhidden" for="to">To</label>
+                                                    <input class="search-advanced-to-field" id="search-advanced-to" name="to" value="" type="search" placeholder="to (£)" autocomplete="off">
+                                                    <br>
+                                                </div>
+                                                <button type="submit" id="submitsearch3" class="button">Search</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+
+                            <section id="search-results">
+                                <table id="search-results-table" class="table-font-xsmall">
+                                <caption style="text-align: left">
+                                    <span class="result-count">
+                                        <span id="result-count" style="display: inline-block; margin: 14px 0"> Showing
+
+
+
+                                                    results 1 to 25 of 1,647
+
+
+
+                                        </span>
+                                    </span>
+                                    <details role="group">
+                                        <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Can’t find your property?</span></summary>
+                                        <div class="panel panel-border-wide" id="details-content-0" aria-hidden="true">
+                                            <p>If you can’t find your property in the list of search results, youll need to contact us.</p>
+                                            <p>Email<br>ccaservice@voa.gsi.gov.uk</p>
+                                            <p>Telephone (England)<br>03000 501 501</p>
+                                            <p>Telephone (Wales)<br>03000 505 505</p>
+                                        </div>
+                                    </details>
+                                </caption>
+
+
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            Address
+                                        </th>
+                                        <th scope="col">
+                                            Description
+                                        </th>
+                                        <th scope="col">
+                                            Total area (m²/unit)
+                                        </th>
+                                        <th scope="col">
+                                            Price per m²/unit
+                                        </th>
+                                        <th scope="col">
+                                            Current rateable value
+                                        </th>
+
+                                            <th scope="col" class="last">
+                                                Action
+                                            </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td>
+                                            <span><a href="#">33, Alverstone Road, Worthing, West Sussex, BN11 2JR</a></span>
+
+                                        </td>
+                                        <td>
+                                            <span>Vehicle repair workshop and premises</span>
+                                        </td>
+                                        <td>
+                                            <span>28.3</span>
+                                        </td>
+                                        <td>
+                                            <span>£60</span>
+                                        </td>
+                                        <td>
+                                            <span>£1,550</span>
+                                        </td>
+
+                                            <td class="last">
+                                                <span>
+                                                    <a href="/dashboard/{{version}}/business-small/find-property/add-property">
+                                                        Claim this property
+                                                        <span class="visuallyhidden">33, Alverstone Road, Worthing, West Sussex, BN11 2JR</span>
+                                                    </a>
+                                                </span>
+                                            </td>
+
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+
+                <footer>
+
+
+        <ul class="pager" id="pager">
+
+
+
+
+
+
+                    <li class="active"><span class="current">1</span></li>
+
+
+
+                    <li>
+                        <a href="#">
+                            2
+                        </a>
+                    </li>
+
+
+
+                    <li>
+                        <a href="#">
+                            3
+                        </a>
+                    </li>
+
+
+
+
+
+
+                <li><a href="#">Next</a></li>
+
+
+        </ul>
+
+                </footer>
+            </section>
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

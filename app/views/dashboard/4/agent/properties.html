@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% set title = "Properties" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+
+        {% include "includes/phase_banner_prototype_signout.html" %}
+
+
+
+            <div class="section-tabs">
+                <ul role="tablist">
+                  <li><a href="/dashboard/{{version}}/agent">Client properties</a></li>
+                  <li><a href="/dashboard/{{version}}/agent/drafts">Drafts</a></li>
+                  <li class="active"><a href="/dashboard/{{version}}/agent/properties">My properties</a></li>
+                  <li><a href="/dashboard/{{version}}/agent/change-details/summary">My details</a></li>
+                  <li class="tab-right"><span>Welcome, <a href="/dashboard/{{version}}/agent/change-details/summary">Jo Bloggs - ABC Agent</a>.<a href="#" class="margin-left-10">Not you?</a></span></li>
+                </ul>
+            </div>
+
+
+        <h1 class="visuallyhidden">
+            {{title}}
+        </h1>
+
+
+        <ul class="data-filter">
+            <li class="data-all"><a href="#" class="current" data-filter="ABC Agent">All (10)</a></li>
+            <li class="data-approved"><a href="#" data-filter="approved">Approved (10)</a></li>
+            <li class="data-pending"><a href="#" data-filter="pending">Pending (0)</a></li>
+            <li class="data-declined"><a href="#" data-filter="declined">Declined (0)</a></li>
+            <li class="claim-property"><a href="/dashboard/{{version}}/business/find-property">+ Claim property</a></li>
+        </ul>
+
+
+
+
+<div class="table-wrapper">
+    <table id="myPropertiesTable" class="table-font-xsmall">
+        <colgroup>
+            <col >
+            <col style="width:220px">
+            <col >
+            <col style="width:180px">
+            <col >
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Address</th>
+                <th>Local authority reference</th>
+                <th>Client</th>
+                <th>Actions</th>
+                <th>Status</th>
+            </tr>
+            <tr id="filterrow">
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+           </tr>
+        </thead>
+
+    </table>
+</div>
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

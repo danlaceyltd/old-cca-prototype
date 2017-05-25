@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% set title = "Property details" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <h1 class="heading-xlarge margin-bottom-10">
+        {{title}}
+    </h1>
+
+    <h2 class="heading-secondary margin-bottom-20">
+        <span class="property-address"></span>
+    </h2>
+
+    <a href="/dashboard/{{version}}/business-small/appoint-agent" >Appoint another agent for this property</a>
+
+    <table class="check-your-answers small">
+
+        <colgroup>
+            <col style="width: 40%">
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+          <tr>
+            <td><strong>Status</strong></td>
+            <td><span class="property-status"></span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Approved period</strong></td>
+            <td>XX/XX/XX - XX/XX/XX</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Agent</strong></td>
+            <td><span class="property-client-name"></span></td>
+            <td class="last"><a href="#">Revoke agent</a></td>
+          </tr>
+          <tr>
+            <td><strong>Local authority	reference</strong></td>
+            <td><span class="property-ba-ref"></span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Check permission</strong></td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><strong>Challenge permission</strong></td>
+            <td>No</td>
+            <td></td>
+          </tr>
+        </tbody>
+    </table>
+
+
+            <div class="table-wrapper">
+                <table class="table-font-xsmall margin-bottom-20">
+                    <caption class="heading-medium">Valuations</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="col">Effective date</th>
+                            <th scope="col">Rateable value</th>
+                            <th scope="col">Capacity</th>
+                            <th scope="col">From</th>
+                            <th scope="col">To</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+
+                            <tr>
+                                <td>1 Apr 2010</td>
+                                <td>£28500</td>
+                                <td>Owner</td>
+                                <td>1 Apr 2017</td>
+                                <td>Present</td>
+                                <td>
+                                    <ul class="list list-actions">
+                                        <li><a href="/dashboard/{{version}}/business-small/valuations/detailed">View valuation</a></li>
+                                        <li><a href="#">Suggest changes
+                                        </a></li>
+                                        <li><a href="#">Challenge this valuation</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <a class="link-back" href="javascript: history.go(-1)">Back</a>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
