@@ -30,7 +30,7 @@
         var table = $('#myPropertiesTable').DataTable({
             ajax: 'https://api.myjson.com/bins/nn5md',
             orderCellsTop: true,
-            stateSave: true,
+            //stateSave: true,
             "language": {
                 "info": "Showing page _PAGE_ of _PAGES_",
                 "lengthMenu": "Show _MENU_"

@@ -30,7 +30,7 @@
         var table = $('#propertiesTable').DataTable({
             ajax: 'https://api.myjson.com/bins/nn5md',
             orderCellsTop: true,
-            stateSave: true,
+            //stateSave: true,
             "language": {
                 "info": "Showing page _PAGE_ of _PAGES_",
                 "lengthMenu": "Show _MENU_"
@@ -50,8 +50,12 @@
                         $('td:eq(3)', nRow).html('<ul class="list list-actions"><li><a href="#">Accept client request</a></li><li><a href="#">Reject client request</a></li></ul>');
                 }else if(aData[4] === "Pending"){
                         $('td:eq(3)', nRow).html('<a href="/dashboard/4/agent/pending?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Pending VOA approval</a>');
+                }else if(aData[4] === "declined 1" || aData[4] === "declined 2" || aData[4] === "declined 3" || aData[4] === "declined 4" || aData[4] === "declined 5" || aData[4] === "declined 6"){
+                    $('td:eq(3)', nRow).html('<ul class="list list-actions"><li><a href="/dashboard/4/agent/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'&status='+aData[4]+'">Property details</a></li><li><a href="#">Delete</a></li></ul>');
+
                 }else{
                     $('td:eq(3)', nRow).html('<a href="/dashboard/4/agent/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'&status='+aData[4]+'">Property details</a>');
+
                 }
 
                 if(!aData[2]){
