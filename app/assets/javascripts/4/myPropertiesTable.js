@@ -62,6 +62,11 @@
 
 
 
+            },
+            initComplete: function( settings, json ) {
+                table.columns(2).search('ABC Agent').draw();
+                table.columns(4).search('Approved').draw();
+
             }
         });
 
@@ -71,28 +76,31 @@
             }
         });
 
-        table.columns(2).search("ABC Agent").draw();
-        table.columns(4).search('').draw();
+        //table.columns(2).search("ABC Agent").draw();
+        //table.columns(4).search('').draw();
 
         $(document).on('click', '.data-filter li:not(".claim-property") a', function(e) {
             $('.data-filter li:not(".claim-property") a').removeClass('current');
+
             $(this).addClass('current');
+
              if($(this).attr('data-filter') === 'ABC Agent'){
                 table.columns(2).search('ABC Agent').draw();
                 table.columns(4).search('').draw();
+                console.log('all')
+
             }else  if($(this).attr('data-filter') === 'approved'){
                 table.columns(2).search('ABC Agent').draw();
                 table.columns(4).search('approved').draw();
+                console.log('approved')
             }else  if($(this).attr('data-filter') === 'pending'){
                 table.columns(2).search('ABC Agent').draw();
                 table.columns(4).search('pending').draw();
+                console.log('pending')
             }else  if($(this).attr('data-filter') === 'declined'){
                 table.columns(2).search('ABC Agent').draw();
                 table.columns(4).search('declined').draw();
-            }
-            else {
-                table.columns(4).search($(this).attr('data-filter')).draw();
-                table.columns(2).search('').draw();
+                console.log('declined');
             }
         });
 

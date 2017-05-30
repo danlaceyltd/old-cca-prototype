@@ -66,7 +66,13 @@
 
 
 
+            },
+            initComplete: function( settings, json ) {
+                table.columns(4).search('Approved').draw();
+                table.columns(2).search('').draw();
+        
             }
+
         });
 
         $("#propertiesTable thead input").on( 'keyup change', function (e) {

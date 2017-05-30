@@ -8,6 +8,7 @@
         new VOA.ShowDialog();
         new VOA.Pagination();
         new VOA.CheckWizard();
+        new VOA.ChallengeWizard();
     });
 
 }(window.VOA = window.VOA || {}, jQuery));
