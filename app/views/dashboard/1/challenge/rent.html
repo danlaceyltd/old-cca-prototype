@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% set title = "Rent" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span>
+                </li>
+            </ul>
+
+
+            <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+            <div class="grid-row">
+                <div class="column-two-thirds">
+
+            <p>You now need to provide some information about rent for this land or property.</p>
+
+
+
+            <form action="">
+
+
+                <fieldset class="inline">
+           				<legend class="heading-medium">Is the land or property occupied under a lease, easement or licence?</legend>
+                            <div class="multiple-choice">
+                                <input id="propertyOccupied_true" type="radio" name="propertyOccupied" value="true">
+                                <label class="block-label selection-button-radio" for="propertyOccupied_true">Yes</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="propertyOccupied_false" type="radio" name="propertyOccupied" value="false">
+                                <label class="block-label selection-button-radio selected" for="propertyOccupied_false">No</label>
+                            </div>
+        	        </fieldset>
+
+
+                <div class="form-group">
+                    <label class="heading-medium" for="currentRent">What is the current annual rent payed for this land or property?</label>
+                    <span class="pound">£</span>
+                    <input type="text" name="currentRent" class="form-control form-control-1-4 input-currency">
+                </div>
+
+                <fieldset class="form-group">
+                  <legend>
+                    <span class="heading-medium">
+                      What is the date this amount first became payable?
+                    </span>
+                    <span class="form-hint">For example, 31 3 1980</span>
+                  </legend>
+                  <div class="form-date">
+                    <div class="form-group form-group-day">
+                      <label class="form-label" for="dob-day">Day</label>
+                      <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                    </div>
+                    <div class="form-group form-group-month">
+                      <label class="form-label" for="dob-month">Month</label>
+                      <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                    </div>
+                    <div class="form-group form-group-year">
+                      <label class="form-label" for="dob-year">Year</label>
+                      <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+                    </div>
+                  </div>
+                </fieldset>
+
+
+
+            </form>
+
+
+
+                <br>
+                <p><a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/challenge/rateable-value">Continue</a></p>
+
+
+
+    <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+</div>
+</div>
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set title = "Floor areas" %}
+{% set title = "Supporting documents" %}
 {% set version = "1" %}
 
 {% block page_title %}
@@ -95,15 +95,17 @@
                             <div id="fileUploadTrue" data-toggle-hidden="" aria-hidden="true" style="display: none;">
 
 
-                                    <div id="newFileGroup" class="form-group  margin-top-20">
 
-                                                <label class="" for="newFile">
-                                                    <span class="label-span visuallyhidden">Choose file to upload</span>
-                                                </label>
 
-                                                <input type="file" id="newFile" value="" name="newFile" tabindex="-1" >
+                                        <div id="newFileGroup" class="form-group  margin-top-20 file-input-group">
 
-                                     </div>
+                                                    <label class="" for="newFile">
+                                                        <span class="label-span visuallyhidden">Choose file to upload</span>
+                                                    </label>
+
+                                                    <input type="file" id="newFile" class="filer_input"  name="documentationfiles[]" tabindex="-1" >
+
+                                         </div>
 
 
 

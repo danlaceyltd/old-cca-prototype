@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% set title = "Rateable value" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span>
+                </li>
+            </ul>
+
+
+            <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+            <div class="grid-row">
+                <div class="column-two-thirds">
+
+
+
+
+
+            <form action="">
+
+
+
+
+                <div class="form-group">
+                    <label class="heading-medium" for="newRv">What do you think the ratable value for this property should be?</label>
+                    <span class="pound">£</span>
+                    <input type="text" name="newRv" class="form-control form-control-1-4 input-currency">
+                </div>
+
+                <p class="panel panel-border-wide">This value must be supported by the evidence and statement attached in the supporting documents. If your're not suggesting a
+                change, state the current ratable value.</p>
+
+
+
+            </form>
+
+
+
+                <br>
+                <p><a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/challenge/effective-date">Continue</a></p>
+
+
+
+    <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+</div>
+</div>
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
