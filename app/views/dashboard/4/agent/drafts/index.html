@@ -38,12 +38,11 @@
     </h1>
 
     <ul class="data-filter">
-        <li class="data-all"><a href="#" class="current" data-filter="all">All</a></li>
-        <li class="data-check"><a href="#" data-filter="Check">Checks</a></li>
+        <li class="data-check"><a href="#" data-filter="Check" class="current">Checks</a></li>
         <li class="data-challenge"><a href="#" data-filter="Challenge">Challenges</a></li>
+        <li class="clear"><a href="#">Clear search</a></li>
     </ul>
 
-    <p>Drafts will only remain for 30 days.</p>
 
             <div class="table-wrapper">
             <table id="draftsTable" class="table-font-xsmall margin-top-30 margin-bottom-20">
@@ -55,6 +54,7 @@
                     <col style="width:160px">
                     <col style="width:160px">
                 </colgroup>
+                <caption><p>You have <span class="count"></span> <span class="filter"></span> draft. Drafts will only remain for 30 days.</p></caption>
                 <thead>
                     <tr>
                         <th scope="col">Address</th>

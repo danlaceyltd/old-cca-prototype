@@ -116,9 +116,9 @@
         });
 
 
-        $(document).on('click', '.data-filter li:not(".claim-property") a', function(e) {
+        $(document).on('click', '.data-filter li:not(".claim-property, .clear") a', function(e) {
             e.preventDefault();
-            $('.data-filter li:not(".claim-property") a').removeClass('current');
+            $('.data-filter li:not(".claim-property, .clear") a').removeClass('current');
             $(this).addClass('current');
             if($(this).attr('data-filter') === 'all'){
 

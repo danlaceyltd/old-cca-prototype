@@ -226,6 +226,36 @@ table.dataTable thead th, #content table.dataTable thead td {
     border: 2px solid #111;
 }
 
+
+#filterrow input.filter-input{
+    width: calc(100% - 26px);
+    padding: 2px 4px;
+    border-width: 1px 1px 1px;
+    border-style: solid none solid solid;
+    border-color: $grey-1;
+    border-right: none;
+    display: inline-block;
+
+}
+#filterrow button.icon{
+    background: none;
+    border-width: 1px 1px 1px;
+    border-style: solid solid solid none;
+    border-color: $grey-1;
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    background-image: url(../images/icons/icon-search-dark.png) !important;
+    background-repeat: no-repeat;
+    background-position: 6px;
+    cursor: pointer;
+
+}
+
+
+
+
+
 	//$link-colour: $govuk-blue;
 	//$link-active-colour: $light-blue;
 	//$link-hover-colour: $light-blue;

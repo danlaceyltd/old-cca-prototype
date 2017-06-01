@@ -23,12 +23,12 @@
         $('#myPropertiesTable thead tr#filterrow th')
             .not('#myPropertiesTable thead tr#filterrow th:eq(2), #myPropertiesTable thead tr#filterrow th:eq(3)')
                 .each( function () {
-                    $(this).html( '<input type="search"  placeholder="Type and press enter" />' );
+                    $(this).html( '<input type="search" class="filter-input" /><button class="icon"><i class="search-icon"></i></button>' );
             });
 
 
         var table = $('#myPropertiesTable').DataTable({
-            ajax: 'https://api.myjson.com/bins/nn5md',
+            ajax: 'https://api.myjson.com/bins/11vcw9',
             orderCellsTop: true,
             //stateSave: true,
             "language": {
@@ -66,6 +66,8 @@
             initComplete: function( settings, json ) {
                 table.columns(2).search('ABC Agent').draw();
                 table.columns(4).search('Approved').draw();
+                $('#myPropertiesTable .count').text(table.page.info().recordsDisplay);
+                $('#myPropertiesTable .filter').text('approved');
 
             }
         });
@@ -79,8 +81,30 @@
         //table.columns(2).search("ABC Agent").draw();
         //table.columns(4).search('').draw();
 
-        $(document).on('click', '.data-filter li:not(".claim-property") a', function(e) {
-            $('.data-filter li:not(".claim-property") a').removeClass('current');
+
+        $(document).on('click', '#myPropertiesTable #filterrow button', function(e) {
+            e.preventDefault();
+            var i = $(this).closest('th').index();
+            var value = $(this).prev().val();
+            table.columns(i).search(value).draw();
+        });
+
+        $(document).on('click', '#myPropertiesTable_wrapper .clear a', function(e) {
+            e.preventDefault();
+            $('#filterrow input').val('');
+            table.columns(0).search('').draw();
+            table.columns(1).search('').draw();
+        });
+
+
+        function count(){
+             if(table.page.info()){
+                 return table.page.info().recordsDisplay
+            }
+        }
+
+        $(document).on('click', '.data-filter li:not(".claim-property, .clear") a', function(e) {
+            $('.data-filter li:not(".claim-property, .clear") a').removeClass('current');
 
             $(this).addClass('current');
 
@@ -88,20 +112,25 @@
                 table.columns(2).search('ABC Agent').draw();
                 table.columns(4).search('').draw();
                 console.log('all')
-
+                $('#myPropertiesTable .filter').text('');
             }else  if($(this).attr('data-filter') === 'approved'){
                 table.columns(2).search('ABC Agent').draw();
                 table.columns(4).search('approved').draw();
+                $('#myPropertiesTable .filter').text($(this).attr('data-filter'));
                 console.log('approved')
             }else  if($(this).attr('data-filter') === 'pending'){
                 table.columns(2).search('ABC Agent').draw();
                 table.columns(4).search('pending').draw();
+                $('#myPropertiesTable .filter').text($(this).attr('data-filter'));
                 console.log('pending')
             }else  if($(this).attr('data-filter') === 'declined'){
                 table.columns(2).search('ABC Agent').draw();
                 table.columns(4).search('declined').draw();
+                $('#myPropertiesTable .filter').text($(this).attr('data-filter'));
                 console.log('declined');
             }
+
+            $('#myPropertiesTable .count').text(count());
         });
 
         $('.data-filter').insertBefore($('#myPropertiesTable'));

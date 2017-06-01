@@ -23,12 +23,32 @@
         $('#propertiesTable thead tr#filterrow th')
             .not('#propertiesTable thead tr#filterrow th:eq(3)')
                 .each( function () {
-                    $(this).html( '<input type="search" placeholder="Type and press enter" />' );
+                    $(this).html( '<input type="search" class="filter-input" /><button class="icon"><i class="search-icon"></i></button>' );
+
             });
 
 
+        $(document).on('click', '#propertiesTable #filterrow button', function(e) {
+            e.preventDefault();
+            var i = $(this).closest('th').index();
+            var value = $(this).prev().val();
+            table.columns(i).search(value).draw();
+        });
+
+        $(document).on('click', '#propertiesTable_wrapper .clear a', function(e) {
+            e.preventDefault();
+            $('#filterrow input').val('');
+            table.columns(0).search('').draw();
+            table.columns(1).search('').draw();
+            table.columns(2).search('').draw();
+        });
+
+
+
+
+
         var table = $('#propertiesTable').DataTable({
-            ajax: 'https://api.myjson.com/bins/nn5md',
+            ajax: 'https://api.myjson.com/bins/11vcw9',
             orderCellsTop: true,
             //stateSave: true,
             "language": {
@@ -65,12 +85,13 @@
 
 
 
-
             },
             initComplete: function( settings, json ) {
                 table.columns(4).search('Approved').draw();
                 table.columns(2).search('').draw();
-        
+                $('#propertiesTable .count').text(table.page.info().recordsDisplay);
+                $('#propertiesTable .filter').text('approved');
+
             }
 
         });
@@ -81,12 +102,13 @@
             }
         });
 
-        $(document).on('click', '.data-filter li:not(".claim-property") a', function(e) {
-            $('.data-filter li:not(".claim-property") a').removeClass('current');
+        $(document).on('click', '#propertiesTable_wrapper .data-filter li:not(".claim-property, .clear") a', function(e) {
+            $('#propertiesTable_wrapper .data-filter li:not(".claim-property, .clear") a').removeClass('current');
             $(this).addClass('current');
             if($(this).attr('data-filter') === 'all'){
                 table.columns(4).search('').draw();
                 table.columns(2).search('').draw();
+                $('#propertiesTable .filter').text('');
             }else if($(this).attr('data-filter') === 'ABC Agent'){
                 table.columns(2).search($(this).attr('data-filter')).draw();
                 table.columns(4).search('').draw();
@@ -94,7 +116,15 @@
             else {
                 table.columns(4).search($(this).attr('data-filter')).draw();
                 table.columns(2).search('').draw();
+                $('#propertiesTable .filter').text($(this).attr('data-filter'));
             }
+            $('#propertiesTable .count').text(table.page.info().recordsDisplay);
+
+
+
+
+
+
         });
 
         $('.data-filter').insertBefore($('#propertiesTable'));

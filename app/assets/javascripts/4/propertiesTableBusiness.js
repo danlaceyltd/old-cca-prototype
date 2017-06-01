@@ -74,8 +74,8 @@
         });
 
 
-        $(document).on('click', '.data-filter li:not(".claim-property") a', function(e) {
-            $('.data-filter li:not(".claim-property") a').removeClass('current');
+        $(document).on('click', '.data-filter li:not(".claim-property, .clear") a', function(e) {
+            $('.data-filter li:not(".claim-property, .clear") a').removeClass('current');
             $(this).addClass('current');
             if($(this).attr('data-filter') === 'all'){
                 table.columns(4).search('').draw();
