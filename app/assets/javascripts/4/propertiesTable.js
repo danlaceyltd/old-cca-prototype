@@ -27,6 +27,8 @@
 
             });
 
+        $('#propertiesTable thead tr#filterrow th:eq(3)').html('<a href="#" class="clear">Clear search</a>');
+
 
         $(document).on('click', '#propertiesTable #filterrow button', function(e) {
             e.preventDefault();
@@ -35,7 +37,7 @@
             table.columns(i).search(value).draw();
         });
 
-        $(document).on('click', '#propertiesTable_wrapper .clear a', function(e) {
+        $(document).on('click', '#propertiesTable .clear', function(e) {
             e.preventDefault();
             $('#filterrow input').val('');
             table.columns(0).search('').draw();
@@ -102,8 +104,8 @@
             }
         });
 
-        $(document).on('click', '#propertiesTable_wrapper .data-filter li:not(".claim-property, .clear") a', function(e) {
-            $('#propertiesTable_wrapper .data-filter li:not(".claim-property, .clear") a').removeClass('current');
+        $(document).on('click', '#propertiesTable_wrapper .data-filter li:not(".claim-property") a', function(e) {
+            $('#propertiesTable_wrapper .data-filter li:not(".claim-property") a').removeClass('current');
             $(this).addClass('current');
             if($(this).attr('data-filter') === 'all'){
                 table.columns(4).search('').draw();

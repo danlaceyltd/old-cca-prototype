@@ -23,13 +23,15 @@
         $('#propertiesTableBusinessSmall thead tr#filterrow th')
             .not('#propertiesTableBusinessSmall thead tr#filterrow th:eq(3)')
                 .each( function () {
-                    $(this).html( '<input type="search" />' );
+                    $(this).html( '<input type="search" class="filter-input" /><button class="icon"><i class="search-icon"></i></button>' );
             });
+
+            $('#propertiesTableBusinessSmall thead tr#filterrow th:eq(3)').html('<a href="#" class="clear">Clear search</a>');
 
 
         var table = $('#propertiesTableBusinessSmall').DataTable({
             orderCellsTop: true,
-            stateSave: true,
+            //stateSave: true,
             "language": {
                 "info": "Showing page _PAGE_ of _PAGES_",
                 "lengthMenu": "Show _MENU_"
@@ -60,13 +62,28 @@
             }
         });
 
+        $(document).on('click', '#propertiesTableBusinessSmall #filterrow button', function(e) {
+            e.preventDefault();
+            var i = $(this).closest('th').index();
+            var value = $(this).prev().val();
+            table.columns(i).search(value).draw();
+        });
 
-        $(document).on('click', '.data-filter li:not(".claim-property, .clear") a', function(e) {
-            $('.data-filter li:not(".claim-property, .clear") a').removeClass('current');
+        $(document).on('click', '#propertiesTableBusinessSmall .clear', function(e) {
+            e.preventDefault();
+            $('#filterrow input').val('');
+            table.columns(0).search('').draw();
+            table.columns(1).search('').draw();
+        });
+
+
+        $(document).on('click', '#propertiesTableBusinessSmall_wrapper .data-filter li:not(".claim-property") a', function(e) {
+            $('.data-filter li:not(".claim-property") a').removeClass('current');
             $(this).addClass('current');
             if($(this).attr('data-filter') === 'all'){
                 table.columns(4).search('').draw();
                 table.columns(2).search('').draw();
+                $('#propertiesTableBusinessSmall .filter').text('');
             }else if($(this).attr('data-filter') === 'MNO Client'){
                 table.columns(2).search($(this).attr('data-filter')).draw();
                 table.columns(4).search('').draw();
@@ -74,8 +91,23 @@
             else {
                 table.columns(4).search($(this).attr('data-filter')).draw();
                 table.columns(2).search('').draw();
+                $('#propertiesTableBusinessSmall .filter').text($(this).attr('data-filter'));
             }
+            $('#propertiesTableBusinessSmall .count').text(table.page.info().recordsDisplay);
         });
+
+        function count(){
+             if(table.page.info()){
+                 return table.page.info().recordsDisplay
+            }
+        }
+
+
+        table.columns(4).search('Approved').draw();
+        table.columns(2).search('').draw();
+        $('#propertiesTableBusinessSmall .count').text(count());
+        $('#PropertiesTableBusinessSmall .filter').text('approved');
+
 
         $('.data-filter').insertBefore($('#propertiesTableBusinessSmall'));
         $('#propertiesTableBusinessSmall_length').insertAfter($('#propertiesTableBusinessSmall_info')).css({'float' : 'none', 'margin-left': '30px', 'display' : 'inline-block', 'margin-top': '13px'});

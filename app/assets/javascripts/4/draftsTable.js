@@ -28,6 +28,8 @@
                     $(this).html( '<input type="search" class="filter-input" /><button class="icon"><i class="search-icon"></i></button>' );
             });
 
+        $('#draftsTable thead tr#filterrow th:eq(5)').html('<a href="#" class="clear">Clear search</a>');
+
 
         var table = $('#draftsTable').DataTable({
             orderCellsTop: true,
@@ -72,7 +74,7 @@
             table.columns(i).search(value).draw();
         });
 
-        $(document).on('click', '#draftsTable_wrapper .clear a', function(e) {
+        $(document).on('click', '#draftsTable .clear', function(e) {
             e.preventDefault();
             $('#filterrow input').val('');
             table.columns(0).search('').draw();
@@ -80,8 +82,8 @@
         });
 
 
-        $(document).on('click', '.data-filter li:not(".claim-property, .clear") a', function(e) {
-            $('.data-filter li:not(".claim-property, .clear") a').removeClass('current');
+        $(document).on('click', '#draftsTable_wrapper .data-filter li:not(".claim-property") a', function(e) {
+            $('.data-filter li:not(".claim-property") a').removeClass('current');
             $(this).addClass('current');
 
             table.columns(3).search($(this).attr('data-filter')).draw();

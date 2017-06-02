@@ -38,23 +38,24 @@
     </h1>
 
     <ul class="data-filter">
-        <li class="data-all"><a href="#" class="current" data-filter="all">All (2)</a></li>
-        <li class="data-check"><a href="#" data-filter="Check">Checks (1)</a></li>
-        <li class="data-challenge"><a href="#" data-filter="Challenge">Challenges (1)</a></li>
+
+        <li class="data-check"><a href="#" class="current" data-filter="Check">Checks</a></li>
+        <li class="data-challenge"><a href="#" data-filter="Challenge">Challenges</a></li>
     </ul>
-    <p>Drafts will only remain for 30 days.</p>
+
 
 
             <div class="table-wrapper">
             <table id="draftsTable" class="table-font-xsmall margin-top-30 margin-bottom-20">
                 <caption class="visuallyhidden">Manage agents</caption>
                 <colgroup>
-                    <col style="width:400px">
+                    <col style="width:350px">
                     <col>
                     <col>
                     <col>
                     <col>
                 </colgroup>
+                <caption><p>You have <span class="count"></span> <span class="filter"></span> draft. Drafts will only remain for 30 days.</p></caption>
                 <thead>
                     <tr>
                         <th scope="col">Address</th>
@@ -83,7 +84,7 @@
                         <td>1 Sept 2017</td>
                         <td>
                             <ul class="list list-action">
-                                <li><a href="#">Continue drafting</a></li>
+                                <li><a href="#">Continue check</a></li>
                                 <li><a href="/dashboard/{{version}}/business-small/valuations/detailed">View valuation</a></li>
                                 <li><a href="#" data-toggle="dialog" data-target="dialog-delete">Delete draft</a></li>
                             </ul>
@@ -97,7 +98,7 @@
                         <td>12 Sept 2017</td>
                         <td>
                             <ul class="list list-action">
-                                <li><a href="#">Continue drafting</a></li>
+                                <li><a href="#">Continue challenge</a></li>
                                 <li><a href="/dashboard/{{version}}/business-small/valuations/detailed">View valuation</a></li>
                                 <li><a href="#" data-toggle="dialog" data-target="dialog-delete">Delete draft</a></li>
                             </ul>

@@ -1,7 +1,7 @@
 #content{
 
     table.dataTable{
-        margin:20px 0 !important;
+        margin:20px 0;
         display:inline-table;
     }
 
@@ -325,5 +325,7 @@ table.dataTable thead th, #content table.dataTable thead td {
     .pendingvoa{
         color: $grey-1;
     }
-
+    .clear{
+        font-weight: 100;
+    }
 }
