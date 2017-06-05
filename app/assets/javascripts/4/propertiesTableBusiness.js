@@ -73,8 +73,8 @@
                 table.columns(4).search('Approved').draw();
                 table.columns(2).search('').draw();
                 $('#propertiesTableBusiness .count').text(table.page.info().recordsDisplay);
-                $('#PropertiesTableBusiness .filter').text('approved');
-
+                $('#propertiesTableBusiness .filter').text('approved');
+                $('#propertiesTableBusiness .filter-help').text($('.current').attr('data-help'));
             }
         });
 
@@ -109,6 +109,7 @@
                 table.columns(4).search('').draw();
                 table.columns(2).search('').draw();
                 $('#propertiesTableBusiness .filter').text('');
+                $('#propertiesTableBusiness .filter-help').text('');
             }else if($(this).attr('data-filter') === 'MNO Client'){
                 table.columns(2).search($(this).attr('data-filter')).draw();
                 table.columns(4).search('').draw();
@@ -119,6 +120,8 @@
                 $('#propertiesTableBusiness .filter').text($(this).attr('data-filter'));
             }
             $('#propertiesTableBusiness .count').text(table.page.info().recordsDisplay);
+            $('#propertiesTableBusiness .filter-help').text($('.current').attr('data-help'));
+
         });
 
         $('.data-filter').insertBefore($('#propertiesTableBusiness'));
@@ -141,18 +144,53 @@
         }
 
         function statusText(status){
+            var text;
             if(status === 'declined 1'){
-                return 'Property link declined by VOA';
+                text = "Property link declined by VOA";
+                $('#dialog-status .heading-small').text(text)
+                $('#dialog-status .dialog-status-content').html(
+                    '<p>The property link has been decline by the VOA. If you believe this has been done in error, you should contact the VOA.</p>' +
+                    '<p>Telephone: <strong>03000 501 501</strong></p>'
+                );
+                return text;
             }else if(status === 'declined 2'){
-                return 'Agent declined representation request';
+                text = "Agent declined representation request";
+                $('#dialog-status .heading-small').text(text)
+                $('#dialog-status .dialog-status-content').html(
+                    '<p>The agent has declined your request for them to represent you for this property. They won’t be able to view detailed property information or start checks and challenges.</p>'
+                );
+                return text;
             }else if(status === 'declined 3'){
-                return  'Property link revoked by VOA';
+                text = "Property link revoked by VOA";
+                $('#dialog-status .heading-small').text(text)
+                $('#dialog-status .dialog-status-content').html(
+                    '<p>The VOA has removed your link to this property. You can no longer view detailed property information or start or continue checks and challenges.</p>' +
+                    '<p>If you believe this has been done in error, you should contact the VOA.</p>' +
+                    '<p>Telephone: <strong>03000 501 501</strong></p>'
+                );
+                return  text;
             }else if(status === 'declined 4'){
-                return 'Agent ended representation';
+                text = "Agent ended representation";
+                $('#dialog-status .heading-small').text(text)
+                $('#dialog-status .dialog-status-content').html(
+                    '<p>Your agent has informed us that they no longer want to represent you for this property. They can no longer view detailed property information or start or continue checks and challenges.</p>'
+                );
+                return text;
             }else if(status === 'declined 5'){
-                return 'Agent representation ended by client';
+                text = "Agent representation ended by client";
+                $('#dialog-status .heading-small').text(text)
+                $('#dialog-status .dialog-status-content').html(
+                    '<p>You’ve informed us that you no longer want the agent to represent you for this property. They can no longer view detailed property information or start or continue checks and challenges.</p>'
+                );
+                return text;
             }else if(status === 'declined 6'){
-                return 'Agent representation request timed out';
+
+                text = "Agent representation request timed out";
+                $('#dialog-status .heading-small').text(text)
+                $('#dialog-status .dialog-status-content').html(
+                    '<p>Your agent request has timed out as the agent has not responded. If you still want to them to represent you for the property, you’ll need to appoint them again.</p>'
+                );
+                return text;
             }else{
                 return 'Approved';
             }
@@ -161,9 +199,7 @@
         $('.property-address').text(getUrlVars()["address"]);
         $('.property-client-name').text(getUrlVars()["client"]);
         $('.property-ba-ref').text(getUrlVars()["ba"]);
-        $('.property-status').text(statusText(getUrlVars()["status"]));
-
-
+        $('.business-table .property-status').text(statusText(getUrlVars()["status"]));
 
     };
 

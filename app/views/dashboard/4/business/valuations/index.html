@@ -28,7 +28,7 @@
 
     <p><a href="/dashboard/{{version}}/business/appoint-agent" >Appoint another agent for this property</a></p>
 
-    <table class="check-your-answers small">
+    <table class="check-your-answers small business-table">
 
         <colgroup>
             <col style="width: 40%">
@@ -38,12 +38,16 @@
         <tbody>
           <tr>
             <td><strong>Status</strong></td>
-            <td><span class="property-status"></span></td>
+            <td><span class="property-status"></span>
+                <a href="#" data-toggle="dialog" data-target="dialog-status" class="help">
+                    <i><span class="visuallyhidden">Help with status</span></i>
+                </a>
+            </td>
             <td></td>
           </tr>
           <tr>
             <td><strong>Approved period</strong></td>
-            <td>XX/XX/XX - XX/XX/XX</td>
+            <td>Approved from xx/xx/xx[start date]</td>
             <td></td>
           </tr>
           <tr>
@@ -110,6 +114,18 @@
     {% include "includes/get_help.html" %}
 
 </main>
+<div class="dialog" id="dialog-status" aria-hidden="true" data-modal="true">
+    <div class="dialog-holder" aria-labelledby="dialog-status" aria-describedby="dialog-content-status" role="alertdialog">
+        <div class="dialog-content" id="dialog-content-status" role="document" tabindex="0">
+            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+            <div class="modal-content-div">
+                <h3 class="heading-small"></h3>
+                <div class="dialog-status-content"></div>
+            </div>
+            <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a>
+        </div>
+    </div>
+</div>
 
 
 

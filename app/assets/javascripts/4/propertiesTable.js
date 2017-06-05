@@ -93,6 +93,7 @@
                 table.columns(2).search('').draw();
                 $('#propertiesTable .count').text(table.page.info().recordsDisplay);
                 $('#propertiesTable .filter').text('approved');
+                $('#propertiesTable .filter-help').html($('.current').attr('data-help'));
 
             }
 
@@ -111,6 +112,7 @@
                 table.columns(4).search('').draw();
                 table.columns(2).search('').draw();
                 $('#propertiesTable .filter').text('');
+                $('#propertiesTable .filter-help').html('');
             }else if($(this).attr('data-filter') === 'ABC Agent'){
                 table.columns(2).search($(this).attr('data-filter')).draw();
                 table.columns(4).search('').draw();
@@ -121,11 +123,7 @@
                 $('#propertiesTable .filter').text($(this).attr('data-filter'));
             }
             $('#propertiesTable .count').text(table.page.info().recordsDisplay);
-
-
-
-
-
+            $('#propertiesTable .filter-help').html($('.current').attr('data-help'));
 
         });
 
@@ -151,9 +149,61 @@
         }
 
 
+        function statusTextAgents(status){
+            var text;
+            if(status === 'declined 1'){
+                text = "Property link declined by VOAxx";
+                $('#dialog-status .heading-small').text(text)
+                $('#dialog-status .dialog-status-content').html(
+                    '<p>Your clients’ property link has been declined by the VOA. If they believe this has been done in error, they should contact the VOA. You can’t do this on their behalf.</p>'
+                );
+                return text;
+            }else if(status === 'declined 2'){
+                text = "Agent declined representation request";
+                $('#dialog-status .heading-small').text(text)
+                $('#dialog-status .dialog-status-content').html(
+                    '<p>You’ve declined the request to represent the client for this property. You won’t be able to view detailed property information or start checks and challenges.</p>'
+                );
+                return text;
+            }else if(status === 'declined 3'){
+                text = "Property link revoked by VOA";
+                $('#dialog-status .heading-small').text(text)
+                $('#dialog-status .dialog-status-content').html(
+                    '<p>The VOA has removed your clients’ link to this property. You can no longer view detailed property information or start or continue checks and challenges.' +
+                    '<p>If your client believes this has been done in error, they should contact the VOA. You can’t do this on their behalf.</p>'
+                );
+                return  text;
+            }else if(status === 'declined 4'){
+                text = "Agent ended representation";
+                $('#dialog-status .heading-small').text(text)
+                $('#dialog-status .dialog-status-content').html(
+                    '<p>You’ve informed us that you no longer want to represent the client for this property. You can no longer view detailed property information or start or continue checks and challenges.</p>'
+                );
+                return text;
+            }else if(status === 'declined 5'){
+                text = "Agent representation ended by client";
+                $('#dialog-status .heading-small').text(text)
+                $('#dialog-status .dialog-status-content').html(
+                    '<p>Your client has informed us that they no longer want you to represent them for this property. You can no longer view detailed property information or start or continue checks and challenges.</p>'
+                );
+                return text;
+            }else if(status === 'declined 6'){
+
+                text = "Agent representation request timed out";
+                $('#dialog-status .heading-small').text(text)
+                $('#dialog-status .dialog-status-content').html(
+                    '<p>The agent request has timed out as you did not respond. If you want to act as the agent for this property, you’ll need to ask your client to appoint you again.</p>'
+                );
+                return text;
+            }else{
+                return 'Approved';
+            }
+        }
+
         $('.property-address').text(getUrlVars()["address"]);
         $('.property-client-name').text(getUrlVars()["client"]);
         $('.property-ba-ref').text(getUrlVars()["ba"]);
+        $('.agents-table .property-status').text(statusTextAgents(getUrlVars()["status"]));
 
 
 
