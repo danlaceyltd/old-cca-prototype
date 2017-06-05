@@ -19,7 +19,7 @@
     {% include "includes/phase_banner_prototype.html" %}
 
     <ul class="navigation-links">
-        <li><a href="/dashboard/{{version}}/business-small/">Manage properties</a></li>
+        <li><a href="/dashboard/{{version}}/agent/">Manage properties</a></li>
         <li><a href="#">Sign out</a></li>
     </ul>
 
@@ -33,25 +33,31 @@
         <div class="banner-temporary-message-without-action rateable-value-top-banner">
             <p class="no-margin">Your rateable value is rounded down to</p>
             <p class="heading-xlarge no-margin">£37,000</p>
-            <p class="no-margin">The rateable value is not the amount you will pay. It is used to calculate your rates bill.</p>
+            <p class="no-margin">The rateable value is not the amount you will pay. It is used to calculate your business rates bill.</p>
         </div>
 
-        <p></p><p>This is the full valuation, property information and rateable value for this property.</p><p>The rateable value is an estimate of the rental value of a property on 1 April 2015. This has been calculated using the information on this page.</p><p>If any of the information in this valuation is wrong, or if there have been changes to your property, you can let us know.</p><p></p>
+        <p>This is the full valuation, property information and rateable value for this property.</p>
+        <p>The rateable value is an estimate of the rental value of your property on 1 April 2015. This has been calculated using the information on this page.</p>
+        <p>If any of the factual details about your property or land are incorrect, you (the owner, occupier or authorised agent) need to let the VOA know. Telling us about anything that’s incorrect is known as a check.</p>
 
-        <p id="top-start-check" class="print-hide">
-            <a href="#" class="button" role="button">Suggest changes</a>
-        </p>
+
 
         <p>
-            If you've already told us about a change to your property, but you disagree with either the outcome or the valuation of your property, you can make a challenge.
+            If all of your property details are correct but you believe your rateable value is incorrect, you must first complete a check and wait for the outcome before making a challenge.
         </p>
+
+        <p id="top-start-check" class="print-hide">
+            <a href="#" class="button" role="button">Start a check</a>
+        </p>
+
+
+        <p>Once you’ve completed a check, the VOA will contact you with the outcome. If you disagree with the outcome of the check or you believe the rateable value of your property is incorrect, you can let us know. Doing this is know as a challenge.</p>
+
+        <p class="panel panel-border-wide">You can’t start a challenge until you’ve received the outcome for your check</p>
+
         <p id="top-challenge-valuation" class="print-hide">
-            <a href="#" class="button" role="button">Challenge this valuation</a>
+            <a href="#" class="button" role="button">Start a challenge</a>
         </p>
-
-
-
-
 
 
 
@@ -164,7 +170,7 @@
     <table id="survey_unit_1" class="table-font-xsmall">
         <caption id="survey-unit-1-caption">
             <div class="heading-medium">Unit 1 - Office</div>
-            <p class="print-hide">The adjustments for each line in the valuation have been compounded. This means that where there is more than one adjustment the values of each adjustment are multiplied (so an upward adjustment can be multiplied with a downward adjustment to reach a compounded value).</p>
+
         </caption>
         <colgroup>
             <col width="">
@@ -192,7 +198,12 @@
                 <th class="data-right">Area <abbr role="text" title="meters squared" aria-label="meters squared">m<sup>2</sup></abbr> or unit</th>
                 <th></th>
                 <th>£ per <abbr role="text" title="meters squared" aria-label="meters squared">m<sup>2</sup></abbr> or unit</th>
-                <th class="data-right">Compounded adjustments</th>
+                <th class="data-right">Compounded adjustments
+                    <a href="/business-rates-valuation/help#dialog-compounded" data-toggle="dialog" data-target="dialog-compounded" class="help">
+                        <i><span class="visuallyhidden">Help with compounded adjustments</span></i>
+                    </a>
+
+                </th>
                 <th>%</th>
                 <th class="last">Value</th>
             </tr>
@@ -335,17 +346,6 @@
 
 
 
-        <br>
-        <p id="bottom-start-check">
-            <a href="#" class="button" role="button">Suggest changes</a>
-        </p>
-        <p>
-            If you've already told us about a change to your property, but you disagree with either the outcome or the valuation of your property, you can make a challenge.
-        </p>
-
-        <p id="button-challenge-valuation">
-            <a href="#" class="button" role="button">Challenge this valuation</a>
-        </p>
 
         <p><a rel="nofollow" href="javascript:window.print()" class="print-link">Print page</a></p>
 
@@ -445,6 +445,16 @@
     </div>
 </div>
 
+<div class="dialog" id="dialog-compounded" aria-hidden="true" data-modal="true">
+    <div class="dialog-holder" aria-labelledby="dialog-compounded" aria-describedby="dialog-content-compounded" role="alertdialog">
+        <div class="dialog-content" id="dialog-content-compounded" role="document" tabindex="0">
+            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+            <div class="modal-content-div"><h3 class="heading-small">Compounded adjustments</h3><p>Where there is more than one adjustment the values of each adjustment are multiplied. For example, an upward adjustment can be multiplied with a downward adjustment to reach a compounded value.</p></div>
+            <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a>
+        </div>
+    </div>
+</div>
+
 
     </div>
 
@@ -458,6 +468,7 @@
 
 
 {% endblock %}
+
 {% block body_end %}
   {% include "includes/" + version +"/scripts.html" %}
   <!-- GOV.UK Prototype kit {{releaseVersion}} -->

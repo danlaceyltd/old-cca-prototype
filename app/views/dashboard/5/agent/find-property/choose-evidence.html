@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% set title = "Provide a copy of your business rates bill" %}
+{% set version = "5" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+            <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">
+                {{title}}
+            </h1>
+
+
+            <form action="/dashboard/{{version}}/agent/find-property/upload-rates-bill" method="get" class="form">
+                <div class=" form-group">
+
+
+                     		<fieldset id="hasRatesBillGroup" class="">
+                   				<legend class="heading-medium">
+                                    Please upload a copy of the business rates bill for this property.
+                                </legend>
+
+
+                    		<span class="form-hint">This business rates bill should be the most recent bill that you have for the property, for the period that you were the owner or occupier.</span>
+
+                            <div class="multiple-choice">
+                                <input id="hasRatesBill_true" type="radio" name="hasRatesBill" value="true">
+                                <label class="block-label selection-button-radio" for="hasRatesBill_true">I have a business rates bill</label>
+                            </div>
+
+                            <div class="multiple-choice">
+                                <input id="hasRatesBill_false" type="radio" name="hasRatesBill" value="false">
+                                <label class="block-label selection-button-radio" for="hasRatesBill_false">I don’t have a business rates bill</label>
+                            </div>
+
+                	 </fieldset>
+
+                </div>
+
+                <p>
+                     <input type="submit" class="button" value="Continue">
+                </p>
+                <a href="javascript: history.go(-1)" class="link-back">Back</a>
+</form>
+</div>
+</div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

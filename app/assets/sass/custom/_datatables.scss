@@ -197,7 +197,7 @@ table.dataTable thead th, #content table.dataTable thead td {
 		font-size: 16px;
 		line-height: 1.25;
 		padding: 5px 4px 4px;
-		border: 2px solid #0b0c0c;
+		border: 1px solid rgb(166, 166, 166);
 }
 .dataTables_filter [type="search"]{
 		width: 200px;
@@ -280,6 +280,8 @@ table.dataTable thead th, #content table.dataTable thead td {
             display:inline-block;
             //border-right: solid 1px $grey-2;
             padding: 0 10px;
+            height: 20px;
+
             a.current{
                 text-decoration: none;
                 color: $black;
@@ -328,4 +330,34 @@ table.dataTable thead th, #content table.dataTable thead td {
     .clear{
         font-weight: 100;
     }
+
+    .dt-checkboxes-select-all input,
+    .dt-checkboxes {
+        cursor: pointer;
+    }
+
+table.dataTable thead .dt-checkboxes-select-all  {
+  text-align: center;
+}
+
+div.dataTables_wrapper span.select-info,
+div.dataTables_wrapper span.select-item {
+  margin-left: 0.5em;
+}
+
+@media screen and (max-width: 640px) {
+  div.dataTables_wrapper span.select-info,
+  div.dataTables_wrapper span.select-item {
+    margin-left: 0;
+    display: block;
+  }
+}
+
+table.dataTable tbody tr.selected {
+    background-color: $grey-3;
+}
+
+
+
+
 }
