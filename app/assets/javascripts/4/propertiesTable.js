@@ -111,7 +111,6 @@
             if($(this).attr('data-filter') === 'all'){
                 table.columns(4).search('').draw();
                 table.columns(2).search('').draw();
-                $('#propertiesTable .filter').text('');
                 $('#propertiesTable .filter-help').html('');
             }else if($(this).attr('data-filter') === 'ABC Agent'){
                 table.columns(2).search($(this).attr('data-filter')).draw();
@@ -123,9 +122,11 @@
                 $('#propertiesTable .filter').text($(this).attr('data-filter'));
             }
             $('#propertiesTable .count').text(table.page.info().recordsDisplay);
-            $('#propertiesTable .filter-help').html($('.current').attr('data-help'));
 
         });
+
+
+
 
         $('.data-filter').insertBefore($('#propertiesTable'));
 
@@ -152,7 +153,7 @@
         function statusTextAgents(status){
             var text;
             if(status === 'declined 1'){
-                text = "Property link declined by VOAxx";
+                text = "Property link declined by VOA";
                 $('#dialog-status .heading-small').text(text)
                 $('#dialog-status .dialog-status-content').html(
                     '<p>Your clients’ property link has been declined by the VOA. If they believe this has been done in error, they should contact the VOA. You can’t do this on their behalf.</p>'

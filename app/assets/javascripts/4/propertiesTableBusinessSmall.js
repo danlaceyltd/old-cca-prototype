@@ -84,7 +84,7 @@
                 table.columns(4).search('').draw();
                 table.columns(2).search('').draw();
                 $('#propertiesTableBusinessSmall .filter').text('');
-                $('#propertiesTableBusinessSmall .filter-help').text('');
+                
             }else if($(this).attr('data-filter') === 'MNO Client'){
                 table.columns(2).search($(this).attr('data-filter')).draw();
                 table.columns(4).search('').draw();
@@ -95,7 +95,7 @@
                 $('#propertiesTableBusinessSmall .filter').text($(this).attr('data-filter'));
             }
             $('#propertiesTableBusinessSmall .count').text(table.page.info().recordsDisplay);
-            $('#propertiesTableBusinessSmall .filter-help').text($('.current').attr('data-help'));
+
         });
 
         function count(){
@@ -115,7 +115,7 @@
         $('#propertiesTableBusinessSmall_length').insertAfter($('#propertiesTableBusinessSmall_info')).css({'float' : 'none', 'margin-left': '30px', 'display' : 'inline-block', 'margin-top': '13px'});
         $('#propertiesTableBusinessSmall_paginate').css({'margin-top': '8px','margin-right': '-10px'});
 
-        $('#propertiesTableBusinessSmall .filter-help').text($('.current').attr('data-help'));
+
 
 
         //property-details
