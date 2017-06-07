@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% set title = "Supporting documents" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>Moon under the water, 5 - 7a Temple Place, Brighton BN3 7JB</span>
+                </li>
+            </ul>
+
+
+            <a href="/dashboard/{{version}}/pubs-check/internal/floors" class="link-back">Back</a>
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+
+<p>If you've told us about any changes, you should upload documents to support them. We can make a more accurate decision if you provide us with evidence such as photos and floor plans.</p>
+<p>When uploading documents:</p>
+
+        <ul class="list-bullet">
+            <li>only PDF and JPEG files can be accepted (JPEGs are image files commonly used by digital cameras and smartphones)</li>
+                <li>only 10 files in total can be accepted</li>
+                <li>files must be less than 10MB each and 50MB in total</li>
+            </ul>
+
+<br />
+            <details class="print-hide">
+                <summary role="button" aria-controls="details-content-1" aria-expanded="false">
+                    <span class="summary">How do I convert a file into a PDF?</span>
+                </summary>
+                <div id="details-content-1" class="panel panel-border-narrow">
+                    <p>Converting a file into PDF format is very simple. The method is similar with most types of word processors. First, open the document you want to convert, then:</p><ul class="list list-number"><li>click “File”</li><li>choose either “Export”, “Export as PDF” or “Save as” (depending on your software)</li><li>select “Create PDF” or “PDF”</li><li>click on either “Publish” or “Save”</li></ul><p>For Mac users and older software:</p><ul class="list list-number"><li>click “File”</li><li>select “Print”</li><li>either click “PDF”, or choose a printer labelled “PDF”</li><li>click either “Save” or “OK”</li></ul><p>You could also search for websites that will convert your document for free.</p>
+                </div>
+            </details>
+            <details class="print-hide">
+                <summary role="button" aria-controls="details-content-1" aria-expanded="false">
+                    <span class="summary">I want to send more than 10 files or my files are too large.</span>
+                </summary>
+                <div id="details-content-1" class="panel panel-border-narrow">
+                    <p>If you have more than 10 files, or they’re too large for us to accept, you can call us.</p><p><strong>Telephone</strong><br>03000 501501</p><p>Opening hours: 8:30am to 5:00pm Monday to Friday. Closed on bank holidays.</p>
+                </div>
+            </details>
+
+
+
+            <form action="">
+
+
+
+
+
+                            <div id="fileUploadTrueInfo" class="panel panel-border-narrow" data-toggle-hidden="" aria-hidden="true" style="display: none;">
+                                <p>You can upload documents:</p><ul class="list-bullet"><li>only PDF and JPEG files can be accepted (JPEGs are image files commonly used by digital cameras and smartphones)</li><li>only 10 files in total can be accepted</li><li>you can't upload more than 50MB of files in total</li><li>each file must be less than 10MB in size</li></ul>
+                            </div>
+
+
+
+
+
+
+
+
+                                        <div id="newFileGroup" class="form-group  margin-top-20 file-input-group">
+
+                                                    <label class="" for="newFile">
+                                                        <span class="label-span visuallyhidden">Choose file to upload</span>
+                                                    </label>
+
+                                                    <input type="file" id="newFile" class="filer_input"  name="documentationfiles[]" tabindex="-1" >
+
+                                         </div>
+
+                                         <div class="clearfix"></div>
+                                         <div class="notice">
+                                           <i class="icon icon-important">
+                                             <span class="visually-hidden">Warning</span>
+                                           </i>
+                                           <strong class="bold-small">
+                                             You should provide evidence to support any changes as this will help us make a decision.
+                                           </strong>
+                                         </div>
+
+
+
+
+
+                        </form>
+
+
+
+                <br>
+                <p><a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/pubs-check/internal/declaration">Continue</a></p>
+
+
+
+
+
+    <a href="/dashboard/{{version}}/pubs-check/internal/floors" class="link-back">Back</a>
+
+
+
+
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+
+{% set title = "Basic property details" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>Moon under the water, 5 - 7a Temple Place, Brighton BN3 7JB</span>
+                </li>
+            </ul>
+
+
+            <a href="/dashboard/{{version}}/pubs-check/internal" class="link-back">Back</a>
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+
+
+
+
+
+
+
+
+                <p>This page shows the basic details about the property.</p>
+                <p>If you want to change any of these basic details, you can do so by uploading supporting documents (and the date of any changes) later in this form.</p>
+                <p></p>
+
+                <div class="panel panel-border-narrow">
+                    <p>It’s important to make sure these fundamental details are correct because if details about the property are wrong here, the valuation could be affected.</p>
+                </div>
+
+                <br>
+
+
+            <table id="property-details" class="table-font-xsmall">
+                <caption class="visuallyhidden">Basic property details</caption>
+                <colgroup>
+                    <col width="40%">
+                    <col width="60%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>
+                            <span>Address</span>
+                        </th>
+                        <td>Moon under the water, 5 - 7a Temple Place, Brighton BN3 7JB</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span>Primary description</span>
+
+
+
+
+            <a href="/business-rates-check/help#dialog-primary_description" data-toggle="dialog" data-target="dialog-primary_description" class="help">
+                <i><span class="visuallyhidden">Help with Primary description</span></i>
+            </a>
+
+                        </th>
+                        <td>Public house</td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <span>Part domestic (composite)</span>
+
+
+
+
+            <a href="/business-rates-check/help#dialog-composite" data-toggle="dialog" data-target="dialog-composite" class="help">
+                <i><span class="visuallyhidden">Help with Part domestic (composite)</span></i>
+            </a>
+
+                         </th>
+                        <td>Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+                <br>
+                <p>
+                    <a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/pubs-check/internal/basis-of-valuation">Continue</a>
+                </p>
+
+
+
+
+            <div class="dialog" id="dialog-composite" aria-hidden="true" data-modal="true">
+                <div class="dialog-holder" aria-labelledby="dialog-content-composite" aria-describedby="dialog-content-composite" role="alertdialog" data-target-remove="">
+                    <div class="dialog-content" id="dialog-content-composite" role="document" tabindex="0">
+                        <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+                        <div class="modal-content-div"><h3 class="heading-small">Part domestic (composite)</h3><p>Where one part is being used for non-domestic use (such as a pub or shop) and another for domestic purposes (for example, where the landlord or shop owner live in a flat above the pub or shop and it still forms part of the same valuation.</p></div>
+                        <a href="#" class="dialog-cancel button" aria-label="close">Close</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="dialog" id="dialog-primary_description" aria-hidden="true" data-modal="true">
+                <div class="dialog-holder" aria-labelledby="dialog-content-primary_description" aria-describedby="dialog-content-primary_description" role="alertdialog" data-target-remove="">
+                    <div class="dialog-content" id="dialog-content-primary_description" role="document" tabindex="0">
+                        <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+                        <div class="modal-content-div"><h3 class="heading-small">Primary description</h3><p>This is the class of property in which your property falls and may not be the same as that in the rating list. For example, a café has a primary description of a shop.</p></div>
+                        <a href="#" class="dialog-cancel button" aria-label="close">Close</a>
+                    </div>
+                </div>
+            </div>
+
+
+    <a href="/dashboard/{{version}}/pubs-check/internal" class="link-back">Back</a>
+
+
+
+
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

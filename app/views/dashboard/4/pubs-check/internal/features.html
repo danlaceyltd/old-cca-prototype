@@ -1,0 +1,269 @@
+{% extends "layout.html" %}
+
+{% set title = "Pub features" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>Moon under the water, 5 - 7a Temple Place, Brighton BN3 7JB</span>
+                </li>
+            </ul>
+
+
+            <a href="/dashboard/{{version}}/pubs-check/internal/basic-property-details" class="link-back">Back</a>
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+
+
+
+
+
+
+
+                <p>These are used by us to value the property.</p>
+                <p>Tell us if there have been any changes to these features.</p>
+                <p class="panel panel-border-narrow">Add any missing information to the fields marked 'No record'.</p>
+
+
+
+            <div class="table-wrapper">
+                <table class="table-summary-amend table-font-xsmall">
+                        <colgroup>
+                        <col width="40%">
+                        <col width="27.5%">
+                        <col width="27.5%">
+                        <col width="5%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th class="original">Current</th>
+                                <th class="proposed">Proposed changes</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Liquor</th>
+                                <td class="original">Yes</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Food</th>
+                                <td class="original">Yes</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Gaming machines</th>
+                                <td class="original">No</td>
+                                <td class="proposed"><span data-edit-aircon=""></span></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Accommodation</th>
+                                <td class="original ">No</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Sub-lettings</th>
+                                <td class="original">No</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Conscessions or franchise</th>
+                                <td class="original">No</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Class</th>
+                                <td class="original">Public house</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Type</th>
+                                <td class="original">Pub within multi-use building</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Location</th>
+                                <td class="original">City centre</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Staff accommodation</th>
+                                <td class="original">3</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Grading</th>
+                                <td class="original">4 Crowns</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Age</th>
+                                <td class="original">1915-1945</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Extension(s)</th>
+                                <td class="original">None</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Major refurb/modernisation</th>
+                                <td class="original">None</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Floors</th>
+                                <td class="original">4</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Passenger lifts</th>
+                                <td class="original">1</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Central heating</th>
+                                <td class="original">Yes</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Air conditioning</th>
+                                <td class="original">Yes</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Restaurant covers</th>
+                                <td class="original">50</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Letting rooms</th>
+                                <td class="original">10</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Parking spaces</th>
+                                <td class="original">80</td>
+                                <td class="proposed"></td>
+                                <td class="last">
+                                     <a href="/todo">Edit</a>
+                                </td>
+                            </tr>
+                      </tbody>
+                    </table>
+            </div>
+
+
+                <br>
+                <p><a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/pubs-check/internal/floors">Continue</a></p>
+
+
+
+    <a href="/dashboard/{{version}}/pubs-check/internal/basic-property-details" class="link-back">Back</a>
+
+
+
+
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

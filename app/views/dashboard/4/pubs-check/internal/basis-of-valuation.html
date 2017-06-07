@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% set title = "Basis of valuation" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>Moon under the water, 5 - 7a Temple Place, Brighton BN3 7JB</span>
+                </li>
+            </ul>
+
+
+            <a href="/dashboard/{{version}}/pubs-check/internal/floors" class="link-back">Back</a>
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+
+            <p>Thisis the method used to value the property.</p>
+
+
+
+
+            <form action="">
+
+                <div class=" form-group">
+             		<fieldset >
+           				<legend class="heading-medium">What is the basis of valuation?</legend>
+                            <div class="multiple-choice">
+                                <input id="basisOfValuation_fmt" type="radio" name="basisOfValuation"  checked value="Fair maintainable trade" >
+                                <label class="block-label selection-button-radio" for="basisOfValuation_fmt">Fair maintainable trade</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="basisOfValuation_floor" type="radio" name="basisOfValuation" value="Floor area">
+                                <label class="block-label selection-button-radio" for="basisOfValuation_floor">Floor area</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="basisOfValuation_bedroom" type="radio" name="basisOfValuation" value="Bedroom units">
+                                <label class="block-label selection-button-radio" for="basisOfValuation_bedroom">Bedroom units</label>
+                            </div>
+        	        </fieldset>
+                </div>
+
+
+
+
+
+
+
+
+                        </form>
+
+
+
+                <br>
+                <p><a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/pubs-check/internal/features">Continue</a></p>
+
+
+
+    <a href="/dashboard/{{version}}/pubs-check/internal/floors" class="link-back">Back</a>
+
+
+
+
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

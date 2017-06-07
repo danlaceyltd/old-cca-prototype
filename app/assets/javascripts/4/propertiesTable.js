@@ -69,9 +69,9 @@
 
 
                 if(aData[3] === 'y'){
-                        $('td:eq(3)', nRow).html('<ul class="list list-actions"><li><a href="#">Accept client request</a></li><li><a href="#">Reject client request</a></li></ul>');
+                        $('td:eq(3)', nRow).html('<ul class="list list-actions"><li><a href="#">Accept client request</a></li><li><a href="#">Reject client request</a></li><li><a href="/dashboard/4/agent/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'&status='+aData[4]+'">Property details</a></li></ul>');
                 }else if(aData[4] === "Pending"){
-                        $('td:eq(3)', nRow).html('<a href="/dashboard/4/agent/pending?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Pending VOA approval</a>');
+                        $('td:eq(3)', nRow).html('<ul class="list list-actions"><li><a href="/dashboard/4/agent/pending?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Pending VOA approval</a></li><li><a href="/dashboard/4/agent/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'&status='+aData[4]+'">Property details</a></li></ul>');
                 }else if(aData[4] === "declined 1" || aData[4] === "declined 2" || aData[4] === "declined 3" || aData[4] === "declined 4" || aData[4] === "declined 5" || aData[4] === "declined 6"){
                     $('td:eq(3)', nRow).html('<ul class="list list-actions"><li><a href="/dashboard/4/agent/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'&status='+aData[4]+'">Property details</a></li><li><a href="#">Delete</a></li></ul>');
 
@@ -134,7 +134,10 @@
         $('#propertiesTable_paginate').css({'margin-top': '8px','margin-right': '-10px'});
 
 
-        //property-details
+
+
+
+
 
 
         function getUrlVars(){
@@ -205,6 +208,14 @@
         $('.property-client-name').text(getUrlVars()["client"]);
         $('.property-ba-ref').text(getUrlVars()["ba"]);
         $('.agents-table .property-status').text(statusTextAgents(getUrlVars()["status"]));
+
+        if(getUrlVars()["status"] === 'Pending'){
+            $('#property-details-table .list-actions-pending').css('display','block');
+            $('#property-details-table .list-actions-approved').css('display','none');
+        }else{
+            $('#property-details-table .list-actions-pending').css('display','none');
+            $('#property-details-table .list-actions-approved').css('display','block');
+        }
 
 
 

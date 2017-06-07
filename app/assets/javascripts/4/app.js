@@ -11,6 +11,8 @@
         new VOA.PropertiesTableBusiness();
         new VOA.PropertiesTableBusinessSmall();
         new VOA.DraftsTable();
+        new VOA.ChallengeWizard();
+        new VOA.CheckWizard();
     });
 
 }(window.VOA = window.VOA || {}, jQuery));

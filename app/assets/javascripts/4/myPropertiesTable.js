@@ -133,6 +133,15 @@
             }
 
             $('#myPropertiesTable .count').text(count());
+
+            if(count() === 0){
+                $('#myPropertiesTable .filter-help').html('<div class="alert--success margin-top-20"><p>Once your business has claimed a property, it will display on this page.</p><p>You can <a href="dashboard/4/business/find-property">claim a property</a> on behalf of your business.</p><p>You’ll need to upload a business rates bill or other suitable evidence.</p></div>');
+                $('#myPropertiesTable thead, #myPropertiesTable tbody, #myPropertiesTable_info, #myPropertiesTable_length, #myPropertiesTable_paginate, #myPropertiesTable .filter-count').hide();
+            }else{
+                $('#myPropertiesTable .filter-help').text('');
+                $('#myPropertiesTable thead, #myPropertiesTable tbody, #myPropertiesTable_info, #myPropertiesTable_length, #myPropertiesTable_paginate, #myPropertiesTable .filter-count').show();
+            }
+
         });
 
         $('.data-filter').insertBefore($('#myPropertiesTable'));
@@ -160,6 +169,8 @@
         $('.property-address').text(getUrlVars()["address"]);
         $('.property-client-name').text(getUrlVars()["client"]);
         $('.property-ba-ref').text(getUrlVars()["ba"]);
+
+
 
 
 

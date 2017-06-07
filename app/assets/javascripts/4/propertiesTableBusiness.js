@@ -53,7 +53,7 @@
                 if(aData[4] === "Approved"){
                     $('td:eq(3)', nRow).html('<a href="/dashboard/4/business/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Property details</a>');
                 }else if(aData[4] === "Pending"){
-                    $('td:eq(3)', nRow).html('<a href="/dashboard/4/business/pending">Pending VOA approval</a>');
+                    $('td:eq(3)', nRow).html('<ul class="list list-actions"><li><a href="/dashboard/4/business/pending">Pending VOA approval</a></li><li><a href="/dashboard/4/business/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'&status='+aData[4]+'">Property details</a></li></ul>');
                 }else{
                     $('td:eq(3)', nRow).html('<a href="/dashboard/4/business/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'&status='+aData[4]+'">Property details</a>');
                 }

@@ -51,7 +51,7 @@
                 if(aData[4] === "Approved"){
                     $('td:eq(3)', nRow).html('<a href="/dashboard/4/business-small/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Property details</a>');
                 }else if(aData[4] === "Pending"){
-                    $('td:eq(3)', nRow).html('<a href="/dashboard/4/business-small/pending">Pending VOA approval</a>');
+                    $('td:eq(3)', nRow).html('<ul class="list list-actions"><li><a href="/dashboard/4/business-small/pending">Pending VOA approval</a></li><li><a href="/dashboard/4/business-small/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Property details</a></li></ul>');
                 }
             }
         });
@@ -84,7 +84,7 @@
                 table.columns(4).search('').draw();
                 table.columns(2).search('').draw();
                 $('#propertiesTableBusinessSmall .filter').text('');
-                
+
             }else if($(this).attr('data-filter') === 'MNO Client'){
                 table.columns(2).search($(this).attr('data-filter')).draw();
                 table.columns(4).search('').draw();

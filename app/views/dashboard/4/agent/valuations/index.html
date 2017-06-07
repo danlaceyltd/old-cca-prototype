@@ -86,7 +86,7 @@
 
 
             <div class="table-wrapper">
-                <table class="table-font-xsmall margin-bottom-20">
+                <table class="table-font-xsmall margin-bottom-20" id="property-details-table">
                     <caption class="heading-medium">Valuations</caption>
                     <tbody>
                         <tr>
@@ -105,9 +105,13 @@
                                 <td>1 Apr 2017</td>
                                 <td>Present</td>
                                 <td>
-                                    <ul class="list list-actions">
+                                    <ul class="list list-actions list-actions-pending" style="display:none">
+                                        <li><a href="/dashboard/{{version}}/agent/valuations/detailed">View summary valuation</a></li>
+                                    </ul>
+
+                                    <ul class="list list-actions list-actions-approved" style="display:none">
                                         <li><a href="/dashboard/{{version}}/agent/valuations/detailed">View valuation</a></li>
-                                        <li><a href="#">Suggest changes
+                                        <li><a href="#">Start a check
                                         </a></li>
                                         <li><a href="#">Challenge this valuation</a></li>
                                     </ul>
