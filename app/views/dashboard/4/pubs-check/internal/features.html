@@ -32,16 +32,12 @@
             </ul>
 
 
-            <a href="/dashboard/{{version}}/pubs-check/internal/basic-property-details" class="link-back">Back</a>
+            <a href="/dashboard/{{version}}/pubs-check/internal/basis-of-valuation" class="link-back">Back</a>
 
 
             <h1 class="heading-xlarge" >
                 {{title}}
             </h1>
-
-
-
-
 
 
 
@@ -242,11 +238,25 @@
 
 
                 <br>
-                <p><a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/pubs-check/internal/floors">Continue</a></p>
 
 
 
-    <a href="/dashboard/{{version}}/pubs-check/internal/basic-property-details" class="link-back">Back</a>
+
+
+                {% if (data['basisOfValuation'] === "Fair maintainable trade") %}
+                  <p><a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/pubs-check/internal/documents">Continue</a></p>
+                {% elif (data['basisOfValuation'] === "Floor area") %}
+                  <p><a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/pubs-check/internal/floors">Continue</a></p>
+                {% else %}
+                  <p><a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/pubs-check/internal/bedroom-units">Continue</a></p>
+                {% endif %}
+
+
+
+
+
+
+    <a href="/dashboard/{{version}}/pubs-check/internal/basis-of-valuation" class="link-back">Back</a>
 
 
 

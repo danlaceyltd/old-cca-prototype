@@ -32,7 +32,7 @@
             </ul>
 
 
-            <a href="/dashboard/{{version}}/pubs-check/internal/floors" class="link-back">Back</a>
+            <a href="/dashboard/{{version}}/pubs-check/internal/basic-property-details" class="link-back">Back</a>
 
 
             <h1 class="heading-xlarge" >
@@ -44,21 +44,22 @@
 
 
 
-            <form action="">
+            <form action="/dashboard/{{version}}/pubs-check/internal/features" method="post" class="form">
+
 
                 <div class=" form-group">
              		<fieldset >
            				<legend class="heading-medium">What is the basis of valuation?</legend>
                             <div class="multiple-choice">
-                                <input id="basisOfValuation_fmt" type="radio" name="basisOfValuation"  checked value="Fair maintainable trade" >
+                                <input id="basisOfValuation_fmt" type="radio" name="basisOfValuation" value="Fair maintainable trade" {{ checked("basisOfValuation", "Fair maintainable trade") }}>
                                 <label class="block-label selection-button-radio" for="basisOfValuation_fmt">Fair maintainable trade</label>
                             </div>
                             <div class="multiple-choice">
-                                <input id="basisOfValuation_floor" type="radio" name="basisOfValuation" value="Floor area">
+                                <input id="basisOfValuation_floor" type="radio" name="basisOfValuation" value="Floor area" {{ checked("basisOfValuation", "Floor area") }}>
                                 <label class="block-label selection-button-radio" for="basisOfValuation_floor">Floor area</label>
                             </div>
                             <div class="multiple-choice">
-                                <input id="basisOfValuation_bedroom" type="radio" name="basisOfValuation" value="Bedroom units">
+                                <input id="basisOfValuation_bedroom" type="radio" name="basisOfValuation" value="Bedroom units" {{ checked("basisOfValuation", "Bedroom units") }}>
                                 <label class="block-label selection-button-radio" for="basisOfValuation_bedroom">Bedroom units</label>
                             </div>
         	        </fieldset>
@@ -70,17 +71,17 @@
 
 
 
+                                        <div class="form-group">
+                                          <input type="submit" class="button" value="Continue">
+                                        </div>
 
                         </form>
 
 
 
-                <br>
-                <p><a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/pubs-check/internal/features">Continue</a></p>
 
 
-
-    <a href="/dashboard/{{version}}/pubs-check/internal/floors" class="link-back">Back</a>
+    <a href="/dashboard/{{version}}/pubs-check/internal/basic-property-details" class="link-back">Back</a>
 
 
 
