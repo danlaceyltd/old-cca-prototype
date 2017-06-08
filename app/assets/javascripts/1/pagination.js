@@ -48,6 +48,7 @@
              },
         });
 
+    
 
         //filtering
         $(document).on('click', '#dataTableFilter thead tr#filterrow th input', function(e) {

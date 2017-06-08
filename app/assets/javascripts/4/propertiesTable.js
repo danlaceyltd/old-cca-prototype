@@ -173,7 +173,7 @@
                 text = "Property link revoked by VOA";
                 $('#dialog-status .heading-small').text(text)
                 $('#dialog-status .dialog-status-content').html(
-                    '<p>The VOA has removed your clients’ link to this property. You can no longer view detailed property information or start or continue checks and challenges.' +
+                    '<p> The VOA has removed your client’s link to this property. You can no longer view detailed property information or start or continue checks and challenges.' +
                     '<p>If your client believes this has been done in error, they should contact the VOA. You can’t do this on their behalf.</p>'
                 );
                 return  text;

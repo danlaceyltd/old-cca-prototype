@@ -9,6 +9,9 @@
         new VOA.Pagination();
         new VOA.CheckWizard();
         new VOA.ChallengeWizard();
+        new VOA.InterimProperties();
+        new VOA.InterimClientProperties();
+        new VOA.DraftsTable();
     });
 
 }(window.VOA = window.VOA || {}, jQuery));

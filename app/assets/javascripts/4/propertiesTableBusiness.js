@@ -156,7 +156,7 @@
                 text = "Property link declined by VOA";
                 $('#dialog-status .heading-small').text(text)
                 $('#dialog-status .dialog-status-content').html(
-                    '<p>The property link has been decline by the VOA. If you believe this has been done in error, you should contact the VOA.</p>' +
+                    '<p>The property link has been declined by the VOA. If you believe this has been done in error, you should contact the VOA.</p>' +
                     '<p>Telephone: <strong>03000 501 501</strong></p>'
                 );
                 return text;
