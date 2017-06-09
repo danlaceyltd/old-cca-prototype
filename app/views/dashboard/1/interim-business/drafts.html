@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% set title = "Drafs" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype_signout.html" %}
+
+
+
+        <div class="section-tabs">
+            <ul role="tablist">
+             <li ><a href="/dashboard/{{version}}/interim-business/">My properties</a></li>
+              <li ><a href="/dashboard/{{version}}/interim-business/agents">Agents</a></li>
+              <li class="active"><a href="/dashboard/{{version}}/interim-business/drafts" >Drafts</a></li>
+              <li><a href="/dashboard/{{version}}/interim-business/change-details/summary">My details</a></li>
+              <li class="tab-right"><span>Welcome, <a href="/dashboard/{{version}}/interim-business/change-details/summary">Jo Bloggs - ABC Business</a>.<a href="#" class="margin-left-10">Not you?</a></span></li>
+            </ul>
+        </div>
+
+
+    <h1 class="visuallyhidden">
+        {{title}}
+    </h1>
+
+    <p>Drafts will only remain for 30 days.</p>
+
+    <div class="table-wrapper">
+    <table id="draftsTable" class="table-font-xsmall margin-top-30 margin-bottom-20">
+        <caption class="visuallyhidden">Manage agents</caption>
+        <colgroup>
+            <col style="width:350px">
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th scope="col">Address</th>
+                <th scope="col">Agent</th>
+                <th scope="col">Effective date</th>
+                <th scope="col">Type</th>
+                <th scope="col">Expiry date</th>
+                <th scope="col">Actions</th>
+            </tr>
+            <tr id="filterrow">
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+           </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria, LA12 9RB</td>
+                <td>ABC Business</td>
+                <td>1 Apr 2017</td>
+                <td>Check</td>
+                <td>1 Sept 2017</td>
+                <td>
+                    <ul class="list list-action">
+                        <li><a href="#">Continue check</a></li>
+                        <li><a href="/dashboard/{{version}}/valuations">View valuations</a></li>
+                        <li><a href="#" data-toggle="dialog" data-target="dialog-delete">Delete draft</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>2 Lorem St, Ipsum ABC 123</td>
+                <td>DEF Agent</td>
+                <td>2 Apr 2017</td>
+                <td>Challenge</td>
+                <td>12 Sept 2017</td>
+                <td>
+                    <ul class="list list-action">
+                        <li><a href="#">Continue challenge</a></li>
+                        <li><a href="/dashboard/{{version}}/valuations">View valuations</a></li>
+                        <li><a href="#" data-toggle="dialog" data-target="dialog-delete">Delete draft</a></li>
+                    </ul>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>
+
+
+
+         <br />
+         <p><a class="link-back" href="/dashboard/{{version}}/">Back</a></p>
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

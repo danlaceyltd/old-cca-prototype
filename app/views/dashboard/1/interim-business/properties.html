@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% set title = "Properties managed  by Agent 1" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    
+
+
+
+
+            <h1 class="heading-xlarge clear-right">
+                    <span class="heading-secondary">
+                        Properties managed by
+                    </span>
+                    <span class="section-title">Agent 1</span>
+                </h1>
+
+            <div class="table-wrapper">
+                <table class="table-font-xsmall margin-bottom-20 margin-top-30">
+                    <tbody>
+                        <tr>
+                            <th scope="col">Address</th>
+                            <th scope="col">Local authority reference</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Appointed agents</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+
+                            <tr>
+                                <td>
+                                    Pinhoe Rifle Club, Langaton Lane, Exeter, EX1 3SL
+                                </td>
+                                <td>
+                                    2209313001
+                                </td>
+                                <td>
+                                	Pending
+                                </td>
+                                <td>
+                                    Agent 1
+                                </td>
+
+                                <td >
+                                    <ul class="list list-action">
+
+                                        <li><a href="#">
+                                            Remove agent
+                                        </a></li>
+                                        <li><a href="#">
+                                            Appoint agent
+                                        </a></li>
+                                        <li><a href="#">
+                                            View valuations
+                                        </a></li>
+
+                                    </ul>
+                                </td>
+                            </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
