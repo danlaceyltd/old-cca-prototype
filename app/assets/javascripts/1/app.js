@@ -11,6 +11,7 @@
         new VOA.ChallengeWizard();
         new VOA.InterimProperties();
         new VOA.InterimClientProperties();
+        new VOA.InterimBusinessProperties();
         new VOA.DraftsTable();
     });
 
