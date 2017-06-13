@@ -1,0 +1,175 @@
+{% extends "layout.html" %}
+
+{% set title = "My submitted cases" %}
+{% set version = "6" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype_signout.html" %}
+
+
+
+        <div class="section-tabs">
+            <ul role="tablist">
+              <li ><a href="/dashboard/{{version}}/agent">Client properties</a></li>
+              <li class="active"><a href="/dashboard/{{version}}/agent/cases/drafts">My cases</a></li>
+              <li><a href="/dashboard/{{version}}/agent/properties">My properties</a></li>
+              <li><a href="/dashboard/{{version}}/agent/change-details/summary">My details</a></li>
+              <li class="tab-right"><span>Welcome, <a href="/dashboard/{{version}}/agent/change-details/summary">Jo Bloggs - ABC Agent</a>.<a href="#" class="margin-left-10">Not you?</a></span></li>
+            </ul>
+        </div>
+
+    <h1 class="visuallyhidden">
+        {{title}}
+    </h1>
+
+    <ul class="data-filter form-group">
+      <li>
+        <input id="radio-all" type="radio" name="draftType" value="all" data-filter="" class="data-check data-challenge" checked>
+        <label for="radio-all">All cases</label>
+      </li>
+      <li>
+        <input id="radio-check" type="radio" name="draftType" value="check" data-filter="Check" class="data-check">
+        <label for="radio-check">Check cases</label>
+      </li>
+      <li>
+        <input id="radio-challenge" type="radio" name="draftType" value="challenge" data-filter="Challenge" class="data-challenge">
+        <label for="radio-challenge">Challenge cases</label>
+      </li>
+    </ul>
+
+    <p><a href="/dashboard/{{version}}/agent/cases/drafts">Back to drafts</a></p>
+
+            <div class="table-wrapper">
+            <table id="draftsTable" class="table-font-xsmall margin-top-20 margin-bottom-20">
+                <caption class="visuallyhidden">Manage agents</caption>
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col style="width:160px">
+                    <col style="width:160px">
+                </colgroup>
+                <caption><p>You have submitted <span class="count"></span><span class="filter"></span> cases.</p></caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Address</th>
+                        <th scope="col">Client</th>
+                        <th scope="col">Effective date</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Submitted</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    <tr id="filterrow">
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                   </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                      <td>Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria, LA12 9RB</td>
+                      <td>ABC Client</td>
+                      <td>1 Apr 2017</td>
+                      <td>Check</td>
+                      <td>23 July 2017</td>
+                      <td>
+                          <ul class="list list-action">
+                              <!-- <li><a href="#">Continue check</a></li>
+                              <li><a href="/dashboard/{{version}}/agent/valuations/detailed">View valuation</a></li>
+                              <li><a href="#" data-toggle="dialog" data-target="dialog-delete">Delete</a></li> -->
+                              <li>Check submitted</li>
+                          </ul>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria, LA12 9RB</td>
+                      <td>ABC Client</td>
+                      <td>1 Apr 2017</td>
+                      <td>Challenge</td>
+                      <td>1 Sept 2017</td>
+                      <td>
+                          <ul class="list list-action">
+                              <li>Challenge submitted</li>
+                          </ul>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria, LA12 9RB</td>
+                      <td>ABC Client</td>
+                      <td>1 Apr 2017</td>
+                      <td>Check</td>
+                      <td>11 Oct 2017</td>
+                      <td>
+                        <ul class="list list-action">
+                            <li>Check submitted</li>
+                        </ul>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>2 Lorem St, Ipsum ABC 123</td>
+                      <td>DEF Client</td>
+                      <td>2 Apr 2017</td>
+                      <td>Challenge</td>
+                      <td>12 Dec 2017</td>
+                      <td>
+                          <ul class="list list-action">
+                            <!-- <li><a href="#">Continue check</a></li>
+                            <li><a href="/dashboard/{{version}}/agent/valuations/detailed">View valuation</a></li>
+                            <li><a href="#" data-toggle="dialog" data-target="dialog-delete">Delete</a></li> -->
+                            <li>Challenge submitted</li>
+                          </ul>
+                      </td>
+                  </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+<div class="dialog" id="dialog-delete" aria-hidden="true" data-modal="true">
+    <div class="dialog-holder" aria-labelledby="dialog-delete" aria-describedby="dialog-content-delete" role="alertdialog">
+        <div class="dialog-content" id="dialog-content-delete" role="document" tabindex="0">
+            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+            <div class="modal-content-div"><h3 class="heading-small">Delete draft case</h3>
+                <p>Are you sure you want to delete the draft case for the property?<br />
+                [Property address]</p>
+            </div>
+            <a href="/dashboard/{{version}}/agent/cases/drafts/no-cases" class="button"  role="button">Yes, I want to delete this draft case</a>
+            <a href="#" class="dialog-cancel button-secondary margin-left-10" aria-label="close" role="button">Cancel</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
