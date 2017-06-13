@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% set title = "Update your mobile number" %}
+{% set version = "6" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+                <h1 class="heading-xlarge">
+                    {{title}}
+                </h1>
+
+                <form action="/dashboard/{{version}}/agent/change-details/summary" method="post" class="form">
+
+                    {% include "dashboard/" + version + "/agent/change-details/fields/mobile.html" %}
+
+
+                    <div class="form-group margin-top-30">
+                      <input type="submit" class="button" value="Update">
+                      <a href="/dashboard/{{version}}/agent/change-details/summary" class="button-secondary margin-left-10">Cancel</a>
+                    </div>
+
+                </form>
+
+
+        </div>
+    </div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
