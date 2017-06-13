@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% set title = "Drafts" %}
+{% set version = "5" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype_signout.html" %}
+
+
+
+        <div class="section-tabs">
+            <ul role="tablist">
+              <li ><a href="/dashboard/{{version}}/agent">Properties</a></li>
+              <li class="active"><a href="/dashboard/{{version}}/agent/drafts">Drafts</a></li>
+              <li ><a href="/dashboard/{{version}}/agent/change-details/summary">My details</a></li>
+              <li class="tab-right"><span>Welcome, <a href="/dashboard/{{version}}/agent/change-details/summary">Jo Bloggs - ABC Agent</a>.<a href="#" class="margin-left-10">Not you?</a></span></li>
+            </ul>
+        </div>
+
+    <h1 class="visuallyhidden">
+        {{title}}
+    </h1>
+
+
+
+        <div class="alert--success margin-top-20">
+            Case has been deleted, you have no draft cases.
+        </div>
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+
+{% endblock %}
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
