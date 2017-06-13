@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% set title = "Clients" %}
-{% set version = "5" %}
+{% set version = "6" %}
 
 {% block page_title %}
   {{title}}
@@ -28,7 +28,7 @@
         <ul role="tablist">
           <li ><a href="/dashboard/{{version}}/agent">Properties</a></li>
           <li  class="active"><a href="/dashboard/{{version}}/agent/manage-clients">Clients</a></li>
-          <li><a href="/dashboard/{{version}}/agent/drafts">Drafts</a></li>
+          <li><a href="/dashboard/{{version}}/agent/cases/drafts">Drafts</a></li>
           <li><a href="/dashboard/{{version}}/agent/change-details/summary">My details</a></li>
           <li class="tab-right"><span>Welcome, Jo bloggs of MNO Client</span><a href="#" class="not-you">(Not you?)</a> <a href="#">Sign out</a></li>
         </ul>
