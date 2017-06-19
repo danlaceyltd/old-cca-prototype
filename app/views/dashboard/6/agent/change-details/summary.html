@@ -23,7 +23,7 @@
         <div class="section-tabs">
             <ul role="tablist">
               <li ><a href="/dashboard/{{version}}/agent">Client properties</a></li>
-              <li><a href="/dashboard/{{version}}/agent/cases/drafts">Drafts</a></li>
+              <li><a href="/dashboard/{{version}}/agent/cases/drafts">My cases</a></li>
               <li><a href="/dashboard/{{version}}/agent/properties">My properties</a></li>
               <li class="active"><a href="/dashboard/{{version}}/agent/change-details/summary">My details</a></li>
               <li class="tab-right"><span>Welcome, <a href="/dashboard/{{version}}/agent/change-details/summary">Jo Bloggs - ABC Agent</a>.<a href="#" class="margin-left-10">Not you?</a></span></li>
@@ -65,6 +65,11 @@
                         <td><strong>Telephone</strong></td>
                         <td>{% if data['telephone'] %}{{data['telephone']}}{% else %}09876543210{% endif %}</td>
                         <td class="last"><a href="/dashboard/{{version}}/agent/change-details/change-phone">Update</a></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Mobile</strong></td>
+                        <td>{% if data['mobile'] %}{{data['mobile']}}{% else %}07776543210{% endif %}</td>
+                        <td class="last"><a href="/dashboard/{{version}}/agent/change-details/change-mobile">Update</a></td>
                       </tr>
                       <tr>
                         <td><strong>Email</strong></td>

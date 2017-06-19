@@ -55,7 +55,7 @@
 
 
         //$('td:eq(1)', nRow).html('<a href="/dashboard/2/manage-clients">'+aData[1]+'</a>');
-        //$('td:eq(2)', nRow).html('<a href="/dashboard/2/valuations">View valuations</a>');
+        //$('td:eq(2)', nRow).html('<a href="/dashboard/2/valuations">Property details</a>');
 
       }
     });

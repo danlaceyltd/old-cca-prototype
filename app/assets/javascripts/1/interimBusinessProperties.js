@@ -54,7 +54,7 @@
              'order': [[1, 'asc']],
             fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
 
-                $('td:eq(4)', nRow).html('<ul class="list list-actions"><li><a href="/dashboard/1/appoint-agent">Appoint agent</a></li><li><a href="/dashboard/1/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">View valuations</a></li></ul>');
+                $('td:eq(4)', nRow).html('<ul class="list list-actions"><li><a href="/dashboard/1/appoint-agent">Appoint agent</a></li><li><a href="/dashboard/1/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Property details</a></li></ul>');
 
 
             },
