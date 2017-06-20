@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% set title = "Properties managed by" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+                <ul class="navigation-links">
+                    <li><a href="/dashboard/{{version}}/business/">Manage properties</a></li>
+                    <li><a href="#">Sign out</a></li>
+                </ul>
+
+
+            <h1 class="heading-xlarge clear-right">
+                <span class="heading-secondary">
+                    {{title}}
+                </span>
+                <span class="section-title">Agent 1</span>
+            </h1>
+
+            <div class="table-wrapper">
+        <table class="table-font-xsmall margin-bottom-20">
+            <caption class="visuallyhidden">Your properties</caption>
+            <colgroup><col width="">
+            <col width="">
+            <col width="">
+            <col width="20%">
+            <col width="20%">
+            </colgroup><tbody>
+                <tr>
+                    <th scope="col">Address</th>
+                    <th scope="col">Local authority reference</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Appointed Agents</th>
+                    <th scope="col" width="15%" class="last">Actions</th>
+                </tr>
+
+                    <tr>
+                        <td scope="row">
+                            Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria,  LA12 9RB
+                        </td>
+                        <td>
+                            09139385080004
+                        </td>
+                        <td>
+
+                                Approved
+
+                        </td>
+                        <td>
+                            <ul>
+
+
+                                        <li>Automated Stub Agent 2</li>
+
+                                        <li>Automated Stub Agent 1</li>
+
+
+                            </ul>
+                        </td>
+                        <td class="last">
+                            <ul>
+                                <li>
+                                    <a href="/dashboard/{{version}}/business/manage-agents/remove-agent">Remove agent</a>
+                                </li>
+                               <li>
+                                   <a href="/dashboard/{{version}}/business/appoint-agent">Appoint agent</a>
+                               </li>
+
+                                <li>
+                                    <a href="/dashboard/{{version}}/business/valuations">
+                                        Property detailss
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </td>
+                    </tr>
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

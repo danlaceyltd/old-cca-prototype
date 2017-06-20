@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% set title = "Confirm or change the information held for this property" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>Moon under the water, 5 - 7a Temple Place, Brighton BN3 7JB</span>
+                </li>
+            </ul>
+
+
+            <a href="/dashboard/{{version}}/check" class="link-back">Back</a>
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+
+
+
+            <p>You should use this option to review the details that we hold for your property and tell us about anything that’s missing or inaccurate. You can also tell us about any changes that have occurred inside the property boundaries.</p>
+
+            <p>If there are no changes, you’ll still need to confirm the details are accurate if you want to challenge your rateable value.</p>
+
+            <h2 class="heading-medium">Before you start</h2>
+
+            <p>You’ll need to provide evidence to support any proposed changes and the date they happened, such as plans and photographs</p>
+
+            <p>You may also need to provide rent details of the property, including the annual rent and date that rent started. This should be included in your supporting documents.</p>
+
+            <p>It’s important to provide as much evidence as you can of any changes as it will help us to make an accurate valuation. It will also support you if you want to challenge the rateable value.</p>
+
+            <p>All fields are mandatory unless otherwise stated.</p>
+
+
+            <p class="panel panel-border-wide">Suggesting changes can cause the rateable value to go up as well as down. This is because we may review the rateable value based on the information you provide.</p>
+
+
+            <a href="/dashboard/{{version}}/pubs-check/internal/basic-property-details" class="button">Continue</a>
+
+
+            <h3 class="heading-medium">After you submit the form</h3>
+
+            <p>We’ll contact you to tell you our decision about any proposed changes.</p>
+
+
+
+            <a href="/dashboard/{{version}}/check" class="link-back">Back</a>
+
+        </div>
+    </div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

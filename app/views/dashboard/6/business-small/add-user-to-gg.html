@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% set title = "Add or remove another person in Government Gateway" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-xlarge">
+                {{title}}
+            </h1>
+
+
+            <p>You’ll need to be an administrator for the Government Gateway account to add or remove another person.</p>
+            <p>You’re an administrator if you created the Government Gateway account or if you have the ‘Manage Administrators’ and ‘Manage Assistants’ options (shown on the left hand side after signing in to Government Gateway and clicking on ‘Your account’).</p>
+
+            <h2 class="heading-medium">Add another person</h2>
+
+            <p>To add another person you’ll need to:</p>
+
+            <ul class="list list-bullet">
+                <li><a href="http://www.gateway.gov.uk/" class="external-link" rel="nofollow">sign in to Government Gateway</a></li>
+                <li>select ‘Manage Administrators’ (or Manage Assistants’)</li>
+                <li>select ‘Add an Administrator’ (or ‘Add an Assistant’)</li>
+                <li>enter the details of the new user and create a password</li>
+                <li>submit the details</li>
+                <li>make a note of the User ID</li>
+            </ul>
+
+            <p>You can then give the User ID and password to the new user so that they can <a href="https://www.gov.uk/correct-your-business-rates">register for the service</a>.</p>
+
+
+            <h2 class="heading-medium">Remove another person</h2>
+
+            <p>To remove another person you’ll need to:</p>
+
+            <ul class="list list-bullet">
+                <li><a href="http://www.gateway.gov.uk/" class="external-link" rel="nofollow">sign in to Government Gateway</a></li>
+                <li>select ‘Manage Administrators’ (or Manage Assistants’)</li>
+                <li>click on ‘delete’ next to the person that you want to remove</li>
+                <li>confirm that you want to delete the person you have selected</li>
+            </ul>
+
+            <p>You’ll then be asked to sign in again for security reasons. The person will now no longer display on your ‘Manage Administrators’ or ‘Manage Assistants’ screens.</p>
+
+            <a href="/dashboard/{{version}}/business-small/change-details/summary" id="backLinkBottom" class="link-back">Back</a>
+
+
+        </div>
+    </div>
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

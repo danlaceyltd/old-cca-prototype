@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% set title = "Floor areas" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>Moon under the water, 5 - 7a Temple Place, Brighton BN3 7JB</span>
+                </li>
+            </ul>
+
+
+            <a href="/dashboard/{{version}}/pubs-check/internal/features" class="link-back">Back</a>
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+
+
+
+                <p id="info">We use these measurements to calculate the rateable value included in the valuation.</p>
+
+
+
+            <div class="table-wrapper">
+                <table id="survey-unit-lines-table-1" class="table-font-xsmall">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col width="120px" class="print-hide">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th id="header_current" colspan="3" class="original no-border-bottom form-heading-large">Current</th>
+                            <th id="header_proposed" colspan="2" class="proposed border-left border-right no-border-bottom form-heading-large">Proposed changes</th>
+                            <th class="no-border-bottom print-hide"></th>
+                        </tr>
+                        <tr>
+                            <th id="header_current_ref" class="original">Ref</th>
+                            <th id="header_current_desc" class="original">Description</th>
+                            <th id="header_current_area" class="original">Area <abbr role="text" title="meters squared" aria-label="meters squared">m<sup>2</sup></abbr></th>
+                            <th id="header_proposed_desc" class="proposed border-left">Description</th>
+                            <th id="header_proposed_area" class="proposed border-right">Area <abbr role="text" title="meters squared" aria-label="meters squared">m<sup>2</sup></abbr></th>
+                            <th class="print-hide"></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                            <tr>
+                                <td headers="header_current_ref header_current">1</td>
+                                <td headers="header_current_desc header_current">Basement store</td>
+                                <td headers="header_current_area header_current">12.28</td>
+
+                                    <td headers="header_proposed_desc header_proposed" class="proposed border-left"></td>
+                                    <td headers="header_proposed_area header_proposed" class="proposed border-right"></td>
+                                    <td class="last print-hide">
+                                        <a href="#" class="margin-right-10">Edit<span class="visuallyhidden"> row 1</span></a>
+                                        <a href="#">Remove<span class="visuallyhidden"> row 1</span></a>
+                                    </td>
+
+                            </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+                <br>
+                <details class="print-hide">
+                    <summary role="button" aria-controls="details-content-1" aria-expanded="false">
+                        <span class="summary">Add another floor or area</span>
+                    </summary>
+                    <div class="panel panel-border-narrow" id="details-content-1"><p>Please provide details of the new floor or area in your supporting documents.</p><p>You should include:</p><ul class="list list-bullet"><li>a description of the change</li><li>the size of the new area</li><li>the date the area was added</li><li>whether it is used for domestic purposes</li><li>whether the new area has air conditioning, central heating or a raised floor (hollow floors for cables and other electrics)</li></ul></div>
+                </details>
+
+
+                <br>
+                <p><a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/pubs-check/internal/documents">Continue</a></p>
+
+
+
+    <a href="/dashboard/{{version}}/pubs-check/internal/features" class="link-back">Back</a>
+
+
+
+
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

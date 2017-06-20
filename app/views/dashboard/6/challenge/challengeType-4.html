@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% set title = "A change to my property or the surrounding area has made the valuation worng" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span>
+                </li>
+            </ul>
+
+
+            <a href="/dashboard/{{version}}/valuations/detailed" class="link-back">Back</a>
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+
+            <p>You can make a challenge if there has been a change to your property or the surrounding area which affects the value of your property.
+                It could be that your property has been flooded, or significant roadworks are taking place outside it.</p>
+
+            <h2 class="heading-medium">Youll need to provide:</h2>
+
+            <ul class="list list-bullet">
+                <li>an alternative ratable value</li>
+                <li>the date that the ratable value should start (must be on or after 1st April 2017)</li>
+                <li>rent details for the property (if it is rented)</li>
+                <li>evidence that suports your suggested rateable value</li>
+                <li>a statement that explains how your evidence supports your challenge and why your suggested rateable value is correct</li>
+            </ul>
+
+            <p>If you don't include everything you need, we'll contact you to tell you that your challenge is incomplete. If it's not corrected within the time limit given, your challenge will be invalid.</p>
+
+
+        <p><a href="/dashboard/{{version}}/challenge/rent" class="button">Continue</a></p>
+
+
+        <p><a href="/dashboard/{{version}}/valuations/detailed" class="link-back">Back</a></p>
+
+        </div>
+    </div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
