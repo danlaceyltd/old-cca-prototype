@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% set title = "Declaration" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span>
+                </li>
+            </ul>
+
+
+            <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+
+            <div class="grid-row">
+                    <div class="column-two-thirds">
+
+                    <p>Most customers prefer us to send information by email as it means we can get it to you quicker.
+                    Although we take care to protect the security of your information, we cannot garantee that it will be secure once sent.
+                If you are happy for us to send your information by email, please accept and submit the declatation, If you do not want to send it by email, please contact us on <strong>03000 501 501</strong> after submitting the declaration.</p>
+
+
+                        <form action="/business-rates-check/build/edcc52da-3b55-4982-b3a1-dda6de9fbefa/declaration" method="POST">
+
+
+
+
+
+                            <div id="confirmedDeclarationGroup" class="form-group  ">
+                                <h3 class="heading-medium margin-top-20 margin-bottom-0">I declare that the information I have given in this form is correct and complete.</h3>
+                                <h3 class="heading-medium margin-top-20 margin-bottom-20">I understand that my information will be sent by email unless I request a different method.</h3>
+                                <div class="multiple-choice">
+                                    <input type="checkbox" id="confirmedDeclaration_text" aria-describedby="confirmedDeclaration_error" name="confirmedDeclaration" value="true">
+                                    <label class="block-label selection-button-checkbox" for="confirmedDeclaration_text">I agree to the above declaration</label>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div class="notice">
+                                <i class="icon icon-important"><span class="visuallyhidden">Warning</span></i>
+                                <strong class="bold-small">
+                                    <span>Once you submit the form you will not be able to go back and make any changes</span>
+                                </strong>
+                            </div>
+                            <br>
+
+                        </form>
+
+
+
+                <br>
+                <p>
+                    <a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/challenge/confirmation">Submit</a>
+                </p>
+<div><div>
+
+
+    <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+
+
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

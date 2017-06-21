@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% set title = "Properties" %}
+{% set version = "4" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype_signout.html" %}
+
+
+
+        <div class="section-tabs">
+            <ul role="tablist">
+              <li class="active"><a href="/dashboard/{{version}}/business/no-properties">My properties</a></li>
+              <li><a href="/dashboard/{{version}}/business/drafts/no-properties">Drafts</a></li>
+              <li><a href="/dashboard/{{version}}/business/change-details/summary-no-properties">My details</a></li>
+              <li class="tab-right"><span>Welcome, <a href="/dashboard/{{version}}/business/change-details/summary-no-properties">Jo Bloggs - ABC Business</a>.<a href="#" class="margin-left-10">Not you?</a></span></li>
+            </ul>
+        </div>
+        <h1 class="visuallyhidden">
+            {{title}}
+        </h1>
+
+        <div class="no-properties">
+        <ul class="data-filter" style="margin: 40px 0 20px;">
+            <li class="data-approved"><a href="#" class="current" data-filter="approved" data-help="Once your property has been approved by the VOA you’ll see it on this page.">Approved</a></li>
+            <li class="data-pending"><a href="#" data-filter="pending" data-help="When you’ve claimed and you’re awaiting approval by the VOA, you’ll see it on this page.">Pending</a></li>
+            <li class="data-declined"><a href="#" data-filter="declined" data-help="When your property claim has been declined or revoked by the VOA, you’ll see it on this page.">Declined</a></li>
+            <li class="claim-property"><a href="/dashboard/{{version}}/business/find-property">+ Claim property</a></li>
+        </ul>
+
+
+        <p class="alert--success margin-top-20"><span class="filter-help"></span></p>
+
+    </div>
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
