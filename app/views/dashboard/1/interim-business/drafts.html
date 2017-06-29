@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set title = "Drafs" %}
+{% set title = "Drafts" %}
 {% set version = "1" %}
 
 {% block page_title %}
@@ -42,7 +42,7 @@
         {{title}}
     </h1>
 
-    <p>Drafts will only remain for 30 days.</p>
+    <p>Your draft will be saved for 30 days from the last time you saved your check form.</p>
 
     <div class="table-wrapper">
     <table id="draftsTable" class="table-font-xsmall margin-top-30 margin-bottom-20">
@@ -52,20 +52,17 @@
             <col>
             <col>
             <col>
-            <col>
         </colgroup>
 
         <thead>
             <tr>
                 <th scope="col">Address</th>
                 <th scope="col">Agent</th>
-                <th scope="col">Effective date</th>
                 <th scope="col">Type</th>
-                <th scope="col">Expiry date</th>
+                <th scope="col">Draft expiry date</th>
                 <th scope="col">Actions</th>
             </tr>
             <tr id="filterrow">
-                <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -78,7 +75,6 @@
             <tr>
                 <td>Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria, LA12 9RB</td>
                 <td>ABC Business</td>
-                <td>1 Apr 2017</td>
                 <td>Check</td>
                 <td>1 Sept 2017</td>
                 <td>
@@ -92,12 +88,11 @@
             <tr>
                 <td>2 Lorem St, Ipsum ABC 123</td>
                 <td>DEF Agent</td>
-                <td>2 Apr 2017</td>
-                <td>Challenge</td>
+                <td>Check</td>
                 <td>12 Sept 2017</td>
                 <td>
                     <ul class="list list-action">
-                        <li><a href="#">Continue challenge</a></li>
+                        <li><a href="#">Continue check</a></li>
                         <li><a href="/dashboard/{{version}}/valuations">Property details</a></li>
                         <li><a href="#" data-toggle="dialog" data-target="dialog-delete">Delete draft</a></li>
                     </ul>

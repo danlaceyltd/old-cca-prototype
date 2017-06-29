@@ -28,7 +28,7 @@
                     $(this).html( '<input type="search" class="filter-input" /><button class="icon"><i class="search-icon"></i></button>' );
             });
 
-        $('#draftsTable thead tr#filterrow th:eq(5)').html('<a href="#" class="clear">Clear search</a>');
+        $('#draftsTable thead tr#filterrow th:eq(4)').html('<a href="#" class="clear">Clear search</a>');
 
 
         var table = $('#draftsTable').DataTable({
@@ -39,7 +39,6 @@
                 "lengthMenu": "Show _MENU_"
             },
             "aoColumns": [
-             null,
              null,
              null,
              {"visible": false },
