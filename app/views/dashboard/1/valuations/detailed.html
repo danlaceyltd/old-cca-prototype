@@ -13,464 +13,241 @@
 
 
 {% block content %}
-
-<main id="content" role="main">
-
-    {% include "includes/phase_banner_prototype.html" %}
-
-    <ul class="navigation-links">
-        <li class="pull-left" style="margin-left: 0"><a href="javascript: history.go(-1)" class="link-back">Back</a></li>
-        <li><a href="/dashboard/{{version}}/agent/">Manage properties</a></li>
-        <li><a href="#">Sign out</a></li>
-    </ul>
-
-    <h1 class="heading-large margin-top-20" id="assessment-address">
-        <span class="heading-secondary">Valuation for</span>
-        <span class="heading-main">{{title}}</span>
-    </h1>
-
-    <div id="panel_valuation" aria-labelledby="tab_valuation" role="tabpanel" aria-hidden="false">
-
-        <div class="banner-temporary-message-without-action rateable-value-top-banner">
-            <p class="no-margin">Your rateable value is rounded down to</p>
-            <p class="heading-xlarge no-margin">£37,000</p>
-            <p class="no-margin">The rateable value is not the amount you will pay. It is used to calculate your business rates bill.</p>
-        </div>
-
-        <p>This is the full valuation, property information and rateable value for this property.</p>
-        <p>The rateable value is an estimate of the rental value of your property on 1 April 2015. This has been calculated using the information on this page.</p>
-        <p>If any of the factual details about your property or land are incorrect, you (the owner, occupier or authorised agent) need to let the VOA know. Telling us about anything that’s incorrect is known as a check.</p>
-
-
-
-        <p>
-            If all of your property details are correct but you believe your rateable value is incorrect, you must first complete a check and wait for the outcome before making a challenge.
-        </p>
-
-        <p id="top-start-check" class="print-hide">
-            <a href="/dashboard/{{version}}/check/" class="button" role="button">Start a check</a>
-        </p>
-
-        <br />
-        <p>Once you’ve completed a check, the VOA will contact you with the outcome. If you disagree with the outcome of the check or you believe the rateable value of your property is incorrect, you can let us know. Doing this is know as a challenge.</p>
-
-        <p class="panel panel-border-wide">You can’t start a challenge until you’ve received the outcome for your check</p>
-
-        <p id="top-challenge-valuation" class="print-hide">
-            <a href="/dashboard/{{version}}/challenge/" class="button" role="button">Start a challenge</a>
-        </p>
-
-
-
-
-<div class="tabular-data__entry assessment-col-2x" id="assessment-details">
-
-    <ul>
-        <li id="rating-list">
-            <span class="tabular-data__heading--label">Rating list</span>
-            <span class="tabular-data__data-1">2017</span>
-            <span class="tabular-data__data-2">
-
-
-
-<a href="/business-rates-valuation/help#dialog-ratingList" data-toggle="dialog" data-target="dialog-ratingList" class="help">
-    <i><span class="visuallyhidden">Help with Rating list</span></i>
-</a>
-</span>
-        </li>
-        <li id="billing-authority-code">
-            <span class="tabular-data__heading--label">Local authority</span>
-            <span class="tabular-data__data-1">Southwark</span>
-            <span class="tabular-data__data-2"></span>
-        </li>
-        <li id="effective-date">
-            <span class="tabular-data__heading--label">Effective date</span>
-            <span class="tabular-data__data-1">01 April 2017</span>
-            <span class="tabular-data__data-2">
-
-
-
-<a href="/business-rates-valuation/help#dialog-effectiveDate" data-toggle="dialog" data-target="dialog-effectiveDate" class="help">
-    <i><span class="visuallyhidden">Help with Effective date</span></i>
-</a>
-</span>
-        </li>
-        <li id="billing-authority-reference-number">
-            <span class="tabular-data__heading--label">Local authority reference</span>
-            <span class="tabular-data__data-1">1940002152213J</span>
-            <span class="tabular-data__data-2">
-
-
-
-<a href="/business-rates-valuation/help#dialog-billingAuthorityReference" data-toggle="dialog" data-target="dialog-billingAuthorityReference" class="help">
-    <i><span class="visuallyhidden">Help with Local authority reference</span></i>
-</a>
-</span>
-        </li>
-
-        <li id="primary-description">
-            <span class="tabular-data__heading--label">Primary description</span>
-            <span class="tabular-data__data-1">Offices and premises</span>
-            <span class="tabular-data__data-2"></span>
-        </li>
-        <li id="valuation-scheme-reference">
-            <span class="tabular-data__heading--label">Valuation scheme reference</span>
-            <span class="tabular-data__data-1">363805</span>
-            <span class="tabular-data__data-2">
-
-
-
-<a href="/business-rates-valuation/help#dialog-valuationSchemeReference" data-toggle="dialog" data-target="dialog-valuationSchemeReference" class="help">
-    <i><span class="visuallyhidden">Help with Valuation scheme reference</span></i>
-</a>
-</span>
-        </li>
-
-        <li id="composite-property">
-            <span class="tabular-data__heading--label">Part domestic (composite) property</span>
-            <span class="tabular-data__data-1">No</span>
-            <span class="tabular-data__data-2">
-
-
-
-<a href="/business-rates-valuation/help#dialog-compositeProperty" data-toggle="dialog" data-target="dialog-compositeProperty" class="help">
-    <i><span class="visuallyhidden">Help with Part domestic (composite) property</span></i>
-</a>
-</span>
-        </li>
-
-        <li id="basis-of-measurement">
-            <span class="tabular-data__heading--label">Basis of measurement</span>
-            <span class="tabular-data__data-1">Net internal area</span>
-            <span class="tabular-data__data-2">
-
-
-
-<a href="/business-rates-valuation/help#dialog-basisOfMeasurement" data-toggle="dialog" data-target="dialog-basisOfMeasurement" class="help">
-    <i><span class="visuallyhidden">Help with Basis of measurement</span></i>
-</a>
-</span>
-        </li>
-
-
-
-    </ul>
-</div>
-
-
-
-
-
+<main id="content" role="main"> {% include "includes/phase_banner_prototype.html" %}
+  <ul class="navigation-links">
+    <li class="pull-left" style="margin-left: 0"><a href="javascript: history.go(-1)" class="link-back">Back</a></li>
+    <li><a href="/dashboard/{{version}}/">Dashboard</a></li>
+    <li><a href="#">Sign out</a></li>
+  </ul>
+  <h1 class="heading-large margin-top-20" id="assessment-address"> <span class="heading-secondary">Valuation for</span> <span class="heading-main">{{title}}</span> </h1>
+  <div id="panel_valuation" aria-labelledby="tab_valuation" role="tabpanel" aria-hidden="false">
+    <div class="banner-temporary-message-without-action rateable-value-top-banner">
+      <p class="no-margin">Your rateable value is rounded down to</p>
+      <p class="heading-xlarge no-margin">£37,000</p>
+      <p class="no-margin">The rateable value is not the amount you will pay. It is used to calculate your business rates bill.</p>
+    </div>
+    <p>This is the full valuation, property information and rateable value for this property.</p>
+    <p>The rateable value is an estimate of the rental value of your property on 1 April 2015. This has been calculated using the information on this page.</p>
+    <p>If any of the factual details about your property or land are incorrect, you (the owner, occupier or authorised agent) need to let the VOA know. Telling us about anything that’s incorrect is known as a check.</p>
+    <p> If all of your property details are correct but you believe your rateable value is incorrect, you must first complete a check and wait for the outcome before making a challenge. </p>
+    <p id="top-start-check" class="print-hide"> <a href="/dashboard/{{version}}/check/" class="button" role="button">Start a check</a> </p>
+    <br />
+    <p>Once you’ve completed a check, the VOA will contact you with the outcome. If you disagree with the outcome of the check or you believe the rateable value of your property is incorrect, you can let us know. Doing this is know as a challenge.</p>
+    <p class="panel panel-border-wide">You can’t start a challenge until you’ve received the outcome for your check</p>
+    <p id="top-challenge-valuation" class="print-hide"> <a href="/dashboard/{{version}}/challenge/" class="button" role="button">Start a challenge</a> </p>
+    <div class="tabular-data__entry assessment-col-2x" id="assessment-details">
+      <ul>
+        <li id="rating-list"> <span class="tabular-data__heading--label">Rating list</span> <span class="tabular-data__data-1">2017</span> <span class="tabular-data__data-2"> <a href="/business-rates-valuation/help#dialog-ratingList" data-toggle="dialog" data-target="dialog-ratingList" class="help"> <i><span class="visuallyhidden">Help with Rating list</span></i> </a> </span> </li>
+        <li id="billing-authority-code"> <span class="tabular-data__heading--label">Local authority</span> <span class="tabular-data__data-1">Southwark</span> <span class="tabular-data__data-2"></span> </li>
+        <li id="effective-date"> <span class="tabular-data__heading--label">Effective date</span> <span class="tabular-data__data-1">01 April 2017</span> <span class="tabular-data__data-2"> <a href="/business-rates-valuation/help#dialog-effectiveDate" data-toggle="dialog" data-target="dialog-effectiveDate" class="help"> <i><span class="visuallyhidden">Help with Effective date</span></i> </a> </span> </li>
+        <li id="billing-authority-reference-number"> <span class="tabular-data__heading--label">Local authority reference</span> <span class="tabular-data__data-1">1940002152213J</span> <span class="tabular-data__data-2"> <a href="/business-rates-valuation/help#dialog-billingAuthorityReference" data-toggle="dialog" data-target="dialog-billingAuthorityReference" class="help"> <i><span class="visuallyhidden">Help with Local authority reference</span></i> </a> </span> </li>
+        <li id="primary-description"> <span class="tabular-data__heading--label">Primary description</span> <span class="tabular-data__data-1">Offices and premises</span> <span class="tabular-data__data-2"></span> </li>
+        <li id="valuation-scheme-reference"> <span class="tabular-data__heading--label">Valuation scheme reference</span> <span class="tabular-data__data-1">363805</span> <span class="tabular-data__data-2"> <a href="/business-rates-valuation/help#dialog-valuationSchemeReference" data-toggle="dialog" data-target="dialog-valuationSchemeReference" class="help"> <i><span class="visuallyhidden">Help with Valuation scheme reference</span></i> </a> </span> </li>
+        <li id="composite-property"> <span class="tabular-data__heading--label">Part domestic (composite) property</span> <span class="tabular-data__data-1">No</span> <span class="tabular-data__data-2"> <a href="/business-rates-valuation/help#dialog-compositeProperty" data-toggle="dialog" data-target="dialog-compositeProperty" class="help"> <i><span class="visuallyhidden">Help with Part domestic (composite) property</span></i> </a> </span> </li>
+        <li id="basis-of-measurement"> <span class="tabular-data__heading--label">Basis of measurement</span> <span class="tabular-data__data-1">Net internal area</span> <span class="tabular-data__data-2"> <a href="/business-rates-valuation/help#dialog-basisOfMeasurement" data-toggle="dialog" data-target="dialog-basisOfMeasurement" class="help"> <i><span class="visuallyhidden">Help with Basis of measurement</span></i> </a> </span> </li>
+      </ul>
+    </div>
     <div id="survey-unit-container_1">
-
-
-
-
-
-<div class="table-wrapper">
-    <table id="survey_unit_1" class="table-font-xsmall">
-        <caption id="survey-unit-1-caption">
-            <div class="heading-medium">Unit 1 - Office</div>
-
-        </caption>
-        <colgroup>
-            <col width="">
-            <col width="">
-            <col width="12%">
-            <col width="">
-            <col width="">
-            <col width="">
-            <col width="">
-            <col width="">
-            <col width="">
-        </colgroup>
-        <thead>
+      <div class="table-wrapper">
+        <table id="survey_unit_1" class="table-font-xsmall">
+          <caption id="survey-unit-1-caption">
+          <div class="heading-medium">Unit 1 - Office</div>
+          </caption>
+          <colgroup>
+          <col width="">
+          <col width="">
+          <col width="12%">
+          <col width="">
+          <col width="">
+          <col width="">
+          <col width="">
+          <col width="">
+          <col width="">
+          </colgroup>
+          <thead>
             <tr>
-                <th>Ref</th>
-                <th>Description</th>
-                <th>Relativity
-
-
-
-<a href="/business-rates-valuation/help#dialog-relativity" data-toggle="dialog" data-target="dialog-relativity" class="help">
-    <i><span class="visuallyhidden">Help with Relativity</span></i>
-</a>
-</th>
-                <th class="data-right">Area <abbr role="text" title="meters squared" aria-label="meters squared">m<sup>2</sup></abbr> or unit</th>
-                <th></th>
-                <th>£ per <abbr role="text" title="meters squared" aria-label="meters squared">m<sup>2</sup></abbr> or unit</th>
-                <th class="data-right">Compounded adjustments
-                    <a href="/business-rates-valuation/help#dialog-compounded" data-toggle="dialog" data-target="dialog-compounded" class="help">
-                        <i><span class="visuallyhidden">Help with compounded adjustments</span></i>
-                    </a>
-
-                </th>
-                <th>%</th>
-                <th class="last">Value</th>
+              <th>Ref</th>
+              <th>Description</th>
+              <th>Relativity <a href="/business-rates-valuation/help#dialog-relativity" data-toggle="dialog" data-target="dialog-relativity" class="help"> <i><span class="visuallyhidden">Help with Relativity</span></i> </a> </th>
+              <th class="data-right">Area <abbr role="text" title="meters squared" aria-label="meters squared">m<sup>2</sup></abbr> or unit</th>
+              <th></th>
+              <th>£ per <abbr role="text" title="meters squared" aria-label="meters squared">m<sup>2</sup></abbr> or unit</th>
+              <th class="data-right">Compounded adjustments <a href="/business-rates-valuation/help#dialog-compounded" data-toggle="dialog" data-target="dialog-compounded" class="help"> <i><span class="visuallyhidden">Help with compounded adjustments</span></i> </a> </th>
+              <th>%</th>
+              <th class="last">Value</th>
             </tr>
-        </thead>
-        <tbody>
-
-
+          </thead>
+          <tbody>
             <tr id="survey-unit-line_1">
-                <td>1</td>
-                <td>Second floor office</td>
-                <td>1</td>
-                <td class="data-right">156.27</td>
-                <td><abbr role="text" title="times" aria-label="times">x</abbr></td>
-                <td>£237.50</td>
-                <td class="data-right">
-                    <ul>
-
-
-                    </ul>
-                </td>
-                <td></td>
-                <td class="last">£37,114</td>
+              <td>1</td>
+              <td>Second floor office</td>
+              <td>1</td>
+              <td class="data-right">156.27</td>
+              <td><abbr role="text" title="times" aria-label="times">x</abbr></td>
+              <td>£237.50</td>
+              <td class="data-right"><ul>
+                </ul></td>
+              <td></td>
+              <td class="last">£37,114</td>
             </tr>
-
-        </tbody>
-        <tfoot>
-
+          </tbody>
+          <tfoot>
             <tr id="survey_unit_total" class="total">
-                <td></td>
-                <td><strong>Unit 1 total</strong></td>
-                <td colspan="6"></td>
-                <td class="last"><strong>£37,114</strong></td>
+              <td></td>
+              <td><strong>Unit 1 total</strong></td>
+              <td colspan="6"></td>
+              <td class="last"><strong>£37,114</strong></td>
             </tr>
-        </tfoot>
-    </table>
-</div>
-
-
-
-<h2 class="heading-medium">Office details</h2>
-<div class="tabular-data__entry assessment-col-2x" id="property-features_1">
-
-    <ul>
-        <li id="property-features-office-basisOfMeasurement_1">
-            <span class="tabular-data__heading--label">Basis of measurement</span>
-            <span class="tabular-data__data-1">Net internal area</span>
-        </li>
-        <li id="property-features-office-raisedFloor_1">
-            <span class="tabular-data__heading--label">Raised floor</span>
-            <span class="tabular-data__data-1">No</span>
-        </li>
-        <li id="property-features-office-centralHeating_1">
-            <span class="tabular-data__heading--label">Central heating</span>
-            <span class="tabular-data__data-1">No coverage</span>
-        </li>
-        <li id="property-features-office-airConditioning_1">
-            <span class="tabular-data__heading--label">Air conditioning</span>
-            <span class="tabular-data__data-1">No coverage</span>
-        </li>
-        <li id="property-features-office-passengerLift_1">
-            <span class="tabular-data__heading--label">Passenger lift</span>
-            <span class="tabular-data__data-1">All floors</span>
-        </li>
-        <li id="property-features-office-numberOfStoreys_1">
-            <span class="tabular-data__heading--label">Number of storeys</span>
-            <span class="tabular-data__data-1">7</span>
-        </li>
-        <li id="property-features-office-firstFloorBusiness_1">
-            <span class="tabular-data__heading--label">Lowest floor of property</span>
-            <span class="tabular-data__data-1">Second floor</span>
-        </li>
-        <li id="property-features-office-lastFloorBusiness_1">
-            <span class="tabular-data__heading--label">Highest floor of property</span>
-            <span class="tabular-data__data-1">Second floor</span>
-        </li>
-        <li id="property-features-office-yearBuilt_1">
-            <span class="tabular-data__heading--label">Year built</span>
-            <span class="tabular-data__data-1">1919-1939</span>
-        </li>
-        <li id="property-features-office-yearRefurbished_1">
-            <span class="tabular-data__heading--label">Year refurbished</span>
-            <span class="tabular-data__data-1"><span class="noRecord">No record</span></span>
-        </li>
-    </ul>
-</div>
-
-
+          </tfoot>
+        </table>
+      </div>
+      <h2 class="heading-medium">Office details</h2>
+      <div class="tabular-data__entry assessment-col-2x" id="property-features_1">
+        <ul>
+          <li id="property-features-office-basisOfMeasurement_1"> <span class="tabular-data__heading--label">Basis of measurement</span> <span class="tabular-data__data-1">Net internal area</span> </li>
+          <li id="property-features-office-raisedFloor_1"> <span class="tabular-data__heading--label">Raised floor</span> <span class="tabular-data__data-1">No</span> </li>
+          <li id="property-features-office-centralHeating_1"> <span class="tabular-data__heading--label">Central heating</span> <span class="tabular-data__data-1">No coverage</span> </li>
+          <li id="property-features-office-airConditioning_1"> <span class="tabular-data__heading--label">Air conditioning</span> <span class="tabular-data__data-1">No coverage</span> </li>
+          <li id="property-features-office-passengerLift_1"> <span class="tabular-data__heading--label">Passenger lift</span> <span class="tabular-data__data-1">All floors</span> </li>
+          <li id="property-features-office-numberOfStoreys_1"> <span class="tabular-data__heading--label">Number of storeys</span> <span class="tabular-data__data-1">7</span> </li>
+          <li id="property-features-office-firstFloorBusiness_1"> <span class="tabular-data__heading--label">Lowest floor of property</span> <span class="tabular-data__data-1">Second floor</span> </li>
+          <li id="property-features-office-lastFloorBusiness_1"> <span class="tabular-data__heading--label">Highest floor of property</span> <span class="tabular-data__data-1">Second floor</span> </li>
+          <li id="property-features-office-yearBuilt_1"> <span class="tabular-data__heading--label">Year built</span> <span class="tabular-data__data-1">1919-1939</span> </li>
+          <li id="property-features-office-yearRefurbished_1"> <span class="tabular-data__heading--label">Year refurbished</span> <span class="tabular-data__data-1"><span class="noRecord">No record</span></span> </li>
+        </ul>
+      </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table id="total-before-adjustments" class="table-font-xsmall">
-    <caption id="total-before-adjustments_caption" class="heading-medium">
-        Total before adjustments to the whole
-    </caption>
-    <tfoot>
+    <table id="total-before-adjustments" class="table-font-xsmall">
+      <caption id="total-before-adjustments_caption" class="heading-medium">
+      Total before adjustments to the whole
+      </caption>
+      <tfoot>
         <tr class="total">
-            <td class="last"><strong>£37,114</strong></td>
+          <td class="last"><strong>£37,114</strong></td>
         </tr>
-    </tfoot>
-</table>
-
-
-
-
-
-
-
-
-
-    <table id="grandTotal" class="table-font-xsmall">
-        <caption id="grandTotal-caption" class="heading-medium">
-            <span>Total value</span>
-        </caption>
-        <tfoot>
-            <tr class="total">
-                <td class="last"><span class="grand-total heading-xlarge">£37,114</span></td>
-            </tr>
-        </tfoot>
+      </tfoot>
     </table>
-
-<a href="javascript: history.go(-1)" class="link-back">Back</a>
-
-
-        <p><a rel="nofollow" href="javascript:window.print()" class="print-link">Print page</a></p>
-
-
-
-<div class="dialog" id="dialog-ratingList" aria-hidden="true" data-modal="true">
-    <div class="dialog-holder" aria-labelledby="dialog-ratingList" aria-describedby="dialog-content-ratingList" role="alertdialog">
+    <table id="grandTotal" class="table-font-xsmall">
+      <caption id="grandTotal-caption" class="heading-medium">
+      <span>Total value</span>
+      </caption>
+      <tfoot>
+        <tr class="total">
+          <td class="last"><span class="grand-total heading-xlarge">£37,114</span></td>
+        </tr>
+      </tfoot>
+    </table>
+    <a href="javascript: history.go(-1)" class="link-back">Back</a>
+    <p><a rel="nofollow" href="javascript:window.print()" class="print-link">Print page</a></p>
+    <div class="dialog" id="dialog-ratingList" aria-hidden="true" data-modal="true">
+      <div class="dialog-holder" aria-labelledby="dialog-ratingList" aria-describedby="dialog-content-ratingList" role="alertdialog">
         <div class="dialog-content" id="dialog-content-ratingList" role="document" tabindex="0">
-            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
-            <div class="modal-content-div"><h3 class="heading-small">Rating list</h3><p>The VOA calculates the rateable value for each non-domestic property in England and Wales and produces a new rating list usually every 5 years. The list includes the address of the property, a description of the property, its rateable value and the date that value has effect from.  The 2017 rating list came into effect on 1 April 2017.</p></div>
-            <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a>
-        </div>
+          <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+          <div class="modal-content-div">
+            <h3 class="heading-small">Rating list</h3>
+            <p>The VOA calculates the rateable value for each non-domestic property in England and Wales and produces a new rating list usually every 5 years. The list includes the address of the property, a description of the property, its rateable value and the date that value has effect from.  The 2017 rating list came into effect on 1 April 2017.</p>
+          </div>
+          <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a> </div>
+      </div>
     </div>
-</div>
-
-
-
-<div class="dialog" id="dialog-effectiveDate" aria-hidden="true" data-modal="true">
-    <div class="dialog-holder" aria-labelledby="dialog-effectiveDate" aria-describedby="dialog-content-effectiveDate" role="alertdialog">
+    <div class="dialog" id="dialog-effectiveDate" aria-hidden="true" data-modal="true">
+      <div class="dialog-holder" aria-labelledby="dialog-effectiveDate" aria-describedby="dialog-content-effectiveDate" role="alertdialog">
         <div class="dialog-content" id="dialog-content-effectiveDate" role="document" tabindex="0">
-            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
-            <div class="modal-content-div"><h3 class="heading-small">Effective date</h3><p>This is the date that the physical circumstances affecting the rateable value take effect from. For example, if an area was added to the property on 1 January 2018, there should be a revised valuation with effect from that date.</p><p>If there have been no physical changes to the property since the beginning of the rating list, this will be 1 April 2017.</p></div>
-            <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a>
-        </div>
+          <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+          <div class="modal-content-div">
+            <h3 class="heading-small">Effective date</h3>
+            <p>This is the date that the physical circumstances affecting the rateable value take effect from. For example, if an area was added to the property on 1 January 2018, there should be a revised valuation with effect from that date.</p>
+            <p>If there have been no physical changes to the property since the beginning of the rating list, this will be 1 April 2017.</p>
+          </div>
+          <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a> </div>
+      </div>
     </div>
-</div>
-
-
-
-<div class="dialog" id="dialog-valuationSchemeReference" aria-hidden="true" data-modal="true">
-    <div class="dialog-holder" aria-labelledby="dialog-valuationSchemeReference" aria-describedby="dialog-content-valuationSchemeReference" role="alertdialog">
+    <div class="dialog" id="dialog-valuationSchemeReference" aria-hidden="true" data-modal="true">
+      <div class="dialog-holder" aria-labelledby="dialog-valuationSchemeReference" aria-describedby="dialog-content-valuationSchemeReference" role="alertdialog">
         <div class="dialog-content" id="dialog-content-valuationSchemeReference" role="document" tabindex="0">
-            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
-            <div class="modal-content-div"><h3 class="heading-small">Valuation scheme reference</h3><p>The VOA groups similar properties in the same area together into a ‘valuation scheme’ so that they value them fairly and consistently. These schemes are drawn up using rental information that the VOA collects. All properties in the same scheme will be given a basic value from the same value range. Individual characteristics of properties can be reflected by adjusting the basic rate.</p><p>For example, in a valuation scheme, the VOA may assume that there is no fire protection. If one of the properties in that scheme has it, they may apply a higher value to that property because of this feature. The final value for a property will depend on an adjustment of all of the individual attributes and factors together.</p><p>Each scheme has a unique reference number and describes which type of property it covers.</p></div>
-            <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a>
-        </div>
+          <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+          <div class="modal-content-div">
+            <h3 class="heading-small">Valuation scheme reference</h3>
+            <p>The VOA groups similar properties in the same area together into a ‘valuation scheme’ so that they value them fairly and consistently. These schemes are drawn up using rental information that the VOA collects. All properties in the same scheme will be given a basic value from the same value range. Individual characteristics of properties can be reflected by adjusting the basic rate.</p>
+            <p>For example, in a valuation scheme, the VOA may assume that there is no fire protection. If one of the properties in that scheme has it, they may apply a higher value to that property because of this feature. The final value for a property will depend on an adjustment of all of the individual attributes and factors together.</p>
+            <p>Each scheme has a unique reference number and describes which type of property it covers.</p>
+          </div>
+          <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a> </div>
+      </div>
     </div>
-</div>
-
-
-
-<div class="dialog" id="dialog-compositeProperty" aria-hidden="true" data-modal="true">
-    <div class="dialog-holder" aria-labelledby="dialog-compositeProperty" aria-describedby="dialog-content-compositeProperty" role="alertdialog">
+    <div class="dialog" id="dialog-compositeProperty" aria-hidden="true" data-modal="true">
+      <div class="dialog-holder" aria-labelledby="dialog-compositeProperty" aria-describedby="dialog-content-compositeProperty" role="alertdialog">
         <div class="dialog-content" id="dialog-content-compositeProperty" role="document" tabindex="0">
-            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
-            <div class="modal-content-div"><h3 class="heading-small">Part domestic (composite) property</h3><p>If a hereditament (a unit of property with the same address and local authority reference number) has a mix of domestic and non-domestic uses (such as a shop with the shop owner’s flat above) it may be described as ‘part domestic (composite)’. This means it will have both a non-domestic valuation and a Council Tax band. Both uses will be considered in the valuation.</p></div>
-            <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a>
-        </div>
+          <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+          <div class="modal-content-div">
+            <h3 class="heading-small">Part domestic (composite) property</h3>
+            <p>If a hereditament (a unit of property with the same address and local authority reference number) has a mix of domestic and non-domestic uses (such as a shop with the shop owner’s flat above) it may be described as ‘part domestic (composite)’. This means it will have both a non-domestic valuation and a Council Tax band. Both uses will be considered in the valuation.</p>
+          </div>
+          <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a> </div>
+      </div>
     </div>
-</div>
-
-
-
-<div class="dialog" id="dialog-basisOfMeasurement" aria-hidden="true" data-modal="true">
-    <div class="dialog-holder" aria-labelledby="dialog-basisOfMeasurement" aria-describedby="dialog-content-basisOfMeasurement" role="alertdialog">
+    <div class="dialog" id="dialog-basisOfMeasurement" aria-hidden="true" data-modal="true">
+      <div class="dialog-holder" aria-labelledby="dialog-basisOfMeasurement" aria-describedby="dialog-content-basisOfMeasurement" role="alertdialog">
         <div class="dialog-content" id="dialog-content-basisOfMeasurement" role="document" tabindex="0">
-            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
-            <div class="modal-content-div"><h3 class="heading-small">Basis of measurement</h3><p>The basis of measuring that the VOA have used for this property. A property is always assumed to be vacant and to let and most tenants’ fittings and furniture are ignored when measuring. The basis will usually be Net Internal Area (NIA) for offices and shops, and Gross Internal Area (GIA) for warehouses and industrial properties.</p><p>NIA is the total usable area of each floor within a building, measured to the inside face of the boundary walls. It doesn’t include areas such as internal structural walls and stairwells.</p><p>GIA is the total area of a building measured to the internal face of the external walls at each floor level, including internal walls and stairwells.</p></div>
-            <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a>
-        </div>
+          <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+          <div class="modal-content-div">
+            <h3 class="heading-small">Basis of measurement</h3>
+            <p>The basis of measuring that the VOA have used for this property. A property is always assumed to be vacant and to let and most tenants’ fittings and furniture are ignored when measuring. The basis will usually be Net Internal Area (NIA) for offices and shops, and Gross Internal Area (GIA) for warehouses and industrial properties.</p>
+            <p>NIA is the total usable area of each floor within a building, measured to the inside face of the boundary walls. It doesn’t include areas such as internal structural walls and stairwells.</p>
+            <p>GIA is the total area of a building measured to the internal face of the external walls at each floor level, including internal walls and stairwells.</p>
+          </div>
+          <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a> </div>
+      </div>
     </div>
-</div>
-
-
-
-<div class="dialog" id="dialog-listAlterationDate" aria-hidden="true" data-modal="true">
-    <div class="dialog-holder" aria-labelledby="dialog-listAlterationDate" aria-describedby="dialog-content-listAlterationDate" role="alertdialog">
+    <div class="dialog" id="dialog-listAlterationDate" aria-hidden="true" data-modal="true">
+      <div class="dialog-holder" aria-labelledby="dialog-listAlterationDate" aria-describedby="dialog-content-listAlterationDate" role="alertdialog">
         <div class="dialog-content" id="dialog-content-listAlterationDate" role="document" tabindex="0">
-            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
-            <div class="modal-content-div"><h3 class="heading-small">Date of last list alteration</h3><p>This is the date the VOA made the changes to the rating list. For example, if the VOA agreed with information received in a check relating to an effective date of 1 April 2017, the effective date would still be 1 April 2017 and the date of the list alteration would be the date the VOA updated the list.</p></div>
-            <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a>
-        </div>
+          <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+          <div class="modal-content-div">
+            <h3 class="heading-small">Date of last list alteration</h3>
+            <p>This is the date the VOA made the changes to the rating list. For example, if the VOA agreed with information received in a check relating to an effective date of 1 April 2017, the effective date would still be 1 April 2017 and the date of the list alteration would be the date the VOA updated the list.</p>
+          </div>
+          <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a> </div>
+      </div>
     </div>
-</div>
-
-
-
-<div class="dialog" id="dialog-relativity" aria-hidden="true" data-modal="true">
-    <div class="dialog-holder" aria-labelledby="dialog-relativity" aria-describedby="dialog-content-relativity" role="alertdialog">
+    <div class="dialog" id="dialog-relativity" aria-hidden="true" data-modal="true">
+      <div class="dialog-holder" aria-labelledby="dialog-relativity" aria-describedby="dialog-content-relativity" role="alertdialog">
         <div class="dialog-content" id="dialog-content-relativity" role="document" tabindex="0">
-            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
-            <div class="modal-content-div"><h3 class="heading-small">Relativity</h3><p>Areas in a property are given a value in relation to the main space for the particular use . So, if the front of a shop (zone A) has a value of 1.0, other areas of the property will be valued against this, depending on where they are in the shop or whether the space is secondary to anyone occupying it for the same use.</p></div>
-            <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a>
-        </div>
+          <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+          <div class="modal-content-div">
+            <h3 class="heading-small">Relativity</h3>
+            <p>Areas in a property are given a value in relation to the main space for the particular use . So, if the front of a shop (zone A) has a value of 1.0, other areas of the property will be valued against this, depending on where they are in the shop or whether the space is secondary to anyone occupying it for the same use.</p>
+          </div>
+          <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a> </div>
+      </div>
     </div>
-</div>
-
-
-
-<div class="dialog" id="dialog-billingAuthorityReference" aria-hidden="true" data-modal="true">
-    <div class="dialog-holder" aria-labelledby="dialog-billingAuthorityReference" aria-describedby="dialog-content-billingAuthorityReference" role="alertdialog">
+    <div class="dialog" id="dialog-billingAuthorityReference" aria-hidden="true" data-modal="true">
+      <div class="dialog-holder" aria-labelledby="dialog-billingAuthorityReference" aria-describedby="dialog-content-billingAuthorityReference" role="alertdialog">
         <div class="dialog-content" id="dialog-content-billingAuthorityReference" role="document" tabindex="0">
-            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
-            <div class="modal-content-div"><h3 class="heading-small">Local authority reference</h3><p>This is a reference code assigned to the property by the local authority, which is used by both the council and the VOA. This is assigned to avoid confusion and to ensure that the rateable value used when the council calculates your business rates bill is for the right property.</p></div>
-            <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a>
-        </div>
+          <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+          <div class="modal-content-div">
+            <h3 class="heading-small">Local authority reference</h3>
+            <p>This is a reference code assigned to the property by the local authority, which is used by both the council and the VOA. This is assigned to avoid confusion and to ensure that the rateable value used when the council calculates your business rates bill is for the right property.</p>
+          </div>
+          <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a> </div>
+      </div>
     </div>
-</div>
-
-<div class="dialog" id="dialog-compounded" aria-hidden="true" data-modal="true">
-    <div class="dialog-holder" aria-labelledby="dialog-compounded" aria-describedby="dialog-content-compounded" role="alertdialog">
+    <div class="dialog" id="dialog-compounded" aria-hidden="true" data-modal="true">
+      <div class="dialog-holder" aria-labelledby="dialog-compounded" aria-describedby="dialog-content-compounded" role="alertdialog">
         <div class="dialog-content" id="dialog-content-compounded" role="document" tabindex="0">
-            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
-            <div class="modal-content-div"><h3 class="heading-small">Compounded adjustments</h3><p>Where there is more than one adjustment the values of each adjustment are multiplied. For example, an upward adjustment can be multiplied with a downward adjustment to reach a compounded value.</p></div>
-            <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a>
-        </div>
+          <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+          <div class="modal-content-div">
+            <h3 class="heading-small">Compounded adjustments</h3>
+            <p>Where there is more than one adjustment the values of each adjustment are multiplied. For example, an upward adjustment can be multiplied with a downward adjustment to reach a compounded value.</p>
+          </div>
+          <a href="#" class="dialog-cancel button" aria-label="close" role="button">Close</a> </div>
+      </div>
     </div>
-</div>
-
-
-    </div>
-
-
-
-
-    {% include "includes/get_help.html" %}
-
-</main>
-
-
-
+  </div>
+  {% include "includes/get_help.html" %} </main>
 {% endblock %}
 
 {% block body_end %}
-  {% include "includes/" + version +"/scripts.html" %}
-  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
-{% endblock %}
+  {% include "includes/" + version +"/scripts.html" %} 
+  <!-- GOV.UK Prototype kit {{releaseVersion}} --> 
+  {% endblock %} 
