@@ -50,7 +50,7 @@
              'order': [[1, 'asc']],
             fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
                 $('td:eq(3)', nRow).html('<ul class="list list-actions"><li>Check: Yes</li><li>Challenge: No</li></ul>');
-                $('td:eq(4)', nRow).html('<ul class="list list-actions"><li><a href="#">Revoke client</a></li><li><a href="/dashboard/1/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Property details</a></li></ul>');
+                $('td:eq(4)', nRow).html('<a href="/dashboard/1/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Property details</a>');
             },
             initComplete: function( settings, json ) {
                 //table.columns(0).search('ABC Agent').draw();
