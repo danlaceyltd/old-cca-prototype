@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set title = "We’ve received your request to add 33, ALVERSTONE ROAD, WORTHING, WEST SUSSEX, BN11 2JR to your business’s customer record" %}
+{% set title = "33, ALVERSTONE ROAD, WORTHING, WEST SUSSEX, BN11 2JR" %}
 {% set version = "1" %}
 
 {% block page_title %}
@@ -24,15 +24,20 @@
 
 
             <div class="govuk-box-highlight">
-                    <h1 class="bold-large">{{title}}</h1>
+                 <h1>We've received your link request.</h1>
                     <p>
                       Your submission ID is <br>
                       <strong class="heading-medium">HDJ2123F</strong>
                     </p>
                   </div>
+                  
+                     <p class="bold-large">{{title}}</p>
 
                   <h2 class="heading-medium">What happens next</h2>
-                  <p>If the property request is approved you’ll be able to view the detailed valuation. This may take some time depending on the nature of your application.</p>
+                  <p>It may take up to 15 days for your request to be approved. You can see the status of your request in your dashboard.</p>
+                  
+				<p><strong>You should make a note of your submission ID</strong>.</p>
+                 <p>You may need to quote this if you contact us about your property before the link has been approved.</p>
                   <p><a href="/dashboard/{{version}}/find-property" class="link">Add another property</a></p>
 
 
@@ -41,7 +46,9 @@
 
 
                 <p>
-                    <a href="/dashboard/{{version}}/manage-properties/"  class="button">Continue</a>
+                   <a href="#"  class="button">Continue</a>
+                   <!-- Replace the null link button above with the button below for production -->
+                   <!--  <a href="/dashboard/{{version}}/manage-properties/"  class="button">Continue</a> -->
                 </p>
 
 
