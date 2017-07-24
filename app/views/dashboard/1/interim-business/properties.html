@@ -58,9 +58,9 @@
                                 <td >
                                     <ul class="list list-action">
 
-                                        <li><a href="#">
-                                            Remove agent
-                                        </a></li>
+                                        <li><a href="#dialogrevoke" data-toggle="dialog" data-target="dialog-revoke">
+              Remove agent
+            </a></li>
                                         <li><a href="#">
                                             Appoint agent
                                         </a></li>
@@ -80,6 +80,19 @@
             <a href="javascript: history.go(-1)" class="link-back">Back</a>
 
     {% include "includes/get_help.html" %}
+    
+    <div class="dialog" id="dialog-revoke" aria-hidden="true" data-modal="true">
+                <div class="dialog-holder" aria-labelledby="dialog-content-revoke" aria-describedby="dialog-content-revoke" role="alertdialog" data-target-remove="">
+                    <div class="dialog-content" id="dialog-content-revoke" role="document" tabindex="0">
+                        <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+                        <div class="modal-content-div"><h3 class="heading-small">Remove agent</h3>
+                        <p>Are you sure you no longer want <br />[Agent name] to act on behalf of [this property]?</p></div>
+                        <a href="#" class="button pull-left">Remove agent</a>
+                       
+                        <a href="#" class="dialog-cancel button-secondary pull-right" aria-label="close">Cancel</a>
+                    </div>
+                </div>
+            </div>
 
 </main>
 
