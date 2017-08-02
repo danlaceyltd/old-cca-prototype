@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+
+{% set title = "Why do you want to challenge this valuation?" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span>
+                </li>
+            </ul>
+
+
+            <a href="/dashboard/{{version}}/valuations/detailed" class="link-back">Back</a>
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+
+            <p>A valid challenge needs to be based on one or more grounds (reasons). If you want to challenge one or more than one grounds, please select the main one here and tell us aboout the others in your supporting documents.</p>
+
+
+            <form  method="get" class="form" id="challengeWizard">
+
+            <div class=" form-group">
+         		<fieldset  class="">
+       				<legend class="heading-medium">I want to challenge this valuation because:</legend>
+                        <div class="multiple-choice">
+                            <input id="challengeType_1" type="radio" name="challengeType" value="The valuation was wrong on 1st April 2017">
+                            <label class="block-label selection-button-radio" for="challengeType_1">
+                                the valuation was wrong on 1st April 2017
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="challengeType_2" type="radio" name="challengeType" value="A change made by the VOA on or after 1st April 2017 is wrong">
+                            <label class="block-label selection-button-radio" for="challengeType_2">
+                                a change made by the VOA on or after 1st April 2017 is wrong
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="challengeType_3" type="radio" name="challengeType" value="The effective date of a change made by the VOA on or after 1st April 2017 is wrong">
+                            <label class="block-label selection-button-radio" for="challengeType_3">
+                                the effective date of a change made by the VOA on or after 1st April 2017 is wrong
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="challengeType_4" type="radio" name="challengeType" value="Something in the local area which affects my property has made the valuation wrong">
+                            <label class="block-label selection-button-radio" for="challengeType_4">
+                                something in the local area which affects my property has made the valuation wrong
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="challengeType_5" type="radio" name="challengeType" value="The property should not be in the rating list">
+                            <label class="block-label selection-button-radio" for="challengeType_5">
+                                the property should not be in the rating list
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="challengeType_6" type="radio" name="challengeType" value="The property should be split into more than one">
+                            <label class="block-label selection-button-radio" for="challengeType_6">
+                                the property should be split into more than one
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="challengeType_7" type="radio" name="challengeType" value="The property should be merged with others into one or more new properties">
+                            <label class="block-label selection-button-radio" for="challengeType_7">
+                                the property should be merged with others into one or more new properties
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="challengeType_8" type="radio" name="challengeType" value="The valuation is wrong because of a legal decision which affects this property">
+                            <label class="block-label selection-button-radio" for="challengeType_8">
+                                the valuation is wrong because of a legal decision which affects this property
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="challengeType_other" type="radio" name="challengeType" value="Other" data-toggle-id="otherChoices">
+                            <label class="block-label selection-button-radio" for="challengeType_other">
+                                other
+                            </label>
+                        </div>
+
+                        <fieldset  id="otherChoices" class="panel panel-border-narrow margin-left-30" data-toggle-hidden aria-hidden="true" style="display: none;">
+               				<legend class="visuallyhidden">Other</legend>
+                                <div class="multiple-choice">
+                                    <input id="challengeType_other_1" type="radio" name="challengeType" value="The property should be added to the rating list" >
+                                    <label class="block-label selection-button-radio" for="challengeType_other_1">
+                                        the property should be added to the rating list
+                                    </label>
+                                </div>
+                                <div class="multiple-choice">
+                                    <input id="challengeType_other_2" type="radio" name="challengeType" value="part of the property is now domestic or exempt" >
+                                    <label class="block-label selection-button-radio" for="challengeType_other_2">
+                                        part of the property is now domestic or exempt
+                                    </label>
+                                </div>
+                                <div class="multiple-choice">
+                                    <input id="challengeType_other_3" type="radio" name="challengeType" value="the rating list should be changed to include part of a property currently shown domestic or exempt" >
+                                    <label class="block-label selection-button-radio" for="challengeType_other_3">
+                                        the rating list should be changed to include part of a property currently shown domestic or exempt
+                                    </label>
+                                </div>
+                                <div class="multiple-choice">
+                                    <input id="challengeType_other_4" type="radio" name="challengeType" value="the rating list shows the wrong address for the property" >
+                                    <label class="block-label selection-button-radio" for="challengeType_other_4">
+                                        the rating list shows the wrong address for the property
+                                    </label>
+                                </div>
+                                <div class="multiple-choice">
+                                    <input id="challengeType_other_5" type="radio" name="challengeType" value="the rating list shows the wrong use for the property" >
+                                    <label class="block-label selection-button-radio" for="challengeType_other_5">
+                                        the rating list shows the wrong use for the property
+                                    </label>
+                                </div>
+                                <div class="multiple-choice">
+                                    <input id="challengeType_other_6" type="radio" name="challengeType" value="the property details are wrong" >
+                                    <label class="block-label selection-button-radio" for="challengeType_other_6">
+                                        the property details are wrong
+                                    </label>
+                                </div>
+                                <div class="multiple-choice">
+                                    <input id="challengeType_other_7" type="radio" name="challengeType" value="the valuation is wrong because of a change to the Plant and Machinery regulations" >
+                                    <label class="block-label selection-button-radio" for="challengeType_other_7">
+                                        the valuation is wrong because of a change to the Plant and Machinery regulations
+                                    </label>
+                                </div>
+
+
+            	        </fieldset>
+
+    	        </fieldset>
+            </div>
+
+                <p>
+                    <button type="submit" class="button">Continue</button>
+                </p>
+
+                <p class="panel panel-border-wide">Business rates may go up, down, or stay the same after a challenge.</p>
+
+            </form>
+
+            <a href="/dashboard/{{version}}/valuations/detailed" class="link-back">Back</a>
+
+        </div>
+    </div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

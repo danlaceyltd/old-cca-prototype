@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% set title = "Challenge this valuation" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span>
+                </li>
+            </ul>
+
+
+            <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+
+            <p>If you disagree with the valuation of your property, you can make a challenge. You can only do this once you've confirmed your poperty information is correct, or told us about any changes.</p>
+
+            <p>Your challenge must be made within 4 months of our decision (or within 16 months of it's based on a change in the local are that you've told us about). You can also make a challenge if we haven't made a decision within 12 months.</p>
+
+            <p>You'll need to tell us why you're making a challenge and provide details of what you think your valuation should be instead.</p>
+
+
+                <p>
+                    <a href="/dashboard/{{version}}/challenge/wizard" class="button">Continue</a>
+                </p>
+
+            <p class="panel panel-border-wide">Business rates may go up, down, or stay the same after a challenge.</p>
+
+
+
+
+            <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+        </div>
+    </div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

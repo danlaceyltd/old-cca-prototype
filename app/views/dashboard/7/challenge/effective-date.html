@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% set title = "Effective date" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span>
+                </li>
+            </ul>
+
+
+            <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+            <div class="grid-row">
+                <div class="column-two-thirds">
+
+
+
+
+
+            <form action="">
+
+
+
+
+                <fieldset class="form-group">
+                  <legend>
+                    <span class="heading-medium">
+                      What date should this rateable value start?
+                    </span>
+                    <span class="form-hint">For example, 31 3 1980</span>
+                  </legend>
+                  <div class="form-date">
+                    <div class="form-group form-group-day">
+                      <label class="form-label" for="dob-day">Day</label>
+                      <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                    </div>
+                    <div class="form-group form-group-month">
+                      <label class="form-label" for="dob-month">Month</label>
+                      <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                    </div>
+                    <div class="form-group form-group-year">
+                      <label class="form-label" for="dob-year">Year</label>
+                      <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+                    </div>
+                  </div>
+                </fieldset>
+
+
+                <p class="panel panel-border-wide">This date cannot be before 1st April 2017. If your're not suggesting a change, state the current effecitve date.</p>
+
+
+
+            </form>
+
+
+
+                <br>
+                <p><a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/challenge/documents">Continue</a></p>
+
+
+
+    <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+</div>
+</div>
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

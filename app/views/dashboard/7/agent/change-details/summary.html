@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% set title = "My details" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype_signout.html" %}
+
+
+
+        <div class="section-tabs">
+            <ul role="tablist">
+              <li ><a href="/dashboard/{{version}}/agent">Client properties</a></li>
+              <li><a href="/dashboard/{{version}}/agent/cases/drafts">My cases</a></li>
+              <li><a href="/dashboard/{{version}}/agent/properties">My properties</a></li>
+              <li class="active"><a href="/dashboard/{{version}}/agent/change-details/summary">My details</a></li>
+              <li class="tab-right"><span>Welcome, <a href="/dashboard/{{version}}/agent/change-details/summary">Jo Bloggs - ABC Agent</a>.<a href="#" class="margin-left-10">Not you?</a></span></li>
+            </ul>
+        </div>
+
+                <h1 class="visuallyhidden">
+                    {{title}}
+                </h1>
+
+
+                <h3 class="heading-medium">Personal details</h3>
+
+                <table class="check-your-answers small">
+
+                    <colgroup>
+                        <col style="width: 40%">
+                        <col>
+                        <col>
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td><strong>Name</strong></td>
+                        <td>{% if data['name'] %}{{data['name']}}{% else %}Lorem Ipsum{% endif %}</td>
+                        <td class="last"><a href="/dashboard/{{version}}/agent/change-details/change-name">Update</a></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Address</strong></td>
+                        <td>
+                            {% if data['address1'] %}{{data['address1']}}<br />{% else %}10 Lorem St<br />{% endif %}
+                            {% if data['address2'] %}{{data['address2']}}<br />{% else %}Ipsum<br />{% endif %}
+                            {% if data['address3'] %}{{data['address3']}}<br />{% else %}{% endif %}
+                            {% if data['address4'] %}{{data['address4']}}<br />{% else %}{% endif %}
+                            {% if data['addressPostcode'] %}{{data['addressPostcode']}}{% else %}ABC 123{% endif %}
+                        </td>
+                        <td class="last"><a href="/dashboard/{{version}}/agent/change-details/change-address">Update</a></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Telephone</strong></td>
+                        <td>{% if data['telephone'] %}{{data['telephone']}}{% else %}09876543210{% endif %}</td>
+                        <td class="last"><a href="/dashboard/{{version}}/agent/change-details/change-phone">Update</a></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Mobile</strong></td>
+                        <td>{% if data['mobile'] %}{{data['mobile']}}{% else %}07776543210{% endif %}</td>
+                        <td class="last"><a href="/dashboard/{{version}}/agent/change-details/change-mobile">Update</a></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Email</strong></td>
+                        <td>{% if data['personalemail'] %}{{data['personalemail']}}{% else %}lorem@ipsum.com{% endif %}</td>
+                        <td class="last"><a href="/dashboard/{{version}}/agent/change-details/change-email">Update</a></td>
+                      </tr>
+
+                    </tbody>
+                </table>
+
+                <h3 class="heading-medium">Business details</h3>
+
+                <p><a href="/dashboard/{{version}}/agent/add-user-to-gg">Add or remove another person in your business account</a></p>
+
+                <table class="check-your-answers small margin-bottom-30">
+                    <colgroup>
+                        <col style="width: 40%">
+                        <col>
+                        <col>
+                    </colgroup>
+                  <tbody>
+                      <tr>
+                        <td><strong>Agent code</strong></td>
+                        <td>1234567</td>
+                        <td></td>
+                      </tr>
+                    <tr>
+                      <td><strong>Business name</strong></td>
+                      <td>{% if data['bussinessName'] %}{{data['bussinessName']}}{% else %}ABC Agent{% endif %}</td>
+                      <td class="last"><a href="/dashboard/{{version}}/agent/change-details/change-business-name">Update</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Business address</strong></td>
+                      <td>
+                          {% if data['bussinessAddress1'] %}{{data['bussinessAddress1']}}<br />{% else %}10 The High St<br />{% endif %}
+                          {% if data['bussinessAddress2'] %}{{data['bussinessAddress2']}}<br />{% else %}Brighton<br />{% endif %}
+                          {% if data['bussinessAddress3'] %}{{data['bussinessAddress3']}}<br />{% else %}{% endif %}
+                          {% if data['bussinessAddress4'] %}{{data['bussinessAddress4']}}<br />{% else %}{% endif %}
+                          {% if data['bussinessAddressPostcode'] %}{{data['bussinessAddressPostcode']}}{% else %}BN13 1AA{% endif %}
+                      </td>
+                      <td class="last"><a href="/dashboard/{{version}}/agent/change-details/change-business-address">Update</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Business telephone</strong></td>
+                      <td>{% if data['phone'] %}{{data['phone']}}{% else %}12345678910{% endif %}</td>
+                      <td class="last"><a href="/dashboard/{{version}}/agent/change-details/change-business-phone">Update</a></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Business email</strong></td>
+                      <td>{% if data['email'] %}{{data['email']}}{% else %}admin@abc.com{% endif %}</td>
+                      <td class="last"><a href="/dashboard/{{version}}/agent/change-details/change-business-email">Update</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

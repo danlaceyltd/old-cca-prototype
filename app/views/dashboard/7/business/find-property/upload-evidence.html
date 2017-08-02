@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% set title = "Upload other evidence" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+            <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">
+                {{title}}
+            </h1>
+
+            <p>You’ve indicated that you don’t have a business rates bill for this property. Please provide other evidence.</p>
+
+            <p>Evidence that we may accept includes:</p>
+
+            <ul class="list list-bullet">
+                <li>the lease agreement</li>
+                <li>a water rate demand</li>
+                <li>other utility bills</li>
+                <li>Stamp Duty Land Tax form</li>
+            </ul>
+
+            <a href="/dashboard/{{version}}/business/find-property/declaration">I’m unable to provide any of these documents.</a>
+            <p>Your file must be:</p>
+
+            <ul class="list list-bullet">
+                <li>a JPEG or PDF</li>
+                <li>no more than 10MB in size</li>
+            </ul>
+
+            <details class="print-hide">
+                <summary role="button" aria-controls="details-content-1" aria-expanded="false">
+                    <span class="summary">How do I convert a file into a PDF?</span>
+                </summary>
+                <div id="details-content-1" class="panel panel-border-narrow">
+                    <p>Converting a file into PDF format is very simple. The method is similar with most types of word processors. First, open the document you want to convert, then:</p><ul class="list list-number"><li>click “File”</li><li>choose either “Export”, “Export as PDF” or “Save as” (depending on your software)</li><li>select “Create PDF” or “PDF”</li><li>click on either “Publish” or “Save”</li></ul><p>For Mac users and older software:</p><ul class="list list-number"><li>click “File”</li><li>select “Print”</li><li>either click “PDF”, or choose a printer labelled “PDF”</li><li>click either “Save” or “OK”</li></ul><p>You could also search for websites that will convert your document for free.</p><p>Telephone<br><strong>03000 501 501</strong></p><p>Opening hours: 8:30am to 5:00pm Monday to Friday. Closed on bank holidays.</p>
+                </div>
+            </details>
+            <br>
+
+
+            <div class=" form-group">
+			    <div id="evidenceGroup" class="file-input-group">
+                    <label class="" for="evidence"><span class="visuallyhidden label-span">Upload other evidence</span></label>
+                    <input type="file" id="evidence" value="" name="evidence[]" class="filer_input" tabindex="-1" >
+                </div>
+	          </div>
+
+
+              <div class=" form-group">
+                  <div id="evidenceTypeGroup" class="">
+
+                        <label class="form-label-bold" for="evidenceType">
+                            <span class=" label-span">Type of evidence</span>
+                        </label>
+
+                        <select id="evidenceType" name="evidenceType" class="form-control">
+                            <option id="evidenceType-lease" value="lease">Lease</option>
+                            <option id="evidenceType-license" value="license">License</option>
+                            <option id="evidenceType-serviceCharge" value="serviceCharge">Service charge</option>
+                            <option id="evidenceType-stampDutyLandTaxForm" value="stampDutyLandTaxForm">Stamp duty land tax form</option>
+                            <option id="evidenceType-waterRateDemand" value="waterRateDemand">Water rate demand</option>
+                            <option id="evidenceType-otherUtilityBill" value="otherUtilityBill">Other utility bill</option>
+                            <option id="evidenceType-ratesBill" value="ratesBill">Rates bill</option>
+                        </select>
+	                </div>
+                </div>
+
+
+
+
+                <a href="/dashboard/{{version}}/business/find-property/declaration" class="button">Continue</a>
+                <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+        </div>
+</div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

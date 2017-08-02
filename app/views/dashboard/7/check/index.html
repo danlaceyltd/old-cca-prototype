@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% set title = "Tell us about a change to your property" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span>
+                </li>
+            </ul>
+
+
+            <a href="/dashboard/{{version}}/valuations/detailed" class="link-back">Back</a>
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+
+            <p>If any of your property’s details are incorrect or missing, you can tell us what should be changed. You can support your suggested changes by uploading appropriate evidence.</p>
+
+            <p>If all the information is correct but you want to propose a change to the valuation, you’ll still need to confirm the details are correct.</p>
+
+            <p>If you want to tell us about more than one change, choose the main reason and give details of the other option in any supporting documents.</p>
+
+            <form  method="get" class="form" id="checkWizard">
+
+            <div class=" form-group">
+         		<fieldset  class="">
+       				<legend class="heading-medium">What do you want to tell us about:</legend>
+                        <div class="multiple-choice">
+                            <input id="checkType_internal" type="radio" name="checkType" value="internal">
+                            <label class="block-label selection-button-radio" for="checkType_internal">confirm or change the information held for this property (for example if you’ve added a floor or floor area measurements are incorrect)</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="checkType_external" type="radio" name="checkType" value="external">
+                            <label class="block-label selection-button-radio" for="checkType_external">something external to this property has affected its value (such as long-term disruptive roadworks or scaffolding outside it)</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="checkType_split" type="radio" name="checkType" value="split">
+                            <label class="block-label selection-button-radio" for="checkType_split">this property needs to be split into more than one</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="checkType_merge" type="radio" name="checkType" value="merge">
+                            <label class="block-label selection-button-radio" for="checkType_merge">this property needs to be merged with others (you’ll need to repeat this for each of the properties you want to merge and each property must have a different local authority reference number)</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="checkType_remove" type="radio" name="checkType" value="remove">
+                            <label class="block-label selection-button-radio" for="checkType_remove">this property is no longer used for business or has been demolished</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="checkType_legalDecision" type="radio" name="checkType" value="legal-decision">
+                            <label class="block-label selection-button-radio" for="checkType_legalDecision">this property has been subject to a court decision (including Supreme Court, High Court, Lands Tribunal or Valuation Tribunal decisions)</label>
+                        </div>
+    	        </fieldset>
+            </div>
+
+                <p>
+                    <button type="submit" class="button">Continue</button>
+                </p>
+            </form>
+
+            <a href="/dashboard/{{version}}/valuations/detailed" class="link-back">Back</a>
+
+        </div>
+    </div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

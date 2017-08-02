@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% set title = "We’ve received your request to remove Automated Stub Agent 1" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+    <div class="grid-row">
+            <div class="column-two-thirds">
+
+
+
+            <div class="govuk-box-highlight">
+                    <h1 class="bold-large">{{title}}</h1>
+
+
+                  </div>
+
+                  <h2 class="heading-medium">What happens next</h2>
+                  <p>The agent will no longer be able to act on behalf of 2nd Flr 42b, Worcester Road, Bromsgrove, Worcs, B61 7AE.</p>
+
+                  <p>They will no longer appear in the ‘Manage agents’ section on your dashboard for this property.</p>
+
+                  <p><a href="/dashboard/{{version}}/agent/manage-agents/" class="button">Contnue</a></p>
+
+
+
+
+
+
+            </div>
+</div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

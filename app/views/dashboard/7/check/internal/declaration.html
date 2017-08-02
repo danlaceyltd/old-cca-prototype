@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% set title = "Declarations" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span>
+                </li>
+            </ul>
+
+
+            <a href="/dashboard/{{version}}/check/internal/summary" class="link-back">Back</a>
+
+
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+
+            <div class="grid-row">
+                    <div class="column-two-thirds">
+
+                    <p>Before you submit this form, you need to tell us whether you’re a smaller proposer.</p>
+                    <p>You are a smaller proposer if you have employed fewer than 10 people on average during the last 12 months. In that same period, you must also have had a turnover or balance sheet total of no more than £2 million.</p>
+                    <p>For businesses less than 12 months old, these requirements are adjusted according to the length of time that the business has been operating.</p>
+
+
+
+                        <form action="/business-rates-check/build/edcc52da-3b55-4982-b3a1-dda6de9fbefa/declaration" method="POST">
+
+                            <div class="form-group ">
+                                <fieldset id="smallBusinessGroup" class="inline">
+                                    <legend class="heading-medium">Are you a smaller proposer?</legend>
+                                    <div class="multiple-choice">
+                                        <input id="smallBusiness_true" type="radio" name="smallBusiness" value="true">
+                                        <label class="block-label selection-button-radio" for="smallBusiness_true">Yes</label>
+                                    </div>
+                                    <div class="multiple-choice">
+                                        <input id="smallBusiness_false" type="radio" name="smallBusiness" value="false">
+                                        <label class="block-label selection-button-radio" for="smallBusiness_false">No</label>
+                                    </div>
+                                 </fieldset>
+                             </div>
+
+
+                            <p class="panel panel-border-wide">Most customers prefer us to send information by email as it means we can get it to you quicker. Although we take care to protect the security of your information, we cannot guarantee it will be secure once sent. If you are happy for us to send your information by email, please accept and submit the declaration. If you do not want us to send it by email, please contact us on <strong>03000 501 501</strong> after submitting the declaration.</p>
+
+
+                            <div id="confirmedDeclarationGroup" class="form-group  ">
+                                <h3 class="heading-medium margin-top-20 margin-bottom-0">I declare that the information I have given in this form is correct and complete.</h3>
+                                <h3 class="heading-medium margin-top-20 margin-bottom-20">I understand that my information will be sent by email unless I request a different method.</h3>
+                                <div class="multiple-choice">
+                                    <input type="checkbox" id="confirmedDeclaration_text" aria-describedby="confirmedDeclaration_error" name="confirmedDeclaration" value="true">
+                                    <label class="block-label selection-button-checkbox" for="confirmedDeclaration_text">I agree to the above declaration</label>
+                                </div>
+                            </div>
+
+                            <div class="clearfix"></div>
+                            <div class="notice">
+                                <i class="icon icon-important"><span class="visuallyhidden">Warning</span></i>
+                                <strong class="bold-small">
+                                    <span>Once you submit the form you will not be able to go back and make any changes</span>
+                                </strong>
+                            </div>
+                            <br>
+
+                        </form>
+
+
+
+                <br>
+                <p>
+                    <a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/check/internal/confirmation">Submit</a>
+                </p>
+<div><div>
+
+
+    <a href="/dashboard/{{version}}/check/internal/summary" class="link-back">Back</a>
+
+
+
+
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

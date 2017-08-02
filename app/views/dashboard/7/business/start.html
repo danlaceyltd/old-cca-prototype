@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% set title = "Properties" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype_signout.html" %}
+
+
+
+        <div class="section-tabs">
+            <ul role="tablist">
+              <li class="active"><a href="#">My properties</a></li>
+              <li><a href="#">Drafts</a></li>
+              <li><a href="#">My details</a></li>
+              <li class="tab-right"><span>Welcome, <a href="#">Jo Bloggs - ABC Business</a>.<a href="#" class="margin-left-10">Not you?</a></span></li>
+            </ul>
+        </div>
+
+        <h1 class="visuallyhidden">
+            {{title}}
+        </h1>
+
+        <h2 class="heading-large">
+            You haven’t yet claimed a property
+        </h2>
+
+
+        <p>You’ll need to <a href="/dashboard/{{version}}/business/find-property">claim your property</a> in order to view the detailed property information or start a check.</p>
+        <p>To do this you’ll need to upload a business rates bill.</p>
+        <p>Once you’ve claimed your property, it may take up to 15 days to display in your dashboard.</p>
+
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}

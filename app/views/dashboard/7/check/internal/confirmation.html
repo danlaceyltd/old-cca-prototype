@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% set title = "Thank you, your form has been successfully sent" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <ul class="property-details-top">
+        <li id="billingAuthorityReference">
+            <span class="tabular-data__heading--label">Local authority reference: </span>
+            <span>0930/09139385080004</span>
+        </li>
+        <li id="address">
+            <span class="tabular-data__heading--label">Property: </span>
+            <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span>
+        </li>
+    </ul>
+
+
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+
+            <div class="transaction-banner--complete margin-top-20">
+                <h1 class="transaction-banner__heading" id="submission-title">{{title}}</h1>
+                <p class="submission-txt">Your form submission number is:<span class="submission-number">CHK-1ZRPBPR</span></p>
+            </div>
+
+            <p class="panel panel-border-wide">Please make a note of your submission ID as you’ll need to provide it if you contact us.</p>
+
+            <hr>
+
+            <h2 class="heading-medium">What happens next?</h2>
+
+            <p>We:</p>
+
+            <ul class="list list-bullet">
+                <li>will confirm receipt of this form (times vary depending on the complexity of the information received). We have recorded the submission date of this form and this is the date that will be used where the date of service on the Valuation Office Agency is part of a future challenge</li>
+                <li>may get in touch to check details or ask for more information</li>
+            </ul>
+
+            <p class="panel panel-border-wide">
+                If you realise you’ve made a mistake in this form or have new information to add, you’ll need to submit a new check form. We will review all forms received and contact you if there are any queries.
+            </p>
+
+            <p><a href="/dashboard/{{version}}/" class="button" role="button">Go to the dashboard</a></p>
+
+
+
+
+
+        </div>
+    </div>
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
