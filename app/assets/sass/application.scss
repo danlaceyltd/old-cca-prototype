@@ -26,6 +26,7 @@ $path: "/public/images/";
 @import 'custom/dialog';
 @import 'custom/help';
 @import 'custom/icons';
+@import 'custom/messages';
 
 
 // Related items
@@ -44,6 +45,15 @@ $path: "/public/images/";
     margin-bottom: 10px;
     list-style-type: none;
   }
+}
+
+.table-checkbox.multiple-choice {
+		padding-top:21px;
+		padding-bottom:21px;
+}
+
+.table-checkbox.multiple-choice > label {
+	width:0;
 }
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
