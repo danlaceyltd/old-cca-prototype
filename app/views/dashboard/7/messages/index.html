@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% set title = "Messages" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+<main id="content" role="main"> {% include "includes/phase_banner_prototype.html" %}
+  <div class="grid-row">
+    <div class="column-full">
+     
+    <h1>{{title}}</h1>
+     
+   <i class="icon icon-search"></i>
+     
+     <table class="table-font-small messages" id="propertiesTableBusiness">
+        <colgroup>
+        <col width="">
+        <col width="">
+        <col width="">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Date received</th>
+            <th>Subject</th>
+            <th>Reference</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="messages--row">
+            <td>19/04/2017</td>
+            <td>Proposed changes to valuation</td>
+            <td>123456789</td>
+            <td>164 Exeter Road, Portsmouth, PO1 123</td>
+          </tr>
+           <tr class="messages--row__read">
+            <td>19/04/2017</td>
+            <td>Proposed changes to valuation</td>
+            <td>123456789</td>
+            <td>164 Exeter Road, Portsmouth, PO1 123</td>
+          </tr>
+           <tr>
+            <td>19/04/2017</td>
+            <td>Proposed changes to valuation</td>
+            <td>123456789</td>
+            <td>164 Exeter Road, Portsmouth, PO1 123</td>
+          </tr>
+           <tr>
+            <td>19/04/2017</td>
+            <td>Proposed changes to valuation</td>
+            <td>123456789</td>
+            <td>164 Exeter Road, Portsmouth, PO1 123</td>
+          </tr>
+           <tr>
+            <td>19/04/2017</td>
+            <td>Proposed changes to valuation</td>
+            <td>123456789</td>
+            <td>164 Exeter Road, Portsmouth, PO1 123</td>
+          </tr>
+           <tr>
+            <td>19/04/2017</td>
+            <td>Proposed changes to valuation</td>
+            <td>123456789</td>
+            <td>164 Exeter Road, Portsmouth, PO1 123</td>
+          </tr>
+           <tr>
+            <td>19/04/2017</td>
+            <td>Proposed changes to valuation</td>
+            <td>123456789</td>
+            <td>164 Exeter Road, Portsmouth, PO1 123</td>
+          </tr>
+           <tr>
+            <td>19/04/2017</td>
+            <td>Proposed changes to valuation</td>
+            <td>123456789</td>
+            <td>164 Exeter Road, Portsmouth, PO1 123</td>
+          </tr>
+           <tr>
+            <td>19/04/2017</td>
+            <td>Proposed changes to valuation</td>
+            <td>123456789</td>
+            <td>164 Exeter Road, Portsmouth, PO1 123</td>
+          </tr>
+           <tr>
+            <td>19/04/2017</td>
+            <td>Proposed changes to valuation</td>
+            <td>123456789</td>
+            <td>164 Exeter Road, Portsmouth, PO1 123</td>
+          </tr>
+           <tr>
+            <td>19/04/2017</td>
+            <td>Proposed changes to valuation</td>
+            <td>123456789</td>
+            <td>164 Exeter Road, Portsmouth, PO1 123</td>
+          </tr>
+        
+        </tbody>
+      </table>
+      </div>
+  </div>
+  {% include "includes/get_help.html" %} </main>
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %} 
+  <!-- GOV.UK Prototype kit {{releaseVersion}} --> 
+  {% endblock %} 
