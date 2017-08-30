@@ -51,20 +51,20 @@
 
 
                 if(aData[4] === "Approved"){
-                    $('td:eq(3)', nRow).html('<a href="/dashboard/4/business/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Property details</a>');
+                    $('td:eq(3)', nRow).html('<a href="/dashboard/7/business/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Property details</a>');
                 }else if(aData[4] === "Pending"){
-                    $('td:eq(3)', nRow).html('<a href="/dashboard/4/business/pending">Pending VOA approval</a>');
+                    $('td:eq(3)', nRow).html('<a href="/dashboard/7/business/pending">Pending VOA approval</a>');
                 }else{
-                    $('td:eq(3)', nRow).html('<a href="/dashboard/4/business/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'&status='+aData[4]+'">Property details</a>');
+                    $('td:eq(3)', nRow).html('<a href="/dashboard/7/business/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'&status='+aData[4]+'">Property details</a>');
                 }
 
                 if(!aData[2]){
-                    $('td:eq(2)', nRow).html('<a href="/dashboard/4/business/appoint-agent">Appoint agent</a>');
+                    $('td:eq(2)', nRow).html('<a href="/dashboard/7/business/appoint-agent">Appoint agent</a>');
 
                 }
 
                 if(aData[2] === "client"){
-                    $('td:eq(2)', nRow).html('<a href="/dashboard/4/business/pending-agent">Pending agent approval</a>');
+                    $('td:eq(2)', nRow).html('<a href="/dashboard/47business/pending-agent">Pending agent approval</a>');
                 }
 
 

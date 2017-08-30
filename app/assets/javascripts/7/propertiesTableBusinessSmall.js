@@ -45,13 +45,13 @@
             ],
             fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
                 if(!aData[2]){
-                    $('td:eq(2)', nRow).html('<a href="/dashboard/4/business-small/appoint-agent">Appoint agent</a>');
+                    $('td:eq(2)', nRow).html('<a href="/dashboard/7/business-small/appoint-agent">Appoint agent</a>');
                 }
 
                 if(aData[4] === "Approved"){
-                    $('td:eq(3)', nRow).html('<a href="/dashboard/4/business-small/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Property details</a>');
+                    $('td:eq(3)', nRow).html('<a href="/dashboard/7/business-small/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Property details</a>');
                 }else if(aData[4] === "Pending"){
-                    $('td:eq(3)', nRow).html('<a href="/dashboard/4/business-small/pending">Pending VOA approval</a>');
+                    $('td:eq(3)', nRow).html('<a href="/dashboard/7/business-small/pending">Pending VOA approval</a>');
                 }
             }
         });

@@ -78,17 +78,17 @@
                 if(aData[4] === 'y'){
                         $('td:eq(4)', nRow).html('<ul class="list list-actions"><li><a href="#">Accept client request</a></li><li><a href="#">Reject client request</a></li></ul>');
                 }else if(aData[5] === "Pending"){
-                        $('td:eq(4)', nRow).html('<a href="/dashboard/5/agent/pending?client='+aData[3]+'&address='+aData[1]+'&ba='+aData[2]+'">Pending VOA approval</a>');
+                        $('td:eq(4)', nRow).html('<a href="/dashboard/7/agent/pending?client='+aData[3]+'&address='+aData[1]+'&ba='+aData[2]+'">Pending VOA approval</a>');
                 }else if(aData[5] === "declined 1" || aData[5] === "declined 2" || aData[5] === "declined 3" || aData[5] === "declined 4" || aData[5] === "declined 5" || aData[5] === "declined 6"){
-                    $('td:eq(4)', nRow).html('<ul class="list list-actions"><li><a href="/dashboard/5/agent/valuations?client='+aData[3]+'&address='+aData[1]+'&ba='+aData[2]+'&status='+aData[5]+'">Property details</a></li><li><a href="#">Delete</a></li></ul>');
+                    $('td:eq(4)', nRow).html('<ul class="list list-actions"><li><a href="/dashboard/7/agent/valuations?client='+aData[3]+'&address='+aData[1]+'&ba='+aData[2]+'&status='+aData[5]+'">Property details</a></li><li><a href="#">Delete</a></li></ul>');
 
                 }else{
-                    $('td:eq(4)', nRow).html('<a href="/dashboard/5/agent/valuations?client='+aData[3]+'&address='+aData[1]+'&ba='+aData[2]+'&status='+aData[5]+'">Property details</a>');
+                    $('td:eq(4)', nRow).html('<a href="/dashboard/7/agent/valuations?client='+aData[3]+'&address='+aData[1]+'&ba='+aData[2]+'&status='+aData[5]+'">Property details</a>');
 
                 }
 
                 if(!aData[3]){
-                    $('td:eq(3)', nRow).html('<a href="/dashboard/5/agent/appoint-agent">Appoint agent</a>');
+                    $('td:eq(3)', nRow).html('<a href="/dashboard/7/agent/appoint-agent">Appoint agent</a>');
 
                 }
 

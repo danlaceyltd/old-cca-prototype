@@ -51,13 +51,13 @@
                 if(aData[3] === 'y'){
                         $('td:eq(3)', nRow).html('<ul class="list list-actions"><li><a href="#">Accept client request</a></li><li><a href="#">Reject client request</a></li></ul>');
                 }else if(aData[4] === "Pending"){
-                        $('td:eq(3)', nRow).html('<a href="/dashboard/4/agent/pending?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Pending VOA approval</a>');
+                        $('td:eq(3)', nRow).html('<a href="/dashboard/7/agent/pending?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'">Pending VOA approval</a>');
                 }else{
-                    $('td:eq(3)', nRow).html('<a href="/dashboard/4/agent/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'&status='+aData[4]+'">Property details</a>');
+                    $('td:eq(3)', nRow).html('<a href="/dashboard/7/agent/valuations?client='+aData[2]+'&address='+aData[0]+'&ba='+aData[1]+'&status='+aData[4]+'">Property details</a>');
                 }
 
                 if(!aData[2]){
-                    $('td:eq(2)', nRow).html('<a href="/dashboard/4/agent/appoint-agent">Appoint agent</a>');
+                    $('td:eq(2)', nRow).html('<a href="/dashboard/7/agent/appoint-agent">Appoint agent</a>');
 
                 }
 
