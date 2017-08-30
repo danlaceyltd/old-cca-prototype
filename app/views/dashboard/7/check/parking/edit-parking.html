@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% set title = "Propose changes to parking" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+<main id="content" role="main"> {% include "includes/phase_banner_prototype.html" %}
+  <div class="grid-row">
+    <div class="column-full">
+     
+     
+    
+
+     
+      <ul class="property-details-top">
+        <li id="billingAuthorityReference"> <span class="tabular-data__heading--label">Local authority reference: </span> <span>0930/09139385080004</span> </li>
+        <li id="address"> <span class="tabular-data__heading--label">Property: </span> <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span> </li>
+      </ul>
+      <a href="/dashboard/{{version}}/check" class="link-back">Back</a>
+      <h1 class="heading-xlarge" > {{title}} </h1>
+      
+     
+      
+      <p>You can propose changes to parking spaces and areas. If there is no change, 
+      leave the field blank.</p>
+      
+       <details>
+        <summary role="button" ><span class="summary">What is a covered space or area?</span></summary>
+        <div class="panel-indent" id="covered">
+          <p>Covered area help text goes here...</p>
+        </div>
+      </details>
+      <details>
+        <summary role="button" ><span class="summary">What is an open space or area?</span></summary>
+        <div class="panel-indent" id="open">
+          <p>Open area help text goes here...</p>
+        </div>
+      </details>
+      <table class="table-summary-amend table-font-small" id="tableParking">
+        <colgroup>
+        <col width="">
+        <col width="">
+        <col width="">
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="original">Description of spaces</th>
+            <th class="original">Number spaces</th>
+            <th class="proposed">Proposed number of spaces</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="original">Surfaced covered spaces</td>
+            <td class="original">271 spaces</td>
+            <td class="proposed"><input class="form-control-1-3" id="text1" name="text1" type="number">
+              <label class="margin-left-5" for="1">spaces</label></td>
+          </tr>
+          <tr>
+            <td class="original">Surfaced open spaces</td>
+            <td class="original">50 spaces</td>
+            <td class="proposed"><input class="form-control-1-3" id="text2" name="text2" type="number">
+              <label class="margin-left-5" for="1">spaces</label></td>
+          </tr>
+          <tr>
+            <td class="original">Unsurfaced covered spaces</td>
+            <td class="original">28 spaces</td>
+            <td class="proposed"><input class="form-control-1-3" id="text3" name="text3" type="number">
+              <label class="margin-left-5" for="1">spaces</label></td>
+          </tr>
+          <tr>
+            <td class="original">Surfaced open spaces</td>
+            <td class="original">32 spaces</td>
+            <td class="proposed"><input class="form-control-1-3" id="text4" name="text4" type="number">
+              <label class="margin-left-5" for="1">spaces</label></td>
+          </tr>
+          <tr>
+            <td class="original">Garage spaces</td>
+            <td class="original">0 spaces</td>
+            <td class="proposed"><input class="form-control-1-3" id="1" name="1" type="number">
+              <label class="margin-left-5" for="1">spaces</label></td>
+          </tr>
+          <tr>
+            <th>Description of areas</th>
+            <th>Area (m&sup2;)</th>
+            <th class="proposed">Proposed area (m&sup2;)</th>
+          </tr>
+          <tr>
+            <td class="original">Surfaced covered areas</td>
+            <td class="original">0m&sup2;</td>
+            <td class="proposed"><input class="form-control-1-3" id="1" name="1" type="number">
+              <label class="margin-left-5" for="1">m&sup2;</label></td>
+          </tr>
+          <tr>
+            <td class="original">Surfaced open areas</td>
+            <td class="original">0m&sup2;</td>
+            <td class="proposed"><input class="form-control-1-3" id="1" name="1" type="number">
+              <label class="margin-left-5" for="1">m&sup2;</label></td>
+          </tr>
+          <tr>
+            <td class="original">Unsurfaced covered areas</td>
+            <td class="original">65m&sup2;</td>
+            <td class="proposed"><input class="form-control-1-3" id="1" name="1" type="number">
+              <label class="margin-left-5" for="1">m&sup2;</label></td>
+          </tr>
+          <tr>
+            <td class="original">Unsurfaced open areas</td>
+            <td class="original">16m&sup2;</td>
+            <td class="proposed"><input class="form-control-1-3" id="1" name="1" type="number">
+              <label class="margin-left-5" for="1">m&sup2;</label></td>
+          </tr>
+          <tr>
+            <td class="original">Garage area</td>
+            <td class="original">28m&sup2;</td>
+            <td class="proposed"><input class="form-control-1-3" id="1" name="1" type="number">
+              <label class="margin-left-5" for="1">m&sup2;</label></td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="/dashboard/{{version}}/check/parking/index-changes" class="pull-right button margin-top-20 margin-right-20">Update</button>
+      
+        <a href="/dashboard/{{version}}/check/parking" class="link-back">Back</a> </div>
+  </div>
+  {% include "includes/get_help.html" %} </main>
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %} 
+  <!-- GOV.UK Prototype kit {{releaseVersion}} --> 
+  {% endblock %} 
