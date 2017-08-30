@@ -19,12 +19,76 @@
     {% include "includes/phase_banner_prototype.html" %}
 
     <div class="grid-row">
-            <div class="column-two-thirds">
+            <div class="column-whole">
 
             <h1 class="heading-xlarge">
                 {{title}}
             </h1>
 
+             <h2 class="heading-medium">Appoint an existing agent</h2>
+             <p>[If you already have an agent associated with your account, you can link them to this property...]</p>
+             <p>[An appointed agent must be able to either do checks, challenges or both on your behalf for this property.]</p>
+             <details>
+                                           <summary role="button" ><span class="summary">What is a check?</span></summary>
+                                           <div class="panel-indent" id="details-content-2" style="margin-bottom:0">
+                                             <p>If any of the factual details about your property or land are incorrect, you (the owner, occupier or authorised agent) need to let the VOA know. Telling us about anything that’s incorrect is known as a check.</p>
+<p>If all of your property details are correct but you believe your rateable value is incorrect, you must first complete a check and wait for the outcome before making a challenge.</p>
+
+                                           </div>
+                                       </details>
+                                         <details>
+                           <summary role="button"><span class="summary">What is a challenge?</span></summary>
+                           <div class="panel-indent" id="details-content-3">
+                              <p>Once you’ve completed a check, the VOA will contact you with the outcome. If you disagree with the outcome of the check or you believe the rateable value of your property is incorrect, you can let us know. Doing this is known as a challenge.</p>
+
+							   <p>You can’t start a challenge until you’ve received the outcome for your check.</p>
+                           </div>
+                       </details>
+             
+             <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+   <tr>
+   	<th>Appoint</th>
+   	<th>Agent ID</th>
+   	<th>Agent name</th>
+   	<th>Check</th>
+   	<th>Challenge</th>
+   	<th>Status</th>
+   </tr>
+    <tr>
+      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="agent_12345"  name="agent_12345" value="true" checked><label  for="agent_12345"><span class="visually-hidden">Assign</span></label></div></td>
+      <td>12345</td>
+      <td>ABC Agent</td>
+      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="agent_12345"  name="agent_12345" value="true" checked><label for="agent_12345"><span class="visually-hidden"Check</span></label></div></td>
+      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="agent_12345"  name="agent_12345" value="true" checked><label for="agent_12345"><span class="visually-hidden"Challenge</span></label></div></td>
+       <td>Appointed</td>
+      
+    </tr>
+     <tr>
+     <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="67890"  name="agent_67890" value="true"><label  for="agent_67890"><span class="visually-hidden">Appoint</span></label></div></td>
+      <td>67890</td>
+      <td>DEF Agent</td>
+      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="agent_67890"  name="agent_67890" value="true"><label for="agent_67890"><span class="visually-hidden"Check</span></label></div></td>
+      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="agent_67890"  name="agent_67890" value="true"><label for="agent_67890"><span class="visually-hidden"Challenge</span></label></div></td>
+       <td>Unappointed</td>
+      
+    </tr>
+     <tr>
+      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="54321"  name="agent_54321" value="true" checked><label  for="agent_54321"><span class="visually-hidden">Appointed</span></label></div></td>
+      <td>54321</td>
+      <td>GHI Agent</td>
+      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="agent_54321"  name="agent_54321" value="true" checked><label for="agent_54321"><span class="visually-hidden"Check</span></label></div></td>
+      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="agent_54321"  name="agent_67890" value="true" ><label for="agent_54321"><span class="visually-hidden"Challenge</span></label></div></td>
+       <td>Appointed</td>
+      
+    </tr>
+   
+  </tbody>
+</table>
+            
+             <a href="/dashboard/{{version}}/business/appoint-agent/success" class="pull-right button margin-top-20 margin-right-20">Update</a>
+             
+             <h2 class="heading-medium clearfix">Add a new agent</h2>
 
             <p>You’ll need to enter the code of the agent you want to appoint and tell us whether they can do checks, challenges or both on behalf of your business, for this property.</p>
 
