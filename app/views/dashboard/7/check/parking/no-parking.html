@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% set title = "Parking" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+<main id="content" role="main"> {% include "includes/phase_banner_prototype.html" %}
+  <div class="grid-row">
+    <div class="column-full">
+     
+      <ul class="property-details-top">
+        <li id="billingAuthorityReference"> <span class="tabular-data__heading--label">Local authority reference: </span> <span>0930/09139385080004</span> </li>
+        <li id="address"> <span class="tabular-data__heading--label">Property: </span> <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span> </li>
+      </ul>
+      <a href="/dashboard/{{version}}/check" class="link-back">Back</a>
+      <h1 class="heading-xlarge" > {{title}} </h1>
+      <div class="panel panel-border-wide">
+  <p>
+    There is no parking in this assessment.
+  </p>
+</div>
+      <a href="/dashboard/{{version}}/check/parking/add-parking.html">Add parking</a>
+      
+      <a href="#" class="clearfix button margin-top-20">Save &amp; continue</a>
+      
+       </div>
+  </div>
+  {% include "includes/get_help.html" %} </main>
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %} 
+  <!-- GOV.UK Prototype kit {{releaseVersion}} --> 
+  {% endblock %} 
