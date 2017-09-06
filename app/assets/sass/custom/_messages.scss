@@ -5,20 +5,36 @@
 
 
 .messages {
-	&--row {
-		font-weight:bold;
-	&__read {
+	& td {
+	font-size:16px;
+}
+	&--row > td {
+		font-weight:bold;	
+		
+	}
+	
+	&--row__read > td {
 	background: #F5F5F5;
 	color: #222222;
 	font-weight: normal;
-		
-}
-		
-		
-}
+	}
+	
+	&--row:hover > td {
+		cursor:pointer;
+		background:#999999;
+		color:#FFFFFF
+	}
 	
 
-	
-	
 }
+
+
+
+
+	
+
+		
+	
+	
+		
 

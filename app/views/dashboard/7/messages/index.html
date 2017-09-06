@@ -16,17 +16,14 @@
 <main id="content" role="main"> {% include "includes/phase_banner_prototype.html" %}
   <div class="grid-row">
     <div class="column-full">
-     
-    <h1>{{title}}</h1>
-     
-
-  
-     
-     <table class="table-font-small messages">
+      <h1>{{title}}</h1>
+      <table class="table-font-small messages">
         <colgroup>
-        <col width="">
-        <col width="">
-        <col width="">
+        <col width="16%">
+        <col width="25%">
+        <col width="20">
+        <col width="31%">
+         <col width="7%">
         </colgroup>
         <thead>
           <tr>
@@ -34,82 +31,100 @@
             <th>Subject</th>
             <th>Reference</th>
             <th>Address</th>
+            <th></th>
           </tr>
         </thead>
-        
-    
         <tbody>
-             <tr role="row"><th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 150px;"><input name="address" type="search" size="10" class="icon icon-search"></th><th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 170px;"><input name="baref" type="search" size="10" class="filter-input"><button class="icon"><i class="search-icon"></i></button></th><th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 280px;"><input name="status" type="search" size="10" class="filter-input"><button class="icon icon-search"></button></th><th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 140px;"><input name="agent" type="search" size="8" class="filter-input"><button class="icon"><i class="search-icon"></i></button></th><th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 120px;"><a href="#" class="clear">Clear search</a></th></tr>
+          <tr role="row">
+            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 150px;"><input name="address" type="search" size="10" class="icon icon-search"></th>
+            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 170px;"><input name="baref" type="search" size="10" class="filter-input">
+              <button class="icon"><i class="search-icon"></i></button></th>
+            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 280px;"><input name="status" type="search" size="10" class="filter-input">
+              <button class="icon icon-search"></button></th>
+            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 140px;"><input name="agent" type="search" size="8" class="filter-input">
+              <button class="icon"><i class="search-icon"></i></button></th>
+            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 120px;"><a href="#" class="clear">Clear search</a></th>
+          </tr>
           <tr class="messages--row">
-            <td>19/04/2017</td>
+            <td><i class="icon icon-messageunread"><span class="hidden">unread</span></i> 19/04/2017</td>
+            <td>Proposed changes to valuation</td>
+            <td>123456789</td>
+            <td class="truncate">164 Exeter Road, Portsmouth, PO1 123 hjkhhkk jkjkjk jkjkj kj kjk</td>
+            <td></td>
+          </tr>
+          <tr class="messages--row messages--row__read">
+            <td><i class="icon icon-messageread"><span class="hidden">read</span></i> 19/04/2017</td>
             <td>Proposed changes to valuation</td>
             <td>123456789</td>
             <td>164 Exeter Road, Portsmouth, PO1 123</td>
+            <td></td>
           </tr>
-           <tr class="messages--row__read">
-            <td>19/04/2017</td>
+          <tr class="messages--row messages--row__read">
+            <td><i class="icon icon-messageread"><span class="hidden">read</span></i>19/04/2017</td>
             <td>Proposed changes to valuation</td>
             <td>123456789</td>
             <td>164 Exeter Road, Portsmouth, PO1 123</td>
+            <td></td>
           </tr>
-           <tr>
-            <td>19/04/2017</td>
+          <tr class="messages--row messages--row__read">
+            <td><i class="icon icon-messageread"><span class="hidden">read</span></i>19/04/2017</td>
             <td>Proposed changes to valuation</td>
             <td>123456789</td>
             <td>164 Exeter Road, Portsmouth, PO1 123</td>
+            <td></td>
           </tr>
-           <tr>
-            <td>19/04/2017</td>
+          <tr class="messages--row messages--row__read">
+            <td><i class="icosn icon-messageread"><span class="hidden">read</span></i>19/04/2017</td>
             <td>Proposed changes to valuation</td>
             <td>123456789</td>
             <td>164 Exeter Road, Portsmouth, PO1 123</td>
+            <td></td>
           </tr>
-           <tr>
-            <td>19/04/2017</td>
+          <tr class="messages--row messages--row__unread">
+            <td><i class="icon icon-messageunread"><span class="hidden">read</span></i>19/04/2017</td>
             <td>Proposed changes to valuation</td>
             <td>123456789</td>
             <td>164 Exeter Road, Portsmouth, PO1 123</td>
+            <td></td>
           </tr>
-           <tr>
-            <td>19/04/2017</td>
+          <tr class="messages--row messages--row__read">
+            <td><i class="icon icon-messageread"><span class="hidden">read</span></i>19/04/2017</td>
             <td>Proposed changes to valuation</td>
             <td>123456789</td>
             <td>164 Exeter Road, Portsmouth, PO1 123</td>
+            <td></td>
           </tr>
-           <tr>
-            <td>19/04/2017</td>
+          <tr class="messages--row messages--row__read">
+            <td><i class="icon icon-messageread"><span class="hidden">read</span></i>19/04/2017</td>
             <td>Proposed changes to valuation</td>
             <td>123456789</td>
             <td>164 Exeter Road, Portsmouth, PO1 123</td>
+            <td></td>
           </tr>
-           <tr>
-            <td>19/04/2017</td>
+          <tr class="messages--row messages--row__read">
+            <td><i class="icon icon-messageread"><span class="hidden">read</span></i>19/04/2017</td>
             <td>Proposed changes to valuation</td>
             <td>123456789</td>
             <td>164 Exeter Road, Portsmouth, PO1 123</td>
+            <td></td>
           </tr>
-           <tr>
-            <td>19/04/2017</td>
+          <tr class="messages--row messages--row__read">
+            <td><i class="icon icon-messageread"><span class="hidden">read</span></i>19/04/2017</td>
             <td>Proposed changes to valuation</td>
             <td>123456789</td>
             <td>164 Exeter Road, Portsmouth, PO1 123</td>
+            <td></td>
           </tr>
-           <tr>
-            <td>19/04/2017</td>
+          <tr class="messages--row messages--row__read">
+            <td><i class="icon icon-messageread"><span class="hidden">read</span></i>19/04/2017</td>
             <td>Proposed changes to valuation</td>
             <td>123456789</td>
             <td>164 Exeter Road, Portsmouth, PO1 123</td>
+            <td></td>
           </tr>
-           <tr>
-            <td>19/04/2017</td>
-            <td>Proposed changes to valuation</td>
-            <td>123456789</td>
-            <td>164 Exeter Road, Portsmouth, PO1 123</td>
-          </tr>
-        
         </tbody>
       </table>
-      </div>
+    </div>
   </div>
   {% include "includes/get_help.html" %} </main>
 {% endblock %}
