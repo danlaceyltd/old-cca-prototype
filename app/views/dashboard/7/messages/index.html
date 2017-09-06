@@ -16,6 +16,26 @@
 <main id="content" role="main"> {% include "includes/phase_banner_prototype.html" %}
   <div class="grid-row">
     <div class="column-full">
+         <div class="pull-right margin-top-20 margin-bottom-20 font-xsmall">Welcome, <a href="/dashboard/{{version}}/business/change-details/summary">Jo Bloggs - ABC Business</a>.<a href="#" class="margin-left-10">Not you?</a> <a href="#" class="margin-left-10">Sign out</a></div>
+         
+         
+         <div class="clearfix pull-right margin-top-5 margin-bottom-20 font-xsmall">
+			 You have <a href="#">(2) unread messages</a></div>
+
+        <div class=" clearfix section-tabs">
+            <ul role="tablist">
+              <li><a href="/dashboard/{{version}}/business">My properties</a></li>
+              <li><a href="/dashboard/{{version}}/business/drafts">Drafts</a></li>
+              <li><a href="/dashboard/{{version}}/business/change-details/summary">My details</a></li>
+               <li class="active"><a href="/dashboard/{{version}}/business">Messages (2)</a></li>
+             
+            </ul>
+        </div>
+
+        <h1 class="visuallyhidden">
+            {{title}}
+        </h1>
+     
       <h1>{{title}}</h1>
       <table class="table-font-small messages">
         <colgroup>
@@ -35,7 +55,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr role="row">
+         <!-- <tr role="row">
             <th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 150px;"><input name="address" type="search" size="10" class="icon icon-search"></th>
             <th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 170px;"><input name="baref" type="search" size="10" class="filter-input">
               <button class="icon"><i class="search-icon"></i></button></th>
@@ -44,13 +64,13 @@
             <th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 140px;"><input name="agent" type="search" size="8" class="filter-input">
               <button class="icon"><i class="search-icon"></i></button></th>
             <th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 120px;"><a href="#" class="clear">Clear search</a></th>
-          </tr>
-          <tr class="messages--row">
-            <td><i class="icon icon-messageunread"><span class="hidden">unread</span></i> 19/04/2017</td>
-            <td>Proposed changes to valuation</td>
-            <td>123456789</td>
-            <td class="truncate">164 Exeter Road, Portsmouth, PO1 123 hjkhhkk jkjkjk jkjkj kj kjk</td>
-            <td></td>
+          </tr> -->
+          <tr class="messages--row"> 
+            <td><a href="#" data-toggle="dialog" data-target="dialog-message"><i class="icon icon-messageunread"><span class="hidden">unread</span></i> 19/04/2017</a></td>
+            <td><a href="#" data-toggle="dialog" data-target="dialog-message">Proposed changes to valuation</a></td>
+			  <td><a href="#" data-toggle="dialog" data-target="dialog-message">123456789</a></td>
+            <td class="truncate"><a href="#" data-toggle="dialog" data-target="dialog-message">164 Exeter Road, Portsmouth, PO1 123 hjkhhkk jkjkjk jkjkj kj kjk</a></td>
+			   <td></td>
           </tr>
           <tr class="messages--row messages--row__read">
             <td><i class="icon icon-messageread"><span class="hidden">read</span></i> 19/04/2017</td>
@@ -60,11 +80,11 @@
             <td></td>
           </tr>
           <tr class="messages--row messages--row__read">
-            <td><i class="icon icon-messageread"><span class="hidden">read</span></i>19/04/2017</td>
+           <td><i class="icon icon-messageread"><span class="hidden">read</span></i>19/04/2017</td>
             <td>Proposed changes to valuation</td>
             <td>123456789</td>
             <td>164 Exeter Road, Portsmouth, PO1 123</td>
-            <td></td>
+				<td></td>
           </tr>
           <tr class="messages--row messages--row__read">
             <td><i class="icon icon-messageread"><span class="hidden">read</span></i>19/04/2017</td>
@@ -124,6 +144,20 @@
           </tr>
         </tbody>
       </table>
+      
+      <div class="dialog" id="dialog-message" aria-hidden="true" data-modal="true">
+    <div class="dialog-holder" aria-labelledby="dialog-message" aria-describedby="dialog-content-delete" role="alertdialog">
+        <div class="dialog-content" id="dialog-content-message" role="document" tabindex="0">
+            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+            <div class="modal-content-div"><h3 class="heading-small">Ref: 123456789 Proposed changes to valuation</h3>
+                <p>This is a sample text. Thank you for submitting your proposed changes for 164 Exeter Road, Portsmouth, PO1 123.</p>
+                <p>Your proposed changes are being reviewed by our team and we will send you an email and a further message when we have made a decision.</p>
+            </div>
+           
+            <a href="#" class="dialog-cancel button-secondary" aria-label="close" role="button">Close</a>
+        </div>
+    </div>
+</div>
     </div>
   </div>
   {% include "includes/get_help.html" %} </main>
