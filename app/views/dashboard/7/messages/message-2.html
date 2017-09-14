@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% set title = "Update: we have recevied your business rates check" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+<main id="content" role="main"> {% include "includes/phase_banner_prototype.html" %}
+  <div class="grid-row">
+    <div class="column-full">
+      <div class="pull-right margin-top-20 margin-bottom-20 font-xsmall">Welcome, <a href="/dashboard/{{version}}/business/change-details/summary">Jo Bloggs - ABC Business</a>.<a href="#" class="margin-left-10">Not you?</a> <a href="#" class="margin-left-10">Sign out</a></div>
+      <div class="clearfix pull-right margin-top-5 margin-bottom-20 font-xsmall"><i class="icon icon-messageunread"> </i>You have <a href="#">(2) unread messages</a></div>
+     
+   
+     
+      
+       <h1 class="clearfix heading-small">[Subject] Update: We have received a business rates check from your agent</h1>
+              <p><strong>Reference: [reference]</strong></p>
+              <p><strong>Property: [address]</strong></p>
+              <p><strong>Received: [date and time]</strong></p>
+              <p>We received a business rates check from your agent. We will send you a copy of the check by
+                email.</p>
+              <h3 class="heading heading-small">What happens now?</h3>
+              <p>The check will be considered by the Valuation Office Agency (VOA). No further action is required
+                at this time.</p>
+              <p>We aim to provide a response within 12 weeks. Some checks may take longer to resolve. We will
+                prioritise your check if you are a smaller proposer. We will contact you with an outcome for your
+                check.</p>
+              <p>We will contact your agent if we need more information or evidence.</p>
+              <p><strong>Please note:</strong> the information submitted as part of your check may cause the valuation to go up
+                as well as down.</p>
+            
+                
+               
+              <p>Valuation Office Agency</p>
+              
+               
+                 <a href="#" role="button">Print this message</a><br />
+               <a href="#" role="button">Download this message as a PDF</a><br />
+             <a class="link-back margin-top-20" href="javascript: history.go(-1)">Back</a>
+      
+     
+    </div>
+  </div>
+  {% include "includes/get_help.html" %} </main>
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %} 
+  <!-- GOV.UK Prototype kit {{releaseVersion}} --> 
+  {% endblock %} 
