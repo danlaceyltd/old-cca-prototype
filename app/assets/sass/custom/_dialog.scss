@@ -22,7 +22,9 @@
     z-index: 11;
   }
 
-
+	&-scroll {
+		overflow:auto;
+	}
   // Matches page container properties
 
   @include media(tablet) {

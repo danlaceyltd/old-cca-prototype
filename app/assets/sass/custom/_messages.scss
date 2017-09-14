@@ -1,12 +1,47 @@
 /* CSS Document */
 
 
-
+.icon-messageunread{
+		background-size:80%;
+		background-image: url('../images/icons/icon-envelope-closed-v2.png');
+		background-repeat:no-repeat;
+		background-position:center 2px;
+		width:22px;
+		height:22px;
+		display:inline-block;
+		margin:0 8px 0px 10px;
+	}
+	
+.icon-messageread{
+		background-size:80%;
+		background-image: url('../images/icons/icon-envelope-open-v2.png');
+		background-repeat:no-repeat;
+		background-position:center center;
+		width:22px;
+		height:22px;
+		display:inline-block;
+		margin:0 8px 0px 10px
+	}
 
 
 .messages {
+	table-layout:auto;
+	width:100%;
+	&--date {
+		width:13%;
+	}
+	&--subject{
+		width:35%;
+	}
+	&--reference {
+		width:13%;
+	}
+	&--address {
+		width:35%;
+	}
 	& td {
-	font-size:16px;
+	font-size:15px;
+		
 }
 	&--row > td {
 		font-weight:bold;	
@@ -19,13 +54,105 @@
 	font-weight: normal;
 	}
 	
-	&--row:hover > td {
-		cursor:pointer;
-		background:#999999;
-		color:#FFFFFF
+	&--row > td a {
+		text-decoration:none;
+		color: #0b0c0c;
+		display:block;
 	}
 	
+	&--row > td a:focus {
+		text-decoration:none;
+		color: #FFFFFF;
+		background:#005ea5;
+			border:0;
+		outline:none;
+	}
+	
+	&--row:active {
+		 outline: 3px solid #ffbf47;
+			background: #ffbf47;
+	}
+	
+	
+	&--row:hover > td {
+		cursor:pointer;
+		background:#005ea5;
+		color:#FFFFFF;
+	}
+	&--row:hover > td a {
+			color:#FFFFFF;
+			}
+		
+	&--row:hover > td a i.icon-messageunread {
+			background-image: url('../images/icons/icon-envelope-closed-white-v2.png');
+			
+			}
+		
+	&--row__read:hover > td a i.icon-messageread {
+			background-image: url('../images/icons/icon-envelope-open-white-v2.png');
+			} 
+		
+		
+} 
 
+
+
+
+
+
+
+/* Collapse the messages table in mobile and tablet */
+
+@media screen and (max-width: 600px) {
+  table.message {
+    border: 0;
+  }
+  table.messages caption {
+    font-size: 1.3em;
+  }
+  table.messages thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  table.messages tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  table.messages td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  table.messages td:before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    
+  }
+
+ table.messages td[data-label="Date"]:before{
+		display:none;
+	}
+	
+	table.messages td[data-label="Date"] {
+		text-align:left;
+	}
+	
+  table.messages td:last-child {
+    border-bottom: 0;
+  }
 }
 
 

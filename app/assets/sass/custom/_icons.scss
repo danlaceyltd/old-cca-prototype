@@ -39,25 +39,7 @@
         height: 12px;
         margin-left: 4px;
   }
-	&-messageunread{
-		background-size:100%;
-		background-image: url('../images/icons/icon-envelope-closed-v2.png');
-		background-position:center -3px;
-		width:22px;
-		height:22px;
-		display:inline-block;
-		margin:0 8px 0px 5px;
-	}
 	
-	&-messageread{
-		background-size:100%;
-		background-image: url('../images/icons/icon-envelope-open-v2.png');
-		background-position:center center;
-		width:22px;
-		height:22px;
-		display:inline-block;
-		margin:0 8px 0px 5px
-	}
 
 
 }
