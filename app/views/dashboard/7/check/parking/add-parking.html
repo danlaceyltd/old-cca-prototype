@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set title = "Propose changes to parking" %}
+{% set title = "Add parking" %}
 {% set version = "7" %}
 
 {% block page_title %}
@@ -30,20 +30,16 @@
       
      
       
-      <p>You can propose changes to parking spaces and areas. If a space or area does not exist, you may leave the corrsponding field blank or enter the number '0'.</p>
+      <p>You can add parking spaces and areas for your property.</p>
       
-       <details>
-        <summary role="button" ><span class="summary">What is a covered space or area?</span></summary>
-        <div class="panel-indent" id="covered">
-          <p>Covered area help text goes here...</p>
-        </div>
-      </details>
-      <details>
-        <summary role="button" ><span class="summary">What is an open space or area?</span></summary>
-        <div class="panel-indent" id="open">
-          <p>Open area help text goes here...</p>
-        </div>
-      </details>
+     
+     <p>Parking should only be recorded once, as either spaces or areas. If there are marked spaces you should count them. If there are no marked spaces you should measure the area.</p>
+
+<p>You can record your parking as a combination of spaces and areas so long as they relate to different sections of parking. Recording the same section of parking as both spaces and areas may result in the parking being counted twice.</p> 
+
+<p>A marked parking space is assumed to be 20 square metres. If you have any spaces which are larger or smaller than this (for example a parking space for a lorry), please enter the total number of spaces and provide more details in your supporting documents.</p>
+
+<p>You’ll need to select whether the parking is covered or uncovered. You’ll also need to select whether the parking is surfaced (for example concrete) or unsurfaced (for example grass or gravel).</p>
       <form id="editParking">
       <table class="table-summary-amend table-font-small" id="tableParking">
         
