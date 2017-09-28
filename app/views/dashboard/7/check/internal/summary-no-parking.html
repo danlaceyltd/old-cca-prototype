@@ -1,0 +1,307 @@
+{% extends "layout.html" %}
+
+{% set title = "Summary" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+
+
+            <ul class="property-details-top">
+                <li id="billingAuthorityReference">
+                    <span class="tabular-data__heading--label">Local authority reference: </span>
+                    <span>0930/09139385080004</span>
+                </li>
+                <li id="address">
+                    <span class="tabular-data__heading--label">Property: </span>
+                    <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span>
+                </li>
+            </ul>
+
+
+            <a href="/dashboard/{{version}}/check/internal/documents" class="link-back">Back</a>
+
+            <span class="pull-right"><a href="javascript:window.print()" class="button button-secondary" id="print-button-top">Print summary</a></span>
+
+            <h1 class="heading-xlarge" >
+                {{title}}
+            </h1>
+
+
+            <div class="table-wrapper">
+            <table id="property-features-1" class="table-font-xsmall">
+                <caption class="visuallyhidden">Property features</caption>
+                <colgroup>
+                    <col width="">
+                    <col width="">
+                    <col width="">
+                    <col width="" class="print-hide">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <th id="header_original">Current</th>
+                        <th id="header_proposed" class="proposed border-left border-right">Proposed changes</th>
+                        <td class="print-hide"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" id="header_basis_of_measurement">Basis of measurement</th>
+                        <td headers="header_basis_of_measurement header_original">Effective floor area</td>
+                        <td headers="header_basis_of_measurement header_proposed" class="proposed border-left border-right"></td>
+                        <td headers="header_basis_of_measurement" class="last print-hide">
+                            <a id="edit_basisOfMeasurement" href="#">Edit<span class="visuallyhidden"> Basis of measurement</span></a>
+                        </td>
+                    </tr>
+
+                        <tr>
+                            <th scope="row" id="header_raised_floor">Raised floor</th>
+                            <td headers="header_raised_floor header_original">
+
+
+                Yes
+
+            </td>
+                            <td headers="header_raised_floor header_proposed" class="proposed border-left border-right"></td>
+                            <td headers="header_raised_floor" class="last print-hide">
+                                <a id="edit_raisedFloor" href="#">Edit<span class="visuallyhidden"> Raised floor</span></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row" id="header_central_heating">Central heating</th>
+                            <td headers="header_central_heating header_original">
+
+
+                Yes
+
+            </td>
+                            <td headers="header_central_heating header_proposed" class="proposed border-left border-right"></td>
+                            <td headers="header_central_heating" class="last print-hide">
+                                <a id="edit_centralHeating" href="#">Edit<span class="visuallyhidden"> Central heating</span></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row" id="header_air_conditioning">Air conditioning</th>
+                            <td headers="header_air_conditioning header_original">
+
+
+                Partial
+
+            </td>
+                            <td headers="header_air_conditioning header_proposed" class="proposed border-left border-right"></td>
+                            <td headers="header_air_conditioning" class="last print-hide">
+                                <a id="edit_airConditioning" href="#">Edit<span class="visuallyhidden"> Air conditioning</span></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row" id="header_passenger_lift">Passenger lift</th>
+                            <td headers="header_passenger_lift header_original">
+
+
+                All floors
+
+            </td>
+                            <td headers="header_passenger_lift header_proposed" class="proposed border-left border-right"></td>
+                            <td headers="header_passenger_lift" class="last print-hide">
+                                <a id="edit_passengerLift" href="#">Edit<span class="visuallyhidden"> Passenger lift</span></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row" id="header_number_of_storeys">Number of storeys</th>
+                            <td headers="header_number_of_storeys header_original">
+
+
+                2
+
+            </td>
+                            <td headers="header_number_of_storeys header_proposed" class="proposed border-left border-right"></td>
+                            <td headers="header_number_of_storeys" class="last print-hide">
+                                <a id="edit_numberOfStoreys" href="#">Edit<span class="visuallyhidden"> Number of storeys</span></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row" id="header_lowest_floor_of_property">Lowest floor of property</th>
+                            <td headers="header_lowest_floor_of_property header_original">
+
+
+                Lower ground floor
+
+            </td>
+                            <td headers="header_lowest_floor_of_property header_proposed" class="proposed border-left border-right"></td>
+                            <td headers="header_lowest_floor_of_property" class="last print-hide">
+                                <a id="edit_floorRangeStart" href="#">Edit<span class="visuallyhidden"> Lowest floor of property</span></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row" id="header_highest_floor_of_property">Highest floor of property</th>
+                            <td headers="header_highest_floor_of_property header_original">
+
+
+                Ground floor
+
+            </td>
+                            <td headers="header_highest_floor_of_property header_proposed" class="proposed border-left border-right"></td>
+                            <td headers="header_highest_floor_of_property" class="last print-hide">
+                                <a id="edit_floorRangeEnd" href="#">Edit<span class="visuallyhidden"> Highest floor of property</span></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row" id="header_year_built">Year built</th>
+                            <td headers="header_year_built header_original">
+
+
+                1940-1954
+
+            </td>
+                            <td headers="header_year_built header_proposed" class="proposed border-left border-right"></td>
+                            <td headers="header_year_built" class="last print-hide">
+                                <a id="edit_yearBuilt" href="#">Edit<span class="visuallyhidden"> Year built</span></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row" id="header_year_refurbished">Year refurbished</th>
+                            <td headers="header_year_refurbished header_original">
+
+
+                2015
+
+            </td>
+                            <td headers="header_year_refurbished header_proposed" class="proposed border-left border-right"></td>
+                            <td headers="header_year_refurbished" class="last print-hide">
+                                <a id="edit_yearRefurbished" href="#">Edit<span class="visuallyhidden"> Year refurbished</span></a>
+                            </td>
+                        </tr>
+
+                </tbody>
+            </table>
+            </div>
+
+                    <br>
+
+                    <h2 class="heading-medium" id="headingSurveyUnitFloorAreas-1">Floor areas</h2>
+
+
+            <div class="table-wrapper">
+                <table id="survey-unit-lines-table-1" class="table-font-xsmall">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col width="120px" class="print-hide">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th id="header_current" colspan="3" class="original no-border-bottom form-heading-large">Current</th>
+                            <th id="header_proposed" colspan="2" class="proposed border-left border-right no-border-bottom form-heading-large">Proposed changes</th>
+                            <th class="no-border-bottom print-hide"></th>
+                        </tr>
+                        <tr>
+                            <th id="header_current_ref" class="original">Ref</th>
+                            <th id="header_current_desc" class="original">Description</th>
+                            <th id="header_current_area" class="original">Area <abbr role="text" title="meters squared" aria-label="meters squared">m<sup>2</sup></abbr></th>
+                            <th id="header_proposed_desc" class="proposed border-left">Description</th>
+                            <th id="header_proposed_area" class="proposed border-right">Area <abbr role="text" title="meters squared" aria-label="meters squared">m<sup>2</sup></abbr></th>
+                            <th class="print-hide"></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                            <tr>
+                                <td headers="header_current_ref header_current">1</td>
+                                <td headers="header_current_desc header_current">Mezzanine 4th/5th office</td>
+                                <td headers="header_current_area header_current">1,000.00</td>
+
+                                    <td headers="header_proposed_desc header_proposed" class="proposed border-left"></td>
+                                    <td headers="header_proposed_area header_proposed" class="proposed border-right"></td>
+                                    <td class="last print-hide">
+                                        <a href="#" class="margin-right-10">Edit<span class="visuallyhidden"> row 1</span></a>
+                                        <a href="#">Remove<span class="visuallyhidden"> row 1</span></a>
+                                    </td>
+
+                            </tr>
+
+                    </tbody>
+                </table>
+                
+            </div>
+                    
+                    <br>
+                     <h2 class="heading-medium" id="parkingsunnary">Parking</h2>
+                    
+                      <div class="panel panel-border-wide">
+  <p>
+    There is no parking recorded for your property.
+  </p>
+</div>
+      <a class="clearfix" href="/dashboard/{{version}}/check/parking/add-parking.html">Add parking</a>
+                     
+
+                    <br>
+
+
+                <h2 class="heading-medium" id="headingSupportingDocuments">Supporting documents</h2>
+
+                    <ul class="summary">
+                        <li>
+                            <span class="question">Do you want to submit documents to support your changes?</span>
+                            <span class="answer">No</span>
+                            <span class="edit"><a href="#">Edit</a></span>
+                        </li>
+                    </ul>
+
+
+
+                <br>
+                <p>
+                    <a role="button" id="continue-button" class="button" href="/dashboard/{{version}}/check/internal/declaration">Continue</a>
+                    <a href="javascript:window.print()" role="button" class="button button-secondary" id="print-button-bottom">Print summary</a>
+                </p>
+
+
+
+    <a href="/dashboard/{{version}}/check/internal/documents" class="link-back">Back</a>
+
+
+
+
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
