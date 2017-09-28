@@ -104,9 +104,35 @@
 /* Collapse the messages table in mobile and tablet */
 
 @media screen and (max-width: 600px) {
-  table.message {
+	
+	.searchHeader {
+		display:block;
+		border:0;
+		&--empty {
+			display:none;
+		}
+	}
+	
+	.searchHeader label.visuallyhidden {
+		position:relative;
+		overflow:auto;
+		clip:auto;
+		height:auto;
+		width:auto;
+		margin:auto;
+		left:0;
+	}
+	
+	
+	.icon.icon-messageread, .icon.icon-messageunread {margin:0; padding:0}
+
+	
+	
+	table.messages {
     border: 0;
   }
+	
+	
   table.messages caption {
     font-size: 1.3em;
   }
@@ -127,33 +153,77 @@
   }
   table.messages td {
     border-bottom: 1px solid #ddd;
-    display: block;
+   display:block;
     font-size: .8em;
-    text-align: right;
+   
   }
   table.messages td:before {
-    /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
+
     content: attr(data-label);
     float: left;
     font-weight: bold;
     
   }
+	
+	table.messages tr.messages--row {
+		position:relative;
+	}
 
- table.messages td[data-label="Date"]:before{
+ table.messages td[data-label="Date"]:before, table.messages td[data-label="Subject"]:before, table.messages td[data-label="Address"]:before, table.messages td[data-label="Status"]:before{
 		display:none;
 	}
+	
+	table.messages td[data-label="Reference"]:before {
+		
+		padding: 0px 3px 0px 30px;
+		font-weight:normal;
+	}
+	
+	table.messages td[data-label="Date"] {
+		position:absolute;
+		top:3px;
+		right:3px;
+		
+	border:none;
+		background:inherit;
+		padding:3px;
+	}
+	
+	table.messages td[data-label="Status"] {
+		position:absolute;
+		top:3px;
+		left:3;
+		border-bottom:none;
+		width:22px;
+		height:22px;
+		padding:0px;
+		
+		
+	}
+	
+	
+table.messages.dataTable td[data-label="Subject"] a{
+	padding:6px 105px 6px 30px;
+	}
+	
+	
+		table.messages td[data-label="Address"] a {
+		
+		
+			padding:6px 3px 6px 30px;
+	}
+	
 	
 	table.messages td[data-label="Date"] {
 		text-align:left;
 	}
 	
-  table.messages td:last-child {
-    border-bottom: 0;
-  }
+	table.messages td {background:transparent;}
+	
+ 
 }
+
+
 
 
 

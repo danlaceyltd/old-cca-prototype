@@ -27,101 +27,100 @@
         </ul>
       </div>
       <h1 class="visuallyhidden"> {{title}} </h1>
-      <h1>{{title}}</h1>
-      <table class="table-font-small messages">
+      
+      
+      
+      <a class="toggleLink" href="#">Show search options</a>
+      
+      
+      
+      
+      <table class="messages dataTable  table-font-small ">
         <thead>
           <tr>
-            <th class="message--status"><span class="hidden">Status</span></th>
-            
-            <th class="messages--subject" scope="col">Subject</th>
-            <th class="messages--reference" scope="col">Reference</th>
-            <th class="messages--address" scope="col">Address</th>
-            <th class="messages--date" scope="col">Date</th>
+            <th class="message--status sorting">Read / Unread</th>
+            <th class="messages--subject sorting" scope="col">Subject</th>
+            <th class="messages--address sorting" scope="col">Address</th>
+            <th class="messages--reference sorting" scope="col">Reference</th>
+            <th class="messages--date sorting" scope="col">Date</th>
           </tr>
         </thead>
         <tbody>
-          <!-- <tr role="row">
-            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 150px;"><input name="address" type="search" size="10" class="icon icon-search"></th>
-            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 170px;"><input name="baref" type="search" size="10" class="filter-input">
-              <button class="icon"><i class="search-icon"></i></button></th>
-            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 280px;"><input name="status" type="search" size="10" class="filter-input">
-              <button class="icon icon-search"></button></th>
-            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 140px;"><input name="agent" type="search" size="8" class="filter-input">
-              <button class="icon"><i class="search-icon"></i></button></th>
-            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 120px;"><a href="#" class="clear">Clear search</a></th>
-          </tr> -->
+        
+        
+        
+        
+        <tr class="toggleElement">
+        <th class="searchHeader searchHeader--empty"></th>
+        <th class="searchHeader"><div class="searchfield"><label for="messagesubject" class="visuallyhidden">Subject</label><input name="messagesubject" id="messagesubject" size="10" class="ss-input"><button id="messagesubjectbtn" class="search-submit ss-button"></button></div></th>
+        <th class="searchHeader"><div class="searchfield"><label for="messageaddress" class="visuallyhidden">Address</label><input name="messageaddress" id="messageaddress" size="10" class="ss-input"><button id="messageaddressbtn" class="search-submit ss-button"></button></div></th>
+        <th class="searchHeader"><div class="searchfield"><label for="messageref" class="visuallyhidden">Reference</label><input name="messageref" id="messageref" size="10" class="ss-input"><button id="messagerefbtn" class="search-submit ss-button"></button></div></th>
+        <th class="searchHeader"><div class="searchfield"><label for="messagedate" class="visuallyhidden">Subject</label><input name="messagedate" id="messagedate" size="10" class="ss-input"><button id="messagedatebtn" class="search-submit ss-button"></button></div></th>
+			</tr>
+
+
           <tr class="messages--row">
             <td data-label="Status"><a href="#" data-toggle="dialog" data-target="dialog-message"><i class="icon icon-messageunread"><span class="hidden">unread</span></i></a></td>
-           
             <td data-label="Subject"><a href="#" data-toggle="dialog" data-target="dialog-message">Update: we have received your business rates check (JS Version)</a></td>
-            <td data-label="Reference"><a href="#" data-toggle="dialog" data-target="dialog-message">[ref]</a></td>
             <td data-label="Address"><a href="#" data-toggle="dialog" data-target="dialog-message">[address]</a></td>
-             <td data-label="Date"><a href="#" data-toggle="dialog" data-target="dialog-message">19/4/17 - 12:07</a></td>
+            <td data-label="Reference"><a href="#" data-toggle="dialog" data-target="dialog-message">[ref]</a></td>
+            <td data-label="Date"><a href="#" data-toggle="dialog" data-target="dialog-message">19/4/17 - 12:07</a></td>
           </tr>
           <tr class="messages--row messages--row__read">
             <td data-label="Status"><a href="#" data-toggle="dialog" data-target="dialog-message2"><i class="icon icon-messageread"><span class="hidden">unread</span></i></a></td>
-           
             <td data-label="Subject"><a href="#" data-toggle="dialog" data-target="dialog-message2">Update: We have received a business rates check from your agent (JS Version)</a></td>
-            <td data-label="Reference"><a href="#" data-toggle="dialog" data-target="dialog-message2">[ref]</a></td>
             <td data-label="Address"><a href="#" data-toggle="dialog" data-target="dialog-message2">[address]</a></td>
-             <td data-label="Date"><a href="#" data-toggle="dialog" data-target="dialog-message2">16/4/17 - 09:40</a></td>
+            <td data-label="Reference"><a href="#" data-toggle="dialog" data-target="dialog-message2">[ref]</a></td>
+            <td data-label="Date"><a href="#" data-toggle="dialog" data-target="dialog-message2">16/4/17 - 09:40</a></td>
           </tr>
-           <tr class="messages--row messages--row__read">
+          <tr class="messages--row messages--row__read">
             <td data-label="Status"><a href="#" data-toggle="dialog" data-target="dialog-message3"><i class="icon icon-messageread"><span class="hidden">unread</span></i></a></td>
-         
-           
             <td data-label="Subject"><a href="#" data-toggle="dialog" data-target="dialog-message3">Update: We have received your business rates check (JS Version)</a></td>
-            <td data-label="Reference"><a href="#" data-toggle="dialog" data-target="dialog-message3">[ref]</a></td>
             <td data-label="Address"><a href="#" data-toggle="dialog" data-target="dialog-message3">[address]</a></td>
-             <td data-label="Date"><a href="#" data-toggle="dialog" data-target="dialog-message3">4/4/17 - 08:30</a></td>
+            <td data-label="Reference"><a href="#" data-toggle="dialog" data-target="dialog-message3">[ref]</a></td>
+            <td data-label="Date"><a href="#" data-toggle="dialog" data-target="dialog-message3">4/4/17 - 08:30</a></td>
           </tr>
           <tr class="messages--row messages--row__read">
             <td data-label="Status"><a href="#" data-toggle="dialog" data-target="dialog-message"><i class="icon icon-messageread"><span class="hidden">read</span></i></a></td>
-            
             <td data-label="Subject"><a href="messages/message-1.html" >Update: we have received your business rates check (NON-JS Version)</a></td>
-            <td data-label="Reference"><a href="#" data-toggle="dialog" data-target="dialog-message">123456789</a></td>
             <td data-label="Address"><a href="#" data-toggle="dialog" data-target="dialog-message">164 Exeter Road, Portsmouth, PO1 123</a></td>
+            <td data-label="Reference"><a href="#" data-toggle="dialog" data-target="dialog-message">123456789</a></td>
             <td data-label="Date"><a href="#" data-toggle="dialog" data-target="dialog-message">19/3/17 - 17:00</a></td>
           </tr>
           <tr class="messages--row messages--row__read">
             <td data-label="Status"><a href="messages/message-2.html"><i class="icon icon-messageread"><span class="hidden">read</span></i></a></td>
-            
             <td data-label="Subject"><a href="messages/message-2.html">Update: We have received a business rates check from your agent (NON-JS Version)</a></td>
-            <td data-label="Reference"><a href="messages/message-2.html" data-toggle="dialog" data-target="dialog-message">123456789</a></td>
             <td data-label="Address"><a href="messages/message-2.html" data-toggle="dialog" data-target="dialog-message">164 Exeter Road, Portsmouth, PO1 123</a></td>
+            <td data-label="Reference"><a href="messages/message-2.html" data-toggle="dialog" data-target="dialog-message">123456789</a></td>
             <td data-label="Date"><a href="messages/message-2.html" data-toggle="dialog" data-target="dialog-message">10/3/17 - 13:08</a></td>
           </tr>
           <tr class="messages--row messages--row__unread">
             <td data-label="Status"><a href="messages/message-3.html"><i class="icon icon-messageunread"><span class="hidden">unread</span></i></a></td>
-           
             <td data-label="Subject"><a href="messages/message-3.html">[Subject] Update: We have received your business rates check</a></td>
-            <td data-label="Reference"><a href="messages/message-3.html">123456789</a></td>
             <td data-label="Address"><a href="messages/message-3.html">164 Exeter Road, Portsmouth, PO1 123</a></td>
-             <td data-label="Date"><a href="messages/message-3.html">9/2/17 - 14:12</a></td>
+            <td data-label="Reference"><a href="messages/message-3.html">123456789</a></td>
+            <td data-label="Date"><a href="messages/message-3.html">9/2/17 - 14:12</a></td>
           </tr>
           <tr class="messages--row messages--row__read">
             <td data-label="Status"><a href="#" data-toggle="dialog" data-target="dialog-message"><i class="icon icon-messageread"><span class="hidden">read</span></i></a></td>
-            
             <td data-label="Subject"><a href="#" data-toggle="dialog" data-target="dialog-message">Proposed changes to valuation</a></td>
-            <td data-label="Reference"><a href="#" data-toggle="dialog" data-target="dialog-message">123456789</a></td>
             <td data-label="Address"><a href="#" data-toggle="dialog" data-target="dialog-message">164 Exeter Road, Portsmouth, PO1 123</a></td>
+            <td data-label="Reference"><a href="#" data-toggle="dialog" data-target="dialog-message">123456789</a></td>
             <td data-label="Date"><a href="#" data-toggle="dialog" data-target="dialog-message">2/1/17 - 11:11</a></td>
           </tr>
           <tr class="messages--row messages--row__read">
             <td data-label="Status"><a href="#" data-toggle="dialog" data-target="dialog-message"><i class="icon icon-messageread"><span class="hidden">read</span></i></a></td>
-            
             <td data-label="Subject"><a href="#" data-toggle="dialog" data-target="dialog-message">Proposed changes to valuation</a></td>
-            <td data-label="Reference"><a href="#" data-toggle="dialog" data-target="dialog-message">123456789</a></td>
             <td data-label="Address"><a href="#" data-toggle="dialog" data-target="dialog-message">164 Exeter Road, Portsmouth, PO1 123</a></td>
+            <td data-label="Reference"><a href="#" data-toggle="dialog" data-target="dialog-message">123456789</a></td>
             <td data-label="Date"><a href="#" data-toggle="dialog" data-target="dialog-message">24/11/16-15:12</a></td>
           </tr>
           <tr class="messages--row messages--row__read">
             <td data-label="Status"><a href="#" data-toggle="dialog" data-target="dialog-message"><i class="icon icon-messageread"><span class="hidden">read</span></i></a></td>
-           
             <td data-label="Subject"><a href="#" data-toggle="dialog" data-target="dialog-message">Proposed changes to valuation</a></td>
             <td data-label="Reference"><a href="#" data-toggle="dialog" data-target="dialog-message">123456789</a></td>
             <td data-label="Address"><a href="#" data-toggle="dialog" data-target="dialog-message">164 Exeter Road, Portsmouth, PO1 123</a></td>
-             <td data-label="Date"><a href="#" data-toggle="dialog" data-target="dialog-message">10/10/16-08:42</a></td>
+            <td data-label="Date"><a href="#" data-toggle="dialog" data-target="dialog-message">10/10/16-08:42</a></td>
           </tr>
         </tbody>
       </table>
@@ -148,8 +147,8 @@
               <p><strong>Please note:</strong> the information submitted as part of your check may cause the valuation to go up
                 as well as down.</p>
               <p>Valuation Office Agency</p>
-               <a href="#" role="button">Print this message</a><br />
-               <a href="#" role="button">Download this message as a PDF</a><br />
+              <a href="#" role="button">Print this message</a><br />
+              <a href="#" role="button">Download this message as a PDF</a><br />
               <a href="#" class="margin-top-10 dialog-cancel button-secondary" aria-label="close" role="button">Close</a> </div>
           </div>
         </div>
@@ -175,9 +174,8 @@
               <p><strong>Please note:</strong> the information submitted as part of your check may cause the valuation to go up
                 as well as down.</p>
               <p>Valuation Office Agency</p>
-              
-               <a href="#" role="button">Print this message</a><br />
-               <a href="#" role="button">Download this message as a PDF</a><br />
+              <a href="#" role="button">Print this message</a><br />
+              <a href="#" role="button">Download this message as a PDF</a><br />
               <a href="#" class="margin-top-10 dialog-cancel button-secondary" aria-label="close" role="button">Close</a> </div>
           </div>
         </div>
