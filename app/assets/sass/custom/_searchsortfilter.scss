@@ -1,0 +1,66 @@
+.dataTable * .searchfield .ss-input {
+    height:30px;
+    width: -webkit-calc(100% - 51px);
+    width: calc(100% - 51px);
+    padding: 0 10px 0 10px;
+}
+
+
+.dataTable * .searchfield .search-submit.ss-button {
+    height:30px;
+    width:30px;
+    margin-top: -30px;
+    background-position:  0% 50%;
+    right:6px
+}
+
+.dataTable * .searchfield .search-submit.ss-dropdown-button {
+    height:30px;
+    width:30px;
+    margin: 0px 20px 0 0;
+    background-position:  0% 50%;
+    right:6px;
+    position:relative;
+    float: right;
+
+}
+
+
+/* Improve Accessibility with proper focus colours */
+.dataTable * .searchfield .search-submit.ss-button:focus, .dataTable * .searchfield .search-submit.ss-dropdown-button:focus, .sorting a:focus {
+    outline: 3px solid #ffbf47 ;
+}
+
+
+
+
+.dataTable{
+    margin: 0 auto;
+    width: 100%;
+    clear: both;
+    border-collapse: collapse;
+    table-layout: fixed;
+word-wrap:break-word;
+}
+
+
+.dataTable * .searchfield .ss-dropdown {
+    margin:0;
+    display:inline-block;
+    width: 67.50%;
+
+}
+.sorting {
+    background: url("../images/sort_both.png") no-repeat scroll center right;
+}
+
+.sorting_asc {
+    background: url("../images/sort_asc.png") no-repeat scroll center right;
+}
+
+.sorting_desc {
+    background: url("../images/sort_desc.png") no-repeat scroll center right;
+}
+
+.sorting a, .sorting_asc a, .sorting_desc a {display:block;}
+.sorting a:focus, .sorting_asc a:focus, .sorting_desc a:focus {background-color: transparent;}

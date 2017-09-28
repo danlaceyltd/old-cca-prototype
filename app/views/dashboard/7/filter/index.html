@@ -1,0 +1,604 @@
+{% extends "layout.html" %}
+
+{% set title = "Properties" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+{% endblock %}
+
+
+{% block content %}
+<div id="content">
+  <article class="content_body ">
+    <div class="section-tabs">
+      <ul role="tablist">
+        <li class="active"> <a href="/business-rates-property-linking/properties">My properties</a> </li>
+        <li> <a href="/business-rates-property-linking/manage-agents">Agents</a> </li>
+        <li> <a href="/business-rates-property-linking/draft-cases">Drafts</a> </li>
+        <li> <a href="/business-rates-property-linking/details">My details</a> </li>
+        <li class="tab-right"> <span>Welcome, <a href="/business-rates-property-linking/details"> Daniel Lacey - Automated Stub 3 </a>. <a href="/business-rates-property-linking/logout">Not you?</a></span> </li>
+      </ul>
+    </div>
+    <p>It may take several hours for your property to display here once you have claimed it.</p>
+    <div class="table-wrapper hide-if-no-js">
+      <div id="dataTableManagePropertiesSearchSort_wrapper" class="dataTables_wrapper no-footer">
+        <div id="dataTableManagePropertiesSearchSort_filter" class="dataTables_filter">
+          <label>Search:
+            <input type="search" class="" placeholder="" aria-controls="dataTableManagePropertiesSearchSort">
+          </label>
+        </div>
+        <div id="dataTableManagePropertiesSearchSort_processing" class="dataTables_processing" style="display: none;">
+          <div class="loading-container"><span class="loading-icon"></span><span class="loading-label">Loading...</span></div>
+        </div>
+        <table id="dataTableManagePropertiesSearchSort" class="table-font-xsmall margin-bottom-20 margin-top-20 dataTable no-footer" role="grid" aria-describedby="dataTableManagePropertiesSearchSort_info">
+          <caption class="visuallyhidden">
+          Your properties
+          </caption>
+     
+          <thead>
+            <tr role="row">
+              <th scope="col" class="sorting_asc" tabindex="0" aria-controls="dataTableManagePropertiesSearchSort" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Address: activate to sort column descending">Address</th>
+              <th scope="col" class="sorting" tabindex="0" aria-controls="dataTableManagePropertiesSearchSort" rowspan="1" colspan="1"  aria-label="Local authority reference: activate to sort column ascending">Local authority reference</th>
+              <th scope="col" class="sorting" tabindex="0" aria-controls="dataTableManagePropertiesSearchSort" rowspan="1" colspan="1"  aria-label="Status: activate to sort column ascending">Status</th>
+              <th scope="col" class="sorting" tabindex="0" aria-controls="dataTableManagePropertiesSearchSort" rowspan="1" colspan="1"  aria-label="Appointed Agents: activate to sort column ascending">Appointed Agents</th>
+              <th scope="col" class="sorting_disabled" rowspan="1" colspan="1"  aria-label="Actions">Actions</th>
+            </tr>
+            <tr role="row">
+              <th scope="col" rowspan="1" colspan="1"><div class="searchfield">
+                  <input name="address" id="address" size="10" class="ss-input">
+                  <button id="addressBtn" class="search-submit ss-button">search</button>
+                </div></th>
+              <th scope="col" rowspan="1" colspan="1"><div class="searchfield">
+                  <input name="baref" id="baref" size="10" class="ss-input">
+                  <button id="barefBtn" class="search-submit ss-button"></button>
+                </div></th>
+              <th scope="col" rowspan="1" colspan="1"><div class="searchfield">
+                 <!-- <input name="status" id="status" size="10" class="ss-input"> -->
+                 <select class="ss-input">
+  <option value="1o">1</option>
+  <option value="2">2</option>
+  <option value="3s">3</option>
+  <option value="4">4</option>
+</select>
+                  <button id="statusBtn" class="search-submit ss-dropdown-button"></button>
+                </div></th>
+              <th scope="col" rowspan="1" colspan="1"><div class="searchfield">
+                  <input name="agent" id="agent" size="8" class="ss-input">
+                  <button id="agentBtn" class="search-submit ss-button"></button>
+                </div></th>
+              <th scope="col" rowspan="1" colspan="1"><a href="#" class="clear">Clear search</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr role="row" class="odd">
+              <td class="sorting_1">2ND FLR 42B, WORCESTER ROAD, BROMSGROVE, WORCS, B61 7AE</td>
+              <td>1101911000148</td>
+              <td><ul class="list">
+                  <li>Pending</li>
+                  <li><span class="submission-id">Submission ID: a0000000000000000000000000000006</span></li>
+                </ul></td>
+              <td>Automated Stub Agent 1</td>
+              <td><ul class="list">
+                  <li><a href="/business-rates-property-linking/appoint-agent/10000000000006">Appoint agent</a></li>
+                  <li><a href="/business-rates-property-linking/property-link/10000000000006/assessments">View valuations</a></li>
+                </ul></td>
+            </tr>
+            <tr role="row" class="even">
+              <td class="sorting_1">BLOCK J UNIT 215 TOWER BRIDGE BUSINESS COMPLEX, CLEMENTS ROAD, LONDON, SE16 4DG</td>
+              <td>1940002152213J</td>
+              <td><ul class="list">
+                  <li>Pending</li>
+                  <li><span class="submission-id">Submission ID: a0000000000000000000000000000005</span></li>
+                </ul></td>
+              <td></td>
+              <td><ul class="list">
+                  <li><a href="/business-rates-property-linking/appoint-agent/10000000000005">Appoint agent</a></li>
+                  <li><a href="/business-rates-property-linking/property-link/10000000000005/assessments">View valuations</a></li>
+                </ul></td>
+            </tr>
+            <tr role="row" class="odd">
+              <td class="sorting_1">OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</td>
+              <td>09139385080004</td>
+              <td><ul class="list">
+                  <li>Pending</li>
+                  <li><span class="submission-id">Submission ID: a0000000000000000000000000000007</span></li>
+                </ul></td>
+              <td>Automated Stub Agent 1, Automated Stub Agent 2</td>
+              <td><ul class="list">
+                  <li><a href="/business-rates-property-linking/appoint-agent/10000000000007">Appoint agent</a></li>
+                  <li><a href="/business-rates-property-linking/property-link/10000000000007/assessments">View valuations</a></li>
+                </ul></td>
+            </tr>
+            <tr role="row" class="even">
+              <td class="sorting_1">ON BUS SHELTER WA 2033 OUTSIDE 540, CHORLEY OLD ROAD, BOLTON, BL1 6AB</td>
+              <td>1S2643050002</td>
+              <td><ul class="list">
+                  <li>Revoked</li>
+                  <li></li>
+                </ul></td>
+              <td>Automated Stub Agent 1, Automated Stub Agent 2</td>
+              <td><ul class="list">
+                  <li><a href="/business-rates-property-linking/appoint-agent/10000000000004">Appoint agent</a></li>
+                  <li><a href="/business-rates-property-linking/summary/1592189000">View valuations</a></li>
+                </ul></td>
+            </tr>
+            <tr role="row" class="odd">
+              <td class="sorting_1">ST FLR OVER PRINCESS GARAGE, 1 WESTEND TERRACE, EBBW VALE, NP23 6HS</td>
+              <td>138030130380000204</td>
+              <td><ul class="list">
+                  <li>Declined</li>
+                  <li></li>
+                </ul></td>
+              <td>Automated Stub Agent 1</td>
+              <td><ul class="list">
+                  <li><a href="/business-rates-property-linking/appoint-agent/10000000000003">Appoint agent</a></li>
+                  <li><a href="/business-rates-property-linking/summary/8444236000">View valuations</a></li>
+                </ul></td>
+            </tr>
+            <tr role="row" class="even">
+              <td class="sorting_1">TOBY CARVERY DOWNLANDS, 123 UPPER BRIGHTON ROAD, WORTHING, WEST SUSSEX, BN14 9JN</td>
+              <td>190023420100</td>
+              <td><ul class="list">
+                  <li>More evidence required</li>
+                  <li></li>
+                </ul></td>
+              <td></td>
+              <td><ul class="list">
+                  <li><a href="/business-rates-property-linking/appoint-agent/10000000000013">Appoint agent</a></li>
+                  <li><a href="/business-rates-property-linking/summary/6497178000">View valuations</a></li>
+                </ul></td>
+            </tr>
+            <tr role="row" class="odd">
+              <td class="sorting_1">VOID PT 1ST FLR THE ROUNDHOUSE, ST VINCENT STREET, BIRMINGHAM, B16 8EB</td>
+              <td>10029262</td>
+              <td><ul class="list">
+                  <li>Approved</li>
+                  <li></li>
+                </ul></td>
+              <td></td>
+              <td><ul class="list">
+                  <li><a href="/business-rates-property-linking/appoint-agent/10000000000002">Appoint agent</a></li>
+                  <li><a href="/business-rates-property-linking/property-link/10000000000002/assessments">View valuations</a></li>
+                </ul></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="dataTables_info" id="dataTableManagePropertiesSearchSort_info" role="status" aria-live="polite">Showing 1 to 7 of 7</div>
+        <div class="dataTables_paginate paging_simple_numbers" id="dataTableManagePropertiesSearchSort_paginate" style="display: none;"><a class="paginate_button previous disabled" aria-controls="dataTableManagePropertiesSearchSort" data-dt-idx="0" tabindex="0" id="dataTableManagePropertiesSearchSort_previous"><i class="previous-arrow"></i>Previous</a><span><a class="paginate_button current" aria-controls="dataTableManagePropertiesSearchSort" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="dataTableManagePropertiesSearchSort" data-dt-idx="2" tabindex="0" id="dataTableManagePropertiesSearchSort_next">Next<i class="next-arrow"></i></a></div>
+      </div>
+    </div>
+    <noscript>
+    &lt;div class="table-wrapper"&gt;
+    &lt;table class="dataTable table-font-xsmall margin-bottom-20 margin-top-20" id="nojsManageProperties"&gt;
+    &lt;caption class="visuallyhidden"&gt;Your properties&lt;/caption&gt;
+    &lt;colgroup&gt;
+    &lt;col style="width: 200px"&gt;
+    &lt;col style="width: 140px"&gt;
+    &lt;col style="width: 130px"&gt;
+    &lt;col style="width: 170px"&gt;
+    &lt;col style="width: 120px"&gt;
+    &lt;/colgroup&gt;
+    &lt;tbody&gt;
+    
+    &lt;tr role="row"&gt;
+    &lt;th scope="col" &gt;
+    
+    &lt;div class="sorting" &gt;
+    
+    &lt;a href="/business-rates-property-linking/properties-search-sort?sortfield=address&amp;amp;sortorder=ASC"&gt;Address&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;/th&gt;
+    &lt;th scope="col" &gt;
+    
+    &lt;div class="sorting" &gt;
+    
+    &lt;a href="/business-rates-property-linking/properties-search-sort?sortfield=baref&amp;amp;sortorder=ASC"&gt;Local authority reference&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;/th&gt;
+    &lt;th scope="col"&gt;
+    
+    &lt;div class="sorting" &gt;
+    
+    &lt;a href="/business-rates-property-linking/properties-search-sort?sortfield=status&amp;amp;sortorder=ASC"&gt;Status&lt;/a&gt;
+    &lt;/th&gt;
+    &lt;th scope="col"&gt;
+    
+    &lt;div class="sorting" &gt;
+    
+    &lt;a href="/business-rates-property-linking/properties-search-sort?sortfield=agent&amp;amp;sortorder=ASC"&gt;Appointed Agents&lt;/a&gt;&lt;/div&gt;
+    &lt;/th&gt;
+    &lt;th scope="col"&gt;
+    &lt;div&gt;Actions&lt;/div&gt;
+    &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;form method="GET" action="/business-rates-property-linking/properties-search-sort"&gt;
+    &lt;tr role="row"&gt;
+    &lt;th scope="col"&gt;&lt;div class="searchfield"&gt;&lt;input name="address" value="" id="address" size="10" class="ss-input"&gt;&lt;button id="addressBtn" class="search-submit ss-button"&gt;&lt;/button&gt;&lt;/div&gt;&lt;/th&gt;
+    &lt;th scope="col"&gt;&lt;div class="searchfield"&gt;&lt;input name="baref"  value="" id="baref" size="10" class="ss-input"&gt;&lt;button id="barefBtn" class="search-submit ss-button"&gt;&lt;/button&gt;&lt;/div&gt;&lt;/th&gt;
+    &lt;th scope="col"&gt;&lt;div class="searchfield"&gt;&lt;input name="status"  value="" id="status" size="10" class="ss-input"&gt;&lt;button id="statusBtn" class="search-submit ss-button"&gt;&lt;/button&gt;&lt;/div&gt;&lt;/th&gt;
+    &lt;th scope="col"&gt;&lt;div class="searchfield"&gt;&lt;input name="agent"  value="" id="agent" size="8" class="ss-input"&gt;&lt;button id="agentBtn" class="search-submit ss-button"&gt;&lt;/button&gt;&lt;/div&gt;&lt;/th&gt;
+    &lt;th scope="col"&gt;&lt;a href="/business-rates-property-linking/properties-search-sort" class="clear"&gt;Clear search&lt;/a&gt;&lt;/th&gt;
+    
+    &lt;/tr&gt;
+    &lt;input type="hidden" name="sortorder" value="ASC" /&gt;
+    &lt;input type="hidden" name="sortfield" value="" /&gt;
+    &lt;/form&gt;
+    
+    
+    
+    &lt;tr&gt;
+    &lt;td&gt;
+    2nd Flr 42b, Worcester Road, Bromsgrove, Worcs,  B61 7AE
+    &lt;/td&gt;
+    &lt;td&gt;
+    1101911000148
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    &lt;li&gt;
+    Pending
+    &lt;/li&gt;
+    
+    &lt;li&gt;
+    &lt;span class="submission-id"&gt;
+    Submission ID: a0000000000000000000000000000006
+    &lt;/span&gt;
+    &lt;/li&gt;
+    
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    
+    
+    &lt;li&gt;Automated Stub Agent 1&lt;/li&gt;
+    
+    
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    &lt;li&gt;
+    &lt;a href="/business-rates-property-linking/appoint-agent/10000000000006"&gt;Appoint agent
+    &lt;span class="visuallyhidden"&gt;
+    for 2nd Flr 42b, Worcester Road, Bromsgrove, Worcs,  B61 7AE&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+    
+    &lt;a href="/business-rates-property-linking/property-link/10000000000006/assessments"&gt;View valuations
+    &lt;span class="visuallyhidden"&gt; for 2nd Flr 42b, Worcester Road, Bromsgrove, Worcs,  B61 7AE&lt;/span&gt;
+    &lt;/a&gt;
+    
+    &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;/tr&gt;
+    
+    &lt;tr&gt;
+    &lt;td&gt;
+    Block J Unit 215 Tower Bridge Business Complex, Clements Road, London,  SE16 4DG
+    &lt;/td&gt;
+    &lt;td&gt;
+    1940002152213J
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    &lt;li&gt;
+    Pending
+    &lt;/li&gt;
+    
+    &lt;li&gt;
+    &lt;span class="submission-id"&gt;
+    Submission ID: a0000000000000000000000000000005
+    &lt;/span&gt;
+    &lt;/li&gt;
+    
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    
+    &lt;li&gt;&lt;/li&gt;
+    
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    &lt;li&gt;
+    &lt;a href="/business-rates-property-linking/appoint-agent/10000000000005"&gt;Appoint agent
+    &lt;span class="visuallyhidden"&gt;
+    for Block J Unit 215 Tower Bridge Business Complex, Clements Road, London,  SE16 4DG&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+    
+    &lt;a href="/business-rates-property-linking/property-link/10000000000005/assessments"&gt;View valuations
+    &lt;span class="visuallyhidden"&gt; for Block J Unit 215 Tower Bridge Business Complex, Clements Road, London,  SE16 4DG&lt;/span&gt;
+    &lt;/a&gt;
+    
+    &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;/tr&gt;
+    
+    &lt;tr&gt;
+    &lt;td&gt;
+    Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria,  LA12 9RB
+    &lt;/td&gt;
+    &lt;td&gt;
+    09139385080004
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    &lt;li&gt;
+    Pending
+    &lt;/li&gt;
+    
+    &lt;li&gt;
+    &lt;span class="submission-id"&gt;
+    Submission ID: a0000000000000000000000000000007
+    &lt;/span&gt;
+    &lt;/li&gt;
+    
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    
+    
+    &lt;li&gt;Automated Stub Agent 1&lt;/li&gt;
+    
+    &lt;li&gt;Automated Stub Agent 2&lt;/li&gt;
+    
+    
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    &lt;li&gt;
+    &lt;a href="/business-rates-property-linking/appoint-agent/10000000000007"&gt;Appoint agent
+    &lt;span class="visuallyhidden"&gt;
+    for Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria,  LA12 9RB&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+    
+    &lt;a href="/business-rates-property-linking/property-link/10000000000007/assessments"&gt;View valuations
+    &lt;span class="visuallyhidden"&gt; for Old Mill Cafe, Coast Road, Bardsea, Ulverston, Cumbria,  LA12 9RB&lt;/span&gt;
+    &lt;/a&gt;
+    
+    &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;/tr&gt;
+    
+    &lt;tr&gt;
+    &lt;td&gt;
+    On Bus Shelter Wa 2033 Outside 540, Chorley Old Road, Bolton,  BL1 6AB
+    &lt;/td&gt;
+    &lt;td&gt;
+    1S2643050002
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    &lt;li&gt;
+    Revoked
+    &lt;/li&gt;
+    
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    
+    
+    &lt;li&gt;Automated Stub Agent 1&lt;/li&gt;
+    
+    &lt;li&gt;Automated Stub Agent 2&lt;/li&gt;
+    
+    
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    &lt;li&gt;
+    &lt;a href="/business-rates-property-linking/appoint-agent/10000000000004"&gt;Appoint agent
+    &lt;span class="visuallyhidden"&gt;
+    for On Bus Shelter Wa 2033 Outside 540, Chorley Old Road, Bolton,  BL1 6AB&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+    
+    &lt;a href="/business-rates-property-linking/summary/1592189000"&gt;View valuations
+    &lt;span class="visuallyhidden"&gt; for On Bus Shelter Wa 2033 Outside 540, Chorley Old Road, Bolton,  BL1 6AB&lt;/span&gt;
+    &lt;/a&gt;
+    
+    &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;/tr&gt;
+    
+    &lt;tr&gt;
+    &lt;td&gt;
+    St Flr Over Princess Garage, 1 Westend Terrace, Ebbw Vale,  NP23 6HS
+    &lt;/td&gt;
+    &lt;td&gt;
+    138030130380000204
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    &lt;li&gt;
+    Declined
+    &lt;/li&gt;
+    
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    
+    
+    &lt;li&gt;Automated Stub Agent 1&lt;/li&gt;
+    
+    
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    &lt;li&gt;
+    &lt;a href="/business-rates-property-linking/appoint-agent/10000000000003"&gt;Appoint agent
+    &lt;span class="visuallyhidden"&gt;
+    for St Flr Over Princess Garage, 1 Westend Terrace, Ebbw Vale,  NP23 6HS&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+    
+    &lt;a href="/business-rates-property-linking/summary/8444236000"&gt;View valuations
+    &lt;span class="visuallyhidden"&gt; for St Flr Over Princess Garage, 1 Westend Terrace, Ebbw Vale,  NP23 6HS&lt;/span&gt;
+    &lt;/a&gt;
+    
+    &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;/tr&gt;
+    
+    &lt;tr&gt;
+    &lt;td&gt;
+    Toby Carvery Downlands, 123 Upper Brighton Road, Worthing, West Sussex,  BN14 9JN
+    &lt;/td&gt;
+    &lt;td&gt;
+    190023420100
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    &lt;li&gt;
+    More evidence required
+    &lt;/li&gt;
+    
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    
+    &lt;li&gt;&lt;/li&gt;
+    
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    &lt;li&gt;
+    &lt;a href="/business-rates-property-linking/appoint-agent/10000000000013"&gt;Appoint agent
+    &lt;span class="visuallyhidden"&gt;
+    for Toby Carvery Downlands, 123 Upper Brighton Road, Worthing, West Sussex,  BN14 9JN&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+    
+    &lt;a href="/business-rates-property-linking/summary/6497178000"&gt;View valuations
+    &lt;span class="visuallyhidden"&gt; for Toby Carvery Downlands, 123 Upper Brighton Road, Worthing, West Sussex,  BN14 9JN&lt;/span&gt;
+    &lt;/a&gt;
+    
+    &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;/tr&gt;
+    
+    &lt;tr&gt;
+    &lt;td&gt;
+    Void Pt 1st Flr The Roundhouse, St Vincent Street, Birmingham,  B16 8EB
+    &lt;/td&gt;
+    &lt;td&gt;
+    10029262
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    &lt;li&gt;
+    Approved
+    &lt;/li&gt;
+    
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    
+    &lt;li&gt;&lt;/li&gt;
+    
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;ul class="list"&gt;
+    &lt;li&gt;
+    &lt;a href="/business-rates-property-linking/appoint-agent/10000000000002"&gt;Appoint agent
+    &lt;span class="visuallyhidden"&gt;
+    for Void Pt 1st Flr The Roundhouse, St Vincent Street, Birmingham,  B16 8EB&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+    
+    &lt;a href="/business-rates-property-linking/property-link/10000000000002/assessments"&gt;View valuations
+    &lt;span class="visuallyhidden"&gt; for Void Pt 1st Flr The Roundhouse, St Vincent Street, Birmingham,  B16 8EB&lt;/span&gt;
+    &lt;/a&gt;
+    
+    &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;/tr&gt;
+    
+    &lt;/tbody&gt;
+    &lt;/table&gt;
+    
+    &lt;/div&gt;
+    
+    &lt;p class="pull-left"&gt;
+    Showing
+    
+    1
+    
+    1
+    
+    to 7 of 7&lt;/p&gt;
+    
+    &lt;div role="navigation" aria-label="Pagination"&gt;
+    &lt;ul class="pagination"&gt;
+    
+    &lt;li class="previous disabled"&gt;&lt;i class="previous-arrow"&gt;&lt;/i&gt;Previous&lt;/li&gt;
+    
+    
+    &lt;li class="active"&gt;1&lt;/li&gt;
+    
+    
+    &lt;li class="next disabled"&gt;Next &lt;i class="next-arrow"&gt;&lt;/i&gt;&lt;/li&gt;
+    
+    &lt;/ul&gt;
+    &lt;/div&gt;
+    </noscript>
+    <div class="clearfix"></div>
+    <p><a href="/business-rates-property-linking/property-search" id="addAnotherProperty">Add property</a></p>
+    <details class="get-help-toggle">
+      <summary role="button" aria-expanded="false"><span class="summary">Get help with this page.</span></summary>
+      <div class="panel panel-border-wide" id="details-content-1">
+        <p>If you’d like to speak to somebody about this service, please contact us.</p>
+        <p>Email<br>
+          <a href="mailto:ccaservice@voa.gsi.gov.uk">ccaservice@voa.gsi.gov.uk</a></p>
+        <p>Telephone<br>
+          <strong>03000 501 501</strong></p>
+        <p>Opening hours: 8:30am to 5:00pm Monday to Friday. Closed on bank holidays.</p>
+      </div>
+    </details>
+  </article>
+</div>
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %} 
+  <!-- GOV.UK Prototype kit {{releaseVersion}} --> 
+  {% endblock %} 
