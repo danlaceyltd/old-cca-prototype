@@ -245,9 +245,11 @@ table.dataTable thead th, #content table.dataTable thead td {
     width: 26px;
     height: 26px;
     display: inline-block;
-    background-image: url(../images/icons/icon-search-dark.png) !important;
+	background-color:#005ea5;
+   background-image:   url('../images/icons/search-button.png');
+		
     background-repeat: no-repeat;
-    background-position: 6px;
+    background-position: -2px;
     cursor: pointer;
 
 }

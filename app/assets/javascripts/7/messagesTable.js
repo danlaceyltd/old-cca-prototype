@@ -24,9 +24,9 @@
 
 
     $('#messagesTable thead tr#filterrow th')
-      .not('#messagesTable thead tr#filterrow th:eq(0)')
+      .not('#messagesTable thead tr#filterrow th:eq(0),#messagesTable thead tr#filterrow th:eq(5)')
       .each(function() {
-        $(this).html('<input type="search" class="filter-input" /><button class="icon"><i class="search-icon"></i></button>');
+        $(this).html('<label for="inputID" class="visuallyhidden">[LABEL]</label><input type="search" class="filter-input" /><button class="icon icon-filters"><i class="search-icon"></i><span class="visuallyhidden">BUTTON TITLE</span></button>');
       });
 
     $('#messagesTable thead tr#filterrow th:eq(6)').html('<a href="#" class="clear">Clear search</a>');
@@ -34,11 +34,14 @@
 
     var table = $('#messagesTable').DataTable({
       orderCellsTop: true,
-		searching: false,
+		searching: true,
       "language": {
         "info": "Showing page _PAGE_ of _PAGES_",
         "lengthMenu": "Show _MENU_"
+		 
       },
+		 "lengthMenu": [[15, 30, 45, -1], [15,30, 45, "All"]],
+		"pageLength": 15,
       "aoColumns": [
 		  null,
         null,

@@ -1,5 +1,12 @@
 /* CSS Document */
 
+/* Hide dataTables search inout from top */
+
+
+
+div#messagesTable_filter.dataTables_filter {
+	display:none;
+}
 
 .icon-messageunread{
 		background-size:80%;
