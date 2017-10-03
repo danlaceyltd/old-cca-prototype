@@ -41,7 +41,7 @@
 		 
       },
 		 "lengthMenu": [[10, 30, 45, -1], [10,30, 45, "All"]],
-		"pageLength": 15,
+		"pageLength": 10,
       "aoColumns": [
 		  null,
         null,
