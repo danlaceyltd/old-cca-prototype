@@ -40,7 +40,7 @@
         "lengthMenu": "Show _MENU_"
 		 
       },
-		 "lengthMenu": [[15, 30, 45, -1], [15,30, 45, "All"]],
+		 "lengthMenu": [[10, 30, 45, -1], [10,30, 45, "All"]],
 		"pageLength": 15,
       "aoColumns": [
 		  null,
