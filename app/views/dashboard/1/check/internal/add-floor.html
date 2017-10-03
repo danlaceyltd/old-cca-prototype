@@ -1,0 +1,206 @@
+{% extends "layout.html" %}
+
+{% set title = "Add floor or area" %}
+{% set version = "1" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+<main id="content" role="main">
+{% include "includes/phase_banner_prototype.html" %}
+<ul class="property-details-top">
+  <li id="billingAuthorityReference"> <span class="tabular-data__heading--label">Local authority reference: </span> <span>0930/09139385080004</span> </li>
+  <li id="address"> <span class="tabular-data__heading--label">Property: </span> <span>OLD MILL CAFE, COAST ROAD, BARDSEA, ULVERSTON, CUMBRIA, LA12 9RB</span> </li>
+</ul>
+<a href="/dashboard/{{version}}/check/internal/features" class="link-back">Back</a>
+<h1 class="heading-xlarge" > {{title}} </h1>
+<p>You can change the floor level, floor level description and size</p>
+
+<!-- Start of new code -->
+<article class="content_body">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+    
+     
+      <form action="/business-rates-check/build/cd123420-ee32-45fc-86f7-b1c4ac832565/survey-unit/1/floor-area/4/update" method="POST">
+        <input name="csrfToken" type="hidden" value="0e8338c933e4b2ce104cb378e6b419ed0ef5044f-1507024565743-336ba327935debec2263ee49">
+        <div class="form-group inline " id="useCodeGroup">
+         
+         
+          <label class="form-label-bold" for="floortype"><span class=" label-span">Floor or area</span> </label>
+          <select name="useCode" class="form-control form-control-1-2" id="useCode">
+            <option id="basement" value="Basement">Basement</option>
+            <option id="ground" value="Ground">Ground</option>
+            <option id="first" value="First">First</option>
+            <option id="second" value="Second">Second</option>
+            <option id="third" value="Third">Third</option>
+           
+          </select>
+        </div>
+        
+        
+        <div class="form-group inline " id="useCodeGroup"><label class="form-label-bold" for="useCode"><span class=" label-span">Description</span>                       
+                                              </label><select name="useCode" class="form-control form-control-1-2" id="useCode"><option id="useCode-AMA" value="AMA">Amusement arcade</option>                     <option id="useCode-ANO" value="ANO">Office</option>                     <option id="useCode-ASG" value="ASG">Grass airstrip</option>                     <option id="useCode-ASH" value="ASH">Surfaced airstrip</option>                     <option id="useCode-ASI" value="ASI">Internal storage</option>                     <option id="useCode-ASO" value="ASO" selected="">External storage</option>                     <option id="useCode-ATM" value="ATM">Atm</option>                     <option id="useCode-ATR" value="ATR">Atrium</option>                     <option id="useCode-BAR" value="BAR">Bar</option>                     <option id="useCode-BAY" value="BAY">Loading 
+  bay</option>                     <option id="useCode-BHA" value="BHA">Area of 
+  beach hut(s)</option>                     <option id="useCode-BHI" value="BHI">Number of beach huts</option>                     <option id="useCode-BHS" value="BHS">Boathouse</option>                     <option id="useCode-BIN" value="BIN">Bingo hall</option>                     <option id="useCode-BKH" value="BKH">Banking hall</option>                     <option id="useCode-BRD" value="BRD">Board room</option>                     <option id="useCode-BWG" value="BWG">Bowling green</option>                     <option id="useCode-CAN" value="CAN">Canteen</option>                     <option id="useCode-CAT" value="CAT">Cattery</option>                     <option id="useCode-CED" value="CED">Drinks cellar</option>                     <option id="useCode-CEL" value="CEL">Cells</option>                     <option id="useCode-CHA" value="CHA">Changing 
+  room</option>                     <option id="useCode-CHL" value="CHL">Chill 
+  store</option>                     <option id="useCode-CLB" value="CLB">Clubhouse</option>                     <option id="useCode-CLD" value="CLD">Cold store</option>                     <option id="useCode-CLS" value="CLS">Classroom</option>                     <option id="useCode-CMC" value="CMC">Community centre</option>                     <option id="useCode-CMM" value="CMM">Committee room</option>                     <option id="useCode-CNP" value="CNP">Canopy</option>                     <option id="useCode-COM" value="COM">Computer room</option>                     <option id="useCode-COV" value="COV">Covered area</option>                     <option id="useCode-CWS" value="CWS">Car wash</option>                     <option id="useCode-DBU" value="DBU">Double bedroom - en suite</option>                     <option id="useCode-DIS" value="DIS">Outdoor sales display</option>                     <option id="useCode-DNC" value="DNC">Dance floor</option>                     <option id="useCode-DOG" value="DOG">Kennel</option>                     <option id="useCode-DOR" value="DOR">Dormitory</option>                     <option id="useCode-DRG" value="DRG">Driving range</option>                     <option id="useCode-DUT" value="DUT">Dutch barn</option>                     <option id="useCode-FIT" value="FIT">Fitness room</option>                     <option id="useCode-FOD" value="FOD">Foodcourt kiosk</option>                     <option id="useCode-FOL" value="FOL">Foaling box</option>                     <option id="useCode-FPA" value="FPA">Food processing areas</option>                     <option id="useCode-FSF" value="FSF">Family/multiple room - shared facilities</option>                  
+     <option id="useCode-FSS" value="FSS">Filling station shop</option>          
+             <option id="useCode-GAR" value="GAR">Garage</option>                
+       <option id="useCode-GHS" value="GHS">Glasshouse</option>                  
+     <option id="useCode-GLF" value="GLF">Golf course</option>                   
+    <option id="useCode-GTH" value="GTH">Gatehouse</option>                     
+  <option id="useCode-GYM" value="GYM">Gymnasium</option>                     
+  <option id="useCode-HAL" value="HAL">Hall</option>                     <option id="useCode-HIT" value="HIT">Hi tech accommodation</option>                    
+   <option id="useCode-HNG" value="HNG">Hangar</option>                     
+  <option id="useCode-HTH" value="HTH">Health centre</option>                    
+   <option id="useCode-KTN" value="KTN">Kitchen</option>                     
+  <option id="useCode-LAA" value="LAA">Actual living accommodation (valued at 
+  0)</option>                     <option id="useCode-LAB" value="LAB">Laboratory</option>                     <option id="useCode-LAN" value="LAN">Notional living accommodation (valued at 0)</option>               
+        <option id="useCode-LBI" value="LBI">Indoor loosebox</option>            
+           <option id="useCode-LBO" value="LBO">Outdoor loosebox</option>        
+               <option id="useCode-LCS" value="LCS">Land used for car 
+  sales</option>                     <option id="useCode-LFG" value="LFG">Rough 
+  surfaced, fenced land</option>                     <option id="useCode-LFH" value="LFH">Hard surfaced, fenced land</option>                     <option id="useCode-LFU" value="LFU">Unsurfaced, fenced land</option>                  
+     <option id="useCode-LOG" value="LOG">Rough surfaced, unfenced land</option> 
+                      <option id="useCode-LOH" value="LOH">Hard surfaced, 
+  unfenced land</option>                     <option id="useCode-LOU" value="LOU">Unsurfaced, 
+  unfenced land</option>                     <option id="useCode-LOK" value="LOK">Locker 
+  room</option>                     <option id="useCode-LFT" value="LFT">Lift 
+  shaft</option>                     <option id="useCode-LNG" value="LNG">Lounge</option>                     <option id="useCode-LRH" value="LRH">Abattoir lairage</option>                     <option id="useCode-MBU" value="MBU">Multiple bedroom - en suite</option>                     <option id="useCode-MOR" value="MOR">Mooring</option>                     <option id="useCode-MSR" value="MSR">Mess/staff room</option>                     <option id="useCode-NUR" value="NUR">Nursery</option>                     <option id="useCode-OFF" value="OFF">Office</option>                     <option id="useCode-OUT" value="OUT">Outdoor display/seating area</option>                     <option id="useCode-OWK" value="OWK">Works office</option>                     <option id="useCode-PAV" value="PAV">Pavilion</option>                     <option id="useCode-PEN" value="PEN">Pen</option>                     <option id="useCode-PIG" value="PIG">Pitch</option> 
+                      <option id="useCode-PIH" value="PIH">Hard surface 
+  pitch</option>                     <option id="useCode-PIW" value="PIW">All 
+  weather pitch</option>                     <option id="useCode-PKB" value="PKB">Bicycle 
+  parking space(s)</option>                     <option id="useCode-PKC" value="PKC">Coach 
+  parking space(s)</option>                     <option id="useCode-PKD" value="PKD">Disabled 
+  parking space(s)</option>                     <option id="useCode-PKG" value="PKG">Parking 
+  area</option>                     <option id="useCode-PKL" value="PKL">Lorry/truck parking space(s)</option>                     <option id="useCode-PKM" value="PKM">Motorbike parking space(s)</option>               
+        <option id="useCode-PKN" value="PKN">Portable building</option>          
+             <option id="useCode-PKS" value="PKS">Parking space(s)</option>      
+                 <option id="useCode-PLT" value="PLT">Plant room</option>        
+               <option id="useCode-PLY" value="PLY">Playing field</option>       
+                <option id="useCode-PON" value="PON">Pond</option>               
+        <option id="useCode-PRD" value="PRD">Production area</option>            
+           <option id="useCode-PRO" value="PRO">Pro shop</option>                
+       <option id="useCode-RAO" value="RAO">Retail area</option>                 
+      <option id="useCode-REC" value="REC">Reception / entrance</option>         
+              <option id="useCode-RES" value="RES">Restaurant</option>           
+            <option id="useCode-SAL" value="SAL">Sales pitch</option>            
+           <option id="useCode-SBS" value="SBS">Single bed space</option>        
+               <option id="useCode-SAM" value="SAM">Site of automatic 
+  machine</option>                     <option id="useCode-SBU" value="SBU">Single bedroom - en suite</option>                     <option id="useCode-SCN" value="SCN">Storage container</option>                     <option id="useCode-SGY" value="SGY">Surgery</option>                     <option id="useCode-SHD" value="SHD">Shed</option>                     <option id="useCode-SHO" value="SHO">Showers</option> 
+                      <option id="useCode-SOC" value="SOC">Indoor 
+  soccerdome</option>                     <option id="useCode-SOV" value="SOV">Ground floor sales</option>                     <option id="useCode-SPU" value="SPU">Store</option>                     <option id="useCode-SQC" value="SQC">Squash 
+  court</option>                     <option id="useCode-SRI" value="SRI">Indoor 
+  shooting range</option>                     <option id="useCode-SRM" value="SRM">Showroom</option> 
+                      <option id="useCode-SRO" value="SRO">Outdoor shooting 
+  range</option>                     <option id="useCode-SSF" value="SSF">Single 
+  room - shared facilities</option>                     <option id="useCode-STL" value="STL">Stall</option>                     <option id="useCode-STR" value="STR">Strongroom</option> 
+                      <option id="useCode-SUI" value="SUI">Suite - 
+  ensuite</option>                     <option id="useCode-SZA" value="SZA">Retail zone a</option>                     <option id="useCode-SZB" value="SZB">Retail zone b</option>                     <option id="useCode-SZC" value="SZC">Retail zone c</option>                     <option id="useCode-SZD" value="SZD">Retail zone d</option>                     <option id="useCode-SZE" value="SZE">Retail zone e</option>                     <option id="useCode-SZF" value="SZF">Retail zone f</option>                     <option id="useCode-SZR" value="SZR">Remaining retail zone</option>                     <option id="useCode-TAC" value="TAC">Tack room</option>                     <option id="useCode-DSF" value="DSF">Double or twin room - shared facilities</option>                   
+    <option id="useCode-TCG" value="TCG">Grass tennis court</option>             
+          <option id="useCode-TCH" value="TCH">Hard surface tennis 
+  court</option>                     <option id="useCode-TCW" value="TCW">All 
+  weather tennis court</option>                     <option id="useCode-TEL" value="TEL">Telephone kiosk</option>                     <option id="useCode-TEN" value="TEN">Indoor tennis hall</option>                     <option id="useCode-TFA" value="TFA">All main areas</option>                     <option id="useCode-TFD" value="TFD">Total floor area - dry (leisure clubs)</option>                    
+   <option id="useCode-TFW" value="TFW">Total floor area - wet (leisure 
+  clubs)</option>                     <option id="useCode-TOW" value="TOW">Control tower</option>                     <option id="useCode-VS1" value="VS1">Vehicle display spaces</option>                     <option id="useCode-VS2" value="VS2">Vehicle display spaces</option>                     <option id="useCode-VS3" value="VS3">Vehicle display spaces</option>                     <option id="useCode-VS4" value="VS4">Vehicle display spaces</option>                     <option id="useCode-VS5" value="VS5">Vehicle display spaces</option>                     <option id="useCode-VS6" value="VS6">Vehicle spaces</option>                     <option id="useCode-VS7" value="VS7">Vehicle spaces</option>                     <option id="useCode-VS8" value="VS8">Vehicle spaces</option>                     <option id="useCode-VS9" value="VS9">Vehicle spaces</option>                     <option id="useCode-WCE" value="WCE">Public toilets</option>                     <option id="useCode-WCS" value="WCS">Staff toilets</option>                     <option id="useCode-WHS" value="WHS">Warehouse</option>                     <option id="useCode-WIN" value="WIN">Windmill</option>                     <option id="useCode-WKS" value="WKS">Workshop</option>                     <option id="useCode-XNC" value="XNC">Unclassified area</option>                     <option id="useCode-144" value="144">144 sheet advertising display</option>                     <option id="useCode-192" value="192">192 sheet advertising display</option>            
+           <option id="useCode-04S" value="04S">4 sheet advertising 
+  display</option>                     <option id="useCode-06S" value="06S">6 
+  sheet advertising display</option>                     <option id="useCode-08S" value="08S">8 sheet advertising display</option>                     <option id="useCode-12S" value="12S">12 sheet advertising display</option>             
+          <option id="useCode-16S" value="16S">16 sheet advertising 
+  display</option>                     <option id="useCode-32S" value="32S">32 
+  sheet advertising display</option>                     <option id="useCode-48S" value="48S">48 sheet advertising display</option>                     <option id="useCode-64S" value="64S">64 sheet advertising display</option>             
+          <option id="useCode-96S" value="96S">96 sheet advertising 
+  display</option>                     <option id="useCode-ADA" value="ADA">Area 
+  (m2) of advertising display</option>                     <option id="useCode-ADS" value="ADS">Advertising display</option>                     <option id="useCode-CDS" value="CDS">Crown double advertising display</option>                     
+  <option id="useCode-CQS" value="CQS">Crown quad advertising display</option>   
+                    <option id="useCode-DDS" value="DDS">Double demy advertising 
+  display</option>                     <option id="useCode-DRS" value="DRS">Double royal advertising display</option>                     
+  <option id="useCode-QDS" value="QDS">Quad demy advertising display</option>    
+                   <option id="useCode-AUS" value="AUS">Area under supported 
+  floor</option>             </select></div>
+        
+        
+        <div class="form-group  " id="unitsGroup">
+          <label class="form-label-bold" for="units"><span class=" label-span">Area <abbr title="meters squared" role="text" aria-label="meters squared">m<sup>2</sup></abbr></span> </label>
+          <input name="units" class="form-control form-control-1-4" id="units" type="text" value="6.7">
+        </div>
+        <div class="form-group ">
+          <fieldset class="inline" id="changedAfter20170331Group">
+            <legend class="form-label-bold"><span class=" label-span">Did the measurements or description change after 31 March 
+            2017?</span> </legend>
+            <label class="block-label" id="label_changedAfter20170331_true" for="changedAfter20170331_true">
+              <input name="changedAfter20170331" id="changedAfter20170331_true" type="radio" value="true">
+              Yes </label>
+            <label class="block-label" id="label_changedAfter20170331_false" for="changedAfter20170331_false">
+              <input name="changedAfter20170331" id="changedAfter20170331_false" type="radio" value="false" data-toggle-id="changeDate_optional">
+              No </label>
+          </fieldset>
+        </div>
+        <div class="form-group " id="changeDate">
+          <fieldset class="form-date fieldset-inline ">
+            <legend class="form-label-bold">When did the measurements or description 
+            change?</legend>
+            <p class="form-hint" id="changeDate_optional" style="display: none;" data-toggle-hidden="">Optional</p>
+            <div class="form-group form-group-day " id="changeDatedayGroup">
+              <label class="form-label" for="changeDate_day"><span class=" label-span">Day</span> </label>
+              <input name="changeDate.day" class="form-control" id="changeDate_day" type="text" maxlength="2">
+            </div>
+            <div class="form-group form-group-month " id="changeDatemonthGroup">
+              <label class="form-label" for="changeDate_month"><span class=" label-span">Month</span> </label>
+              <input name="changeDate.month" class="form-control" id="changeDate_month" type="text" maxlength="2">
+            </div>
+            <div class="form-group form-group-year " id="changeDateyearGroup">
+              <label class="form-label" for="changeDate_year"><span class=" label-span">Year</span> </label>
+              <input name="changeDate.year" class="form-control" id="changeDate_year" type="text" maxlength="4">
+            </div>
+          </fieldset>
+        </div>
+        <div class="clearfix"></div>
+        <p>
+          <button class="button" type="submit">Update</button>
+        </p>
+      </form>
+    </div>
+  </div>
+  <a class="link-back" id="back-link-bottom" href="https://www.qa.tax.service.gov.uk/business-rates-check/build/cd123420-ee32-45fc-86f7-b1c4ac832565/survey-unit/1/floor-areas"> Back </a>
+  <details class="get-help-toggle print-hide">
+    <summary><span class="summary">Get help with 
+      this page.</span></summary>
+    <div class="panel panel-border-wide">
+      <p>If you’d like to speak to somebody about this service, please contact us.</p>
+      <p>Email<br>
+        <a href="mailto:ccaservice@voa.gsi.gov.uk">ccaservice@voa.gsi.gov.uk</a></p>
+      <p>Telephone<br>
+        <strong>03000 501 501</strong></p>
+      <p>Opening hours: 8:30am to 5:00pm Monday to Friday. Closed on bank 
+        holidays.</p>
+    </div>
+  </details>
+</article>
+
+<!-- End of new code --> 
+<!--
+<br>
+<details class="print-hide">
+<summary role="button" aria-controls="details-content-1" aria-expanded="false">
+<a href="/add-floor">Add another floor or area</a> 
+ </summary>
+                    <div class="panel panel-border-narrow" id="details-content-1"><p>Please provide details of the new floor or area in your supporting documents.</p><p>You should include:</p><ul class="list list-bullet"><li>a description of the change</li><li>the size of the new area</li><li>the date the area was added</li><li>whether it is used for domestic purposes</li><li>whether the new area has air conditioning, central heating or a raised floor (hollow floors for cables and other electrics)</li></ul></div>
+                </details>--> 
+
+
+</main>
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %} 
+  <!-- GOV.UK Prototype kit {{releaseVersion}} --> 
+  {% endblock %} 
