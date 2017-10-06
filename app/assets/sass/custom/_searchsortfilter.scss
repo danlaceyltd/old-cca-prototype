@@ -39,7 +39,7 @@
     width: 100%;
     clear: both;
     border-collapse: collapse;
-    table-layout: fixed;
+   
 word-wrap:break-word;
 }
 
@@ -51,15 +51,15 @@ word-wrap:break-word;
 
 }
 .sorting {
-    background: url("../images/sort_both.png") no-repeat scroll center right;
+    background: url("../images/sort_both.png") no-repeat scroll right 10px center;
 }
 
 .sorting_asc {
-    background: url("../images/sort_asc.png") no-repeat scroll center right;
+    background: url("../images/sort_asc.png") no-repeat scroll right 10px center;
 }
 
 .sorting_desc {
-    background: url("../images/sort_desc.png") no-repeat scroll center right;
+    background: url("../images/sort_desc.png") no-repeat scroll right 10px center;
 }
 
 .sorting a, .sorting_asc a, .sorting_desc a {display:block;}
