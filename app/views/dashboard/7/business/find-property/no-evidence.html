@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% set title = "Evidence required" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main">
+
+    {% include "includes/phase_banner_prototype.html" %}
+
+    <div class="grid-row">
+            <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">
+                {{title}}
+            </h1>
+
+           <div class="govuk-box-highlight">
+          <p class="font-large">
+           We're unable to add this property to your account without a business rates bill or other suitable evidence.
+          </p>
+        </div>
+
+         <h2 class="heading-large">What happens next</h2>
+<p>You should contact us on 03000 501 501 to discuss your property linking request.</p>
+           <a class="button" href="../index.html">Go to my dashboard</a> 
+	                </div>
+                </div>
+
+
+
+
+              
+                <a href="javascript: history.go(-1)" class="link-back">Back</a>
+
+
+
+
+    {% include "includes/get_help.html" %}
+
+</main>
+
+
+
+{% endblock %}
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
