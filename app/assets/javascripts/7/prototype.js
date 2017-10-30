@@ -37,4 +37,42 @@ $("#lookup-btn").on("click", function () {
         return toReturn;
     });
 
+$('.toggleLink').on('click', function (e) {
+        e.preventDefault();
+        var elem = $(this).next('.toggleElement');
+        elem.toggle('slow');
+    });
+
+
+// Method for selecting all
+
+$(document).ready(function() {
+  $('#selectAll').click(function(e){
+    e.preventDefault();
+    $("input:checkbox").prop('checked', function(i, current) { return !current; });
+	
+   $('input:radio').prop('disabled', function(i, v) { return !v; });
+   
+  });
+});
+
+
+
+$('input:checkbox').change(function(){
+    if($(this).is(":checked")) {
+     $('input:radio').prop("disabled", false);
+    } else {
+          $('input:radio').prop("disabled", true);
+		
+    }
+});
+
+
+
+$(function() {
+    $("[name=pendingRequests]").click(function(){
+            $('.pendingRequestBtn').hide();
+            $("#btn-"+$(this).val()).show();
+    });
+ });
  
