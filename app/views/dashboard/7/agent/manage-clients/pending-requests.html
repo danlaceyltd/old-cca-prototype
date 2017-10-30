@@ -13,47 +13,166 @@
 
 
 {% block content %}
-
-<main id="content" role="main">
-
-    {% include "includes/phase_banner_prototype.html" %}
-
-    <ul class="navigation-links">
-        <li><a href="/dashboard/{{version}}/agent/">Manage properties</a></li>
-        <li><a href="#">Sign out</a></li>
-    </ul>
-
-            <h1 class="heading-xlarge">
-                {{title}}
-            </h1>
-
- <div class="margin-top-10 panel panel-border-wide">
-  <p class="font-xsmall">
-  You need to accept agent requests within 21 days. Otherwise, they will be rejected and your clients will need to send a new request.
-  </p>
-</div>
-            <div class="table-wrapper hide-if-no-js">
-    <div id="dataTablePendingRequests_wrapper" class="dataTables_wrapper no-footer"><div id="dataTablePendingRequests_processing" class="dataTables_processing" style="display: none;"><div class="loading-container"><span class="loading-icon"></span><span class="loading-label">Loading...</span></div></div><table id="dataTablePendingRequests" class="table-font-xsmall margin-bottom-20 margin-top-20 dataTable no-footer" role="grid" aria-describedby="dataTablePendingRequests_info" style="width: 960px;">
+<main id="content" role="main"> {% include "includes/phase_banner_prototype.html" %}
+  <ul class="navigation-links">
+    <li><a href="/dashboard/{{version}}/agent/">Manage properties</a></li>
+    <li><a href="#">Sign out</a></li>
+  </ul>
+  <h1 class="heading-xlarge"> {{title}} </h1>
+  <div class="margin-top-10 panel panel-border-wide">
+    <p class="font-xsmall"> You need to accept agent requests within 21 days. Otherwise, they will be rejected and your clients will need to send a new request. </p>
+  </div>
+  <div class="table-wrapper hide-if-no-js">
+    <div id="dataTablePendingRequests_wrapper" class="dataTables_wrapper no-footer">
+      <div id="dataTablePendingRequests_processing" class="dataTables_processing" style="display: none;">
+        <div class="loading-container"><span class="loading-icon"></span><span class="loading-label">Loading...</span></div>
+      </div>
+      <table id="dataTablePendingRequests" class="table-font-xsmall margin-bottom-20 margin-top-20 dataTable no-footer isSelectable" role="grid" aria-describedby="dataTablePendingRequests_info" style="width: 960px;">
         <caption class="visuallyhidden">
-            Pending agent requests
+        Pending agent requests
         </caption>
         <thead>
-            <tr role="row"><th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 172px;">Organisation name</th><th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 172px;">Property address</th><th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 172px;">Permissions</th><th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 172px;">Date requested</th><th scope="col" class="sorting_disabled" rowspan="1" colspan="1" style="width: 172px;">Actions</th></tr>
+          <tr role="row">
+           <th scope="col" class="sorting_disabled" rowspan="1" colspan="1">Select</th>
+            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1">Organisation name</th>
+            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1">Property address</th>
+            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1">Permissions</th>
+            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1">Date requested</th>
+            <th scope="col" class="sorting_disabled" rowspan="1" colspan="1">Actions</th>
+          </tr>
         </thead>
-    <tbody><tr role="row" class="odd"><td>Bunters Buttons</td><td>2, YORK PLACE, BRIGHTON, BN1 4GU</td><td><ul class="list"><li>Check: Yes</li><li>Challenge: Yes</li></ul></td><td>October 10, 2017</td><td><ul class="list"><li><a href="/business-rates-property-linking/representation-request/accept/040d5c9e-fa69-48bc-a143-5c90156b09fc/1">Accept</a></li><li><a href="/business-rates-property-linking/representation-request/reject/040d5c9e-fa69-48bc-a143-5c90156b09fc/1">Reject</a></li></ul></td></tr></tbody></table><div class="dataTables_info" id="dataTablePendingRequests_info" role="status" aria-live="polite">Showing 1 to 1 of 1</div><div class="dataTables_paginate paging_simple_numbers" id="dataTablePendingRequests_paginate" style="display: none;"><a class="paginate_button previous disabled" aria-controls="dataTablePendingRequests" data-dt-idx="0" tabindex="0" id="dataTablePendingRequests_previous"><i class="previous-arrow"></i>Previous</a><span><a class="paginate_button current" aria-controls="dataTablePendingRequests" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="dataTablePendingRequests" data-dt-idx="2" tabindex="0" id="dataTablePendingRequests_next">Next<i class="next-arrow"></i></a></div></div>
-</div>
+        <tbody>
+          <tr role="row" class="odd">
+            <td class="dt-body-center">
+            	 <div class="multiple-choice">
+      <input id="check1" name="check1" type="checkbox" value="waste-animal">
+      <label for="check1">Select</label>
+    </div>
+            	
+            </td>
+            <td>Bunters Buttons</td>
+            <td>2, YORK PLACE, BRIGHTON, BN1 4GU</td>
+            <td><ul class="list">
+                <li>Check: Yes</li>
+                <li>Challenge: Yes</li>
+              </ul></td>
+            <td>October 10, 2017</td>
+            <td><ul class="list">
+                <li><a href="/business-rates-property-linking/representation-request/accept/040d5c9e-fa69-48bc-a143-5c90156b09fc/1">Accept</a></li>
+                <li><a href="/business-rates-property-linking/representation-request/reject/040d5c9e-fa69-48bc-a143-5c90156b09fc/1">Reject</a></li>
+              </ul></td>
+          </tr>
+           <tr role="row" class="odd">
+            <td class="dt-body-center">
+			   
+            <div class="multiple-choice">
+      <input id="check1" name="check1" type="checkbox" value="waste-animal">
+      <label for="check1">Select</label>
+    </div>
+           </td>
+            <td>Bunters Buttons</td>
+            <td>2, YORK PLACE, BRIGHTON, BN1 4GU</td>
+            <td><ul class="list">
+                <li>Check: Yes</li>
+                <li>Challenge: Yes</li>
+              </ul></td>
+            <td>October 10, 2017</td>
+            <td><ul class="list">
+                <li><a href="/business-rates-property-linking/representation-request/accept/040d5c9e-fa69-48bc-a143-5c90156b09fc/1">Accept</a></li>
+                <li><a href="/business-rates-property-linking/representation-request/reject/040d5c9e-fa69-48bc-a143-5c90156b09fc/1">Reject</a></li>
+              </ul></td>
+          </tr>
+          <tr role="row" class="odd">
+            <td class="dt-body-center"> <div class="multiple-choice">
+      <input id="check1" name="check1" type="checkbox" value="waste-animal">
+      <label for="check1">Select</label>
+    </div></td>
+            <td>Bunters Buttons</td>
+            <td>2, YORK PLACE, BRIGHTON, BN1 4GU</td>
+            <td><ul class="list">
+                <li>Check: Yes</li>
+                <li>Challenge: Yes</li>
+              </ul></td>
+            <td>October 10, 2017</td>
+            <td><ul class="list">
+                <li><a href="/business-rates-property-linking/representation-request/accept/040d5c9e-fa69-48bc-a143-5c90156b09fc/1">Accept</a></li>
+                <li><a href="/business-rates-property-linking/representation-request/reject/040d5c9e-fa69-48bc-a143-5c90156b09fc/1">Reject</a></li>
+              </ul></td>
+          </tr>
+          <tr role="row" class="odd">
+            <td class="dt-body-center">
+            	 <div class="multiple-choice">
+      <input id="check1" name="check1" type="checkbox" value="waste-animal">
+      <label for="check1">Select</label>
+    </div>
+            </td>
+            <td>Bunters Buttons</td>
+            <td>2, YORK PLACE, BRIGHTON, BN1 4GU</td>
+            <td><ul class="list">
+                <li>Check: Yes</li>
+                <li>Challenge: Yes</li>
+              </ul></td>
+            <td>October 10, 2017</td>
+            <td><ul class="list">
+                <li><a href="/business-rates-property-linking/representation-request/accept/040d5c9e-fa69-48bc-a143-5c90156b09fc/1">Accept</a></li>
+                <li><a href="/business-rates-property-linking/representation-request/reject/040d5c9e-fa69-48bc-a143-5c90156b09fc/1">Reject</a></li>
+              </ul></td>
+          </tr>
+        </tbody>
+      </table>
+      
+     
+      
+		<a href="#" id="selectAll">Select all / deselect all</a>
+     
+     <form>
+  <div class="form-group">
+    <fieldset class="inline">
 
+      <legend>
+        <h1 class="heading-medium">
+          Accept or reject selected client requests
+        </h1>
+      </legend>
 
+      <div class="multiple-choice">
+        <input id="radio-inline-1" type="radio" name="pendingRequests" value="accept" disabled>
+        <label for="radio-inline-1">Accept</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-inline-2" type="radio" name="pendingRequests" value="reject" disabled>
+        <label for="radio-inline-2">Reject</label>
+      </div>
 
-
-    {% include "includes/get_help.html" %}
-
-</main>
-
-
-
+    </fieldset>
+  </div>
+  <a href="#" id="btn-accept" class="button pendingRequestBtn" style="display:none;">Accept requests</a>
+   <a href="#" id="btn-reject" class="button pendingRequestBtn" style="display:none;" data-toggle="dialog" data-target="dialog-message">Reject requests</a>
+</form>
+      
+      <div class="dataTables_paginate paging_simple_numbers" id="dataTablePendingRequests_paginate" style="display: none;"><a class="paginate_button previous disabled" aria-controls="dataTablePendingRequests" data-dt-idx="0" tabindex="0" id="dataTablePendingRequests_previous"><i class="previous-arrow"></i>Previous</a><span><a class="paginate_button current" aria-controls="dataTablePendingRequests" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="dataTablePendingRequests" data-dt-idx="2" tabindex="0" id="dataTablePendingRequests_next">Next<i class="next-arrow"></i></a></div>
+    </div>
+    
+    <div class="dialog dialog-scroll" id="dialog-message" aria-hidden="true" data-modal="true">
+        <div class="dialog-holder" aria-labelledby="dialog-message" aria-describedby="dialog-content-delete" role="alertdialog">
+          <div class="dialog-content" id="dialog-content-message" role="document" tabindex="0">
+            <button class="dialog-close" aria-label="close" type="button"><span class="icon icon-close">x</span></button>
+            <div class="modal-content-div">
+              <h3 class="heading-small">Reject client requests</h3>
+              <p>Are you sure you wish to reject 3 pending agent requests?</p>
+              <p>If you reject these requests then your client will have to reapply to link to this property to your agency.</p>
+           
+              <a href="#" class="button pull-left" role="button">Reject requests</a>
+              <a href="#" class="dialog-cancel button-secondary pull-right" aria-label="close" role="button">Cancel</a> </div>
+          </div>
+        </div>
+      </div>
+    
+    
+  </div>
+  {% include "includes/get_help.html" %} </main>
 {% endblock %}
 {% block body_end %}
-  {% include "includes/" + version +"/scripts.html" %}
-  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
-{% endblock %}
+  {% include "includes/" + version +"/scripts.html" %} 
+  <!-- GOV.UK Prototype kit {{releaseVersion}} --> 
+  {% endblock %} 
