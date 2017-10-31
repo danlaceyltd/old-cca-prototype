@@ -47,7 +47,7 @@ $('.toggleLink').on('click', function (e) {
 // Method for selecting all
 
 $(document).ready(function() {
-  $('#selectAll').click(function(e){
+  $('#selectAll, #selectAll2').click(function(e){
     e.preventDefault();
     $("input:checkbox").prop('checked', function(i, current) { return !current; });
 	
