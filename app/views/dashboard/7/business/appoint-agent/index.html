@@ -21,164 +21,54 @@
     <div class="grid-row">
             <div class="column-whole">
 
-            <h1 class="heading-xlarge">
+            <h1 class="heading-xlarge margin-bottom-10">
                 {{title}}
             </h1>
-
-             <h2 class="heading-medium">Appoint an existing agent</h2>
-             <p>[If you already have an agent associated with your account, you can link them to this property...]</p>
-             <p>[An appointed agent must be able to either do checks, challenges or both on your behalf for this property.]</p>
-             <details>
-                                           <summary role="button" ><span class="summary">What is a check?</span></summary>
-                                           <div class="panel-indent" id="details-content-2" style="margin-bottom:0">
-                                             <p>If any of the factual details about your property or land are incorrect, you (the owner, occupier or authorised agent) need to let the VOA know. Telling us about anything that’s incorrect is known as a check.</p>
-<p>If all of your property details are correct but you believe your rateable value is incorrect, you must first complete a check and wait for the outcome before making a challenge.</p>
-
-                                           </div>
-                                       </details>
-                                         <details>
-                           <summary role="button"><span class="summary">What is a challenge?</span></summary>
-                           <div class="panel-indent" id="details-content-3">
-                              <p>Once you’ve completed a check, the VOA will contact you with the outcome. If you disagree with the outcome of the check or you believe the rateable value of your property is incorrect, you can let us know. Doing this is known as a challenge.</p>
-
-							   <p>You can’t start a challenge until you’ve received the outcome for your check.</p>
-                           </div>
-                       </details>
-             
-             <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tbody>
-   <tr>
-   	<th>Appoint</th>
-   	<th>Agent ID</th>
-   	<th>Agent name</th>
-   	<th>Check</th>
-   	<th>Challenge</th>
-   	<th>Status</th>
-   </tr>
-    <tr>
-      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="agent_12345"  name="agent_12345" value="true" checked><label  for="agent_12345"><span class="visually-hidden">Assign</span></label></div></td>
-      <td>12345</td>
-      <td>ABC Agent</td>
-      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="agent_12345"  name="agent_12345" value="true" checked><label for="agent_12345"><span class="visually-hidden"Check</span></label></div></td>
-      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="agent_12345"  name="agent_12345" value="true" checked><label for="agent_12345"><span class="visually-hidden"Challenge</span></label></div></td>
-       <td>Appointed</td>
-      
-    </tr>
-     <tr>
-     <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="67890"  name="agent_67890" value="true"><label  for="agent_67890"><span class="visually-hidden">Appoint</span></label></div></td>
-      <td>67890</td>
-      <td>DEF Agent</td>
-      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="agent_67890"  name="agent_67890" value="true"><label for="agent_67890"><span class="visually-hidden"Check</span></label></div></td>
-      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="agent_67890"  name="agent_67890" value="true"><label for="agent_67890"><span class="visually-hidden"Challenge</span></label></div></td>
-       <td>Unappointed</td>
-      
-    </tr>
-     <tr>
-      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="54321"  name="agent_54321" value="true" checked><label  for="agent_54321"><span class="visually-hidden">Appointed</span></label></div></td>
-      <td>54321</td>
-      <td>GHI Agent</td>
-      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="agent_54321"  name="agent_54321" value="true" checked><label for="agent_54321"><span class="visually-hidden"Check</span></label></div></td>
-      <td><div class="table-checkbox multiple-choice"><input type="checkbox" id="agent_54321"  name="agent_67890" value="true" ><label for="agent_54321"><span class="visually-hidden"Challenge</span></label></div></td>
-       <td>Appointed</td>
-      
-    </tr>
+             <h2 class="heading-secondary margin-bottom-20">
    
-  </tbody>
-</table>
+    </h2>
+
             
-             <a href="/dashboard/{{version}}/business/appoint-agent/success" class="pull-right button margin-top-20 margin-right-20">Update</a>
              
-             <h2 class="heading-medium clearfix">Add a new agent</h2>
+             <form method="post" id="form-appoint-agent" name="form-appoint-agent">
+  <div class="form-group">
+    <fieldset>
 
-            <p>You’ll need to enter the code of the agent you want to appoint and tell us whether they can do checks, challenges or both on behalf of your business, for this property.</p>
+      <legend>
+        <h1 class="heading-medium">
+         Do you want to appoint an existing agent or appoint a new agent?
+        </h1>
+      </legend>
+      
+       <div class="multiple-choice">
+        <input id="example-contact-by-phone" type="radio" name="appoint-agent" value="/dashboard/7/business/appoint-agent/appoint-existing-agent.html">
+        <label for="example-contact-by-phone">Appoint an existing agent</label>
+      </div>
 
+      <div class="multiple-choice">
+        <input id="example-contact-by-email" type="radio" name="appoint-agent" value="/dashboard/7/business/appoint-agent/appoint-new-agent.html">
+        <label for="example-contact-by-email">Appoint a new agent</label>
+      </div>
+      
 
-                <details>
-                                <summary role="button"><span class="summary">My agent hasn’t given me a code</span></summary>
-                                <div class="panel-indent" id="details-content-1">
-                                  You’ll need to ask your agent for the code they were assigned when they registered for this service.
-                                </div>
-                            </details>
+     
+      
 
-                            <p>Please be aware that you'll be responsible for any information your agent submits to us about your property. You'll be liable for any penalty or the backdating of revised valuations if your agent submits false information.</p>
+      
+      
 
-                            <form>
-
-                                <div class=" form-group">
-                                       <label class="heading-medium" for="agentCode">Agent code</label>
-                                       <input type="text" id="agentCode" value="" name="agentCode" class="form-control">
-                                </div>
-
-
-                        		<fieldset id="canCheckGroup" class="form-group inline">
-                      				<legend class="heading-medium">
-                                       Do you want this agent to submit checks?
-                                   </legend>
-
-                                       <details>
-                                           <summary role="button" ><span class="summary">What is a check?</span></summary>
-                                           <div class="panel-indent" id="details-content-2" style="margin-bottom:0">
-                                             <p>If any of the factual details about your property or land are incorrect, you (the owner, occupier or authorised agent) need to let the VOA know. Telling us about anything that’s incorrect is known as a check.</p>
-<p>If all of your property details are correct but you believe your rateable value is incorrect, you must first complete a check and wait for the outcome before making a challenge.</p>
-
-                                           </div>
-                                       </details>
-
-                                     <div class="multiple-choice">
-                                       <input id="canCheck_START_AND_CONTINUE" type="radio" name="canCheck" value="START_AND_CONTINUE">
-                                       <label class="block-label selection-button-radio" for="canCheck_START_AND_CONTINUE">Yes</label>
-                                   </div>
-
-                                   <div class="multiple-choice">
-                                    <input id="canCheck_NOT_PERMITTED" type="radio" name="canCheck" value="NOT_PERMITTED">
-                                    <label class="block-label selection-button-radio" for="canCheck_NOT_PERMITTED">No</label>
-                                   </div>
-
-                           	 </fieldset>
+    </fieldset>
+  </div>
+  <input class="button" type="submit" value="Continue" id="appointAgent">
+</form>
+             
+             
+             
+             
+            
+            
 
 
-
-
-                		<fieldset id="canChallengeGroup" class="form-group inline">
-              				<legend class="heading-medium">
-                               Do you want this agent to submit challenges?
-                           </legend>
-                           
-                            <div class="panel panel-border-wide">
-  <p>
-    You can’t start a challenge until you’ve received the outcome for your check.
-  </p>
-</div>
-
-                       <details>
-                           <summary role="button"><span class="summary">What is a challenge?</span></summary>
-                           <div class="panel-indent" id="details-content-3">
-                              <p>Once you’ve completed a check, the VOA will contact you with the outcome. If you disagree with the outcome of the check or you believe the rateable value of your property is incorrect, you can let us know. Doing this is known as a challenge.</p>
-
-							   <p>You can’t start a challenge until you’ve received the outcome for your check.</p>
-                           </div>
-                       </details>
-
-
-                        <div class="multiple-choice">
-                           <input id="canChallenge_START_AND_CONTINUE" type="radio" name="canChallenge" value="START_AND_CONTINUE">
-                           <label class="block-label selection-button-radio" for="canChallenge_START_AND_CONTINUE">Yes</label>
-                       </div>
-
-                       <div class="multiple-choice">
-                            <input id="canChallenge_NOT_PERMITTED" type="radio" name="canChallenge" value="NOT_PERMITTED">
-                            <label class="block-label selection-button-radio" for="canChallenge_NOT_PERMITTED">No</label>
-                        </div>
-
-           	            </fieldset>
-
-                           <p>
-                               <a href="/dashboard/{{version}}/business/appoint-agent/success" class="button margin-right-20">Continue</a>
-                               <a href="javascript: history.go(-1)" class="button-secondary">Cancel</a>
-
-                           </p>
-
-                            </form>
     </div>
 </div>
 
