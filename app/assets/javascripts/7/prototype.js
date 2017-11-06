@@ -58,7 +58,7 @@ $(document).ready(function() {
 
 
 
-$('input:checkbox').change(function(){
+$('input:checkbox.toggleEnabled').change(function(){
     if($(this).is(":checked")) {
      $('input:radio').prop("disabled", false);
     } else {
@@ -75,4 +75,17 @@ $(function() {
             $("#btn-"+$(this).val()).show();
     });
  });
+
+
+// Appoint agent selection
+
+$(document).ready(function(){
+
+    $("#form-appoint-agent").submit(function(){
+        event.preventDefault();
+       
+        window.location = $('input[name="appoint-agent"]:checked').val();
+    });
+
+});
  
