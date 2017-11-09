@@ -17,17 +17,35 @@
 }
 
 
+.paginationBlock {
+	float:right;
+	text-align:right;
+}
 
+
+.showResults {
+	display:inline-block;
+	margin: 0;
+	& li {
+		display:inline-block;
+		margin:0px 5px 0 0;
+	}
+	& li:first-child {
+		margin-left:5px;
+	}
+}
 
 
 .pagination{
+	
 	list-style-type:none;
 	li{
 		display: inline-block;
 		margin: 0 .2em;
-		&.disabled{
+		&.disabled a{
 			color: $grey-1;
 			text-decoration: none;
+			display:inline-block;
 		}
 		&.next {
 		   margin-right: 0;
