@@ -1,0 +1,319 @@
+{% extends "layout.html" %}
+
+{% set title = "Evidence required" %}
+{% set version = "7" %}
+
+{% block page_title %}
+  {{title}}
+{% endblock %}
+
+{% block service_name %}
+    Check and challenge your business rates valuation
+{% endblock %}
+
+
+{% block content %}
+<main id="content" role="main"> {% include "includes/phase_banner_prototype.html" %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="/dashboard/{{version}}/messages" class="link-back">Back to messages</a>
+      <header class="page-header">
+        <div class="tabular-data__entry" id="assessment-heading">
+          <ul>
+
+            <li><span class="tabular-data__heading--label"> Check Case Reference:</span> <span>CHK223343</span></li>
+            
+            <li><span class="tabular-data__heading--label">Property:</span> <span>12 ROWLANDS ROAD, WORthING, BN11 3JU</span></li>
+            
+            <li><span class="tabular-data__heading--label">Local Authority Reference:</span> <span>144/008690</span></li>
+            
+			  <li><span class="tabular-data__heading--label">Effective Date of Assessment:</span> <span>1st April 2017</span></li>
+           
+            <li><span class="tabular-data__heading--label">Date Check Case Submitted:</span> <span>12th November 2017</span></li>
+          </ul>
+		  </div>
+          
+          
+          
+          <h2 class="heading-small">Case Details</h2>
+          
+           
+           
+              <div class="tabular-data__entry">
+           <ul>
+            <li><span class="tabular-data__heading--label">Reason for Case:</span><span>confirm or change the information held for this property (for example if you’ve added a floor or floor area measurements are incorrect)</span></li>
+            
+            <li><span class="tabular-data__heading--label">Small Proposer:</span> <span>Yes</span></li>
+            
+            <li><span class="tabular-data__heading--label">Proposer Name:</span> <span>George Best</span></li>
+            
+            <li><span class="tabular-data__heading--label">Address:</span> <span>9, MICHIGAN WAY, EXETER, EX4 5EU</span></li>
+            
+            <li><span class="tabular-data__heading--label">Email:</span> <span>george@hotmail.com</span></li>
+            
+            <li><span class="tabular-data__heading--label">Agent Name:</span> <span>Fred’s Agency</span></li>
+            
+            <li><span class="tabular-data__heading--label">Address:</span> <span>19, MICHIGAN WAY, EXETER, EX4 5EU</span></li>
+            
+            <li><span class="tabular-data__heading--label">Email:</span> <span>fredagency@hotmail.com</span></li>
+          </ul>
+        
+		  </div>
+      </header>
+	  </div>
+	</div>
+    <div class="grid-row">
+    <div class="column-full">
+     
+     
+      <article class="content_body"><span class="pull-right"><a 
+class="button button-secondary" id="print-button-top" href="javascript:window.print()">Print 
+        summary</a></span>
+        <h1 class="heading-xlarge">Summary</h1>
+        <h2 class="heading-medium" id="headingSurveyUnitFeatures-1"> Warehouse 
+          features </h2>
+        <h1 class="visually-hidden"> {{title}} </h1>
+        <div class="table-wrapper">
+          <table class="table-font-xsmall" id="property-features-1">
+            <caption class="visuallyhidden">
+            Property features
+            </caption>
+            <colgroup>
+            <col width="">
+            <col width="">
+            <col width="">
+            </colgroup>
+            <thead>
+              <tr>
+                <td></td>
+                <th id="header_original">Current</th>
+                <th class="proposed border-left border-right" 
+      id="header_proposed">Proposed changes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th id="header_basis_of_measurement" scope="row">Basis of measurement</th>
+                <td headers="header_basis_of_measurement header_original">Gross internal 
+                  area</td>
+                <td class="proposed border-left border-right" headers="header_basis_of_measurement header_proposed"></td>
+              </tr>
+              <tr>
+                <th id="header_eaves_height" scope="row">Eaves height</th>
+                <td headers="header_eaves_height header_original"><span class="unknown">No 
+                  record</span></td>
+                <td class="proposed border-left border-right" headers="header_eaves_height header_proposed"> 33.00m </td>
+              </tr>
+              <tr>
+                <th id="header_number_of_storeys" scope="row">Number of storeys</th>
+                <td headers="header_number_of_storeys header_original"> 1 </td>
+                <td class="proposed border-left border-right" headers="header_number_of_storeys header_proposed"></td>
+              </tr>
+              <tr>
+                <th id="header_lowest_floor_of_your_property" scope="row">Lowest floor of 
+                  your property</th>
+                <td headers="header_lowest_floor_of_your_property header_original"> Ground floor </td>
+                <td class="proposed border-left border-right" headers="header_lowest_floor_of_your_property header_proposed"></td>
+              </tr>
+              <tr>
+                <th id="header_highest_floor_of_your_property" scope="row">Highest floor 
+                  of your property</th>
+                <td headers="header_highest_floor_of_your_property header_original"><span 
+      class="unknown">No record</span></td>
+                <td class="proposed border-left border-right" headers="header_highest_floor_of_your_property header_proposed"> Lower ground floor </td>
+              </tr>
+              <tr>
+                <th id="header_year_built" scope="row">Year built</th>
+                <td headers="header_year_built header_original"> 1919-1939 </td>
+                <td class="proposed border-left border-right" headers="header_year_built header_proposed"></td>
+              </tr>
+              <tr>
+                <th id="header_year_refurbished" scope="row">Year refurbished</th>
+                <td headers="header_year_refurbished header_original"><span class="unknown">No 
+                  record</span></td>
+                <td class="proposed border-left border-right" headers="header_year_refurbished header_proposed"> 1986 </td>
+              </tr>
+              <tr>
+                <th id="header_central_heating" scope="row">Central heating</th>
+                <td headers="header_central_heating header_original"> No coverage </td>
+                <td class="proposed border-left border-right" headers="header_central_heating header_proposed"></td>
+              </tr>
+              <tr>
+                <th id="header_air_conditioning" scope="row">Air conditioning</th>
+                <td headers="header_air_conditioning header_original"> No coverage </td>
+                <td class="proposed border-left border-right" headers="header_air_conditioning header_proposed"></td>
+              </tr>
+              <tr>
+                <th id="header_sprinklers" scope="row">Sprinklers</th>
+                <td headers="header_sprinklers header_original"> None/minimal </td>
+                <td class="proposed border-left border-right" headers="header_sprinklers header_proposed"></td>
+              </tr>
+              <tr>
+                <th id="header_passenger_lift" scope="row">Passenger lift</th>
+                <td headers="header_passenger_lift header_original"> No floors </td>
+                <td class="proposed border-left border-right" headers="header_passenger_lift header_proposed"></td>
+              </tr>
+              <tr>
+                <th id="header_goods_lift" scope="row">Goods lift</th>
+                <td headers="header_goods_lift header_original"> No floors </td>
+                <td class="proposed border-left border-right" headers="header_goods_lift header_proposed"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+          <h2 class="heading-medium" id="headingSurveyUnitFloorAreas-1">Floor areas</h2>
+      <div class="table-wrapper">
+        <table class="table-font-xsmall" id="survey-unit-lines-table-1">
+          <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="original no-border-bottom form-heading-large" id="header_current" 
+    colspan="3">Current</th>
+              <th class="proposed border-left border-right no-border-bottom form-heading-large" 
+    id="header_proposed" colspan="2">Proposed changes</th>
+          
+            </tr>
+            <tr>
+              <th class="original" id="header_current_ref">Ref</th>
+              <th class="original" id="header_current_desc">Description</th>
+              <th class="original" id="header_current_area">Area <abbr title="meters squared" 
+      role="text" aria-label="meters squared">m<sup>2</sup></abbr></th>
+              <th class="proposed border-left" id="header_proposed_desc">Description</th>
+              <th class="proposed border-right" id="header_proposed_area">Area <abbr 
+      title="meters squared" role="text" 
+      aria-label="meters squared">m<sup>2</sup></abbr></th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td headers="header_current_ref header_current">1</td>
+              <td headers="header_current_desc header_current">Ground floor portable 
+                building</td>
+              <td headers="header_current_area header_current">18.20</td>
+              <td class="proposed border-left" headers="header_proposed_desc header_proposed"></td>
+              <td class="proposed border-right" headers="header_proposed_area header_proposed"></td>
+             
+            </tr>
+            <tr>
+              <td headers="header_current_ref header_current">2</td>
+              <td headers="header_current_desc header_current">Ground floor portable 
+                building (toilets)</td>
+              <td headers="header_current_area header_current">7.70</td>
+              <td class="proposed border-left" headers="header_proposed_desc header_proposed"></td>
+              <td class="proposed border-right" headers="header_proposed_area header_proposed"></td>
+          
+            </tr>
+            <tr>
+              <td headers="header_current_ref header_current">3</td>
+              <td headers="header_current_desc header_current">Ground floor external 
+                storage</td>
+              <td headers="header_current_area header_current">8.80</td>
+              <td class="proposed border-left" headers="header_proposed_desc header_proposed"></td>
+              <td class="proposed border-right" headers="header_proposed_area header_proposed"></td>
+           
+            </tr>
+            <tr>
+              <td headers="header_current_ref header_current">4</td>
+              <td headers="header_current_desc header_current">Ground floor garage</td>
+              <td headers="header_current_area header_current">19.40</td>
+              <td class="proposed border-left" headers="header_proposed_desc header_proposed"></td>
+              <td class="proposed border-right" headers="header_proposed_area header_proposed"></td>
+            
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br/>
+      <h2 class="heading-medium" id="headingCarParking">Parking</h2>
+      <table class="table-font-xsmall" id="parking-spaces-216">
+        <thead>
+          <tr>
+            <th class="original" id="header-spaces-desc">Description of spaces</th>
+            <th class="original" id="header-spaces-original">Number of spaces</th>
+            <th class="proposed" id="header-spaces-proposed">Proposed number of 
+              spaces</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">Surfaced covered spaces</td>
+            <td scope="row">None</td>
+            <td class="proposed">23 spaces</td>
+          </tr>
+          <tr>
+            <td scope="row">Surfaced open spaces</td>
+            <td scope="row">None</td>
+            <td class="proposed"></td>
+          </tr>
+          <tr>
+            <td scope="row">Unsurfaced covered spaces</td>
+            <td scope="row">None</td>
+            <td class="proposed"></td>
+          </tr>
+          <tr>
+            <td scope="row">Unsurfaced open spaces</td>
+            <td scope="row">None</td>
+            <td class="proposed"></td>
+          </tr>
+          <tr>
+            <td scope="row">Garage spaces</td>
+            <td scope="row">None</td>
+            <td class="proposed"></td>
+          </tr>
+          <tr>
+            <th class="original" id="header-area-desc">Description of areas</th>
+            <th class="original" id="header-area-original">Area (m²)</th>
+            <th class="proposed" id="header-area-proposed">Proposed area (m²)</th>
+          </tr>
+          <tr>
+            <td scope="row">Surfaced covered areas</td>
+            <td scope="row">None</td>
+            <td class="proposed"></td>
+          </tr>
+          <tr>
+            <td scope="row">Surfaced open areas</td>
+            <td scope="row">None</td>
+            <td class="proposed"></td>
+          </tr>
+          <tr>
+            <td scope="row">Unsurfaced covered areas</td>
+            <td scope="row">None</td>
+            <td class="proposed"></td>
+          </tr>
+          <tr>
+            <td scope="row">Unsurfaced open areas</td>
+            <td scope="row">None</td>
+            <td class="proposed"></td>
+          </tr>
+          <tr>
+            <td scope="row">Garage areas</td>
+            <td scope="row">None</td>
+            <td class="proposed"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="heading-medium" id="headingsupportingDocuments">supporting 
+        documents</h2>
+      <ul>
+        <li><span class="upload-list-file-name">QASummary.pdf</span> <span class="upload-list-file-size">(85kB)</span> <span 
+																															 class="upload-list-file-type">Floor plan</span></li>
+      </ul>
+        
+      </article>
+    </div>
+  </div>
+  <a href="/dashboard/{{version}}/messages" class="link-back">Back to messages</a> {% include "includes/get_help.html" %} </main>
+{% endblock %}
+{% block body_end %}
+  {% include "includes/" + version +"/scripts.html" %} 
+  <!-- GOV.UK Prototype kit {{releaseVersion}} --> 
+  {% endblock %} 
